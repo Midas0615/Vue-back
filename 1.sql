@@ -194,7 +194,7 @@ CREATE TABLE `users` (
   `DeptIdx` int(11) DEFAULT NULL,
   `UserName` varchar(50) NOT NULL,
   `UserId` varchar(30) NOT NULL,
-  `Passwd` varchar(50) DEFAULT NULL,
+  `Passwd` varchar(100) DEFAULT NULL,
   `PasswdInit` smallint(6) DEFAULT NULL,
   `UserImage` binary(1) DEFAULT NULL,
   `SignImage` binary(1) DEFAULT NULL,
