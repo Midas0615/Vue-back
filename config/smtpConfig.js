@@ -1,7 +1,7 @@
 module.exports = {
   service: "Gmail",
   auth: {
-      user: "sewfactory32@gmail.com",
+      user: "intsystem.info@gmail.com",
       pass: "!Alove1229"
   }
 };

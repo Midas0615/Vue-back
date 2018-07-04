@@ -3,8 +3,8 @@ module.exports = {
   'connection': {
     'host': 'localhost',
     'user': 'root',
-    'password': 'root',
-    'database': 'project'
+    'password': '',
+    'database': 'vue'
   },
-  'database': 'project'
+  'database': 'vue'
 };
