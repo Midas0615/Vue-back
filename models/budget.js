@@ -37,26 +37,26 @@ var add = function(body, callback) {
 
 var find_all = function(body, callback) {
   console.log(body);
-  var q = ' WHERE ';
+  var q = ' WHERE';
   var arr = [];
   if(body.account != null) {
-    q += 'AccountIdx = ? AND';
+    q += ' AccountIdx = ? AND';
     arr.push(body.account.Idx);
   }
   if(body.cost != null) {
-    q += 'CostIdx = ? AND';
+    q += ' CostIdx = ? AND';
     arr.push(body.cost.CostcenterIdx);
   }
   if(body.department != null) {
-    q += 'DepIdx = ? AND';
+    q += ' DepIdx = ? AND';
     arr.push(body.department.DeptIdx);
   }
   if(body.team != ''){
-    q += 'team = ? AND';
+    q += ' team = ? AND';
     arr.push(body.team);
   }
   if(body.date != '') {
-    q += 'pdate = ? AND';
+    q += ' pdate = ? AND';
     arr.push(body.date.split('T')[0]);
   }
   if(arr.length > 0) {
@@ -95,7 +95,35 @@ var edit = function(body, callback) {
   })
 }
 
+var report = function(body, callback) {
+  var q = ' WHERE';
+  var arr = [];
+  if(body.department != null) {
+    q += ' DepIdx = ? AND';
+    arr.push(body.department.DeptIdx);
+  }
+  if(body.year != null) {
+    q += ' pdate >= ? AND pdate <= ? AND';
+    arr.push(body.year.YearName+'-01-01');
+    arr.push(body.year.YearName+'-12-31');
+  }
+  if(arr.length > 0) {
+    q = `SELECT AccountIdx, sum(m1) as m1, sum(m2) as m2, sum(m3) as m3, sum(m4) as m4, sum(m5) as m5, sum(m6) as m6,
+        sum(m7) as sm7, sum(m8) as m8, sum(m9) as m9, sum(m10) as m10, sum(m11) as m11, sum(m12) as m12 FROM budget` + q;
+    q = q.substring(0, q.lastIndexOf(" "));
+    q += ` GROUP BY AccountIdx`;
+  } else {
+    q = `SELECT AccountIdx, sum(m1) as m1, sum(m2) as m2, sum(m3) as m3, sum(m4) as m4, sum(m5) as m5, sum(m6) as m6,
+        sum(m7) as sm7, sum(m8) as m8, sum(m9) as m9, sum(m10) as m10, sum(m11) as m11, sum(m12) as m12 FROM budget GROUP BY AccountIdx`;
+  }
+  console.log(q);
+  db.query(q, arr, function(err, rows) {
+    callback(err, rows);
+  });
+}
+
 exports.add = add;
 exports.find_all = find_all;
 exports.remove = remove;
 exports.edit = edit;
+exports.report = report;

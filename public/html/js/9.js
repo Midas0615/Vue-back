@@ -6,13 +6,13 @@ webpackJsonp([9],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(842)
+  __webpack_require__(844)
 }
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(844)
+var __vue_script__ = __webpack_require__(846)
 /* template */
-var __vue_template__ = __webpack_require__(845)
+var __vue_template__ = __webpack_require__(847)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,13 +52,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 842:
+/***/ 844:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(843);
+var content = __webpack_require__(845);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 843:
+/***/ 845:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -94,7 +94,7 @@ exports.push([module.i, "\n.bg-color[data-v-59bf189d] {\n    background-color: #
 
 /***/ }),
 
-/***/ 844:
+/***/ 846:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -133,7 +133,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 845:
+/***/ 847:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

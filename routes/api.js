@@ -15,4 +15,6 @@ router.post('/budget/budget_add', budget.budget_add);
 router.post('/budget/budget_remove', budget.budget_remove);
 router.post('/budget/budget_edit', budget.budget_edit);
 router.post('/budget/upload_excel', budget.upload_excel);
+
+router.post('/budget/report_list', budget.report_list);
 module.exports = router;

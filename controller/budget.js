@@ -85,10 +85,19 @@ exports.budget_edit = function(req, res) {
   })
 }
 
-var saveExcelData = function(path, callback) {
-
+exports.report_list = function(req, res) {
+  console.log(req.body);
+  Budget.report(req.body, function(err, rows) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send({isSuccess: true, list: rows});
+    }
+  })  
 }
 
+var saveExcelData = function(path, callback) {
+}
 exports.upload_excel = function(req, res) {
   var form = new formidable.IncomingForm();
   form.parse(req, function(err, fields, files) {
