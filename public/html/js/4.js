@@ -6,13 +6,13 @@ webpackJsonp([4],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(818)
+  __webpack_require__(825)
 }
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(820)
+var __vue_script__ = __webpack_require__(827)
 /* template */
-var __vue_template__ = __webpack_require__(821)
+var __vue_template__ = __webpack_require__(828)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1321,18 +1321,19 @@ var options = {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
+  // host: 'http://localhost:3000'
   host: 'http://35.168.158.241'
 });
 
 /***/ }),
 
-/***/ 818:
+/***/ 825:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(819);
+var content = __webpack_require__(826);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1353,7 +1354,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 819:
+/***/ 826:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -1368,7 +1369,7 @@ exports.push([module.i, "\n.login-content[data-v-603313aa] {\n    margin-top: 6%
 
 /***/ }),
 
-/***/ 820:
+/***/ 827:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1512,7 +1513,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 /***/ }),
 
-/***/ 821:
+/***/ 828:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

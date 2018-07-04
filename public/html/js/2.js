@@ -6,13 +6,13 @@ webpackJsonp([2],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(813)
+  __webpack_require__(820)
 }
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(815)
+var __vue_script__ = __webpack_require__(822)
 /* template */
-var __vue_template__ = __webpack_require__(816)
+var __vue_template__ = __webpack_require__(823)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1321,18 +1321,19 @@ var options = {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
+  // host: 'http://localhost:3000'
   host: 'http://35.168.158.241'
 });
 
 /***/ }),
 
-/***/ 813:
+/***/ 820:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(814);
+var content = __webpack_require__(821);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1353,7 +1354,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 814:
+/***/ 821:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -1368,7 +1369,7 @@ exports.push([module.i, "\n.login-content[data-v-130d3d11] {\n    margin-top: 7%
 
 /***/ }),
 
-/***/ 815:
+/***/ 822:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1513,7 +1514,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 /***/ }),
 
-/***/ 816:
+/***/ 823:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1953,7 +1954,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "text-center" }, [
           _c("img", {
             staticClass: "rounded-circle",
-            attrs: { src: __webpack_require__(817) }
+            attrs: { src: __webpack_require__(824) }
           })
         ])
       ])
@@ -1971,7 +1972,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 817:
+/***/ 824:
 /***/ (function(module, exports) {
 
 module.exports = "/images/login_user-01.png?11f289cac06c5b1a19de1d9cd11f677c";
