@@ -780,6 +780,37 @@ insert  into `accounts`(`Idx`,`CostcenterIdx`,`AccountIdx`,`AccountName`,`Accoun
 (2787,1,'81200003','Otros Gastos Financieros','Otros Gastos Financieros','Otros Gastos Financieros',0,0,'',0,0,0,1,0),
 (2788,1,'81200004','Diferencial Cambiario (Gasto)\r','Diferencial Cambiario (Gasto)\r','Diferencial Cambiario (Gasto)\r',0,0,'',0,0,0,1,0);
 
+/*Table structure for table `budget` */
+
+DROP TABLE IF EXISTS `budget`;
+
+CREATE TABLE `budget` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `AccountIdx` int(11) DEFAULT NULL,
+  `CostIdx` int(11) DEFAULT NULL,
+  `DepIdx` int(11) DEFAULT NULL,
+  `team` varchar(10) DEFAULT NULL,
+  `pdate` varchar(30) DEFAULT NULL,
+  `m1` varchar(10) DEFAULT NULL,
+  `m2` varchar(10) DEFAULT NULL,
+  `m3` varchar(10) DEFAULT NULL,
+  `m4` varchar(10) DEFAULT NULL,
+  `m5` varchar(10) DEFAULT NULL,
+  `m6` varchar(10) DEFAULT NULL,
+  `m7` varchar(10) DEFAULT NULL,
+  `m8` varchar(10) DEFAULT NULL,
+  `m9` varchar(10) DEFAULT NULL,
+  `m10` varchar(10) DEFAULT NULL,
+  `m11` varchar(10) DEFAULT NULL,
+  `m12` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+/*Data for the table `budget` */
+
+insert  into `budget`(`Idx`,`AccountIdx`,`CostIdx`,`DepIdx`,`team`,`pdate`,`m1`,`m2`,`m3`,`m4`,`m5`,`m6`,`m7`,`m8`,`m9`,`m10`,`m11`,`m12`) values 
+(16,2051,1,3,'12','2018-06-30','13','13','13','','','','12','','','','','');
+
 /*Table structure for table `codes` */
 
 DROP TABLE IF EXISTS `codes`;
