@@ -1321,7 +1321,7 @@ var options = {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  host: 'http://localhost:3001'
+  host: 'http://35.168.158.241'
 });
 
 /***/ }),
