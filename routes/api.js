@@ -4,6 +4,7 @@ var passport = require('passport');
 require('../config/passport')(passport);
 
 var budget = require('../controller/budget');
+var voucher = require('../controller/voucher');
 
 router.use('/',  passport.authenticate('jwt', { session: false}), function(req, res, next) {  
   next();
@@ -15,6 +16,7 @@ router.post('/budget/budget_add', budget.budget_add);
 router.post('/budget/budget_remove', budget.budget_remove);
 router.post('/budget/budget_edit', budget.budget_edit);
 router.post('/budget/upload_excel', budget.upload_excel);
-
 router.post('/budget/report_list', budget.report_list);
+
+router.post('/voucher/load_acc_cus_dep_ord_user_list', voucher.load_acc_cus_dep_ord_user_list);
 module.exports = router;

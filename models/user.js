@@ -95,7 +95,13 @@ var findOne = function(body, callback) {
       return callback(null, new User(rows[0]));    
   });  
 }
+var find_all = function(callback) {
+  db.query('SELECT * FROM users', [], function(err, rows) {
+    callback(err, rows);
+  });
+}
 
 exports.login = login;
 exports.register = register;
 exports.findOne = findOne;
+exports.find_all = find_all;

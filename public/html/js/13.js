@@ -1,6 +1,6 @@
 webpackJsonp([13],{
 
-/***/ 833:
+/***/ 734:
 /***/ (function(module, exports, __webpack_require__) {
 
 var normalizeComponent = __webpack_require__(46)
@@ -24,7 +24,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\components\\pages\\budget_report.vue"
+Component.options.__file = "src\\components\\pages\\voucher_list.vue"
 
 module.exports = Component.exports
 
