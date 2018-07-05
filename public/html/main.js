@@ -90,7 +90,7 @@ window.axios = __webpack_require__(116);
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_5_vue_cookie___default.a);
-if (__WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('username') != 'undefined' && __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('token') != 'undefined') {
+if (__WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('username') != null && __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('token') != null) {
     console.log(__WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('username'));
     __WEBPACK_IMPORTED_MODULE_3__store_store_js__["a" /* default */].commit('setUser', { username: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('username'), token: __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('token') });
     window.axios.defaults.headers.common = {
@@ -3934,7 +3934,7 @@ var routes = [{
 var layout = [{
     path: '/',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(8).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(730)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(16).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(730)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: "Blank",
@@ -3943,7 +3943,7 @@ var layout = [{
 }, {
     path: '/budget',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(731)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(14).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(731)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: 'Budget',
@@ -3952,10 +3952,37 @@ var layout = [{
 }, {
     path: '/budget_report',
     component: function component(resolve) {
-        return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(732)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e/* require */(15).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(732)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
     },
     meta: {
         title: 'Report',
+        requireAuth: true
+    }
+}, {
+    path: '/voucher',
+    component: function component(resolve) {
+        return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(852)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    },
+    meta: {
+        title: 'Voucher',
+        requireAuth: true
+    }
+}, {
+    path: '/voucher_list',
+    component: function component(resolve) {
+        return __webpack_require__.e/* require */(2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(853)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    },
+    meta: {
+        title: 'Voucher List',
+        requireAuth: true
+    }
+}, {
+    path: '/voucher_report',
+    component: function component(resolve) {
+        return __webpack_require__.e/* require */(8).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(854)]; ((resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    },
+    meta: {
+        title: 'Yearly Report',
         requireAuth: true
     }
 }];
@@ -6168,14 +6195,25 @@ var mutations = {
         state.user.name = res.data.username;
         state.user.token = res.data.token;
         state.authenticated = true;
+        window.axios.defaults.headers.common = {
+            'Authorization': state.user.token
+        };
     },
     setUser: function setUser(state, data) {
         state.user.name = data.username;
         state.user.token = data.token;
         state.authenticated = true;
+        window.axios.defaults.headers.common = {
+            'Authorization': state.user.token
+        };
     },
     changeLoading: function changeLoading(state, b) {
         state.loading = b;
+    },
+    logout: function logout(state) {
+        state.user.name = '';
+        state.user.token = '';
+        state.authenticated = false;
     }
 };
 /* harmony default export */ __webpack_exports__["a"] = (mutations);

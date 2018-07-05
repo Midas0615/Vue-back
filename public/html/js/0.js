@@ -1877,6 +1877,22 @@ var menu_items = [{
         link: '/budget_report',
         icon: 'fa fa-angle-double-right'
     }]
+}, {
+    name: 'Voucher',
+    icon: 'fa fa-clone',
+    child: [{
+        name: 'Management',
+        link: '/voucher',
+        icon: 'fa fa-angle-double-right'
+    }, {
+        name: 'Voucher List',
+        link: '/voucher_list',
+        icon: 'fa fa-angle-double-right'
+    }, {
+        name: 'Yearly Report',
+        link: '/voucher_report',
+        icon: 'fa fa-angle-double-right'
+    }]
 }];
 /* harmony default export */ __webpack_exports__["a"] = (menu_items);
 
@@ -2099,6 +2115,7 @@ exports.push([module.i, "\n.wrapper {\n  margin-top: 50px;\n}\n@media screen and
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_screenfull__ = __webpack_require__(813);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_screenfull___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_screenfull__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_src_store_store__ = __webpack_require__(115);
 //
 //
 //
@@ -2272,6 +2289,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
