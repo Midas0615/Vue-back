@@ -88,7 +88,6 @@ var edit = function(body, callback) {
       m1: body.m1, m2: body.m2, m3: body.m3, m4: body.m4, m5: body.m5, m6: body.m6, m7: body.m7, m8: body.m8, m9: body.m9, m10: body.m10, m11: body.m11, m12: body.m12
     }, body.idx],
   function(err){
-    console.log(err);
     if(err)
       return callback(err);
     return callback(null);

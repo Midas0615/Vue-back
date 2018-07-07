@@ -22,4 +22,8 @@ router.post('/voucher/load_acc_cus_dep_ord_user_list', voucher.load_acc_cus_dep_
 router.post('/voucher/load_acc_cus_dep_cost_list', voucher.load_acc_cus_dep_cost_list);
 router.post('/voucher/voucher_add', voucher.voucher_add);
 router.post('/voucher/voucher_list', voucher.voucher_list);
+router.post('/voucher/voucher_detail', voucher.voucher_detail);
+router.post('/voucher/voucher_update', voucher.voucher_update);
+router.post('/voucher/report_list', voucher.report_list);
+router.post('/voucher/vouchers', voucher.vouchers);
 module.exports = router;
