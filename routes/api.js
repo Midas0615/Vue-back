@@ -19,4 +19,7 @@ router.post('/budget/upload_excel', budget.upload_excel);
 router.post('/budget/report_list', budget.report_list);
 
 router.post('/voucher/load_acc_cus_dep_ord_user_list', voucher.load_acc_cus_dep_ord_user_list);
+router.post('/voucher/load_acc_cus_dep_cost_list', voucher.load_acc_cus_dep_cost_list);
+router.post('/voucher/voucher_add', voucher.voucher_add);
+router.post('/voucher/voucher_list', voucher.voucher_list);
 module.exports = router;
