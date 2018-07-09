@@ -1,7 +1,9 @@
 var db = require('./db');
 
 var find_all = function(callback) {
-  db.query('SELECT * FROM iorderactual', [], function(err, rows) {
+  db.query(`
+    SELECT iorderactual.*, users.UserName as HandlerName FROM iorderactual INNER JOIN users ON iorderactual.Handler = users.UserIdx
+  `, [], function(err, rows) {
     callback(err, rows);
   });
 }

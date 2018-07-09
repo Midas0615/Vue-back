@@ -1633,29 +1633,28 @@ insert  into `codes`(`Idx`,`Priority`,`Classification`,`Contents`,`SubCode1`,`Su
 (902,0,'Fabric Type','Stripe Slub Single','','',''),
 (903,0,'Fabric Type','Stripe Single Jersey','','','');
 
-/*Table structure for table `constcenter` */
+/*Table structure for table `confirmation` */
 
-DROP TABLE IF EXISTS `constcenter`;
+DROP TABLE IF EXISTS `confirmation`;
 
-CREATE TABLE `constcenter` (
-  `CostcenterIdx` int(11) NOT NULL,
-  `CostcenterName` varchar(30) NOT NULL,
-  `IsUse` tinyint(3) DEFAULT '1',
-  PRIMARY KEY (`CostcenterIdx`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `confirmation` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `C1` tinyint(1) DEFAULT '0',
+  `C2` tinyint(1) DEFAULT '0',
+  `C3` tinyint(1) DEFAULT '0',
+  `C4` tinyint(1) DEFAULT '0',
+  `C5` tinyint(1) DEFAULT '0',
+  `C6` tinyint(1) DEFAULT '0',
+  `C7` tinyint(1) DEFAULT '0',
+  `C8` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-/*Data for the table `constcenter` */
+/*Data for the table `confirmation` */
 
-insert  into `constcenter`(`CostcenterIdx`,`CostcenterName`,`IsUse`) values 
-(1,'Head Office',1),
-(3,'JS International, S.A.',1),
-(4,'Development',1),
-(5,'Sewing Factory 1',1),
-(6,'Partner',1),
-(7,'People & Arts, S.A.',1),
-(8,'INT Bodega',1),
-(9,'Recepsa',1),
-(10,'Recepsa Bodega',1);
+insert  into `confirmation`(`Idx`,`OrderIdx`,`C1`,`C2`,`C3`,`C4`,`C5`,`C6`,`C7`,`C8`) values 
+(1,1,0,0,0,1,1,0,0,0);
 
 /*Table structure for table `costcenter` */
 
@@ -2661,6 +2660,81 @@ insert  into `dept`(`DeptIdx`,`CostCenterIdx`,`DeptName`,`IsUse`,`ReportNo`) val
 (14,8,'INT Bodega',1,0),
 (15,10,'Recepsa Bodega',1,0),
 (16,3,'Administracion (JS)',1,0);
+
+/*Table structure for table `fabrics` */
+
+DROP TABLE IF EXISTS `fabrics`;
+
+CREATE TABLE `fabrics` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `LongName` varchar(80) DEFAULT NULL,
+  `ShortName` varchar(30) DEFAULT NULL,
+  `Yaarn1` int(11) DEFAULT NULL,
+  `Yarn2` int(11) DEFAULT NULL,
+  `Yarn3` int(11) DEFAULT NULL,
+  `Yarn4` int(11) DEFAULT NULL,
+  `Yarn5` int(11) DEFAULT NULL,
+  `Percent1` float DEFAULT NULL,
+  `Percent2` float DEFAULT NULL,
+  `Percent3` float DEFAULT NULL,
+  `Percent4` float DEFAULT NULL,
+  `Percent5` float DEFAULT NULL,
+  `RegDate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `IsUse` bit(1) DEFAULT b'1',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `fabrics` */
+
+insert  into `fabrics`(`Idx`,`LongName`,`ShortName`,`Yaarn1`,`Yarn2`,`Yarn3`,`Yarn4`,`Yarn5`,`Percent1`,`Percent2`,`Percent3`,`Percent4`,`Percent5`,`RegDate`,`IsUse`) values 
+(1,'Fabric 1','Fab 1',0,0,0,NULL,NULL,10,10,NULL,NULL,NULL,'2018-07-09 08:00:53','');
+
+/*Table structure for table `fcactual` */
+
+DROP TABLE IF EXISTS `fcactual`;
+
+CREATE TABLE `fcactual` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `F_Type` int(11) DEFAULT NULL,
+  `Fabric` int(11) DEFAULT NULL,
+  `U_Price` varchar(30) DEFAULT NULL,
+  `Consumption` varchar(30) DEFAULT NULL,
+  `Yds_Pcs` varchar(30) DEFAULT NULL,
+  `Width` varchar(30) DEFAULT NULL,
+  `Weight` varchar(30) DEFAULT NULL,
+  `Confirm` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `fcactual` */
+
+insert  into `fcactual`(`Idx`,`OrderIdx`,`F_Type`,`Fabric`,`U_Price`,`Consumption`,`Yds_Pcs`,`Width`,`Weight`,`Confirm`) values 
+(1,1,147,1,'1232','12','12','12','12',1);
+
+/*Table structure for table `fcplan` */
+
+DROP TABLE IF EXISTS `fcplan`;
+
+CREATE TABLE `fcplan` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `F_Type` int(11) DEFAULT NULL,
+  `Fabric` int(11) DEFAULT NULL,
+  `U_Price` varchar(30) DEFAULT NULL,
+  `Consumption` varchar(30) DEFAULT NULL,
+  `Yds_Pcs` varchar(30) DEFAULT NULL,
+  `Width` varchar(30) DEFAULT NULL,
+  `Weight` varchar(30) DEFAULT NULL,
+  `Confirm` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `fcplan` */
+
+insert  into `fcplan`(`Idx`,`OrderIdx`,`F_Type`,`Fabric`,`U_Price`,`Consumption`,`Yds_Pcs`,`Width`,`Weight`,`Confirm`) values 
+(1,1,118,1,'12','12','32','12','12',1),
+(2,1,156,1,'32','12','32','12','32',0);
 
 /*Table structure for table `iorderactual` */
 
@@ -8940,6 +9014,32 @@ insert  into `iorderactual`(`Idx`,`DeptIdx`,`Fileno`,`Indate`,`Buyer`,`Brand`,`P
 (8246,3,'1812167-07','2018-07-03 00:00:00',15,'','620274','94741-01','','NEW POPPIN BOTTLES','2018-10-25 00:00:00','2000-01-01 00:00:00',12,5,0,1,800,4.48,3584,14,17,131,0,'',80,80,1,'',120,0,'TBD'),
 (8247,3,'1812190-01','2018-07-03 00:00:00',15,'','620280','95213-12','','MAMA MAMA TQ','2018-10-25 00:00:00','2000-01-01 00:00:00',12,5,0,1,2500,4.78,11950,14,17,131,0,'',80,80,1,'',120,0,'TBD');
 
+/*Table structure for table `po` */
+
+DROP TABLE IF EXISTS `po`;
+
+CREATE TABLE `po` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `No` varchar(30) DEFAULT NULL,
+  `Po` varchar(30) DEFAULT NULL,
+  `Style` varchar(30) DEFAULT NULL,
+  `U_Price` varchar(30) DEFAULT NULL,
+  `Qty` varchar(30) DEFAULT NULL,
+  `Amount` varchar(30) DEFAULT NULL,
+  `Factory` varchar(30) DEFAULT NULL,
+  `D_Date` varchar(30) DEFAULT NULL,
+  `Remark` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+/*Data for the table `po` */
+
+insert  into `po`(`Idx`,`OrderIdx`,`No`,`Po`,`Style`,`U_Price`,`Qty`,`Amount`,`Factory`,`D_Date`,`Remark`) values 
+(3,1,'1231232','123','123','123','123','1233','1','3-Jul-2018','1233'),
+(4,1,'123','1234123123','123123','123','123','123','1','3-Jul-2018','123'),
+(5,1,'123','12','12','321','123123','12312312','1','3-Jul-2018','12312');
+
 /*Table structure for table `users` */
 
 DROP TABLE IF EXISTS `users`;
@@ -9085,12 +9185,86 @@ CREATE TABLE `voucher` (
   `Txt` text,
   `Email` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `voucher` */
 
 insert  into `voucher`(`Idx`,`VIdx`,`Txt`,`Email`) values 
-(3,NULL,'{\"top\":{\"encargador\":{\"UserIdx\":23,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Tom Shin\",\"UserId\":\"tomshin\",\"Passwd\":\"qazwsx98\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"tomshin@inttrading.com\",\"Phone\":\"\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":1,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":0,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":352,\"PointYR\":352},\"gerente\":{\"UserIdx\":27,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Carmen Cho\",\"UserId\":\"carmencho\",\"Passwd\":\"9241\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"carmen.cho@intsa.net\",\"Phone\":\"50230086997\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":0,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":0,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":0,\"PointYR\":0},\"director\":null,\"director_general\":null,\"d_director\":null,\"d_director_general\":null,\"d_presidente\":null},\"header\":{\"departmento\":{\"DeptIdx\":1,\"CostCenterIdx\":1,\"DeptName\":\"Sales1\",\"IsUse\":1,\"ReportNo\":1},\"fetcha\":\"2018-07-06T17:20:18.544Z\",\"voucher\":\"1\",\"cuenta\":{\"Idx\":2052,\"CostcenterIdx\":1,\"AccountIdx\":\"111\",\"AccountName\":\"Corriente\",\"AccountNameKO\":\"Corriente\",\"AccountNameES\":\"Corriente\",\"LevelNo\":3,\"ParentIdx\":0,\"ManualSortKey\":\"\",\"Distribute\":0,\"DistributeWay\":0,\"Division\":0,\"IsUse\":1,\"SubIdx\":0},\"proveedor\":{\"CustIdx\":4,\"ParentIdx\":0,\"CustName\":\"Banco Industrial\",\"CustNameEN\":\"Banco Industrial\",\"Classification\":28,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":0,\"MaxSize\":0,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":0,\"Handler2\":0,\"Handler3\":0,\"Cad1\":0,\"Cad2\":0,\"Cad3\":0,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"forma\":{\"Name\":\"Check\",\"Idx\":1},\"credit_limit\":\"1\",\"copora\":null,\"cheque\":\"3\",\"banco_nombre\":{\"CustIdx\":4,\"ParentIdx\":0,\"CustName\":\"Banco Industrial\",\"CustNameEN\":\"Banco Industrial\",\"Classification\":28,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":0,\"MaxSize\":0,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":0,\"Handler2\":0,\"Handler3\":0,\"Cad1\":0,\"Cad2\":0,\"Cad3\":0,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"buyer\":{\"CustIdx\":1,\"ParentIdx\":1,\"CustName\":\"Catherines\",\"CustNameEN\":\"Catherines\",\"Classification\":24,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":312,\"MaxSize\":8,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":89,\"Handler2\":0,\"Handler3\":0,\"Cad1\":67,\"Cad2\":34,\"Cad3\":65,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"banco_cuenta\":\"4\",\"currency\":{\"Name\":\"Q\",\"Idx\":1},\"compora\":\"2\"},\"body\":[{\"file\":null,\"buyer\":{\"CustIdx\":2,\"ParentIdx\":2,\"CustName\":\"Bella+Canvas\",\"CustNameEN\":\"BELLA + CANVAS, LLC.\",\"Classification\":24,\"address\":\"6670 FLOTILLA STREET CITY \\r\\nOF COMMERCE, CA 90040\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":111,\"MaxSize\":8,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":89,\"Handler2\":0,\"Handler3\":0,\"Cad1\":67,\"Cad2\":34,\"Cad3\":65,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"reg\":\"5\",\"fact\":\"6\",\"descripcion_title\":\"7\",\"descripcion_body\":\"1\",\"cantidad\":\"1\",\"unitario\":\"3\"}]}','bryan.cho@intsa.net');
+(3,'123','{\"top\":{\"encargador\":{\"UserIdx\":23,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Tom Shin\",\"UserId\":\"tomshin\",\"Passwd\":\"qazwsx98\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"tomshin@inttrading.com\",\"Phone\":\"\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":1,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":0,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":352,\"PointYR\":352},\"gerente\":{\"UserIdx\":27,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Carmen Cho\",\"UserId\":\"carmencho\",\"Passwd\":\"9241\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"carmen.cho@intsa.net\",\"Phone\":\"50230086997\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":0,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":0,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":0,\"PointYR\":0},\"director\":null,\"director_general\":null,\"d_director\":null,\"d_director_general\":null,\"d_presidente\":null},\"header\":{\"departmento\":{\"DeptIdx\":1,\"CostCenterIdx\":1,\"DeptName\":\"Sales1\",\"IsUse\":1,\"ReportNo\":1},\"fetcha\":\"2018-07-06T17:20:18.544Z\",\"voucher\":\"1\",\"cuenta\":{\"Idx\":2051,\"CostcenterIdx\":1,\"AccountIdx\":\"1\",\"AccountName\":\"Activo\",\"AccountNameKO\":\"Activo\",\"AccountNameES\":\"Activo\",\"LevelNo\":5,\"ParentIdx\":0,\"ManualSortKey\":\"\",\"Distribute\":0,\"DistributeWay\":0,\"Division\":0,\"IsUse\":1,\"SubIdx\":0},\"proveedor\":{\"CustIdx\":4,\"ParentIdx\":0,\"CustName\":\"Banco Industrial\",\"CustNameEN\":\"Banco Industrial\",\"Classification\":28,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":0,\"MaxSize\":0,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":0,\"Handler2\":0,\"Handler3\":0,\"Cad1\":0,\"Cad2\":0,\"Cad3\":0,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"forma\":{\"Name\":\"Check\",\"Idx\":1},\"credit_limit\":\"1\",\"copora\":null,\"cheque\":\"3\",\"banco_nombre\":{\"CustIdx\":4,\"ParentIdx\":0,\"CustName\":\"Banco Industrial\",\"CustNameEN\":\"Banco Industrial\",\"Classification\":28,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":0,\"MaxSize\":0,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":0,\"Handler2\":0,\"Handler3\":0,\"Cad1\":0,\"Cad2\":0,\"Cad3\":0,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"buyer\":{\"CustIdx\":1,\"ParentIdx\":1,\"CustName\":\"Catherines\",\"CustNameEN\":\"Catherines\",\"Classification\":24,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":312,\"MaxSize\":8,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":89,\"Handler2\":0,\"Handler3\":0,\"Cad1\":67,\"Cad2\":34,\"Cad3\":65,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"banco_cuenta\":\"4\",\"currency\":{\"Name\":\"Q\",\"Idx\":1},\"compora\":\"2\"},\"body\":[{\"file\":{\"Idx\":1,\"DeptIdx\":3,\"Fileno\":\"1712000-01\",\"Indate\":\"2016-10-09T21:00:00.000Z\",\"Buyer\":15,\"Brand\":\"\",\"Pono\":\"D596036\",\"Styleno\":\"94240-10\",\"Season\":\"\",\"Description\":\"LEGGING CROP\",\"DeliveryDate\":\"2016-01-18T21:00:00.000Z\",\"IndcDate\":\"1999-12-31T21:00:00.000Z\",\"IsPrinting\":4,\"EmbelishId1\":0,\"EmbelishId2\":0,\"SizeGroupIdx\":1,\"OrderQty\":560,\"OrderPrice\":4.42,\"OrderAmount\":2475.2,\"ShipTerm\":14,\"VsslAir\":17,\"Destination\":131,\"ShipCompleted\":1,\"BodyFabric\":\"CM 30\'S/1 SP 70D Single 240 g/m2\",\"Handler\":3,\"ModifiedUser\":3,\"Status\":2,\"Remark\":\"\",\"Category\":119,\"TBD\":0,\"Concept\":\"MH49SP16026D\"},\"buyer\":{\"CustIdx\":2,\"ParentIdx\":2,\"CustName\":\"Bella+Canvas\",\"CustNameEN\":\"BELLA + CANVAS, LLC.\",\"Classification\":24,\"address\":\"6670 FLOTILLA STREET CITY \\r\\nOF COMMERCE, CA 90040\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":111,\"MaxSize\":8,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":89,\"Handler2\":0,\"Handler3\":0,\"Cad1\":67,\"Cad2\":34,\"Cad3\":65,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"reg\":\"5\",\"fact\":\"6\",\"descripcion_title\":\"7\",\"descripcion_body\":\"1\",\"cantidad\":\"1\",\"unitario\":\"3\"}]}','bryan.cho@intsa.net'),
+(6,'12','{\"top\":{\"encargador\":{\"UserIdx\":22,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Steven Hong\",\"UserId\":\"steven\",\"Passwd\":\"Stjuyeha\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"steven.hong@intsa.net\",\"Phone\":\"\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":1,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":1,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":50,\"PointYR\":50},\"gerente\":{\"UserIdx\":22,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Steven Hong\",\"UserId\":\"steven\",\"Passwd\":\"Stjuyeha\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"steven.hong@intsa.net\",\"Phone\":\"\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":1,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":1,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":50,\"PointYR\":50},\"director\":{\"UserIdx\":22,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Steven Hong\",\"UserId\":\"steven\",\"Passwd\":\"Stjuyeha\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"steven.hong@intsa.net\",\"Phone\":\"\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":1,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":1,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":50,\"PointYR\":50},\"director_general\":{\"UserIdx\":22,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Steven Hong\",\"UserId\":\"steven\",\"Passwd\":\"Stjuyeha\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"steven.hong@intsa.net\",\"Phone\":\"\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":1,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":1,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":50,\"PointYR\":50},\"d_director\":{\"UserIdx\":22,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Steven Hong\",\"UserId\":\"steven\",\"Passwd\":\"Stjuyeha\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"steven.hong@intsa.net\",\"Phone\":\"\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":1,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":1,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":50,\"PointYR\":50},\"d_director_general\":{\"UserIdx\":22,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Steven Hong\",\"UserId\":\"steven\",\"Passwd\":\"Stjuyeha\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"steven.hong@intsa.net\",\"Phone\":\"\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":1,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":1,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":50,\"PointYR\":50},\"d_presidente\":{\"UserIdx\":22,\"CostcenterIdx\":1,\"DeptIdx\":1,\"UserName\":\"Steven Hong\",\"UserId\":\"steven\",\"Passwd\":\"Stjuyeha\",\"PasswdInit\":0,\"UserImage\":{\"type\":\"Buffer\",\"data\":[0]},\"SignImage\":{\"type\":\"Buffer\",\"data\":[0]},\"MacAddr\":\"\",\"AuthCode\":\"\",\"Email\":\"steven.hong@intsa.net\",\"Phone\":\"\",\"RegDate\":\"2018-07-02T21:00:00.000Z\",\"IsUse\":1,\"Connected\":0,\"GroupIdx\":0,\"IsLeader\":1,\"Position\":0,\"ExceptionGroup\":233,\"Nationality\":0,\"Bank\":0,\"BankAccount\":\"\",\"CheckName\":\"\",\"Point\":50,\"PointYR\":50}},\"header\":{\"departmento\":{\"DeptIdx\":1,\"CostCenterIdx\":1,\"DeptName\":\"Sales1\",\"IsUse\":1,\"ReportNo\":1},\"fetcha\":\"2018-07-07T13:01:14.261Z\",\"voucher\":\"123123\",\"cuenta\":{\"Idx\":2051,\"CostcenterIdx\":1,\"AccountIdx\":\"1\",\"AccountName\":\"Activo\",\"AccountNameKO\":\"Activo\",\"AccountNameES\":\"Activo\",\"LevelNo\":5,\"ParentIdx\":0,\"ManualSortKey\":\"\",\"Distribute\":0,\"DistributeWay\":0,\"Division\":0,\"IsUse\":1,\"SubIdx\":0},\"proveedor\":{\"CustIdx\":4,\"ParentIdx\":0,\"CustName\":\"Banco Industrial\",\"CustNameEN\":\"Banco Industrial\",\"Classification\":28,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":0,\"MaxSize\":0,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":0,\"Handler2\":0,\"Handler3\":0,\"Cad1\":0,\"Cad2\":0,\"Cad3\":0,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"forma\":{\"Name\":\"Check\",\"Idx\":1},\"credit_limit\":\"123\",\"copora\":null,\"cheque\":\"123\",\"banco_nombre\":{\"CustIdx\":4,\"ParentIdx\":0,\"CustName\":\"Banco Industrial\",\"CustNameEN\":\"Banco Industrial\",\"Classification\":28,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":0,\"MaxSize\":0,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":0,\"Handler2\":0,\"Handler3\":0,\"Cad1\":0,\"Cad2\":0,\"Cad3\":0,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"buyer\":{\"CustIdx\":1,\"ParentIdx\":1,\"CustName\":\"Catherines\",\"CustNameEN\":\"Catherines\",\"Classification\":24,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":312,\"MaxSize\":8,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":89,\"Handler2\":0,\"Handler3\":0,\"Cad1\":67,\"Cad2\":34,\"Cad3\":65,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"banco_cuenta\":\"123\",\"currency\":{\"Name\":\"Q\",\"Idx\":1},\"compora\":\"123\"},\"body\":[{\"file\":{\"Idx\":1,\"DeptIdx\":3,\"Fileno\":\"1712000-01\",\"Indate\":\"2016-10-09T21:00:00.000Z\",\"Buyer\":15,\"Brand\":\"\",\"Pono\":\"D596036\",\"Styleno\":\"94240-10\",\"Season\":\"\",\"Description\":\"LEGGING CROP\",\"DeliveryDate\":\"2016-01-18T21:00:00.000Z\",\"IndcDate\":\"1999-12-31T21:00:00.000Z\",\"IsPrinting\":4,\"EmbelishId1\":0,\"EmbelishId2\":0,\"SizeGroupIdx\":1,\"OrderQty\":560,\"OrderPrice\":4.42,\"OrderAmount\":2475.2,\"ShipTerm\":14,\"VsslAir\":17,\"Destination\":131,\"ShipCompleted\":1,\"BodyFabric\":\"CM 30\'S/1 SP 70D Single 240 g/m2\",\"Handler\":3,\"ModifiedUser\":3,\"Status\":2,\"Remark\":\"\",\"Category\":119,\"TBD\":0,\"Concept\":\"MH49SP16026D\"},\"buyer\":{\"CustIdx\":1,\"ParentIdx\":1,\"CustName\":\"Catherines\",\"CustNameEN\":\"Catherines\",\"Classification\":24,\"address\":\"\",\"IsUse\":1,\"iDate\":\"2018-07-02T21:00:00.000Z\",\"uDate\":\"2018-07-02T21:00:00.000Z\",\"POTableName\":\"\",\"GroupID\":312,\"MaxSize\":8,\"Currency\":0,\"BusinessNo\":\"\",\"BankAccount\":\"\",\"AttnName\":\"\",\"Handler\":89,\"Handler2\":0,\"Handler3\":0,\"Cad1\":67,\"Cad2\":34,\"Cad3\":65,\"DocumentType\":0,\"PurchaseType\":0,\"Terms\":0,\"CheckName\":\"\",\"Phone\":\"\",\"Faxno\":\"\",\"CostRatesAdmin\":0,\"Units\":0,\"ProveedorType\":0,\"Email\":\"\"},\"reg\":\"123\",\"fact\":\"123\",\"descripcion_title\":\"123\",\"descripcion_body\":\"123\",\"cantidad\":\"12\",\"unitario\":\"12\"}]}','bryan.cho@intsa.net');
+
+/*Table structure for table `yarn` */
+
+DROP TABLE IF EXISTS `yarn`;
+
+CREATE TABLE `yarn` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `YarnCode` varchar(50) DEFAULT NULL,
+  `Composition` int(11) DEFAULT '0',
+  `BurnCount` int(11) DEFAULT '0',
+  `Contents1` int(11) DEFAULT '0',
+  `Contents2` int(11) DEFAULT '0',
+  `Contents3` int(11) DEFAULT '0',
+  `Contents4` int(11) DEFAULT '0',
+  `Percent1` float DEFAULT '0',
+  `Percent2` float DEFAULT '0',
+  `Percent3` float DEFAULT '0',
+  `Percent4` float DEFAULT '0',
+  `Method` int(11) DEFAULT '0',
+  `YarnType` int(11) DEFAULT '0',
+  `Special` int(11) DEFAULT '0',
+  `Remark` varchar(100) DEFAULT NULL,
+  `IsUse` bit(1) DEFAULT b'1',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `yarn` */
+
+insert  into `yarn`(`Idx`,`YarnCode`,`Composition`,`BurnCount`,`Contents1`,`Contents2`,`Contents3`,`Contents4`,`Percent1`,`Percent2`,`Percent3`,`Percent4`,`Method`,`YarnType`,`Special`,`Remark`,`IsUse`) values 
+(1,'Yarn1',0,0,0,0,0,0,0,0,0,0,0,0,0,NULL,'');
+
+/*Table structure for table `yarnactual` */
+
+DROP TABLE IF EXISTS `yarnactual`;
+
+CREATE TABLE `yarnactual` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `Yarn` int(11) DEFAULT NULL,
+  `U_Price` varchar(30) DEFAULT NULL,
+  `KGS` varchar(30) DEFAULT NULL,
+  `Amount` varchar(30) DEFAULT NULL,
+  `Remark` varchar(30) DEFAULT NULL,
+  `Confirm` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `yarnactual` */
+
+insert  into `yarnactual`(`Idx`,`OrderIdx`,`Yarn`,`U_Price`,`KGS`,`Amount`,`Remark`,`Confirm`) values 
+(2,1,1,'12','12','12','12',1);
+
+/*Table structure for table `yarnplan` */
+
+DROP TABLE IF EXISTS `yarnplan`;
+
+CREATE TABLE `yarnplan` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `Yarn` int(11) DEFAULT NULL,
+  `U_Price` varchar(30) DEFAULT NULL,
+  `KGS` varchar(30) DEFAULT NULL,
+  `Amount` varchar(30) DEFAULT NULL,
+  `Remark` varchar(30) DEFAULT NULL,
+  `Confirm` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+/*Data for the table `yarnplan` */
+
+insert  into `yarnplan`(`Idx`,`OrderIdx`,`Yarn`,`U_Price`,`KGS`,`Amount`,`Remark`,`Confirm`) values 
+(1,1,1,'12','12','12','12',1),
+(5,1,1,'32','32','32','323',0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

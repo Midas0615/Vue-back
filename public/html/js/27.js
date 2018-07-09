@@ -1,19 +1,19 @@
-webpackJsonp([13],{
+webpackJsonp([27],{
 
-/***/ 735:
+/***/ 732:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(856)
-  __webpack_require__(858)
+  __webpack_require__(838)
+  __webpack_require__(840)
 }
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(860)
+var __vue_script__ = __webpack_require__(842)
 /* template */
-var __vue_template__ = __webpack_require__(861)
+var __vue_template__ = __webpack_require__(843)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30,7 +30,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\components\\pages\\voucher_report.vue"
+Component.options.__file = "src\\components\\pages\\budget_report.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -39,9 +39,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-70ec7326", Component.options)
+    hotAPI.createRecord("data-v-5721e2d4", Component.options)
   } else {
-    hotAPI.reload("data-v-70ec7326", Component.options)
+    hotAPI.reload("data-v-5721e2d4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -1578,23 +1578,23 @@ const miniToastr = {
 
 /***/ }),
 
-/***/ 856:
+/***/ 838:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(857);
+var content = __webpack_require__(839);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(34)("8d6b5b2c", content, false);
+var update = __webpack_require__(34)("545e94f1", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-70ec7326\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-70ec7326\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5721e2d4\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5721e2d4\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -1605,7 +1605,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 857:
+/***/ 839:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -1620,23 +1620,23 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 858:
+/***/ 840:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(859);
+var content = __webpack_require__(841);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(34)("9ccd583c", content, false);
+var update = __webpack_require__(34)("e1a0e110", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-70ec7326\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_report.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-70ec7326\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_report.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5721e2d4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./budget_report.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5721e2d4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./budget_report.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -1647,7 +1647,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 859:
+/***/ 841:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -1655,14 +1655,14 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\n.cursor {\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 860:
+/***/ 842:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1676,12 +1676,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_mini_toastr__ = __webpack_require__(751);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_src_store_store__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_src_const_js__ = __webpack_require__(747);
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1777,7 +1771,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "voucher_report_page",
+  name: "budget_report_page",
   components: {
     Multiselect: __WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default.a
   },
@@ -1786,9 +1780,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       formstate: {},
       model: {
         department: null,
-        year: {
-          YearName: 2018
-        }
+        year: null
       },
       year_options: [{
         YearName: 2017
@@ -1799,7 +1791,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       }],
       account_options: [],
       department_options: [],
-      buyer_options: [],
       tabledata: []
     };
   },
@@ -1822,10 +1813,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
     onSubmit: function onSubmit() {
       this.load_report();
     },
-    load_acc_cost_dept_cust: function load_acc_cost_dept_cust() {
+    load_init_value: function load_init_value() {
       return new Promise(function (resolve, reject) {
         __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', true);
-        axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_cost_list').then(function (res) {
+        axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/api/budget/load_acc_cost_dep_list').then(function (res) {
           resolve(res);
           __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', false);
         }).catch(function (err) {
@@ -1838,16 +1829,16 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       var _this = this;
 
       __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', true);
-      axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/api/voucher/report_list', this.model).then(function (res) {
+      axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/api/budget/report_list', this.model).then(function (res) {
         if (res.data.isSuccess) {
           _this.tabledata = [];
           var list = res.data.list;
           for (var i = 0; i < list.length; i++) {
             _this.tabledata.push({
-              acc_name: _this.getAccName(list[i].acc_idx),
+              acc_name: _this.getAccName(list[i].AccountIdx),
               m1: list[i].m1, m2: list[i].m2, m3: list[i].m3, m4: list[i].m4, m5: list[i].m5, m6: list[i].m6,
               m7: list[i].m7, m8: list[i].m8, m9: list[i].m9, m10: list[i].m10, m11: list[i].m11, m12: list[i].m12,
-              total: _this.getTotal(list[i]), per: 10, acc_idx: list[i].acc_idx
+              total: _this.getTotal(list[i]), per: 10
             });
           }
         }
@@ -1859,20 +1850,15 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
     },
     warnMsg: function warnMsg(type, msg, title) {
       __WEBPACK_IMPORTED_MODULE_3_mini_toastr__["a" /* default */][type](msg, title);
-    },
-    voucherlist: function voucherlist(item, number) {
-      var url = "/vouchers?year=" + this.model.year.YearName + "&month=" + number + "&acc=" + item.acc_idx;
-      this.$router.push(url);
     }
   },
   mounted: function mounted() {
     var _this2 = this;
 
-    this.load_acc_cost_dept_cust().then(function (res) {
+    this.load_init_value().then(function (res) {
       if (res.data.isSuccess) {
         _this2.account_options = res.data.acc_list;
         _this2.department_options = res.data.dep_list;
-        _this2.buyer_options = res.data.cus_list;
         // Load Budget List
         _this2.load_report();
       } else {
@@ -1887,7 +1873,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
 
 /***/ }),
 
-/***/ 861:
+/***/ 843:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1929,33 +1915,6 @@ var render = function() {
                             "div",
                             { staticClass: "form-group" },
                             [
-                              _c("label", [_vm._v("Year")]),
-                              _vm._v(" "),
-                              _c("multiselect", {
-                                attrs: {
-                                  options: _vm.year_options,
-                                  selectLabel: "",
-                                  label: "YearName",
-                                  "track-by": "YearName"
-                                },
-                                model: {
-                                  value: _vm.model.year,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.model, "year", $$v)
-                                  },
-                                  expression: "model.year"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-2" }, [
-                          _c(
-                            "div",
-                            { staticClass: "form-group" },
-                            [
                               _c("label", [_vm._v("Department")]),
                               _vm._v(" "),
                               _c("multiselect", {
@@ -1983,21 +1942,21 @@ var render = function() {
                             "div",
                             { staticClass: "form-group" },
                             [
-                              _c("label", [_vm._v("Buyer")]),
+                              _c("label", [_vm._v("Year")]),
                               _vm._v(" "),
                               _c("multiselect", {
                                 attrs: {
-                                  options: _vm.buyer_options,
+                                  options: _vm.year_options,
                                   selectLabel: "",
-                                  label: "CustName",
-                                  "track-by": "CustName"
+                                  label: "YearName",
+                                  "track-by": "YearName"
                                 },
                                 model: {
-                                  value: _vm.model.buyer,
+                                  value: _vm.model.year,
                                   callback: function($$v) {
-                                    _vm.$set(_vm.model, "buyer", $$v)
+                                    _vm.$set(_vm.model, "year", $$v)
                                   },
-                                  expression: "model.buyer"
+                                  expression: "model.year"
                                 }
                               })
                             ],
@@ -2005,7 +1964,7 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-4" }),
+                        _c("div", { staticClass: "col-sm-6" }),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-sm-2" }, [
                           _c("div", { staticClass: "form-group" }, [
@@ -2097,174 +2056,31 @@ var render = function() {
                       return _c("tr", { key: index }, [
                         _c("td", [_vm._v(_vm._s(item.acc_name))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 1)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m1))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m1))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 2)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m2))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m2))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 3)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m3))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m3))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 4)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m4))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m4))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 5)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m5))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m5))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 6)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m6))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m6))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 7)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m7))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m7))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 8)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m8))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m8))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 9)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m9))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m9))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 10)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m10))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m10))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 11)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m11))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m11))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 12)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.m12))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.m12))]),
                         _vm._v(" "),
-                        _c(
-                          "td",
-                          {
-                            staticClass: "cursor",
-                            on: {
-                              click: function($event) {
-                                _vm.voucherlist(item, 0)
-                              }
-                            }
-                          },
-                          [_vm._v(_vm._s(item.total))]
-                        ),
+                        _c("td", [_vm._v(_vm._s(item.total))]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(item.per))])
                       ])
@@ -2286,7 +2102,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-70ec7326", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-5721e2d4", module.exports)
   }
 }
 

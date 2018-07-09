@@ -1,25 +1,25 @@
 webpackJsonp([1],{
 
-/***/ 733:
+/***/ 736:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(843)
-  __webpack_require__(845)
+  __webpack_require__(862)
+  __webpack_require__(864)
 }
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(847)
+var __vue_script__ = __webpack_require__(866)
 /* template */
-var __vue_template__ = __webpack_require__(848)
+var __vue_template__ = __webpack_require__(867)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-30eb25b8"
+var __vue_scopeId__ = "data-v-16a6b30a"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -30,7 +30,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\components\\pages\\voucher_add.vue"
+Component.options.__file = "src\\components\\pages\\voucher_detail.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -39,9 +39,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-30eb25b8", Component.options)
+    hotAPI.createRecord("data-v-16a6b30a", Component.options)
   } else {
-    hotAPI.reload("data-v-30eb25b8", Component.options)
+    hotAPI.reload("data-v-16a6b30a", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -7950,23 +7950,23 @@ module.exports = "/images/qr.png?78cce8f660d49eb850b1a7b79f8f5fb0";
 
 /***/ }),
 
-/***/ 843:
+/***/ 862:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(844);
+var content = __webpack_require__(863);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(34)("3e459a34", content, false);
+var update = __webpack_require__(34)("7c3c336f", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-16a6b30a\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-16a6b30a\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -7977,7 +7977,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 844:
+/***/ 863:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -7992,23 +7992,23 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 845:
+/***/ 864:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(846);
+var content = __webpack_require__(865);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(34)("c3c05db0", content, false);
+var update = __webpack_require__(34)("5db9bf71", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_add.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_add.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-16a6b30a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_detail.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-16a6b30a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_detail.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -8019,7 +8019,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 846:
+/***/ 865:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -8027,14 +8027,14 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n.box-shadow[data-v-30eb25b8]{\n  -webkit-box-shadow: 0px 0px 1px 1px #cfcfcf;\n          box-shadow: 0px 0px 1px 1px #cfcfcf;\n}\n.options .active[data-v-30eb25b8]{\n  background-color: #eee;\n  color: #3e6174 !important;\n}\n.options a[data-v-30eb25b8] {\n  cursor: pointer;\n}\n.options a[data-v-30eb25b8]:hover,.options2 a[data-v-30eb25b8]:hover{\n  background-color: #eee;\n}\n.border-bottom[data-v-30eb25b8] {\n  border-bottom: 1px solid #dee2e6 !important;\n}\n.v-title[data-v-30eb25b8] {\n  font-size: 1.3em;\n  margin: auto;\n}\n.c-input[data-v-30eb25b8] {\n  height: 40px;\n}\n.vo-title[data-v-30eb25b8] {\n   font-weight: 700;\n   font-size: 3em;\n}\n.vo-number[data-v-30eb25b8] {\n   font-size: 1.7em;\n}\n.t-v-title tr td[data-v-30eb25b8] {\n   border: solid black 1px;\n   text-align: center;\n   padding: 2px;\n   font-family: \"Helvetica Narrow\",\"Arial Narrow\",Tahoma,Arial,Helvetica,sans-serif;\n}\n.t-v-header tr td[data-v-30eb25b8], .t-v-detail tr td[data-v-30eb25b8], .t-v-detail th[data-v-30eb25b8] {\n   border: solid black 1px;\n   text-align: left;\n   padding: 6px;\n}\n.t-v-detail th[data-v-30eb25b8] {\n  border-top: solid black 3px;\n}\n.paper[data-v-30eb25b8] {\n  size: 8.5in 11in;\n  margin: auto;\n}\n.paper .qr[data-v-30eb25b8] {\n  width: 93px;\n  height: 93px;\n}\n.w-10[data-v-30eb25b8] {\n  width: 10%;\n}\n.w-12-5[data-v-30eb25b8] {\n  width: 12.5%;\n}\n.w-25[data-v-30eb25b8] {\n  width: 25%;\n}\n.w-80[data-v-30eb25b8] {\n  width: 80%;\n}\n.container[data-v-30eb25b8] {\n  width: 850px;\n  margin: auto\n}\n.nav-tabs-custom[data-v-30eb25b8] {\n  width: 100%;\n}\n.nav-link[data-v-30eb25b8] {\n  font-size:1.2em !important;\n}\n", ""]);
+exports.push([module.i, "\n.box-shadow[data-v-16a6b30a]{\n  -webkit-box-shadow: 0px 0px 1px 1px #cfcfcf;\n          box-shadow: 0px 0px 1px 1px #cfcfcf;\n}\n.options .active[data-v-16a6b30a]{\n  background-color: #eee;\n  color: #3e6174 !important;\n}\n.options a[data-v-16a6b30a] {\n  cursor: pointer;\n}\n.options a[data-v-16a6b30a]:hover,.options2 a[data-v-16a6b30a]:hover{\n  background-color: #eee;\n}\n.border-bottom[data-v-16a6b30a] {\n  border-bottom: 1px solid #dee2e6 !important;\n}\n.v-title[data-v-16a6b30a] {\n  font-size: 1.3em;\n  margin: auto;\n}\n.c-input[data-v-16a6b30a] {\n  height: 40px;\n}\n.vo-title[data-v-16a6b30a] {\n   font-weight: 700;\n   font-size: 3em;\n}\n.vo-number[data-v-16a6b30a] {\n   font-size: 1.7em;\n}\n.t-v-title tr td[data-v-16a6b30a] {\n   border: solid black 1px;\n   text-align: center;\n   padding: 2px;\n   font-family: \"Helvetica Narrow\",\"Arial Narrow\",Tahoma,Arial,Helvetica,sans-serif;\n}\n.t-v-header tr td[data-v-16a6b30a], .t-v-detail tr td[data-v-16a6b30a], .t-v-detail th[data-v-16a6b30a] {\n   border: solid black 1px;\n   text-align: left;\n   padding: 6px;\n}\n.t-v-detail th[data-v-16a6b30a] {\n  border-top: solid black 3px;\n}\n.paper[data-v-16a6b30a] {\n  size: 8.5in 11in;\n  margin: auto;\n}\n.paper .qr[data-v-16a6b30a] {\n  width: 93px;\n  height: 93px;\n}\n.w-10[data-v-16a6b30a] {\n  width: 10%;\n}\n.w-12-5[data-v-16a6b30a] {\n  width: 12.5%;\n}\n.w-25[data-v-16a6b30a] {\n  width: 25%;\n}\n.w-80[data-v-16a6b30a] {\n  width: 80%;\n}\n.container[data-v-16a6b30a] {\n  width: 850px;\n  margin: auto\n}\n.nav-tabs-custom[data-v-16a6b30a] {\n  width: 100%;\n}\n.nav-link[data-v-16a6b30a] {\n  font-size:1.2em !important;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 847:
+/***/ 866:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8453,7 +8453,7 @@ __WEBPACK_IMPORTED_MODULE_3_mini_toastr__["a" /* default */].init();
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_1_vue_multiselect___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "VoucherAddPage",
+  name: "VoucherDetailPage",
   components: {
     Multiselect: __WEBPACK_IMPORTED_MODULE_1_vue_multiselect___default.a,
     Datepicker: __WEBPACK_IMPORTED_MODULE_2_vuejs_datepicker___default.a
@@ -8507,7 +8507,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       buyer_options: [], // classi 24
       currency_options: [{ Name: 'Q', Idx: 1 }, { Name: '$', Idx: 2 }],
       s_num: 0,
-      b_print: false
+      b_print: false,
+      oldIdx: null
     };
   },
 
@@ -8537,7 +8538,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         header: this.header_model,
         body: this.body_model
       };
-      axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/voucher_add', { data: data, vo_id: this.vo_id }).then(function (res) {
+      axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/voucher_update', { data: data, vo_id: this.vo_id, oldIdx: this.oldIdx }).then(function (res) {
         console.log(res);
         __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
       }).catch(function (err) {
@@ -8584,27 +8585,49 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         sum += this.getMonto(i);
       }
       return sum;
+    },
+    loadVoucherDetail: function loadVoucherDetail(idx) {
+      var _this2 = this;
+
+      this.oldIdx = idx;
+      __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', true);
+      axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/voucher_detail', { Idx: idx }).then(function (res) {
+        if (res.data.isSuccess) {
+          _this2.top_model = res.data.data.Txt.top;
+          _this2.header_model = res.data.data.Txt.header;
+          _this2.body_model = res.data.data.Txt.body;
+          console.log(res.data.data);
+          _this2.vo_id = res.data.data.VIdx;
+        }
+      }).catch(function (err) {
+        if (err.response && err.response.status == 401) {
+          __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('logout');
+        };
+        __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
+      });
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this3 = this;
 
     __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', true);
     axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_ord_user_list').then(function (res) {
-      _this2.dept_options = res.data.dep_list;
-      _this2.cus_options = res.data.cus_list.filter(function (v) {
+      _this3.dept_options = res.data.dep_list;
+      _this3.cus_options = res.data.cus_list.filter(function (v) {
         return v.Classification != 24;
       });
-      _this2.buyer_options = res.data.cus_list.filter(function (v) {
+      _this3.buyer_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 24;
       });
-      _this2.order_options = res.data.ord_list;
-      _this2.bank_options = res.data.cus_list.filter(function (v) {
+      _this3.order_options = res.data.ord_list;
+      _this3.bank_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 28;
       });
-      _this2.acc_options = res.data.acc_list;
-      _this2.user_options = res.data.user_list;
-      _this2.admin_user_options = _this2.user_options;
+      _this3.acc_options = res.data.acc_list;
+      _this3.user_options = res.data.user_list;
+      _this3.admin_user_options = _this3.user_options;
+
+      _this3.loadVoucherDetail(_this3.$route.query.id);
       __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
     }).catch(function (err) {
       if (err.response && err.response.status == 401) {
@@ -8617,7 +8640,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
 
 /***/ }),
 
-/***/ 848:
+/***/ 867:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -8656,7 +8679,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Save Voucher")]
+                  [_vm._v("Update Voucher")]
                 )
               ]),
               _vm._v(" "),
@@ -10351,7 +10374,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-30eb25b8", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-16a6b30a", module.exports)
   }
 }
 

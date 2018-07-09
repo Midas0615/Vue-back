@@ -5,6 +5,8 @@ require('../config/passport')(passport);
 
 var budget = require('../controller/budget');
 var voucher = require('../controller/voucher');
+var order = require('../controller/order');
+var ordercard = require('../controller/ordercard');
 
 router.use('/',  passport.authenticate('jwt', { session: false}), function(req, res, next) {  
   next();
@@ -26,4 +28,15 @@ router.post('/voucher/voucher_detail', voucher.voucher_detail);
 router.post('/voucher/voucher_update', voucher.voucher_update);
 router.post('/voucher/report_list', voucher.report_list);
 router.post('/voucher/vouchers', voucher.vouchers);
+
+router.post('/order/load_dept_buyer', order.load_dept_buyer);
+router.post('/order/order_list', order.load_order_list);
+
+router.post('/order/order_card/load_init', ordercard.load_init);
+router.post('/order/order_card/edit', ordercard.edit);
+router.post('/order/order_card/add', ordercard.add);
+router.post('/order/order_card/load', ordercard.load);
+router.post('/order/order_card/delete', ordercard.delete);
+router.post('/order/order_card/confirm', ordercard.confirm);
+router.post('/order/order_card/confirm7', ordercard.confirm7);
 module.exports = router;
