@@ -16,6 +16,26 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`vue` /*!40100 DEFAULT CHARACTER SET lat
 
 USE `vue`;
 
+/*Table structure for table `accident` */
+
+DROP TABLE IF EXISTS `accident`;
+
+CREATE TABLE `accident` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `Report` varchar(30) DEFAULT NULL,
+  `Description` varchar(100) DEFAULT NULL,
+  `P_Accident` varchar(30) DEFAULT NULL,
+  `Amount` varchar(10) DEFAULT NULL,
+  `Confirm` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `accident` */
+
+insert  into `accident`(`Idx`,`OrderIdx`,`Report`,`Description`,`P_Accident`,`Amount`,`Confirm`) values 
+(1,1,'12','12','12','12',1);
+
 /*Table structure for table `accounts` */
 
 DROP TABLE IF EXISTS `accounts`;
@@ -779,6 +799,72 @@ insert  into `accounts`(`Idx`,`CostcenterIdx`,`AccountIdx`,`AccountName`,`Accoun
 (2786,1,'81200002','Comisi?n Bancaria','Comisi?n Bancaria','Comisi?n Bancaria',0,0,'',0,0,0,1,0),
 (2787,1,'81200003','Otros Gastos Financieros','Otros Gastos Financieros','Otros Gastos Financieros',0,0,'',0,0,0,1,0),
 (2788,1,'81200004','Diferencial Cambiario (Gasto)\r','Diferencial Cambiario (Gasto)\r','Diferencial Cambiario (Gasto)\r',0,0,'',0,0,0,1,0);
+
+/*Table structure for table `admaterial` */
+
+DROP TABLE IF EXISTS `admaterial`;
+
+CREATE TABLE `admaterial` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `A_Name` varchar(30) DEFAULT NULL,
+  `Supplier1` varchar(11) DEFAULT NULL,
+  `Order_Qty` varchar(10) DEFAULT NULL,
+  `Unit_Price` varchar(10) DEFAULT NULL,
+  `Amount1` varchar(10) DEFAULT NULL,
+  `Voucher_Date` varchar(20) DEFAULT NULL,
+  `Supplier2` varchar(11) DEFAULT NULL,
+  `Amount2` varchar(10) DEFAULT NULL,
+  `Handler1` tinyint(1) DEFAULT '0',
+  `Manager1` tinyint(1) DEFAULT '0',
+  `Handler2` tinyint(1) DEFAULT '0',
+  `Manager2` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `admaterial` */
+
+insert  into `admaterial`(`Idx`,`OrderIdx`,`A_Name`,`Supplier1`,`Order_Qty`,`Unit_Price`,`Amount1`,`Voucher_Date`,`Supplier2`,`Amount2`,`Handler1`,`Manager1`,`Handler2`,`Manager2`) values 
+(2,1,'12','5','321','123','123','2-Jul-2018','2','32',1,1,1,0);
+
+/*Table structure for table `admini` */
+
+DROP TABLE IF EXISTS `admini`;
+
+CREATE TABLE `admini` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `D_Date` varchar(20) DEFAULT NULL,
+  `Description` varchar(30) DEFAULT NULL,
+  `Amount` varchar(10) DEFAULT NULL,
+  `Confirm` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `admini` */
+
+insert  into `admini`(`Idx`,`OrderIdx`,`D_Date`,`Description`,`Amount`,`Confirm`) values 
+(2,1,'3-Jul-2018','12','12',0);
+
+/*Table structure for table `approval` */
+
+DROP TABLE IF EXISTS `approval`;
+
+CREATE TABLE `approval` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `Handler` tinyint(1) DEFAULT '0',
+  `Manager` tinyint(1) DEFAULT '0',
+  `Director` tinyint(1) DEFAULT '0',
+  `Managing_Director` tinyint(1) DEFAULT '0',
+  `President` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `approval` */
+
+insert  into `approval`(`Idx`,`OrderIdx`,`Handler`,`Manager`,`Director`,`Managing_Director`,`President`) values 
+(1,1,NULL,1,1,0,NULL);
 
 /*Table structure for table `budget` */
 
@@ -1654,7 +1740,7 @@ CREATE TABLE `confirmation` (
 /*Data for the table `confirmation` */
 
 insert  into `confirmation`(`Idx`,`OrderIdx`,`C1`,`C2`,`C3`,`C4`,`C5`,`C6`,`C7`,`C8`) values 
-(1,1,0,0,0,1,1,0,0,0);
+(1,1,1,1,1,1,1,1,1,0);
 
 /*Table structure for table `costcenter` */
 
@@ -9014,6 +9100,80 @@ insert  into `iorderactual`(`Idx`,`DeptIdx`,`Fileno`,`Indate`,`Buyer`,`Brand`,`P
 (8246,3,'1812167-07','2018-07-03 00:00:00',15,'','620274','94741-01','','NEW POPPIN BOTTLES','2018-10-25 00:00:00','2000-01-01 00:00:00',12,5,0,1,800,4.48,3584,14,17,131,0,'',80,80,1,'',120,0,'TBD'),
 (8247,3,'1812190-01','2018-07-03 00:00:00',15,'','620280','95213-12','','MAMA MAMA TQ','2018-10-25 00:00:00','2000-01-01 00:00:00',12,5,0,1,2500,4.78,11950,14,17,131,0,'',80,80,1,'',120,0,'TBD');
 
+/*Table structure for table `material` */
+
+DROP TABLE IF EXISTS `material`;
+
+CREATE TABLE `material` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `A_Name` varchar(30) DEFAULT NULL,
+  `Supplier1` varchar(11) DEFAULT NULL,
+  `Order_Qty` varchar(10) DEFAULT NULL,
+  `Unit_Price` varchar(10) DEFAULT NULL,
+  `Amount1` varchar(10) DEFAULT NULL,
+  `Voucher_Date` varchar(20) DEFAULT NULL,
+  `Supplier2` varchar(11) DEFAULT NULL,
+  `Amount2` varchar(10) DEFAULT NULL,
+  `Handler1` tinyint(1) DEFAULT '0',
+  `Manager1` tinyint(1) DEFAULT '0',
+  `Handler2` tinyint(1) DEFAULT '0',
+  `Manager2` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `material` */
+
+insert  into `material`(`Idx`,`OrderIdx`,`A_Name`,`Supplier1`,`Order_Qty`,`Unit_Price`,`Amount1`,`Voucher_Date`,`Supplier2`,`Amount2`,`Handler1`,`Manager1`,`Handler2`,`Manager2`) values 
+(3,1,'12','2','32','32','12','2-Jul-2018','2','32',0,0,1,0);
+
+/*Table structure for table `ordpay` */
+
+DROP TABLE IF EXISTS `ordpay`;
+
+CREATE TABLE `ordpay` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `Operation` int(11) DEFAULT NULL,
+  `F_Type` int(11) DEFAULT NULL,
+  `Customer1` varchar(20) DEFAULT NULL,
+  `Kg_Pcs1` varchar(10) DEFAULT NULL,
+  `U_Price1` varchar(10) DEFAULT NULL,
+  `Amount1` varchar(10) DEFAULT NULL,
+  `Date` varchar(30) DEFAULT NULL,
+  `Kg_Pcs2` varchar(10) DEFAULT NULL,
+  `U_Price2` varchar(10) DEFAULT NULL,
+  `Amount2` varchar(10) DEFAULT NULL,
+  `Customer2` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+/*Data for the table `ordpay` */
+
+insert  into `ordpay`(`Idx`,`OrderIdx`,`Operation`,`F_Type`,`Customer1`,`Kg_Pcs1`,`U_Price1`,`Amount1`,`Date`,`Kg_Pcs2`,`U_Price2`,`Amount2`,`Customer2`) values 
+(1,1,110,117,'1','1','1','1','10-Jul-2018','1','1','12','2'),
+(4,1,111,118,'3','12','21',NULL,'10-Jul-2018',NULL,'12','32','2');
+
+/*Table structure for table `overshort` */
+
+DROP TABLE IF EXISTS `overshort`;
+
+CREATE TABLE `overshort` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `Ship_Date` varchar(20) DEFAULT NULL,
+  `Ship_Qty` varchar(10) DEFAULT NULL,
+  `U_Price` varchar(10) DEFAULT NULL,
+  `Remark` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `overshort` */
+
+insert  into `overshort`(`Idx`,`OrderIdx`,`Ship_Date`,`Ship_Qty`,`U_Price`,`Remark`) values 
+(1,1,'2-Jul-2018','12','12','12'),
+(2,1,'1-Jul-2018','12','123','121');
+
 /*Table structure for table `po` */
 
 DROP TABLE IF EXISTS `po`;
@@ -9039,6 +9199,97 @@ insert  into `po`(`Idx`,`OrderIdx`,`No`,`Po`,`Style`,`U_Price`,`Qty`,`Amount`,`F
 (3,1,'1231232','123','123','123','123','1233','1','3-Jul-2018','1233'),
 (4,1,'123','1234123123','123123','123','123','123','1','3-Jul-2018','123'),
 (5,1,'123','12','12','321','123123','12312312','1','3-Jul-2018','12312');
+
+/*Table structure for table `shipment` */
+
+DROP TABLE IF EXISTS `shipment`;
+
+CREATE TABLE `shipment` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `Ship_Date` varchar(20) DEFAULT NULL,
+  `Ship_Qty` varchar(10) DEFAULT NULL,
+  `U_Price` varchar(10) DEFAULT NULL,
+  `Ship_Amount` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `shipment` */
+
+insert  into `shipment`(`Idx`,`OrderIdx`,`Ship_Date`,`Ship_Qty`,`U_Price`,`Ship_Amount`) values 
+(2,1,'2-Jul-2018','12','12','12');
+
+/*Table structure for table `summary` */
+
+DROP TABLE IF EXISTS `summary`;
+
+CREATE TABLE `summary` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `YF_Price` varchar(10) DEFAULT NULL,
+  `YF_Rate` varchar(10) DEFAULT NULL,
+  `YF_Amount` varchar(10) DEFAULT NULL,
+  `Material_Price` varchar(10) DEFAULT NULL,
+  `Material_Rate` varchar(10) DEFAULT NULL,
+  `Material_Amount` varchar(10) DEFAULT NULL,
+  `Sew_Price` varchar(10) DEFAULT NULL,
+  `Sew_Rate` varchar(10) DEFAULT NULL,
+  `Sew_Amount` varchar(10) DEFAULT NULL,
+  `Int_Price` varchar(10) DEFAULT NULL,
+  `Int_Rate` varchar(10) DEFAULT NULL,
+  `Int_Amount` varchar(10) DEFAULT NULL,
+  `Frt_Price` varchar(10) DEFAULT NULL,
+  `Frt_Rate` varchar(10) DEFAULT NULL,
+  `Frt_Amount` varchar(10) DEFAULT NULL,
+  `Commission_Price` varchar(10) DEFAULT NULL,
+  `Commission_Rate` varchar(10) DEFAULT NULL,
+  `Commission_Amount` varchar(10) DEFAULT NULL,
+  `Test_Price` varchar(10) DEFAULT NULL,
+  `Test_Rate` varchar(10) DEFAULT NULL,
+  `Test_Amount` varchar(10) DEFAULT NULL,
+  `Duty_Price` varchar(10) DEFAULT NULL,
+  `Duty_Rate` varchar(10) DEFAULT NULL,
+  `Duty_Amount` varchar(10) DEFAULT NULL,
+  `Admini_Price` varchar(10) DEFAULT NULL,
+  `Admini_Rate` varchar(10) DEFAULT NULL,
+  `Admini_Amount` varchar(10) DEFAULT NULL,
+  `Other_Price` varchar(10) DEFAULT NULL,
+  `Other_Rate` varchar(10) DEFAULT NULL,
+  `Other_Amount` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+/*Data for the table `summary` */
+
+insert  into `summary`(`Idx`,`OrderIdx`,`YF_Price`,`YF_Rate`,`YF_Amount`,`Material_Price`,`Material_Rate`,`Material_Amount`,`Sew_Price`,`Sew_Rate`,`Sew_Amount`,`Int_Price`,`Int_Rate`,`Int_Amount`,`Frt_Price`,`Frt_Rate`,`Frt_Amount`,`Commission_Price`,`Commission_Rate`,`Commission_Amount`,`Test_Price`,`Test_Rate`,`Test_Amount`,`Duty_Price`,`Duty_Rate`,`Duty_Amount`,`Admini_Price`,`Admini_Rate`,`Admini_Amount`,`Other_Price`,`Other_Rate`,`Other_Amount`) values 
+(1,1,'123','32','12','32','12','32','123','12','32','12','32','12','321','123','321','123','32','123','123','31','123','321','123','321','123','123','321','123','321','23'),
+(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(4,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+/*Table structure for table `testfg` */
+
+DROP TABLE IF EXISTS `testfg`;
+
+CREATE TABLE `testfg` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `OrderIdx` int(11) DEFAULT NULL,
+  `Test_Item` varchar(30) DEFAULT NULL,
+  `Supplier` varchar(30) DEFAULT NULL,
+  `Request_Date` varchar(20) DEFAULT NULL,
+  `Description` varchar(30) DEFAULT NULL,
+  `Cost` varchar(10) DEFAULT NULL,
+  `Times_Number` varchar(10) DEFAULT NULL,
+  `Pass_Fail` tinyint(1) DEFAULT '1',
+  `Remarks` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `testfg` */
+
+insert  into `testfg`(`Idx`,`OrderIdx`,`Test_Item`,`Supplier`,`Request_Date`,`Description`,`Cost`,`Times_Number`,`Pass_Fail`,`Remarks`) values 
+(1,1,'123','2','2-Jul-2018','123','123','123',2,'123');
 
 /*Table structure for table `users` */
 
@@ -9237,12 +9488,19 @@ CREATE TABLE `yarnactual` (
   `Remark` varchar(30) DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `yarnactual` */
 
 insert  into `yarnactual`(`Idx`,`OrderIdx`,`Yarn`,`U_Price`,`KGS`,`Amount`,`Remark`,`Confirm`) values 
-(2,1,1,'12','12','12','12',1);
+(2,1,1,'12','12','12','12',1),
+(3,1,1,'12',NULL,NULL,NULL,0),
+(4,1,NULL,'32',NULL,NULL,NULL,0),
+(5,1,NULL,'32',NULL,NULL,NULL,0),
+(6,1,NULL,'12',NULL,NULL,NULL,0),
+(7,1,NULL,'12',NULL,NULL,NULL,0),
+(8,1,NULL,'12',NULL,NULL,NULL,0),
+(9,1,NULL,'12',NULL,NULL,NULL,0);
 
 /*Table structure for table `yarnplan` */
 

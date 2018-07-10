@@ -11,6 +11,16 @@ var Yarn = require('../models/yarn');
 var YarnPlan = require('../models/yarnplan');
 var YarnActual = require('../models/yarnactual');
 var Confirmation = require('../models/confirmation');
+var Approval = require('../models/approval');
+var OrdPay = require('../models/ordpay');
+var Shipment = require('../models/shipment');
+var OverShort = require('../models/overshort');
+var Accident = require('../models/accident');
+var Admini = require('../models/admini');
+var Material = require('../models/material');
+var AdMaterial = require('../models/admaterial');
+var TestFG = require('../models/testfg');
+var Summary = require('../models/summary');
 
 exports.load_init = function(req, res) {
   var p1 = new Promise((resolve, reject) => {
@@ -105,13 +115,24 @@ exports.load_init = function(req, res) {
       }
     })
   })
+  var p11 = new Promise((resolve, reject) => {
+    Code.find_all(function(err, list) {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(list.filter(v => {
+          return v.Classification == 'Operation';
+        }))
+      }
+    })
+  })
   var p = [];
-  p.push(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10);
+  p.push(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11);
   Promise.all(p).then(lists => {
     res.status(200).send({
       isSuccess: true, dept_list: lists[0], cust_list: lists[1], usr_list: lists[2],
       p1_term_list: lists[3], p2_term_list: lists[4], ori_list: lists[5], fact_list: lists[6],
-      fabric_list: lists[7], f_type_list: lists[8], yarn_list: lists[9]
+      fabric_list: lists[7], f_type_list: lists[8], yarn_list: lists[9], oper_list: lists[10]
     });
   })
   .catch(err => {
@@ -168,6 +189,7 @@ exports.add = function(req, res) {
           res.status(200).send({isSuccess: true});
         }
       })
+      break;
     case 6:
       YarnActual.add(req.body, function(err, result) {
         if(err) {
@@ -178,7 +200,108 @@ exports.add = function(req, res) {
           res.status(200).send({isSuccess: true});
         }
       })
-  }  
+      break;
+    case 9:
+      OrdPay.add(req.body, function(err, result) {
+        if(err) {
+          res.status(500).send();
+        } else if(result == false) {
+          res.status(200).send({isSuccess: false});
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 10:
+      Shipment.add(req.body, function(err, result) {
+        if(err) {
+          res.status(500).send();
+        } else if(result == false) {
+          res.status(200).send({isSuccess: false});
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 11:
+      OverShort.add(req.body, function(err, result) {
+        if(err) {
+          res.status(500).send();
+        } else if(result == false) {
+          res.status(200).send({isSuccess: false});
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 12:
+      Accident.add(req.body, function(err, result) {
+        if(err) {
+          res.status(500).send();
+        } else if(result == false) {
+          res.status(200).send({isSuccess: false});
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 13:
+      Admini.add(req.body, function(err, result) {
+        if(err) {
+          res.status(500).send();
+        } else if(result == false) {
+          res.status(200).send({isSuccess: false});
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 14:
+      Material.add(req.body, function(err, result) {
+        if(err) {
+          res.status(500).send();
+        } else if(result == false) {
+          res.status(200).send({isSuccess: false});
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 15:
+      AdMaterial.add(req.body, function(err, result) {
+        if(err) {
+          res.status(500).send();
+        } else if(result == false) {
+          res.status(200).send({isSuccess: false});
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 16:
+      TestFG.add(req.body, function(err, result) {
+        if(err) {
+          res.status(500).send();
+        } else if(result == false) {
+          res.status(200).send({isSuccess: false});
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 17:
+      Summary.add(req.body, function(err, result) {
+        if(err) {
+          console.log(err);
+          res.status(500).send();
+        } else if(result == false) {
+          res.status(200).send({isSuccess: false});
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+  }
 }
 exports.load = function(req, res) {
   switch(req.body.num) {
@@ -230,11 +353,104 @@ exports.load = function(req, res) {
     case 7:
       Confirmation.load(req.body.ordidx, function(err, list) {
         if(err) {
+          console.log(err);
           res.status(500).send();
         } else {
           res.status(200).send({isSuccess: true, list: list[0]});
         }
       })
+      break;
+    case 8:
+      Approval.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list[0]});
+        }
+      })
+      break;
+    case 9:
+      OrdPay.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })
+      break;
+    case 10:
+      Shipment.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          console.log(err);
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })
+      break;
+    case 11:
+      OverShort.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })
+      break;
+    case 12:
+      Accident.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })
+      break;
+    case 13:
+      Admini.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })
+      break;
+    case 14:
+      Material.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })
+      break;
+    case 15:
+      AdMaterial.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })
+      break;
+    case 16:
+      TestFG.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })
+      break;
+    case 17:
+      Summary.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })
+      break;
   }
   
 }
@@ -280,6 +496,87 @@ exports.delete = function(req, res) {
       break;
     case 6:
       YarnActual.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 9:
+      OrdPay.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 10:
+      Shipment.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 11:
+      OverShort.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 12:
+      Accident.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 13:
+      Admini.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 14:
+      Material.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 15:
+      AdMaterial.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 16:
+      TestFG.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 17:
+      Summary.remove(req.body, function(err) {
         if(err) {
           res.status(500).send();
         } else {
@@ -337,7 +634,88 @@ exports.edit = function(req, res) {
         }
       })
       break;
-  }  
+    case 9:
+      OrdPay.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 10:
+      Shipment.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 11:
+      OverShort.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 12:
+      Accident.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 13:
+      Admini.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 14:
+      Material.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 15:
+      AdMaterial.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 16:
+      TestFG.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 17:
+      Summary.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+  }
 }
 exports.confirm = function(req, res) {
   switch(req.body.num) {
@@ -379,10 +757,56 @@ exports.confirm = function(req, res) {
         }
       })
       break;
+    case 12:
+      Accident.confirm(req.body.Idx, req.body.confirm, function(err) {
+        if(err) {
+          console.log(err);
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 13:
+      Admini.confirm(req.body.Idx, req.body.confirm, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 14:
+      Material.confirm(req.body.Idx, req.body.data, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
+    case 15:
+      AdMaterial.confirm(req.body.Idx, req.body.data, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
   }  
 }
 exports.confirm7 = function(req, res) {
   Confirmation.confirm(req.body, function(err) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send({isSuccess: true});
+    }
+  })
+}
+exports.confirm8 = function(req, res) {
+  Approval.confirm(req.body, function(err) {
     if(err) {
       res.status(500).send();
     } else {

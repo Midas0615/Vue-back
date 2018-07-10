@@ -2,8 +2,8 @@ var db = require('./db');
 
 var create = function(ordidx, callback) {
   db.query(`
-    INSERT INTO confirmation (OrderIdx,C1,C2,C3,C4,C5,C6,C7,C8) values (?,?,?,?,?,?,?,?,?)
-  `, [ordidx,0,0,0,0,0,0,0,0],
+    INSERT INTO approval (OrderIdx,Handler,Manager,Director,Managing_Director,President) values (?,?,?,?,?,?)
+  `, [ordidx,0,0,0,0,0],
   function(err)
   {
     if(err){
@@ -18,8 +18,8 @@ var create = function(ordidx, callback) {
 }
 
 var load = function(ordidx, callback) {
-  db.query('SELECT * FROM confirmation WHERE OrderIdx = ?', [ordidx], function(err, list) {
-    if(err) {
+  db.query('SELECT * FROM approval WHERE OrderIdx = ?', [ordidx], function(err, list) {
+    if(err) {      
       return callback(err);
     } else {
       console.log(list);
@@ -33,9 +33,9 @@ var load = function(ordidx, callback) {
 }
 
 var confirm = function(body, callback) {
-  db.query('UPDATE confirmation SET ? WHERE Idx = ? AND OrderIdx = ?', [{
-    c1: body.data.c1, c2: body.data.c2, c3: body.data.c3, c4: body.data.c4,
-    c5: body.data.c5, c6: body.data.c6, c7: body.data.c7, c8: body.data.c8
+  db.query('UPDATE approval SET ? WHERE Idx = ? AND OrderIdx = ?', [{
+    Handler: body.data.handler, Manager: body.data.manager, Director: body.data.director,
+    Managing_Director: body.data.managing_director, President: body.president
   }, body.data.idx, body.ordidx], function(err) {
     console.log(err);
     callback(err);

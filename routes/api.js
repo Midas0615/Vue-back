@@ -39,4 +39,5 @@ router.post('/order/order_card/load', ordercard.load);
 router.post('/order/order_card/delete', ordercard.delete);
 router.post('/order/order_card/confirm', ordercard.confirm);
 router.post('/order/order_card/confirm7', ordercard.confirm7);
+router.post('/order/order_card/confirm8', ordercard.confirm8);
 module.exports = router;
