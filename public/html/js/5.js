@@ -2141,13 +2141,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_js_modal__ = __webpack_require__(836);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_js_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue_js_modal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue2_dropzone__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue2_dropzone__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue2_dropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue2_dropzone__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue2_dropzone_dist_vue2Dropzone_css__ = __webpack_require__(837);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue2_dropzone_dist_vue2Dropzone_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_vue2_dropzone_dist_vue2Dropzone_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_mini_toastr__ = __webpack_require__(755);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_src_store_store__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_src_const_js__ = __webpack_require__(752);
+//
+//
 //
 //
 //
@@ -2553,6 +2555,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         team: "",
         date: ""
       },
+      year_options: [{
+        YearName: 2017
+      }, {
+        YearName: 2018
+      }, {
+        YearName: 2019
+      }],
       new_model: {
         account: null, cost: null, department: null, team: "", date: new Date(), m1: "", m2: "", m3: "", m4: "", m5: "", m6: "", m7: "", m8: "", m9: "", m10: "", m11: "", m12: ""
       },
@@ -2650,7 +2659,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
               department: _this.getDepName(list[i].DepIdx), team: list[i].team, date: list[i].pdate.split('T')[0],
               m1: list[i].m1, m2: list[i].m2, m3: list[i].m3, m4: list[i].m4, m5: list[i].m5, m6: list[i].m6,
               m7: list[i].m7, m8: list[i].m8, m9: list[i].m9, m10: list[i].m10, m11: list[i].m11, m12: list[i].m12,
-              total: _this.getTotal(list[i]), idx: list[i].Idx, ori: list[i]
+              revised_date: list[i].revised_date, total: _this.getTotal(list[i]), idx: list[i].Idx, ori: list[i]
             });
           }
         }
@@ -2675,7 +2684,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         m7: this.edit_model.m7, m8: this.edit_model.m8,
         m9: this.edit_model.m9, m10: this.edit_model.m10,
         m11: this.edit_model.m11, m12: this.edit_model.m12,
-        idx: this.edit_model.idx
+        idx: this.edit_model.idx, revised_date: new Date()
       };
       __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('changeLoading', true);
       axios.post(__WEBPACK_IMPORTED_MODULE_9_src_const_js__["a" /* default */].host + '/api/budget/budget_edit', m).then(function (res) {
@@ -2714,7 +2723,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         m5: this.new_model.m5, m6: this.new_model.m6,
         m7: this.new_model.m7, m8: this.new_model.m8,
         m9: this.new_model.m9, m10: this.new_model.m10,
-        m11: this.new_model.m11, m12: this.new_model.m12
+        m11: this.new_model.m11, m12: this.new_model.m12,
+        revised_date: new Date()
       };
       __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('changeLoading', true);
       axios.post(__WEBPACK_IMPORTED_MODULE_9_src_const_js__["a" /* default */].host + '/api/budget/budget_add', m).then(function (res) {
@@ -2815,6 +2825,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         _this5.account_options = res.data.acc_list;
         _this5.department_options = res.data.dep_list;
         _this5.cost_options = res.data.cost_list;
+        _this5.new_model.cost = _this5.cost_options[0];
+        _this5.edit_model.cost = _this5.cost_options[0];
         // Load Budget List
         _this5.load_budget_list();
       } else {
@@ -4025,8 +4037,13 @@ var render = function() {
                             [
                               _c("label", [_vm._v("Planned Date")]),
                               _vm._v(" "),
-                              _c("datepicker", {
-                                attrs: { placeholder: "Select Date" },
+                              _c("multiselect", {
+                                attrs: {
+                                  options: _vm.year_options,
+                                  selectLabel: "",
+                                  label: "YearName",
+                                  "track-by": "YearName"
+                                },
                                 model: {
                                   value: _vm.model.date,
                                   callback: function($$v) {
@@ -4105,33 +4122,6 @@ var render = function() {
                         },
                         [
                           _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col-sm-2" }, [
-                              _c(
-                                "div",
-                                { staticClass: "form-group" },
-                                [
-                                  _c("label", [_vm._v("Account")]),
-                                  _vm._v(" "),
-                                  _c("multiselect", {
-                                    attrs: {
-                                      options: _vm.account_options,
-                                      selectLabel: "",
-                                      label: "AccountName",
-                                      "track-by": "AccountName"
-                                    },
-                                    model: {
-                                      value: _vm.new_model.account,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.new_model, "account", $$v)
-                                      },
-                                      expression: "new_model.account"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ]),
-                            _vm._v(" "),
                             _c("div", { staticClass: "col-sm-2" }, [
                               _c(
                                 "div",
@@ -4237,6 +4227,33 @@ var render = function() {
                                         _vm.$set(_vm.new_model, "date", $$v)
                                       },
                                       expression: "new_model.date"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-2" }, [
+                              _c(
+                                "div",
+                                { staticClass: "form-group" },
+                                [
+                                  _c("label", [_vm._v("Account")]),
+                                  _vm._v(" "),
+                                  _c("multiselect", {
+                                    attrs: {
+                                      options: _vm.account_options,
+                                      selectLabel: "",
+                                      label: "AccountName",
+                                      "track-by": "AccountName"
+                                    },
+                                    model: {
+                                      value: _vm.new_model.account,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.new_model, "account", $$v)
+                                      },
+                                      expression: "new_model.account"
                                     }
                                   })
                                 ],
@@ -4729,33 +4746,6 @@ var render = function() {
                                 "div",
                                 { staticClass: "form-group" },
                                 [
-                                  _c("label", [_vm._v("Account")]),
-                                  _vm._v(" "),
-                                  _c("multiselect", {
-                                    attrs: {
-                                      options: _vm.account_options,
-                                      selectLabel: "",
-                                      label: "AccountName",
-                                      "track-by": "AccountName"
-                                    },
-                                    model: {
-                                      value: _vm.edit_model.account,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.edit_model, "account", $$v)
-                                      },
-                                      expression: "edit_model.account"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
-                              _c(
-                                "div",
-                                { staticClass: "form-group" },
-                                [
                                   _c("label", [_vm._v("Cost Center")]),
                                   _vm._v(" "),
                                   _c("multiselect", {
@@ -4856,6 +4846,33 @@ var render = function() {
                                         _vm.$set(_vm.edit_model, "date", $$v)
                                       },
                                       expression: "edit_model.date"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-2" }, [
+                              _c(
+                                "div",
+                                { staticClass: "form-group" },
+                                [
+                                  _c("label", [_vm._v("Account")]),
+                                  _vm._v(" "),
+                                  _c("multiselect", {
+                                    attrs: {
+                                      options: _vm.account_options,
+                                      selectLabel: "",
+                                      label: "AccountName",
+                                      "track-by": "AccountName"
+                                    },
+                                    model: {
+                                      value: _vm.edit_model.account,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.edit_model, "account", $$v)
+                                      },
+                                      expression: "edit_model.account"
                                     }
                                   })
                                 ],
@@ -5400,6 +5417,8 @@ var render = function() {
                       _vm._v(" "),
                       _c("th", [_vm._v("Total")]),
                       _vm._v(" "),
+                      _c("th", [_vm._v("Revised Date")]),
+                      _vm._v(" "),
                       _c("th", [_vm._v("Action")])
                     ])
                   ]),
@@ -5420,31 +5439,61 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(item.date))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m1))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m1))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m2))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m2))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m3))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m3))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m4))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m4))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m5))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m5))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m6))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m6))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m7))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m7))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m8))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m8))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m9))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m9))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m10))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m10))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m11))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m11))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m12))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m12))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.total))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.total))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.revised_date))
+                        ]),
                         _vm._v(" "),
                         _c("td", [
                           _c("i", {

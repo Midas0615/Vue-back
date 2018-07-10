@@ -3311,7 +3311,7 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\n.mt-40 {\n  margin-top: -40px;\n}\n.hide-body .card-body .row{\n  display: none;\n}\ni {\n  cursor: pointer;\n}  \n", ""]);
+exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\n.mt-40 {\n  margin-top: -40px;\n}\n.hide-body .card-body .row{\n  display: none;\n}\n.hide-body .card-body{\n  padding: 0px !important;\n}\n.hide-body .card-body .mt-40{\n  margin-top: -25px;\n  padding-right: 15px;\n}\ni {\n  cursor: pointer;\n}  \n", ""]);
 
 // exports
 
@@ -3611,6 +3611,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         _this2.acc_options = res.data.acc_list;
         _this2.cost_options = res.data.cost_list;
         __WEBPACK_IMPORTED_MODULE_5_src_store_store__["a" /* default */].commit('changeLoading', false);
+        _this2.onSubmit();
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
           __WEBPACK_IMPORTED_MODULE_5_src_store_store__["a" /* default */].commit('logout');

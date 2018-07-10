@@ -8460,7 +8460,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
   },
   data: function data() {
     return {
-      vo_id: null,
       top_model: {
         encargador: null,
         gerente: null,
@@ -8538,8 +8537,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         header: this.header_model,
         body: this.body_model
       };
-      axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/voucher_update', { data: data, vo_id: this.vo_id, oldIdx: this.oldIdx }).then(function (res) {
-        console.log(res);
+      axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/voucher_update', { data: data, vo_id: this.header_model.voucher, oldIdx: this.oldIdx }).then(function (res) {
         __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
@@ -8596,8 +8594,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
           _this2.top_model = res.data.data.Txt.top;
           _this2.header_model = res.data.data.Txt.header;
           _this2.body_model = res.data.data.Txt.body;
-          console.log(res.data.data);
-          _this2.vo_id = res.data.data.VIdx;
         }
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
@@ -9516,19 +9512,25 @@ var render = function() {
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.vo_id,
-                                      expression: "vo_id"
+                                      value: _vm.header_model.paper_no,
+                                      expression: "header_model.paper_no"
                                     }
                                   ],
                                   staticClass: "form-control c-input",
                                   attrs: { type: "text" },
-                                  domProps: { value: _vm.vo_id },
+                                  domProps: {
+                                    value: _vm.header_model.paper_no
+                                  },
                                   on: {
                                     input: function($event) {
                                       if ($event.target.composing) {
                                         return
                                       }
-                                      _vm.vo_id = $event.target.value
+                                      _vm.$set(
+                                        _vm.header_model,
+                                        "paper_no",
+                                        $event.target.value
+                                      )
                                     }
                                   }
                                 })
@@ -9894,7 +9896,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "mt-2 vo-number text-left" }, [
                     _vm._v("#."),
-                    _c("span", [_vm._v(_vm._s(_vm.vo_id))])
+                    _c("span", [_vm._v(_vm._s(_vm.header_model.paper_no))])
                   ])
                 ]),
                 _vm._v(" "),

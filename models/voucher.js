@@ -52,6 +52,18 @@ var find_one = function(Idx, callback) {
     }
   })
 }
+var fine_one_Vidx = function(VIdx, callback) {
+  db.query('SELECT * FROM voucher WHERE VIdx = ?', [VIdx], function(err, rows) {
+    if(err) {
+      return callback(err);
+    }
+    if (rows.length > 0) {
+      return callback(null, false);
+    } else {
+      return callback(null, true);
+    }
+  })
+}
 var update = function(id, email, data, oldIdx, callback) {
   db.query('UPDATE voucher SET ? WHERE Idx = ?', [{VIdx: id, Email: email, Txt: data}, oldIdx],
     function(err) {
@@ -66,4 +78,5 @@ var update = function(id, email, data, oldIdx, callback) {
 exports.add = add;
 exports.find_all = find_all;
 exports.fine_one = find_one;
+exports.fine_one_Vidx = fine_one_Vidx;
 exports.update = update;

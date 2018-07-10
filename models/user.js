@@ -8,7 +8,8 @@ var User = function(user) {
   that.id       = user.UserId;
   that.email    = user.Email;
   that.password = user.Passwd;
-  that.name = user.UserName
+  that.name = user.UserName;
+  that.depart = user.DeptIdx;
 
   return that;
 };

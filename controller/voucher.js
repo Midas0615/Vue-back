@@ -146,6 +146,24 @@ exports.voucher_add = function(req, res) {
   })
 }
 
+exports.generate_id = function(req, res) {
+  var dpt = req.query.dpt;
+  var date = req.query.date;  
+  const search = function(id) {
+    var vid = date+dpt+'00'+id;
+    Voucher.fine_one_Vidx(vid, function(err, result) {
+      if(err) {
+        res.status(500);
+      } else if(result) {
+        res.status(200).send({id: '00'+id});
+      } else {
+        search(++id);
+      }
+    })
+  }
+  search(1);
+}
+
 exports.voucher_list = function(req, res) {
   Voucher.find_all(function(err, rows) {
     if(err) {

@@ -1757,6 +1757,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1780,6 +1786,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       formstate: {},
       model: {
         department: null,
+        cost: null,
         year: null
       },
       year_options: [{
@@ -1791,6 +1798,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       }],
       account_options: [],
       department_options: [],
+      cost_options: [],
       tabledata: []
     };
   },
@@ -1859,6 +1867,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       if (res.data.isSuccess) {
         _this2.account_options = res.data.acc_list;
         _this2.department_options = res.data.dep_list;
+        _this2.cost_options = res.data.cost_list;
         // Load Budget List
         _this2.load_report();
       } else {
@@ -1930,6 +1939,35 @@ var render = function() {
                                     _vm.$set(_vm.model, "department", $$v)
                                   },
                                   expression: "model.department"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-sm-2" }, [
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c("label", { attrs: { for: "cost" } }, [
+                                _vm._v("Cost Center")
+                              ]),
+                              _vm._v(" "),
+                              _c("multiselect", {
+                                attrs: {
+                                  options: _vm.cost_options,
+                                  selectLabel: "",
+                                  label: "CostcenterName",
+                                  "track-by": "CostcenterName"
+                                },
+                                model: {
+                                  value: _vm.model.cost,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.model, "cost", $$v)
+                                  },
+                                  expression: "model.cost"
                                 }
                               })
                             ],
@@ -2020,33 +2058,35 @@ var render = function() {
                     _c("tr", [
                       _c("th", [_vm._v("Account")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Jan")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Jan")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Feb")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Feb")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Mar")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Mar")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Apr")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Apr")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("May")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("May")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Jun")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Jun")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Jul")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Jul")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Aug")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Aug")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Sep")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Sep")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Oct")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Oct")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Nov")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Nov")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Dec")]),
+                      _c("th", { staticClass: "text-right" }, [_vm._v("Dec")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Total")]),
+                      _c("th", { staticClass: "text-right" }, [
+                        _vm._v("Total")
+                      ]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("%")])
+                      _c("th", { staticClass: "text-right" }, [_vm._v("%")])
                     ])
                   ]),
                   _vm._v(" "),
@@ -2056,33 +2096,61 @@ var render = function() {
                       return _c("tr", { key: index }, [
                         _c("td", [_vm._v(_vm._s(item.acc_name))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m1))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m1))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m2))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m2))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m3))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m3))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m4))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m4))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m5))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m5))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m6))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m6))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m7))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m7))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m8))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m8))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m9))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m9))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m10))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m10))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m11))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m11))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.m12))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.m12))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.total))]),
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.total))
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(item.per))])
+                        _c("td", { staticClass: "text-right" }, [
+                          _vm._v(_vm._s(item.per))
+                        ])
                       ])
                     })
                   )

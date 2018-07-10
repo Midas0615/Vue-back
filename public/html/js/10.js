@@ -1378,7 +1378,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(751);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_form__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_cookie__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_cookie__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_cookie__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_src_validations_validations_js__ = __webpack_require__(770);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_src_store_store__ = __webpack_require__(115);
@@ -1502,10 +1502,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
                 return;
             } else {
                 axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/login', this.model).then(function (res) {
-                    console.log(res);
                     __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('loginSuccess', res);
                     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.set('username', res.data.username, 1);
                     __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.set('token', res.data.token, 1);
+                    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.set('depart', res.data.userdepartment, 1);
                     _this.$router.push("/");
                 }).catch(function (err) {});
             }

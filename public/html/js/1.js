@@ -8041,17 +8041,19 @@ exports.push([module.i, "\n.box-shadow[data-v-30eb25b8]{\n  -webkit-box-shadow: 
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_multiselect__ = __webpack_require__(757);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_multiselect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_multiselect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuejs_datepicker__ = __webpack_require__(763);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuejs_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vuejs_datepicker__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_mini_toastr__ = __webpack_require__(755);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_html2canvas__ = __webpack_require__(783);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_html2canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_html2canvas__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jspdf__ = __webpack_require__(813);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jspdf___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jspdf__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_src_store_store__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_src_const_js__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_cookie__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_cookie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_multiselect__ = __webpack_require__(757);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_multiselect__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__ = __webpack_require__(763);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_mini_toastr__ = __webpack_require__(755);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_html2canvas__ = __webpack_require__(783);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_html2canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_html2canvas__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jspdf__ = __webpack_require__(813);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jspdf___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jspdf__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_src_store_store__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_src_const_js__ = __webpack_require__(752);
 //
 //
 //
@@ -8449,18 +8451,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_3_mini_toastr__["a" /* default */].init();
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_1_vue_multiselect___default.a);
+
+__WEBPACK_IMPORTED_MODULE_4_mini_toastr__["a" /* default */].init();
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_cookie___default.a);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "VoucherAddPage",
   components: {
-    Multiselect: __WEBPACK_IMPORTED_MODULE_1_vue_multiselect___default.a,
-    Datepicker: __WEBPACK_IMPORTED_MODULE_2_vuejs_datepicker___default.a
+    Multiselect: __WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default.a,
+    Datepicker: __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker___default.a
   },
   data: function data() {
     return {
-      vo_id: null,
       top_model: {
         encargador: null,
         gerente: null,
@@ -8483,7 +8486,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         banco_nombre: null,
         buyer: null,
         banco_cuenta: null,
-        currency: null
+        currency: null,
+        paper_no: null
       },
       body_model: [],
       model: {
@@ -8522,29 +8526,29 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       this.b_print = false;
     },
     exportpdf: function exportpdf() {
-      __WEBPACK_IMPORTED_MODULE_4_html2canvas___default()(this.$refs.pdf).then(function (canvas) {
+      __WEBPACK_IMPORTED_MODULE_5_html2canvas___default()(this.$refs.pdf).then(function (canvas) {
         var context = canvas.getContext('2d');
         var imgData = canvas.toDataURL("image/jpeg", 1.0);
-        var pdf = new __WEBPACK_IMPORTED_MODULE_5_jspdf___default.a('p', 'in', [8.5, 11]);
+        var pdf = new __WEBPACK_IMPORTED_MODULE_6_jspdf___default.a('p', 'in', [8.5, 11]);
         pdf.addImage(imgData, 'JPEG', 0, 0);
         pdf.save("download.pdf");
       });
     },
     save: function save() {
-      __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', true);
+      __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', true);
       var data = {
         top: this.top_model,
         header: this.header_model,
         body: this.body_model
       };
-      axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/voucher_add', { data: data, vo_id: this.vo_id }).then(function (res) {
+      axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/voucher/voucher_add', { data: data, vo_id: this.header_model.voucher }).then(function (res) {
         console.log(res);
-        __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
+        __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
-          __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('logout');
+          __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('logout');
         };
-        __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
+        __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
       });
     },
     add_detail: function add_detail() {
@@ -8553,13 +8557,26 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
     remove_detail: function remove_detail() {
       this.body_model.pop();
     },
-    selectDepart: function selectDepart() {
+    setVId: function setVId() {
       var _this = this;
+
+      axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/voucher/generate_id?dpt=' + this.header_model.departmento.DeptIdx + '&date=' + this.formatDateYYMMDD(new Date())).then(function (res) {
+        _this.header_model.voucher = _this.formatDateYYMMDD(new Date()) + _this.header_model.departmento.DeptIdx + res.data.id;
+      }).catch(function (err) {
+        if (err.response && err.response.status == 401) {
+          __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('logout');
+        };
+      });
+    },
+    selectDepart: function selectDepart() {
+      var _this2 = this;
 
       if (this.header_model.departmento != null) {
         this.admin_user_options = this.user_options.filter(function (v) {
-          return v.DeptIdx == _this.header_model.departmento.DeptIdx;
+          return v.DeptIdx == _this2.header_model.departmento.DeptIdx;
         });
+        // Set Date
+        this.setVId();
       } else {
         this.admin_user_options = this.user_options;
       }
@@ -8572,6 +8589,16 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       var month_index = today.getMonth();
       var year = today.getFullYear();
       return day + "-" + month_names[month_index] + "-" + year;
+    },
+    formatDateYYMMDD: function formatDateYYMMDD(date) {
+      var d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear().toString().substr(-2);
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+
+      return [year, month, day].join('');
     },
     getMonto: function getMonto(index) {
       var a = Number(this.body_model[index].cantidad ? this.body_model[index].cantidad : 0);
@@ -8587,30 +8614,34 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this3 = this;
 
-    __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', true);
-    axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_ord_user_list').then(function (res) {
-      _this2.dept_options = res.data.dep_list;
-      _this2.cus_options = res.data.cus_list.filter(function (v) {
+    __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', true);
+    axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_ord_user_list').then(function (res) {
+      _this3.dept_options = res.data.dep_list;
+      var dpt = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('depart');
+      for (var i = 0; i < _this3.dept_options.length; i++) {
+        if (dpt == _this3.dept_options[i].DeptIdx) _this3.header_model.departmento = _this3.dept_options[i];
+      }
+      _this3.cus_options = res.data.cus_list.filter(function (v) {
         return v.Classification != 24;
       });
-      _this2.buyer_options = res.data.cus_list.filter(function (v) {
+      _this3.buyer_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 24;
       });
-      _this2.order_options = res.data.ord_list;
-      _this2.bank_options = res.data.cus_list.filter(function (v) {
+      _this3.order_options = res.data.ord_list;
+      _this3.bank_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 28;
       });
-      _this2.acc_options = res.data.acc_list;
-      _this2.user_options = res.data.user_list;
-      _this2.admin_user_options = _this2.user_options;
-      __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
+      _this3.acc_options = res.data.acc_list;
+      _this3.user_options = res.data.user_list;
+      _this3.admin_user_options = _this3.user_options;
+      __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
     }).catch(function (err) {
       if (err.response && err.response.status == 401) {
-        __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('logout');
+        __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('logout');
       };
-      __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
+      __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
     });
   }
 });
@@ -8669,6 +8700,42 @@ var render = function() {
                       "b-tabs",
                       [
                         _c("b-tab", { attrs: { title: "1.HEADER INFO" } }, [
+                          _c("div", { staticClass: "row m-0 p-3" }, [
+                            _c("div", { staticClass: "col-sm-4 col-md-3" }, [
+                              _c("div", { staticClass: "form-group" }, [
+                                _c("label", [_vm._v("Paper#")]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.header_model.paper_no,
+                                      expression: "header_model.paper_no"
+                                    }
+                                  ],
+                                  staticClass: "form-control c-input",
+                                  attrs: { type: "text" },
+                                  domProps: {
+                                    value: _vm.header_model.paper_no
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.header_model,
+                                        "paper_no",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
                           _c("div", { staticClass: "row m-0 p-3" }, [
                             _c("div", { staticClass: "col-sm-4 col-md-3" }, [
                               _c(
@@ -9483,36 +9550,6 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("b-tab", { attrs: { title: "3.APPROVAL ROUTE" } }, [
-                          _c("div", { staticClass: "row m-0 pt-3" }, [
-                            _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-                              _c("div", { staticClass: "form-group" }, [
-                                _c("label", [_vm._v("Paper#")]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.vo_id,
-                                      expression: "vo_id"
-                                    }
-                                  ],
-                                  staticClass: "form-control c-input",
-                                  attrs: { type: "text" },
-                                  domProps: { value: _vm.vo_id },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.vo_id = $event.target.value
-                                    }
-                                  }
-                                })
-                              ])
-                            ])
-                          ]),
-                          _vm._v(" "),
                           _c(
                             "div",
                             {
@@ -9871,7 +9908,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "mt-2 vo-number text-left" }, [
                     _vm._v("#."),
-                    _c("span", [_vm._v(_vm._s(_vm.vo_id))])
+                    _c("span", [_vm._v(_vm._s(_vm.header_model.paper_no))])
                   ])
                 ]),
                 _vm._v(" "),
@@ -10328,21 +10365,23 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("th", [_vm._v("FILE")]),
+      _c("th", { staticClass: "text-center" }, [_vm._v("FILE")]),
       _vm._v(" "),
-      _c("th", [_vm._v("CLIENTE")]),
+      _c("th", { staticClass: "text-center" }, [_vm._v("CLIENTE")]),
       _vm._v(" "),
-      _c("th", [_vm._v("REG#")]),
+      _c("th", { staticClass: "text-center" }, [_vm._v("REG#")]),
       _vm._v(" "),
-      _c("th", [_vm._v("FACT#/INV#")]),
+      _c("th", { staticClass: "text-center" }, [_vm._v("FACT#/INV#")]),
       _vm._v(" "),
-      _c("th", { staticStyle: { width: "40%" } }, [_vm._v("DESCRIPCIÓN")]),
+      _c("th", { staticClass: "text-center", staticStyle: { width: "40%" } }, [
+        _vm._v("DESCRIPCIÓN")
+      ]),
       _vm._v(" "),
-      _c("th", [_vm._v("CANTIDAD")]),
+      _c("th", { staticClass: "text-center" }, [_vm._v("CANTIDAD")]),
       _vm._v(" "),
-      _c("th", [_vm._v("UNITARIO")]),
+      _c("th", { staticClass: "text-center" }, [_vm._v("UNITARIO")]),
       _vm._v(" "),
-      _c("th", [_vm._v("MONTO")])
+      _c("th", { staticClass: "text-center" }, [_vm._v("MONTO")])
     ])
   }
 ]
