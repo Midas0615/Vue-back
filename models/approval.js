@@ -2,8 +2,8 @@ var db = require('./db');
 
 var create = function(ordidx, callback) {
   db.query(`
-    INSERT INTO approval (OrderIdx,Handler,Manager,Director,Managing_Director,President) values (?,?,?,?,?,?)
-  `, [ordidx,0,0,0,0,0],
+    INSERT INTO approval (OrderIdx,Handler,Manager,Director,Managing_Director,President,Handler2,Manager2,Director2,Managing_Director2,President2) values (?,?,?,?,?,?,?,?,?,?,?)
+  `, [ordidx,0,0,0,0,0,0,0,0,0,0],
   function(err)
   {
     if(err){
@@ -22,7 +22,6 @@ var load = function(ordidx, callback) {
     if(err) {      
       return callback(err);
     } else {
-      console.log(list);
       if(list.length == 0) {
         return create(ordidx, callback);
       } else {
@@ -35,7 +34,9 @@ var load = function(ordidx, callback) {
 var confirm = function(body, callback) {
   db.query('UPDATE approval SET ? WHERE Idx = ? AND OrderIdx = ?', [{
     Handler: body.data.handler, Manager: body.data.manager, Director: body.data.director,
-    Managing_Director: body.data.managing_director, President: body.president
+    Managing_Director: body.data.managing_director, President: body.president,
+    Handler2: body.data.handler, Manager2: body.data.manager, Director2: body.data.director,
+    Managing_Director2: body.data.managing_director, President2: body.president
   }, body.data.idx, body.ordidx], function(err) {
     console.log(err);
     callback(err);

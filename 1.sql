@@ -29,12 +29,13 @@ CREATE TABLE `accident` (
   `Amount` varchar(10) DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `accident` */
 
 insert  into `accident`(`Idx`,`OrderIdx`,`Report`,`Description`,`P_Accident`,`Amount`,`Confirm`) values 
-(1,1,'12','12','12','12',1);
+(1,1,'12','12','12','12',1),
+(4,1,'213','xp asdf awef',NULL,NULL,0);
 
 /*Table structure for table `accounts` */
 
@@ -839,7 +840,7 @@ CREATE TABLE `admini` (
   `Amount` varchar(10) DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `admini` */
 
@@ -858,13 +859,17 @@ CREATE TABLE `approval` (
   `Director` tinyint(1) DEFAULT '0',
   `Managing_Director` tinyint(1) DEFAULT '0',
   `President` tinyint(1) DEFAULT '0',
+  `Handler2` tinyint(1) DEFAULT '0',
+  `Manager2` tinyint(1) DEFAULT '0',
+  `Director2` tinyint(1) DEFAULT '0',
+  `Managing_Director2` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `approval` */
 
-insert  into `approval`(`Idx`,`OrderIdx`,`Handler`,`Manager`,`Director`,`Managing_Director`,`President`) values 
-(1,1,NULL,1,1,0,NULL);
+insert  into `approval`(`Idx`,`OrderIdx`,`Handler`,`Manager`,`Director`,`Managing_Director`,`President`,`Handler2`,`Manager2`,`Director2`,`Managing_Director2`) values 
+(1,1,0,1,1,0,0,0,0,0,0);
 
 /*Table structure for table `budget` */
 
@@ -1741,7 +1746,7 @@ CREATE TABLE `confirmation` (
 /*Data for the table `confirmation` */
 
 insert  into `confirmation`(`Idx`,`OrderIdx`,`C1`,`C2`,`C3`,`C4`,`C5`,`C6`,`C7`,`C8`) values 
-(1,1,1,1,1,1,1,1,1,0);
+(1,1,0,1,1,0,0,1,0,0);
 
 /*Table structure for table `constcenter` */
 
@@ -2816,12 +2821,13 @@ CREATE TABLE `fcactual` (
   `Weight` varchar(30) DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `fcactual` */
 
 insert  into `fcactual`(`Idx`,`OrderIdx`,`F_Type`,`Fabric`,`U_Price`,`Consumption`,`Yds_Pcs`,`Width`,`Weight`,`Confirm`) values 
-(1,1,147,1,'1232','12','12','12','12',1);
+(1,1,147,1,'1232','12','12','12','12',1),
+(2,1,118,1,'1','1','2','2','2',0);
 
 /*Table structure for table `fcplan` */
 
@@ -2839,13 +2845,14 @@ CREATE TABLE `fcplan` (
   `Weight` varchar(30) DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `fcplan` */
 
 insert  into `fcplan`(`Idx`,`OrderIdx`,`F_Type`,`Fabric`,`U_Price`,`Consumption`,`Yds_Pcs`,`Width`,`Weight`,`Confirm`) values 
 (1,1,118,1,'12','12','32','12','12',1),
-(2,1,156,1,'32','12','32','12','32',0);
+(2,1,156,1,'32','12','32','12','32',0),
+(3,1,118,1,'2','2','2','2','1',0);
 
 /*Table structure for table `iorderactual` */
 
@@ -9145,12 +9152,13 @@ CREATE TABLE `material` (
   `Handler2` tinyint(1) DEFAULT '0',
   `Manager2` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `material` */
 
 insert  into `material`(`Idx`,`OrderIdx`,`A_Name`,`Supplier1`,`Order_Qty`,`Unit_Price`,`Amount1`,`Voucher_Date`,`Supplier2`,`Amount2`,`Handler1`,`Manager1`,`Handler2`,`Manager2`) values 
-(3,1,'12','2','32','32','12','2-Jul-2018','2','32',0,0,1,0);
+(3,1,'12','2','32','32','12','2-Jul-2018','2','32',0,0,1,0),
+(4,1,'123','2560','23','21','12','3-Jul-2018','2515','12',0,0,0,0);
 
 /*Table structure for table `ordpay` */
 
@@ -9171,13 +9179,12 @@ CREATE TABLE `ordpay` (
   `Amount2` varchar(10) DEFAULT NULL,
   `Customer2` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `ordpay` */
 
 insert  into `ordpay`(`Idx`,`OrderIdx`,`Operation`,`F_Type`,`Customer1`,`Kg_Pcs1`,`U_Price1`,`Amount1`,`Date`,`Kg_Pcs2`,`U_Price2`,`Amount2`,`Customer2`) values 
-(1,1,110,117,'1','1','1','1','10-Jul-2018','1','1','12','2'),
-(4,1,111,118,'3','12','21',NULL,'10-Jul-2018',NULL,'12','32','2');
+(1,1,110,117,'1','1','1','1','10-Jul-2018','1','1','12','2');
 
 /*Table structure for table `overshort` */
 
@@ -9191,7 +9198,7 @@ CREATE TABLE `overshort` (
   `U_Price` varchar(10) DEFAULT NULL,
   `Remark` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `overshort` */
 
@@ -9216,7 +9223,7 @@ CREATE TABLE `po` (
   `D_Date` varchar(30) DEFAULT NULL,
   `Remark` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `po` */
 
@@ -9238,7 +9245,7 @@ CREATE TABLE `shipment` (
   `U_Price` varchar(10) DEFAULT NULL,
   `Ship_Amount` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `shipment` */
 
@@ -9310,7 +9317,7 @@ CREATE TABLE `testfg` (
   `Pass_Fail` tinyint(1) DEFAULT '1',
   `Remarks` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `testfg` */
 
@@ -9510,7 +9517,7 @@ CREATE TABLE `yarnactual` (
   `Remark` varchar(30) DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `yarnactual` */
 
@@ -9543,8 +9550,7 @@ CREATE TABLE `yarnplan` (
 /*Data for the table `yarnplan` */
 
 insert  into `yarnplan`(`Idx`,`OrderIdx`,`Yarn`,`U_Price`,`KGS`,`Amount`,`Remark`,`Confirm`) values 
-(1,1,1,'12','12','12','12',1),
-(5,1,1,'32','32','32','323',0);
+(1,1,1,'12','12','12','12',1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
