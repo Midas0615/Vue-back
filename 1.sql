@@ -863,13 +863,14 @@ CREATE TABLE `approval` (
   `Manager2` tinyint(1) DEFAULT '0',
   `Director2` tinyint(1) DEFAULT '0',
   `Managing_Director2` tinyint(1) DEFAULT '0',
+  `President2` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `approval` */
 
-insert  into `approval`(`Idx`,`OrderIdx`,`Handler`,`Manager`,`Director`,`Managing_Director`,`President`,`Handler2`,`Manager2`,`Director2`,`Managing_Director2`) values 
-(1,1,0,1,1,0,0,0,0,0,0);
+insert  into `approval`(`Idx`,`OrderIdx`,`Handler`,`Manager`,`Director`,`Managing_Director`,`President`,`Handler2`,`Manager2`,`Director2`,`Managing_Director2`,`President2`) values 
+(1,1,0,1,1,0,0,0,0,0,0,0);
 
 /*Table structure for table `budget` */
 
