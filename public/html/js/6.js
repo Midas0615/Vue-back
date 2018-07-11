@@ -1288,8 +1288,8 @@ return VueForm;
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  host: 'http://localhost:3000'
-  // host: 'http://35.168.158.241'
+  // host: 'http://localhost:3000'
+  host: 'http://35.168.158.241'
 });
 
 /***/ }),
