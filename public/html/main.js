@@ -26,7 +26,7 @@ var store = new __WEBPACK_IMPORTED_MODULE_2_vuex__["a" /* default */].Store({
     state: {
         left_open: true,
         preloader: true,
-        site_name: "INT, S.A.",
+        site_name: "INT. S.A.",
         page_title: null,
         user: {
             name: "",
