@@ -12605,6 +12605,213 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -28706,128 +28913,407 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
+                  _c("div", { staticStyle: { display: "inline-block" } }, [
+                    _c(
+                      "table",
+                      { staticStyle: { "margin-top": "1px", width: "355px" } },
+                      [
+                        _vm._m(15),
+                        _vm._v(" "),
+                        _c(
+                          "tbody",
+                          [
+                            _vm._l(32, function(index) {
+                              return [
+                                index >= _vm.tabledata9.length + 1 ||
+                                (index > 1 &&
+                                  index <= _vm.tabledata9.length &&
+                                  _vm.tabledata9[index - 1].f_type !=
+                                    _vm.tabledata9[index - 2].f_type)
+                                  ? _c("tr", { key: index + 100000 }, [
+                                      _c("td", { attrs: { width: "12.5%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "5%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "5%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "5%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "12.5%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "10%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "10%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "10%" } })
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                index < _vm.tabledata9.length + 1 &&
+                                (index == 1 ||
+                                  _vm.tabledata9[index - 1].f_type !=
+                                    _vm.tabledata9[index - 2].f_type)
+                                  ? _c("tr", { key: index }, [
+                                      _c("td", { attrs: { width: "12.5%" } }, [
+                                        _vm._v(
+                                          _vm._s(_vm.tabledata9[index - 1].date)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "5%" } }, [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.tabledata9[index - 1].kg_pcs2
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "5%" } }, [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.tabledata9[index - 1].u_price2
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "5%" } }, [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.tabledata9[index - 1].amount2
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "12.5%" } }, [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.tabledata9[index - 1].customer2
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "10%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "10%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "10%" } })
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                index < _vm.tabledata9.length + 1 &&
+                                (index > 1 &&
+                                  _vm.tabledata9[index - 1].f_type ==
+                                    _vm.tabledata9[index - 2].f_type)
+                                  ? _c("tr", { key: index }, [
+                                      _c("td", { attrs: { width: "12.5%" } }, [
+                                        _vm._v(
+                                          _vm._s(_vm.tabledata9[index - 1].date)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "5%" } }, [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.tabledata9[index - 1].kg_pcs2
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "5%" } }, [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.tabledata9[index - 1].u_price2
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "5%" } }, [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.tabledata9[index - 1].amount2
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "12.5%" } }, [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.tabledata9[index - 1].customer2
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "10%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "10%" } }),
+                                      _vm._v(" "),
+                                      _c("td", { attrs: { width: "10%" } })
+                                    ])
+                                  : _vm._e()
+                              ]
+                            })
+                          ],
+                          2
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(16)
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "table",
-                    { staticStyle: { "margin-top": "1px", width: "300px" } },
+                    "div",
+                    {
+                      staticStyle: {
+                        display: "inline-block",
+                        "margin-left": "-3px"
+                      }
+                    },
                     [
-                      _vm._m(15),
+                      _c(
+                        "table",
+                        {
+                          staticStyle: { width: "195px", "margin-top": "1px" }
+                        },
+                        [
+                          _vm._m(17),
+                          _vm._v(" "),
+                          _c(
+                            "tbody",
+                            [
+                              _vm._l(_vm.tabledata10, function(item, index) {
+                                return _c("tr", { key: index }, [
+                                  _c("td", { attrs: { width: "25%" } }, [
+                                    _vm._v(_vm._s(item.ship_date))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", { attrs: { width: "25%" } }, [
+                                    _vm._v(_vm._s(item.ship_qty))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", { attrs: { width: "25%" } }, [
+                                    _vm._v(_vm._s(item.u_price))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", { attrs: { width: "25%" } }, [
+                                    _vm._v(_vm._s(item.ship_amount))
+                                  ])
+                                ])
+                              }),
+                              _vm._v(" "),
+                              _vm._l(8 - _vm.tabledata10.length, function(
+                                index
+                              ) {
+                                return _c(
+                                  "tr",
+                                  { key: index + _vm.tabledata10.length },
+                                  [
+                                    _c("td"),
+                                    _vm._v(" "),
+                                    _c("td"),
+                                    _vm._v(" "),
+                                    _c("td"),
+                                    _vm._v(" "),
+                                    _c("td")
+                                  ]
+                                )
+                              })
+                            ],
+                            2
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
                       _c(
-                        "tbody",
+                        "table",
+                        {
+                          staticStyle: { width: "195px", "margin-top": "1px" }
+                        },
                         [
-                          _vm._l(31, function(index) {
-                            return [
-                              index >= _vm.tabledata9.length + 1 ||
-                              (index > 1 &&
-                                index <= _vm.tabledata9.length &&
-                                _vm.tabledata9[index - 1].f_type !=
-                                  _vm.tabledata9[index - 2].f_type)
-                                ? _c("tr", { key: index + 100000 }, [
-                                    _c("td", { attrs: { width: "12.5%" } }),
-                                    _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }),
-                                    _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }),
-                                    _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }),
-                                    _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } })
-                                  ])
-                                : _vm._e(),
+                          _vm._m(18),
+                          _vm._v(" "),
+                          _c(
+                            "tbody",
+                            [
+                              _vm._l(_vm.tabledata11, function(item, index) {
+                                return _c("tr", { key: index }, [
+                                  _c("td", [_vm._v(_vm._s(item.ship_date))]),
+                                  _vm._v(" "),
+                                  _c("td", [_vm._v(_vm._s(item.ship_qty))]),
+                                  _vm._v(" "),
+                                  _c("td", [_vm._v(_vm._s(item.u_price))]),
+                                  _vm._v(" "),
+                                  _c("td", [_vm._v(_vm._s(item.remark))])
+                                ])
+                              }),
                               _vm._v(" "),
-                              index < _vm.tabledata9.length + 1 &&
-                              (index == 1 ||
-                                _vm.tabledata9[index - 1].f_type !=
-                                  _vm.tabledata9[index - 2].f_type)
-                                ? _c("tr", { key: index }, [
-                                    _c("td", { attrs: { width: "12.5%" } }, [
-                                      _vm._v(
-                                        _vm._s(_vm.tabledata9[index - 1].date)
-                                      )
+                              _vm._l(2 - _vm.tabledata11.length, function(
+                                index
+                              ) {
+                                return _c(
+                                  "tr",
+                                  { key: index + _vm.tabledata11.length },
+                                  [
+                                    _c("td"),
+                                    _vm._v(" "),
+                                    _c("td"),
+                                    _vm._v(" "),
+                                    _c("td"),
+                                    _vm._v(" "),
+                                    _c("td")
+                                  ]
+                                )
+                              })
+                            ],
+                            2
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "table",
+                        {
+                          staticStyle: { width: "195px", "margin-top": "1px" }
+                        },
+                        [
+                          _vm._m(19),
+                          _vm._v(" "),
+                          _c(
+                            "tbody",
+                            [
+                              _vm._l(3, function(index) {
+                                return [
+                                  _c("tr", { key: index }, [
+                                    _c("td", { attrs: { width: "30%" } }, [
+                                      _vm._v("Report")
                                     ]),
                                     _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }, [
+                                    _c("td", { attrs: { colspan: "3" } }, [
                                       _vm._v(
                                         _vm._s(
-                                          _vm.tabledata9[index - 1].kg_pcs2
+                                          _vm.tabledata12[index]
+                                            ? _vm.tabledata12[index].report
+                                            : ""
+                                        )
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("tr", { key: index + 4 }, [
+                                    _c("td", { attrs: { width: "30%" } }, [
+                                      _vm._v("Description")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", { attrs: { colspan: "3" } }, [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.tabledata12[index]
+                                            ? _vm.tabledata12[index].description
+                                            : ""
+                                        )
+                                      )
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("tr", { key: index + 8 }, [
+                                    _c("td", { attrs: { width: "30%" } }, [
+                                      _vm._v("Place")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(
+                                        _vm._s(
+                                          _vm.tabledata12[index]
+                                            ? _vm.tabledata12[index].p_accident
+                                            : ""
                                         )
                                       )
                                     ]),
                                     _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }, [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.tabledata9[index - 1].u_price2
-                                        )
-                                      )
+                                    _c("td", { attrs: { width: "20%" } }, [
+                                      _vm._v("Confirm")
                                     ]),
                                     _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }, [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.tabledata9[index - 1].amount2
-                                        )
-                                      )
+                                    _c("td")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("tr", { key: index + 12 }, [
+                                    _c("td", { attrs: { width: "30%" } }, [
+                                      _vm._v("Amount")
                                     ]),
                                     _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }, [
+                                    _c("td", { attrs: { colspan: "3" } }, [
                                       _vm._v(
                                         _vm._s(
-                                          _vm.tabledata9[index - 1].customer2
+                                          _vm.tabledata12[index]
+                                            ? _vm.tabledata12[index].amount
+                                            : ""
                                         )
                                       )
                                     ])
                                   ])
-                                : _vm._e(),
-                              _vm._v(" "),
-                              index < _vm.tabledata9.length + 1 &&
-                              (index > 1 &&
-                                _vm.tabledata9[index - 1].f_type ==
-                                  _vm.tabledata9[index - 2].f_type)
-                                ? _c("tr", { key: index }, [
-                                    _c("td", { attrs: { width: "12.5%" } }, [
-                                      _vm._v(
-                                        _vm._s(_vm.tabledata9[index - 1].date)
-                                      )
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }, [
+                                ]
+                              })
+                            ],
+                            2
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "table",
+                        {
+                          staticStyle: { width: "195px", "margin-top": "1px" }
+                        },
+                        [
+                          _vm._m(20),
+                          _vm._v(" "),
+                          _c(
+                            "tbody",
+                            [
+                              _vm._l(14, function(index) {
+                                return [
+                                  _c("tr", { key: index }, [
+                                    _c("td", { attrs: { width: "25%" } }, [
                                       _vm._v(
                                         _vm._s(
-                                          _vm.tabledata9[index - 1].kg_pcs2
+                                          _vm.tabledata13[index]
+                                            ? _vm.tabledata13[index].d_date
+                                            : ""
                                         )
                                       )
                                     ]),
                                     _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }, [
+                                    _c("td", { attrs: { width: "25%" } }, [
                                       _vm._v(
                                         _vm._s(
-                                          _vm.tabledata9[index - 1].u_price2
+                                          _vm.tabledata13[index]
+                                            ? _vm.tabledata13[index].description
+                                            : ""
                                         )
                                       )
                                     ]),
                                     _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }, [
+                                    _c("td", { attrs: { width: "25%" } }, [
                                       _vm._v(
                                         _vm._s(
-                                          _vm.tabledata9[index - 1].amount2
+                                          _vm.tabledata13[index]
+                                            ? _vm.tabledata13[index].amount
+                                            : ""
                                         )
                                       )
                                     ]),
                                     _vm._v(" "),
-                                    _c("td", { attrs: { width: "12.5%" } }, [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.tabledata9[index - 1].customer2
-                                        )
-                                      )
-                                    ])
+                                    _c("td", { attrs: { width: "25%" } })
                                   ])
-                                : _vm._e()
-                            ]
-                          })
-                        ],
-                        2
+                                ]
+                              }),
+                              _vm._v(" "),
+                              _vm._m(21)
+                            ],
+                            2
+                          )
+                        ]
                       )
                     ]
                   )
@@ -29213,14 +29699,251 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", { attrs: { width: "12.5%" } }, [_vm._v("PAID DATE")]),
         _vm._v(" "),
-        _c("th", { attrs: { width: "12.5%" } }, [_vm._v("KG(PCS)")]),
+        _c("th", { attrs: { width: "5%" } }, [_vm._v("PCS")]),
         _vm._v(" "),
-        _c("th", { attrs: { width: "12.5%" } }, [_vm._v("U/PRICE")]),
+        _c("th", { attrs: { width: "5%" } }, [_vm._v("U/P")]),
         _vm._v(" "),
-        _c("th", { attrs: { width: "12.5%" } }, [_vm._v("AMOUNTS")]),
+        _c("th", { attrs: { width: "5%" } }, [_vm._v("AMOUNTS")]),
         _vm._v(" "),
-        _c("th", { attrs: { width: "12.5%" } }, [_vm._v("CUSTOMER")])
+        _c("th", { attrs: { width: "12.5%" } }, [_vm._v("CUSTOMER")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "10%" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "10%" } }),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "10%" } })
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "table",
+      { staticStyle: { "margin-top": "1px", width: "355px" } },
+      [
+        _c("thead", [
+          _c("tr", [
+            _c("th", { attrs: { width: "25%" } }, [_vm._v("Division")]),
+            _vm._v(" "),
+            _c("th", { attrs: { width: "25%" } }, [_vm._v("Price per PCS")]),
+            _vm._v(" "),
+            _c("th", { attrs: { width: "25%" } }, [_vm._v("Rates(%)")]),
+            _vm._v(" "),
+            _c("th", { attrs: { width: "25%" } }, [_vm._v("Amount")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tbody", [
+          _c("tr", [
+            _c("td", [_vm._v("Yarn & Fabric")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("Materials")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("Sew")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("INT")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("FRT Charge")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("Commission")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("Test")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("Duty")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("Admini")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [_vm._v("Others")]),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td"),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { attrs: { colspan: "3" } }, [_vm._v("Production Total")]),
+            _vm._v(" "),
+            _c("td")
+          ]),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { staticStyle: { height: "24px!important" } }, [
+              _vm._v("PROFIT(%)")
+            ]),
+            _vm._v(" "),
+            _c("td", {
+              staticStyle: { height: "24px!important" },
+              attrs: { colspan: "2" }
+            }),
+            _vm._v(" "),
+            _c("td", { staticStyle: { height: "24px!important" } })
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", { staticStyle: { height: "40px" } }, [
+        _c("th", { attrs: { colspan: "4", width: "100%" } }, [
+          _vm._v("SHIPMENT")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Qty")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("U/P")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Amount")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { colspan: "4", width: "100%" } }, [
+          _vm._v("Over Ship, Short")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Qty")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("U/P")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Remark")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { colspan: "4", width: "100%" } }, [
+          _vm._v("Accident")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticStyle: { height: "40px" } }, [
+      _c("tr", [
+        _c("th", { attrs: { colspan: "4", width: "100%" } }, [
+          _vm._v("Administration")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("tr", [
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Description")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Amount")]),
+        _vm._v(" "),
+        _c("th", { attrs: { width: "25%" } }, [_vm._v("Confirm")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", { staticStyle: { height: "40px" } }, [
+      _c("td", { attrs: { width: "50%", colspan: "2" } }, [_vm._v("Total")]),
+      _vm._v(" "),
+      _c("td", { attrs: { width: "50%", colspan: "2" } })
     ])
   }
 ]
