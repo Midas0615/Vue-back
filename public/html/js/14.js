@@ -1,6 +1,6 @@
 webpackJsonp([14],{
 
-/***/ 743:
+/***/ 744:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -52,7 +52,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 751:
+/***/ 752:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -1282,21 +1282,21 @@ return VueForm;
 
 /***/ }),
 
-/***/ 768:
+/***/ 769:
 /***/ (function(module, exports) {
 
 module.exports = "/images/logo_black.png?808637a0af399b8a11165eb3791a3658";
 
 /***/ }),
 
-/***/ 769:
+/***/ 770:
 /***/ (function(module, exports) {
 
 module.exports = "/images/Login-03-01.png?13d89c25d2f5166aa12b08827d4c9b92";
 
 /***/ }),
 
-/***/ 770:
+/***/ 771:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1351,7 +1351,7 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n.login-content[data-v-6895f8c6] {\n    margin-top: 7%;\n    margin-bottom: 7%;\n    padding-bottom: 20px;\n    -webkit-box-shadow: 0 0 20px #ccc;\n            box-shadow: 0 0 20px #ccc;\n    background-size: 100% 100%;\n    border-radius: 7px;\n}\n.user-message[data-v-6895f8c6] {\n    padding: 15px 0;\n    font-size: 14px;\n    color: #777;\n}\n.img_backgrond[data-v-6895f8c6]{\n    background-image: url(" + __webpack_require__(769) + ");\n    background-size: cover;\n    height: 100vh;\n    width:100%;\n}\nlabel[data-v-6895f8c6]{\n    font-size: 14px !important;\n}\n[data-v-6895f8c6]::-webkit-input-placeholder {\n    font-size:14px;\n}\n", ""]);
+exports.push([module.i, "\n.login-content[data-v-6895f8c6] {\n    margin-top: 7%;\n    margin-bottom: 7%;\n    padding-bottom: 20px;\n    -webkit-box-shadow: 0 0 20px #ccc;\n            box-shadow: 0 0 20px #ccc;\n    background-size: 100% 100%;\n    border-radius: 7px;\n}\n.user-message[data-v-6895f8c6] {\n    padding: 15px 0;\n    font-size: 14px;\n    color: #777;\n}\n.img_backgrond[data-v-6895f8c6]{\n    background-image: url(" + __webpack_require__(770) + ");\n    background-size: cover;\n    height: 100vh;\n    width:100%;\n}\nlabel[data-v-6895f8c6]{\n    font-size: 14px !important;\n}\n[data-v-6895f8c6]::-webkit-input-placeholder {\n    font-size:14px;\n}\n", ""]);
 
 // exports
 
@@ -1365,9 +1365,9 @@ exports.push([module.i, "\n.login-content[data-v-6895f8c6] {\n    margin-top: 7%
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(751);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(752);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_form__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_validations_validations_js__ = __webpack_require__(770);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_validations_validations_js__ = __webpack_require__(771);
 //
 //
 //
@@ -1564,7 +1564,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-sm-12 mt-4" }, [
         _c("h2", { staticClass: "text-center" }, [
           _c("img", {
-            attrs: { src: __webpack_require__(768), alt: "Logo" }
+            attrs: { src: __webpack_require__(769), alt: "Logo" }
           })
         ])
       ]),

@@ -10,7 +10,9 @@ var User = function(user) {
   that.password = user.Passwd;
   that.name = user.UserName;
   that.depart = user.DeptIdx;
-
+  that.position = user.posname;
+  that.point = user.PointYR;
+  console.log(that);
   return that;
 };
 
@@ -31,9 +33,10 @@ var validPassword = function(password, savedPassword) {
 
 var login = function(email, password, callback) {
   // Check that the user logging in exists
-  db.query('SELECT * FROM users WHERE Email = ?', [email], function(err, rows) {
-    if (err)
+  db.query('SELECT users.*, codes.SubCode1 as posname FROM users LEFT JOIN codes on users.Position = codes.Priority and codes.Classification = "App Position" WHERE users.Email = ? ', [email], function(err, rows) {
+    if (err){
       return callback(err);
+    }      
 
     if (!rows.length)
       return callback(null, false);
