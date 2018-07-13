@@ -5,6 +5,9 @@ var OrderActual = require('../models/orderactual');
 var CostCenter = require('../models/costcenter');
 var User = require('../models/user');
 var Voucher = require('../models/voucher');
+var VoucherHeader = require('../models/voucherheader');
+var VoucherBody = require('../models/voucherbody');
+var VoucherRoute = require('../models/voucherroute');
 
 exports.load_acc_cus_dep_ord_user_list = function(req, res) {
   var acc_list = [], cus_list = [], dep_list = [], ord_list = [], user_list = [];
@@ -137,12 +140,56 @@ exports.load_acc_cus_dep_cost_list = function(req, res) {
 }
 
 exports.voucher_add = function(req, res) {
-  Voucher.add(req.body.vo_id, req.user.email, JSON.stringify(req.body.data), function(err, result) {
-    if(err) {
-      res.status(500).send({isSuccess: false});
-    } else {
-      res.status(200).send({isSuccess: true, status: result});
+  var header = req.body.data.header;
+  var body = req.body.data.body;
+  var top = req.body.data.top;
+  new Promise((resolve, reject) => {
+    VoucherHeader.add(header, function(err, result) {
+      if(err) {
+        reject(err);
+      } else {
+        if(result == false) {
+          resolve(result);
+        } else {
+          resolve(result);
+        }        
+      }
+    })
+  }).then((header_id) => {
+    if(header_id == false) {
+      res.status(200).send({isSuccess: false});
+      return;      
     }
+    var p = [];
+    p.push(
+      new Promise((resolve, reject) => {
+        VoucherRoute.add(header_id, top, function(err) {
+          if(err) {
+            reject(err);
+          } else {
+            resolve();
+          }
+        })
+      })
+    )
+    for(var i = 0; i<body.length; i++) {
+      p.push(
+        new Promise((resolve, reject) => {
+          VoucherBody.add(header_id, body[i], function(err) {
+            if(err) {
+              reject(err);
+            } else {
+              resolve();
+            }
+          })
+        })
+      )
+    }
+    Promise.all(p).then(() => {
+      res.status(200).send({isSuccess: true});
+    }).catch(err => {
+      res.status(500).send();
+    })
   })
 }
 
@@ -151,7 +198,7 @@ exports.generate_id = function(req, res) {
   var date = req.query.date;  
   const search = function(id) {
     var vid = date+dpt+'00'+id;
-    Voucher.fine_one_Vidx(vid, function(err, result) {
+    VoucherHeader.fine_one_Vidx(vid, function(err, result) {
       if(err) {
         res.status(500);
       } else if(result) {
@@ -165,37 +212,98 @@ exports.generate_id = function(req, res) {
 }
 
 exports.voucher_list = function(req, res) {
-  Voucher.find_all(function(err, rows) {
+  Voucher.find(req.body, function(err, list) {
     if(err) {
       res.status(500).send({isSuccess: false});
-    } else {
-      var list = [];
-      for(var i = 0; i < rows.length; i++) {
-        rows[i].Txt = JSON.parse(rows[i].Txt);
-        list.push(rows[i]);
-      }
+    } else {      
       res.status(200).send({isSuccess: true, list: list});
     }
   })
 }
 exports.voucher_detail = function(req, res) {
-  Voucher.fine_one(req.body.Idx, function(err, row) {
-    if(err) {
-      res.status(500).send({isSuccess: false});
-    } else {
-      row.Txt = JSON.parse(row.Txt);
-      res.status(200).send({isSuccess: true, data: row});
-    }
+  var p = [];
+  p.push(
+    new Promise((resolve, reject) => {
+      VoucherHeader.get(req.body.Idx, function(err, rows) {
+        if(err) {
+          reject(err);
+        } else {
+          resolve(rows[0]);
+        }
+      })
+    })
+  )
+  p.push(
+    new Promise((resolve, reject) => {
+      VoucherBody.get(req.body.Idx, function(err, rows) {
+        if(err) {
+          reject(err);
+        } else {
+          resolve(rows);
+        }
+      })
+    })
+  )
+  p.push(
+    new Promise((resolve, reject) => {
+      VoucherRoute.get(req.body.Idx, function(err, rows) {
+        if(err) {
+          reject(err);
+        } else {
+          resolve(rows[0]);
+        }
+      })
+    })
+  )
+  Promise.all(p).then((data) => {
+    console.log(data);
+    res.status(200).send({
+      isSuccess: true,
+      header: data[0],
+      body: data[1],
+      top: data[2]
+    })
+  }).catch(err => {
+    res.status(500).send();
   })
 }
 exports.voucher_update = function(req, res) {
-  Voucher.update(req.body.vo_id, req.user.email, JSON.stringify(req.body.data), req.body.oldIdx, function(err, row) {
-    if(err) {
-      res.status(500).send({isSuccess: false});
-    } else {
-      res.status(200).send({isSuccess: true});
-    }
-  })
+  var p = [];
+  p.push(
+    new Promise((resolve, reject) => {
+      VoucherHeader.update(req.body.header, function(err) {
+        if(err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      })
+    })
+  );
+  p.push(
+    new Promise((resolve, reject) => {
+      VoucherRoute.update(req.body.top, function(err) {
+        if(err) reject(err);
+        else resolve();
+      })
+    })
+  )
+  for(var i = 0; i < req.body.body.length; i++) {
+    p.push(
+      new Promise((resolve, reject) => {
+        VoucherBody.update(req.body.body[i], req.body.header.oldid, function(err) {
+          if(err) reject(err);
+          else resolve();
+        })
+      })
+    )
+  }
+  Promise.all(p).then(()=>{
+    res.status(200).send({isSuccess: true});
+  }).catch(err => {
+    console.log(err);
+    res.status(500).send();
+  })  
 }
 exports.report_list = function(req, res) {
   var getAmount = function(body) {
@@ -216,7 +324,7 @@ exports.report_list = function(req, res) {
     for(var i = 0; i < list.length; i++) {
       var b = true;
       for(var j = 0; j < tmp.length; j++) {
-        if(list[i].AccountIdx == tmp[j].AccountIdx) {
+        if(list[i].acc_idx == tmp[j].acc_idx) {
           tmp[j].m1 += list[i].m1;
           tmp[j].m2 += list[i].m2;
           tmp[j].m3 += list[i].m3;
@@ -241,15 +349,20 @@ exports.report_list = function(req, res) {
     if(err) {
       res.status(500).send({isSuccess: false});
     } else {
-      var list = [];      
+      var list = [];
+      if(req.body.department) {
+        rows = rows.filter(v => {
+          return v.DeptIdx == req.body.department.DeptIdx;
+        })
+      }
+      
       for(var i = 0; i < rows.length; i++) {
-        rows[i].Txt = JSON.parse(rows[i].Txt);
-        var m = getMonth(rows[i].Txt.header.fetcha);
-        var amount = getAmount(rows[i].Txt.body);
-        var year = getYear(rows[i].Txt.header.fetcha);
+        var m = getMonth(rows[i].Fetcha);
+        var amount = rows[i].sum;
+        var year = getYear(rows[i].Fetcha);
         if(year != req.body.year.YearName) continue;
         list.push({
-          'acc_idx': rows[i].Txt.header.cuenta.Idx,
+          'acc_idx': rows[i].Cuenta,
           'm1': m==1?amount:0,
           'm2': m==2?amount:0,
           'm3': m==3?amount:0,
@@ -262,7 +375,7 @@ exports.report_list = function(req, res) {
           'm10': m==10?amount:0,
           'm11': m==11?amount:0,
           'm12': m==12?amount:0,
-        });
+        });        
       }
       var tmp = groupByAccount(list);
       res.status(200).send({isSuccess: true, list: tmp});
@@ -276,31 +389,25 @@ exports.vouchers = function(req, res) {
   const getMonth = function(d) {
     return new Date(d).getMonth() + 1;
   }
-  Voucher.find_all(function(err, rows) {
+  Voucher.find({}, function(err, list) {
     if(err) {
       res.status(500).send({isSuccess: false});
-    } else {
-      var list = [];
-      for(var i = 0; i < rows.length; i++) {
-        rows[i].Txt = JSON.parse(rows[i].Txt);
-        list.push(rows[i]);
-      }      
+    } else { 
       // Filter By Account
       list = list.filter(v => {
-        return Number(v.Txt.header.cuenta.Idx) == Number(req.body.acc);
-      })
-      console.log(list);
+        return Number(v.Cuenta) == Number(req.body.acc);
+      })      
       //Filter By Year
       list = list.filter(v => {
-        return getYear(v.Txt.header.fetcha) == req.body.year;
+        return getYear(v.Fetcha) == req.body.year;
       })
       // Filter By Month
       if(req.body.month != 0) {
         list = list.filter(v => {
-          return getMonth(v.Txt.header.fetcha) == req.body.month;
+          return getMonth(v.Fetcha) == req.body.month;
         })
       }
       res.status(200).send({isSuccess: true, list: list});
     }
-  })
+  })  
 }

@@ -3311,7 +3311,7 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\n.mt-40 {\n  margin-top: -40px;\n}\n.hide-body .card-body .row{\n  display: none;\n}\n.hide-body .card-body{\n  padding: 0px !important;\n}\n.hide-body .card-body .mt-40{\n  margin-top: -25px;\n  padding-right: 15px;\n}\ni {\n  cursor: pointer;\n}  \n", ""]);
+exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\n.mt-40 {\n  margin-top: -40px;\n}\n.hide-body .card-body .row{\n  display: none;\n}\n.hide-body .card-body{\n  padding: 0px !important;\n}\n.hide-body .card-body .mt-40{\n  margin-top: -25px;\n  padding-right: 15px;\n}\ni {\n  cursor: pointer;\n}\n.card-folder {\n   height: 34px;\n   margin-top: -40px;\n   cursor: pointer;\n}\n", ""]);
 
 // exports
 
@@ -3336,6 +3336,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_src_const_js__ = __webpack_require__(753);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_components_plugins_DataTable_DataTable_vue__ = __webpack_require__(821);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_components_plugins_DataTable_DataTable_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_components_plugins_DataTable_DataTable_vue__);
+//
 //
 //
 //
@@ -3566,27 +3567,24 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
           _this.rowdata = [];
           for (var i = 0; i < res.data.list.length; i++) {
             var tmp = res.data.list[i];
-            console.log(tmp);
             _this.rowdata.push({
-              'acc_code': tmp.Txt.header.cuenta.AccountIdx,
-              'acc_name': tmp.Txt.header.cuenta.AccountName,
-              'cost': _this.costcenterName(tmp.CostcenterIdx),
-              'dept': tmp.Txt.header.departmento.DeptName,
+              'acc_code': _this.getAccountCode(tmp.Cuenta),
+              'acc_name': _this.getAccountName(tmp.Cuenta),
+              'cost': '',
+              'dept': _this.getDeptName(tmp.DeptIdx),
               'team': '',
-              'voucher': tmp.Txt.header.voucher,
-              'iss_date': _this.formatDate(tmp.Txt.header.fetcha),
-              'cust': tmp.Txt.header.proveedor.CustName,
-              'cur': tmp.Txt.header.currency.Name,
-              'amount': _this.getAmount(tmp.Txt.body),
-              'p_type': tmp.Txt.header.forma.Name,
-              'purchase': tmp.Txt.header.compora,
-              'file': '',
+              'voucher': tmp.Voucher,
+              'iss_date': _this.formatDate(tmp.Fetcha),
+              'cust': _this.getCustomerName(tmp.Proveedor),
+              'cur': _this.getCurrencyName(tmp.Currency),
+              'amount': tmp.sum,
+              'p_type': '',
+              'purchase': '',
+              'file': tmp.file.substr(0, tmp.file.length - 1),
               "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
             });
-            console.log(_this.rowdata);
           }
         }
-
         __WEBPACK_IMPORTED_MODULE_5_src_store_store__["a" /* default */].commit('changeLoading', false);
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
@@ -3599,7 +3597,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       this.b_fold = false;
     },
     unfold_search_panel: function unfold_search_panel() {
-      this.b_fold = true;
+      this.b_fold = !this.b_fold;
     },
     load_acc_cost_dept_cust: function load_acc_cost_dept_cust() {
       var _this2 = this;
@@ -3641,6 +3639,41 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         sum += Number(body[i].cantidad) * Number(body[i].unitario);
       }
       return sum;
+    },
+    getAccountCode: function getAccountCode(Idx) {
+      for (var i = 0; i < this.acc_options.length; i++) {
+        if (this.acc_options[i].Idx == Idx) return this.acc_options[i].AccountIdx;
+      }
+      return null;
+    },
+    getAccountName: function getAccountName(Idx) {
+      for (var i = 0; i < this.acc_options.length; i++) {
+        if (this.acc_options[i].Idx == Idx) return this.acc_options[i].AccountName;
+      }
+      return null;
+    },
+    getDeptName: function getDeptName(Idx) {
+      for (var i = 0; i < this.dept_options.length; i++) {
+        if (this.dept_options[i].DeptIdx == Idx) {
+          return this.dept_options[i].DeptName;
+        }
+      }
+      return null;
+    },
+    getCustomerName: function getCustomerName(Idx) {
+      for (var i = 0; i < this.cust_options.length; i++) {
+        if (this.cust_options[i].CustIdx == Idx) return this.cust_options[i].CustName;
+      }
+      return null;
+    },
+    getCurrencyName: function getCurrencyName(Idx) {
+      for (var i = 0; i < this.cur_options.length; i++) {
+        if (this.cur_options[i].Idx == Idx) return this.cur_options[i].Name;
+      }
+      return null;
+    },
+    warnMsg: function warnMsg(type, msg, title) {
+      __WEBPACK_IMPORTED_MODULE_4_mini_toastr__["a" /* default */][type](msg, title);
     }
   },
   mounted: function mounted() {
@@ -3670,27 +3703,14 @@ var render = function() {
             attrs: { header: "Search...", "header-tag": "h4" }
           },
           [
-            _vm.b_fold
-              ? _c("i", {
-                  staticClass: "fa fa-arrow-up text-info pull-right mt-40",
-                  on: {
-                    click: function($event) {
-                      _vm.fold_search_panel()
-                    }
-                  }
-                })
-              : _vm._e(),
-            _vm._v(" "),
-            !_vm.b_fold
-              ? _c("i", {
-                  staticClass: "fa fa-arrow-down text-info pull-right mt-40",
-                  on: {
-                    click: function($event) {
-                      _vm.unfold_search_panel()
-                    }
-                  }
-                })
-              : _vm._e(),
+            _c("h4", {
+              staticClass: "card-folder",
+              on: {
+                click: function($event) {
+                  _vm.unfold_search_panel()
+                }
+              }
+            }),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c(

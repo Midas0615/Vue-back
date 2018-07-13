@@ -13153,8 +13153,18 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         //   doExtended();
         // });   
       };
-      __WEBPACK_IMPORTED_MODULE_5_html2canvas___default()(this.$refs.pdf).then(function (canvas) {
-        var context = canvas.getContext('2d');
+      var w = 3220 * 2;
+      var h = 2216 * 2;
+      var canvas = document.createElement('canvas');
+      canvas.width = w * 5;
+      canvas.height = h * 5;
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      var context = canvas.getContext('2d');
+      context.scale(5, 5);
+      __WEBPACK_IMPORTED_MODULE_5_html2canvas___default()(this.$refs.pdf, { canvas: canvas }).then(function (canvas) {
+        console.log(canvas);
+        // var context = canvas.getContext('2d');
         var imgData = canvas.toDataURL("image/jpeg", 1.0);
         var pdf = new __WEBPACK_IMPORTED_MODULE_6_jspdf___default.a('l', 'mm', [415, 295]);
         pdf.addImage(imgData, 'JPEG', 0, 0);

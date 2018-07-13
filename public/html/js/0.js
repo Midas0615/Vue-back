@@ -8472,22 +8472,25 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         director_general: null,
         d_director: null,
         d_director_general: null,
-        d_presidente: null
+        d_presidente: null,
+        oldid: null
       },
       header_model: {
         departmento: null,
-        fetcha: new Date(),
+        fetcha: null,
         voucher: null,
         cuenta: null,
         proveedor: null,
-        forma: { Name: 'Check', Idx: 1 },
+        forma: null,
         credit_limit: null,
-        copora: null,
+        compora: null,
         cheque: null,
         banco_nombre: null,
         buyer: null,
         banco_cuenta: null,
-        currency: null
+        currency: null,
+        paper_no: null,
+        oldid: null
       },
       body_model: [],
       model: {
@@ -8498,12 +8501,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         descripcion_title: null,
         descripcion_body: null,
         cantidad: null,
-        unitario: null
+        unitario: null,
+        oldid: null
       },
       user_options: [],
       admin_user_options: [],
       dept_options: [],
       acc_options: [],
+      cus_list: [],
       cus_options: [], // except classi 24
       forma_options: [{ Name: 'Check', Idx: 1 }, { Name: 'Cash', Idx: 2 }, { Name: 'Wire Transfer', Idx: 3 }],
       bank_options: [],
@@ -8536,19 +8541,23 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       });
     },
     save: function save() {
+      var _this = this;
+
+      if (this.header_model.voucher == null) {
+        this.warnMsg('warn', 'Please insert voucher number.', 'Warn!');
+        return;
+      }
       __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', true);
-      var data = {
-        top: this.top_model,
-        header: this.header_model,
-        body: this.body_model
-      };
-      axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/voucher_update', { data: data, vo_id: this.header_model.voucher, oldIdx: this.oldIdx }).then(function (res) {
+      axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/voucher_update', { top: this.top_model, header: this.header_model, body: this.body_model }).then(function (res) {
         __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
+        _this.warnMsg('success', 'Successfully updated.', 'Success!');
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
           __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('logout');
+          _this.warnMsg('error', 'Authentication Error.', 'Error!');
         };
         __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
+        _this.warnMsg('error', 'Internal Server Error.', 'Error!');
       });
     },
     add_detail: function add_detail() {
@@ -8558,11 +8567,11 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       this.body_model.pop();
     },
     selectDepart: function selectDepart() {
-      var _this = this;
+      var _this2 = this;
 
       if (this.header_model.departmento != null) {
         this.admin_user_options = this.user_options.filter(function (v) {
-          return v.DeptIdx == _this.header_model.departmento.DeptIdx;
+          return v.DeptIdx == _this2.header_model.departmento.DeptIdx;
         });
       } else {
         this.admin_user_options = this.user_options;
@@ -8589,16 +8598,103 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       }
       return sum;
     },
+    getUser: function getUser(Idx) {
+      for (var i = 0; i < this.user_options.length; i++) {
+        if (this.user_options[i].UserIdx == Idx) return this.user_options[i];
+      }
+      return null;
+    },
+    getAccount: function getAccount(Idx) {
+      for (var i = 0; i < this.acc_options.length; i++) {
+        if (this.acc_options[i].Idx == Idx) return this.acc_options[i];
+      }
+      return null;
+    },
+    getCustomer: function getCustomer(Idx) {
+      for (var i = 0; i < this.cus_list.length; i++) {
+        if (this.cus_list[i].CustIdx == Idx) return this.cus_list[i];
+      }
+      return null;
+    },
+    getForma: function getForma(Idx) {
+      for (var i = 0; i < this.forma_options.length; i++) {
+        if (this.forma_options[i].Idx == Idx) return this.forma_options[i];
+      }
+      return null;
+    },
+    getBank: function getBank(Idx) {
+      for (var i = 0; i < this.bank_options.length; i++) {
+        if (this.bank_options[i].Idx == Idx) return this.bank_options[i];
+      }
+      return null;
+    },
+    getCurrency: function getCurrency(Idx) {
+      for (var i = 0; i < this.currency_options.length; i++) {
+        if (this.currency_options[i].Idx == Idx) return this.currency_options[i];
+      }
+      return null;
+    },
+    getFile: function getFile(Idx) {
+      for (var i = 0; i < this.order_options.length; i++) {
+        if (this.order_options[i].Idx == Idx) return this.order_options[i];
+      }
+      return null;
+    },
+    getDepartmento: function getDepartmento(Idx) {
+      for (var i = 0; i < this.dept_options.length; i++) {
+        if (this.dept_options[i].DeptIdx == Idx) return this.dept_options[i];
+      }
+      return null;
+    },
     loadVoucherDetail: function loadVoucherDetail(idx) {
-      var _this2 = this;
+      var _this3 = this;
 
       this.oldIdx = idx;
       __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', true);
       axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/voucher_detail', { Idx: idx }).then(function (res) {
         if (res.data.isSuccess) {
-          _this2.top_model = res.data.data.Txt.top;
-          _this2.header_model = res.data.data.Txt.header;
-          _this2.body_model = res.data.data.Txt.body;
+          _this3.top_model = {
+            encargador: _this3.getUser(res.data.top.Encargador),
+            gerente: _this3.getUser(res.data.top.Gerente),
+            director: _this3.getUser(res.data.top.Director),
+            director_general: _this3.getUser(res.data.top.Director_General),
+            d_director: _this3.getUser(res.data.top.D_Director),
+            d_director_general: _this3.getUser(res.data.top.D_Director_General),
+            d_presidente: _this3.getUser(res.data.top.D_Presidente),
+            oldid: res.data.top.Idx
+          };
+          _this3.header_model = {
+            departmento: _this3.getDepartmento(res.data.header.DeptIdx),
+            fetcha: new Date(res.data.header.Fetcha),
+            voucher: res.data.header.Voucher,
+            cuenta: _this3.getAccount(res.data.header.Cuenta),
+            proveedor: _this3.getCustomer(res.data.header.Proveedor),
+            forma: _this3.getForma(res.data.header.Forma),
+            credit_limit: res.data.header.C_Limit,
+            compora: res.data.header.Compora,
+            cheque: res.data.header.Cheque,
+            banco_nombre: _this3.getCustomer(res.data.header.Banco_Nombre),
+            buyer: _this3.getCustomer(res.data.header.Buyer),
+            banco_cuenta: res.data.header.Banco_Cuenta,
+            currency: _this3.getCurrency(res.data.header.Currency),
+            paper_no: res.data.header.Paper_No,
+            oldid: res.data.header.Idx
+          };
+          console.log(_this3.header_model.cuenta);
+          _this3.body_model = [];
+          for (var i = 0; i < res.data.body.length; i++) {
+            _this3.body_model.push({
+              file: _this3.getFile(res.data.body[i].File),
+              buyer: _this3.getCustomer(res.data.body[i].Buyer),
+              reg: res.data.body[i].Reg,
+              fact: res.data.body[i].Fact,
+              descripcion_title: res.data.body[i].Descripcion_Title,
+              descripcion_body: res.data.body[i].Descripcion_Body,
+              cantidad: res.data.body[i].Cantidad,
+              unitario: res.data.body[i].Unitario,
+              oldid: res.data.body[i].Idx
+            });
+          }
         }
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
@@ -8606,35 +8702,41 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         };
         __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
       });
+    },
+    warnMsg: function warnMsg(type, msg, title) {
+      __WEBPACK_IMPORTED_MODULE_3_mini_toastr__["a" /* default */][type](msg, title);
     }
   },
   mounted: function mounted() {
-    var _this3 = this;
+    var _this4 = this;
 
     __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', true);
     axios.post(__WEBPACK_IMPORTED_MODULE_7_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_ord_user_list').then(function (res) {
-      _this3.dept_options = res.data.dep_list;
-      _this3.cus_options = res.data.cus_list.filter(function (v) {
+      _this4.dept_options = res.data.dep_list;
+      _this4.cus_list = res.data.cus_list;
+      _this4.cus_options = res.data.cus_list.filter(function (v) {
         return v.Classification != 24;
       });
-      _this3.buyer_options = res.data.cus_list.filter(function (v) {
+      _this4.buyer_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 24;
       });
-      _this3.order_options = res.data.ord_list;
-      _this3.bank_options = res.data.cus_list.filter(function (v) {
+      _this4.order_options = res.data.ord_list;
+      _this4.bank_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 28;
       });
-      _this3.acc_options = res.data.acc_list;
-      _this3.user_options = res.data.user_list;
-      _this3.admin_user_options = _this3.user_options;
+      _this4.acc_options = res.data.acc_list;
+      _this4.user_options = res.data.user_list;
+      _this4.admin_user_options = _this4.user_options;
 
-      _this3.loadVoucherDetail(_this3.$route.query.id);
+      _this4.loadVoucherDetail(_this4.$route.query.id);
       __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
     }).catch(function (err) {
       if (err.response && err.response.status == 401) {
         __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('logout');
+        _this4.warnMsg('error', 'Authentication Error.', 'Error!');
       };
       __WEBPACK_IMPORTED_MODULE_6_src_store_store__["a" /* default */].commit('changeLoading', false);
+      _this4.warnMsg('error', 'Internal Server Error.', 'Error!');
     });
   }
 });
@@ -8693,6 +8795,42 @@ var render = function() {
                       "b-tabs",
                       [
                         _c("b-tab", { attrs: { title: "1.HEADER INFO" } }, [
+                          _c("div", { staticClass: "row m-0 p-3" }, [
+                            _c("div", { staticClass: "col-sm-4 col-md-3" }, [
+                              _c("div", { staticClass: "form-group" }, [
+                                _c("label", [_vm._v("Paper#")]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.header_model.paper_no,
+                                      expression: "header_model.paper_no"
+                                    }
+                                  ],
+                                  staticClass: "form-control c-input",
+                                  attrs: { type: "text" },
+                                  domProps: {
+                                    value: _vm.header_model.paper_no
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.header_model,
+                                        "paper_no",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
                           _c("div", { staticClass: "row m-0 p-3" }, [
                             _c("div", { staticClass: "col-sm-4 col-md-3" }, [
                               _c(
@@ -9517,42 +9655,6 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("b-tab", { attrs: { title: "3.APPROVAL ROUTE" } }, [
-                          _c("div", { staticClass: "row m-0 pt-3" }, [
-                            _c("div", { staticClass: "col-sm-4 col-md-3" }, [
-                              _c("div", { staticClass: "form-group" }, [
-                                _c("label", [_vm._v("Paper#")]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.header_model.paper_no,
-                                      expression: "header_model.paper_no"
-                                    }
-                                  ],
-                                  staticClass: "form-control c-input",
-                                  attrs: { type: "text" },
-                                  domProps: {
-                                    value: _vm.header_model.paper_no
-                                  },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.header_model,
-                                        "paper_no",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                })
-                              ])
-                            ])
-                          ]),
-                          _vm._v(" "),
                           _c(
                             "div",
                             {
@@ -10096,8 +10198,8 @@ var render = function() {
                       _c("td", [
                         _vm._v(
                           _vm._s(
-                            _vm.header_model.codigo
-                              ? _vm.header_model.codigo.AccountIdx
+                            _vm.header_model.cuenta
+                              ? _vm.header_model.cuenta.AccountIdx
                               : ""
                           )
                         )
@@ -10123,7 +10225,7 @@ var render = function() {
                         _vm._v(
                           _vm._s(
                             _vm.header_model.forma
-                              ? _vm.header_model.forma.CustName
+                              ? _vm.header_model.forma.Name
                               : ""
                           )
                         )
@@ -10191,7 +10293,7 @@ var render = function() {
                           _vm._v(
                             _vm._s(
                               _vm.body_model[index].file
-                                ? _vm.body_model[index].file.Name
+                                ? _vm.body_model[index].file.Fileno
                                 : ""
                             )
                           )

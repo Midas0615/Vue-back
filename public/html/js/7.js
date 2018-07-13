@@ -2091,7 +2091,13 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
         field: 'button',
         numeric: false,
         html: true
-      }]
+      }],
+      acc_options: [],
+      cost_options: [],
+      dept_options: [],
+      cust_options: [],
+      cur_options: [{ Name: 'Q', Idx: 1 }, { Name: '$', Idx: 2 }],
+      pay_options: [{ Name: 'Check', Idx: 1 }, { Name: 'Cash', Idx: 2 }, { Name: 'Wire Transfer', Idx: 3 }]
     };
   },
 
@@ -2111,48 +2117,104 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
         sum += Number(body[i].cantidad) * Number(body[i].unitario);
       }
       return sum;
+    },
+    getAccountCode: function getAccountCode(Idx) {
+      for (var i = 0; i < this.acc_options.length; i++) {
+        if (this.acc_options[i].Idx == Idx) return this.acc_options[i].AccountIdx;
+      }
+      return null;
+    },
+    getAccountName: function getAccountName(Idx) {
+      for (var i = 0; i < this.acc_options.length; i++) {
+        if (this.acc_options[i].Idx == Idx) return this.acc_options[i].AccountName;
+      }
+      return null;
+    },
+    getDeptName: function getDeptName(Idx) {
+      for (var i = 0; i < this.dept_options.length; i++) {
+        if (this.dept_options[i].DeptIdx == Idx) {
+          return this.dept_options[i].DeptName;
+        }
+      }
+      return null;
+    },
+    getCustomerName: function getCustomerName(Idx) {
+      for (var i = 0; i < this.cust_options.length; i++) {
+        if (this.cust_options[i].CustIdx == Idx) return this.cust_options[i].CustName;
+      }
+      return null;
+    },
+    getCurrencyName: function getCurrencyName(Idx) {
+      for (var i = 0; i < this.cur_options.length; i++) {
+        if (this.cur_options[i].Idx == Idx) return this.cur_options[i].Name;
+      }
+      return null;
+    },
+    warnMsg: function warnMsg(type, msg, title) {
+      __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */][type](msg, title);
+    },
+    load_acc_cost_dept_cust: function load_acc_cost_dept_cust() {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', true);
+      axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_cost_list').then(function (res) {
+        _this.dept_options = res.data.dep_list;
+        _this.cust_options = res.data.cus_list;
+        _this.acc_options = res.data.acc_list;
+        _this.cost_options = res.data.cost_list;
+        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        _this.load_data();
+      }).catch(function (err) {
+        if (err.response && err.response.status == 401) {
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('logout');
+        };
+        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+      });
+    },
+    load_data: function load_data() {
+      var _this2 = this;
+
+      __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', true);
+      var search_model = {
+        year: this.$route.query.year,
+        month: this.$route.query.month,
+        acc: this.$route.query.acc
+      };
+      axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/voucher/vouchers', search_model).then(function (res) {
+        if (res.data.isSuccess) {
+          _this2.rowdata = [];
+          for (var i = 0; i < res.data.list.length; i++) {
+            var tmp = res.data.list[i];
+            _this2.rowdata.push({
+              'acc_code': _this2.getAccountCode(tmp.Cuenta),
+              'acc_name': _this2.getAccountName(tmp.Cuenta),
+              'cost': '',
+              'dept': _this2.getDeptName(tmp.DeptIdx),
+              'team': '',
+              'voucher': tmp.Voucher,
+              'iss_date': _this2.formatDate(tmp.Fetcha),
+              'cust': _this2.getCustomerName(tmp.Proveedor),
+              'cur': _this2.getCurrencyName(tmp.Currency),
+              'amount': tmp.sum,
+              'p_type': '',
+              'purchase': '',
+              'file': tmp.file.substr(0, tmp.file.length - 1),
+              "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
+            });
+            console.log(_this2.rowdata);
+          }
+        }
+        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+      }).catch(function (err) {
+        if (err.response && err.response.status == 401) {
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('logout');
+        };
+        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+      });
     }
   },
   mounted: function mounted() {
-    var _this = this;
-
-    __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', true);
-    var search_model = {
-      year: this.$route.query.year,
-      month: this.$route.query.month,
-      acc: this.$route.query.acc
-    };
-    axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/voucher/vouchers', search_model).then(function (res) {
-      if (res.data.isSuccess) {
-        _this.rowdata = [];
-        for (var i = 0; i < res.data.list.length; i++) {
-          var tmp = res.data.list[i];
-          _this.rowdata.push({
-            'acc_code': tmp.Txt.header.cuenta.AccountIdx,
-            'acc_name': tmp.Txt.header.cuenta.AccountName,
-            'cost': tmp.CostcenterName,
-            'dept': tmp.Txt.header.departmento.DeptName,
-            'team': '',
-            'voucher': tmp.Txt.header.voucher,
-            'iss_date': _this.formatDate(tmp.Txt.header.fetcha),
-            'cust': tmp.Txt.header.proveedor.CustName,
-            'cur': tmp.Txt.header.currency.Name,
-            'amount': _this.getAmount(tmp.Txt.body),
-            'p_type': tmp.Txt.header.forma.Name,
-            'purchase': tmp.Txt.header.compora,
-            'file': '',
-            "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
-          });
-          console.log(_this.rowdata);
-        }
-      }
-      __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
-    }).catch(function (err) {
-      if (err.response && err.response.status == 401) {
-        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('logout');
-      };
-      __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
-    });
+    this.load_acc_cost_dept_cust();
   }
 });
 

@@ -8486,7 +8486,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         proveedor: null,
         forma: { Name: 'Check', Idx: 1 },
         credit_limit: null,
-        copora: null,
+        compora: null,
         cheque: null,
         banco_nombre: null,
         buyer: null,
@@ -8503,7 +8503,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         descripcion_title: null,
         descripcion_body: null,
         cantidad: null,
-        unitario: null
+        unitario: null,
+        oldid: null
       },
       user_options: [],
       admin_user_options: [],
@@ -8540,6 +8541,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       });
     },
     save: function save() {
+      var _this = this;
+
+      if (this.header_model.voucher == null) {
+        this.warnMsg('warn', 'Please insert voucher number.', 'Warn!');
+        return;
+      }
       __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', true);
       var data = {
         top: this.top_model,
@@ -8547,13 +8554,19 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         body: this.body_model
       };
       axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/voucher/voucher_add', { data: data, vo_id: this.header_model.voucher }).then(function (res) {
-        console.log(res);
         __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
+        if (res.data.isSuccess == false) {
+          _this.warnMsg('warn', 'Same data exsited.', 'Warn!');
+        } else {
+          _this.warnMsg('success', 'Successfully saved.', 'Success!');
+        }
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
           __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('logout');
+          _this.warnMsg('error', 'Authentication Error.', 'Error!');
         };
         __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
+        _this.warnMsg('error', 'Internal Server Error.', 'Error!');
       });
     },
     add_detail: function add_detail() {
@@ -8563,22 +8576,25 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       this.body_model.pop();
     },
     setVId: function setVId() {
-      var _this = this;
+      var _this2 = this;
 
       axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/voucher/generate_id?dpt=' + this.header_model.departmento.DeptIdx + '&date=' + this.formatDateYYMMDD(new Date())).then(function (res) {
-        _this.header_model.voucher = _this.formatDateYYMMDD(new Date()) + _this.header_model.departmento.DeptIdx + res.data.id;
+        _this2.header_model.voucher = _this2.formatDateYYMMDD(new Date()) + _this2.header_model.departmento.DeptIdx + res.data.id;
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
           __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('logout');
-        };
+          _this2.warnMsg('error', 'Authentication Error.', 'Error!');
+        } else {
+          _this2.warnMsg('error', 'Internal Server Error.', 'Error!');
+        }
       });
     },
     selectDepart: function selectDepart() {
-      var _this2 = this;
+      var _this3 = this;
 
       if (this.header_model.departmento != null) {
         this.admin_user_options = this.user_options.filter(function (v) {
-          return v.DeptIdx == _this2.header_model.departmento.DeptIdx;
+          return v.DeptIdx == _this3.header_model.departmento.DeptIdx;
         });
         // Set Date
         this.setVId();
@@ -8616,37 +8632,42 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         sum += this.getMonto(i);
       }
       return sum;
+    },
+    warnMsg: function warnMsg(type, msg, title) {
+      __WEBPACK_IMPORTED_MODULE_4_mini_toastr__["a" /* default */][type](msg, title);
     }
   },
   mounted: function mounted() {
-    var _this3 = this;
+    var _this4 = this;
 
     __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', true);
     axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_ord_user_list').then(function (res) {
-      _this3.dept_options = res.data.dep_list;
+      _this4.dept_options = res.data.dep_list;
       var dpt = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('depart');
-      for (var i = 0; i < _this3.dept_options.length; i++) {
-        if (dpt == _this3.dept_options[i].DeptIdx) _this3.header_model.departmento = _this3.dept_options[i];
+      for (var i = 0; i < _this4.dept_options.length; i++) {
+        if (dpt == _this4.dept_options[i].DeptIdx) _this4.header_model.departmento = _this4.dept_options[i];
       }
-      _this3.cus_options = res.data.cus_list.filter(function (v) {
+      _this4.cus_options = res.data.cus_list.filter(function (v) {
         return v.Classification != 24;
       });
-      _this3.buyer_options = res.data.cus_list.filter(function (v) {
+      _this4.buyer_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 24;
       });
-      _this3.order_options = res.data.ord_list;
-      _this3.bank_options = res.data.cus_list.filter(function (v) {
+      _this4.order_options = res.data.ord_list;
+      _this4.bank_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 28;
       });
-      _this3.acc_options = res.data.acc_list;
-      _this3.user_options = res.data.user_list;
-      _this3.admin_user_options = _this3.user_options;
+      _this4.acc_options = res.data.acc_list;
+      _this4.user_options = res.data.user_list;
+      _this4.admin_user_options = _this4.user_options;
       __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
     }).catch(function (err) {
       if (err.response && err.response.status == 401) {
         __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('logout');
+        _this4.warnMsg('error', 'Authentication Error.', 'Error!');
       };
       __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
+      _this4.warnMsg('error', 'Internal Server Error.', 'Error!');
     });
   }
 });
@@ -10108,8 +10129,8 @@ var render = function() {
                       _c("td", [
                         _vm._v(
                           _vm._s(
-                            _vm.header_model.codigo
-                              ? _vm.header_model.codigo.AccountIdx
+                            _vm.header_model.cuenta
+                              ? _vm.header_model.cuenta.AccountIdx
                               : ""
                           )
                         )
@@ -10135,7 +10156,7 @@ var render = function() {
                         _vm._v(
                           _vm._s(
                             _vm.header_model.forma
-                              ? _vm.header_model.forma.CustName
+                              ? _vm.header_model.forma.Name
                               : ""
                           )
                         )
@@ -10203,7 +10224,7 @@ var render = function() {
                           _vm._v(
                             _vm._s(
                               _vm.body_model[index].file
-                                ? _vm.body_model[index].file.Name
+                                ? _vm.body_model[index].file.Fileno
                                 : ""
                             )
                           )
