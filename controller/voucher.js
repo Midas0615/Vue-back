@@ -346,6 +346,7 @@ exports.report_list = function(req, res) {
     return tmp;
   }
   Voucher.find_all(function(err, rows) {
+    console.log(err);
     if(err) {
       res.status(500).send({isSuccess: false});
     } else {
