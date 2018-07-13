@@ -3567,6 +3567,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
           _this.rowdata = [];
           for (var i = 0; i < res.data.list.length; i++) {
             var tmp = res.data.list[i];
+            console.log(tmp);
             _this.rowdata.push({
               'acc_code': _this.getAccountCode(tmp.Cuenta),
               'acc_name': _this.getAccountName(tmp.Cuenta),
@@ -3580,7 +3581,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
               'amount': tmp.sum,
               'p_type': '',
               'purchase': '',
-              'file': tmp.file.substr(0, tmp.file.length - 1),
+              'file': tmp.file ? tmp.file.substr(0, tmp.file.length - 1) : null,
               "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
             });
           }

@@ -26,13 +26,13 @@ var find = function(body, callback) {
   
   if(arr.length > 0) {
     q = `SELECT voucherheader.*, sum(voucherbody.Cantidad*voucherbody.Unitario) as sum, CONCAT(iorderactual.Fileno, ",") as file FROM voucherheader
-         INNER JOIN voucherbody ON voucherbody.HeaderIdx = voucherheader.Idx
-         INNER JOIN iorderactual ON iorderactual.Idx = voucherbody.File` + q;
+         LEFT JOIN voucherbody ON voucherbody.HeaderIdx = voucherheader.Idx
+         LEFT JOIN iorderactual ON iorderactual.Idx = voucherbody.File` + q;
     q = q.substring(0, q.lastIndexOf(" "));
   } else {
     q = `SELECT voucherheader.*, sum(voucherbody.Cantidad*voucherbody.Unitario) as sum, CONCAT(iorderactual.Fileno, ",") as file FROM voucherheader
-         INNER JOIN voucherbody ON voucherbody.HeaderIdx = voucherheader.Idx
-         INNER JOIN iorderactual ON iorderactual.Idx = voucherbody.File`;
+         LEFT JOIN voucherbody ON voucherbody.HeaderIdx = voucherheader.Idx
+         LEFT JOIN iorderactual ON iorderactual.Idx = voucherbody.File`;
   }
   q += ` GROUP BY voucherheader.Idx`;  
   db.query(q, arr, function(err, rows) {
