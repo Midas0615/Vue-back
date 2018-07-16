@@ -202,8 +202,9 @@ exports.generate_id = function(req, res) {
 exports.voucher_list = function(req, res) {
   Voucher.find(req.body, function(err, list) {
     if(err) {
-      res.status(500).send({isSuccess: false});
-    } else {
+      console.log(err);
+      res.status(500).send();
+    } else {      
       res.status(200).send({isSuccess: true, list: list});
     }
   })
