@@ -11,132 +11,119 @@ var VoucherRoute = require('../models/voucherroute');
 var VoucherGroup = require('../models/vouchergroup');
 
 exports.load_acc_cus_dep_ord_user_list = function(req, res) {
-  var acc_list = [], cus_list = [], dep_list = [], ord_list = [], user_list = [];
-  new Promise((resolve, reject) => {
+  var p = [];
+  var p1 = new Promise((resolve, reject) => {
     Account.find_all(function(err, rows) {
       if(err) {
         reject(err);
       } else {
-        acc_list = rows;
-        resolve();
+        resolve(rows);
       }
     })
-  }).then(() => {
-    return new Promise((resolve, reject) => {
-      Customer.find_all(function(err, rows) {
-        if(err) {
-          reject(err);
-        } else {
-          cus_list = rows;
-          resolve();
-        }
-      })
-    })    
-  }).then(() => {
-    return new Promise((resolve, reject) => {
-      Department.find_all(function(err, rows) {
-        if(err) {
-          reject(err);
-        } else {
-          dep_list = rows;
-          resolve();
-        }
-      })
+  });
+  var p2 = new Promise((resolve, reject) => {
+    Customer.find_all(function(err, rows) {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
     })
-  }).then(() => {
-    return new Promise((resolve, reject) => {
-      OrderActual.find_all(function(err, rows) {
-        if(err) {
-          reject(err);
-        } else {
-          ord_list = rows;
-          resolve();
-        }
-      })
+  });
+  var p3 = new Promise((resolve, reject) => {
+    Department.find_all(function(err, rows) {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
     })
-  }).then(() => {
-    return new Promise((resolve, reject) => {
-      User.find_all(function(err, rows) {
-        if(err) {
-          reject(err);
-        } else {
-          user_list = rows;
-          resolve();
-        }
-      })
+  });
+  var p4 = new Promise((resolve, reject) => {
+    OrderActual.find_all(function(err, rows) {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
     })
-  }).then(() => {
+  });
+  var p5 = new Promise((resolve, reject) => {
+    User.find_all(function(err, rows) {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
+    })
+  })
+  p.push(p1, p2, p3, p4, p5);
+  Promise.all(p).then((data) => {
+    console.log(data);
     res.status(200).send({isSuccess: true,
-      acc_list: acc_list, cus_list: cus_list, dep_list: dep_list, ord_list: ord_list, user_list: user_list
+      acc_list: data[0], cus_list: data[1], dep_list: data[2], ord_list: data[3], user_list: data[4]
     });
   }).catch(err => {
     console.log(err);
-    res.status(200).send({isSuccess: false});
+    res.status(500).send({isSuccess: false});
   })
 }
 
 exports.load_acc_cus_dep_cost_list = function(req, res) {
-  var acc_list = [], cus_list = [], dep_list = [], cost_list = [], user_list = [];
-  new Promise((resolve, reject) => {
+  var p = [];
+  var p1 = new Promise((resolve, reject) => {
     Account.find_all(function(err, rows) {
       if(err) {
         reject(err);
       } else {
-        acc_list = rows;
-        resolve();
+        resolve(rows);
       }
     })
-  }).then(() => {
-    return new Promise((resolve, reject) => {
-      Customer.find_all(function(err, rows) {
-        if(err) {
-          reject(err);
-        } else {
-          cus_list = rows;
-          resolve();
-        }
-      })
-    })    
-  }).then(() => {
-    return new Promise((resolve, reject) => {
-      Department.find_all(function(err, rows) {
-        if(err) {
-          reject(err);
-        } else {
-          dep_list = rows;
-          resolve();
-        }
-      })
+  })
+  var p2 = new Promise((resolve, reject) => {
+    Customer.find_all(function(err, rows) {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
     })
-  }).then(() => {
-    return new Promise((resolve, reject) => {
-      CostCenter.find_all(function(err, rows) {
-        if(err) {
-          reject(err);
-        } else {
-          cost_list = rows;
-          resolve();
-        }
-      })
+  })
+  var p3 = new Promise((resolve, reject) => {
+    Department.find_all(function(err, rows) {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
     })
-  }).then(() => {
-    return new Promise((resolve, reject) => {
-      User.find_all(function(err, rows) {
-        if(err) {
-          reject(err);
-        } else {
-          user_list = rows;
-          resolve();
-        }
-      })
+  })
+  var p4 = new Promise((resolve, reject) => {
+    CostCenter.find_all(function(err, rows) {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
     })
-  }).then(() => {
+  })
+  var p5 = new Promise((resolve, reject) => {
+    User.find_all(function(err, rows) {
+      if(err) {
+        reject(err);
+      } else {
+        resolve(rows);
+      }
+    })
+  })
+  p.push(p1,p2,p3,p4,p5);
+  Promise.all(p).then((data) => {
     res.status(200).send({isSuccess: true,
-      acc_list: acc_list, cus_list: cus_list, dep_list: dep_list, cost_list: cost_list, user_list: user_list
+      acc_list: data[0], cus_list: data[1], dep_list: data[2], cost_list: data[3], user_list: data[4]
     });
   }).catch(err => {
     console.log(err);
-    res.status(200).send({isSuccess: false});
+    res.status(500).send({isSuccess: false});
   })
 }
 
