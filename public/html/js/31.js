@@ -1,4 +1,4 @@
-webpackJsonp([11],{
+webpackJsonp([31],{
 
 /***/ 739:
 /***/ (function(module, exports, __webpack_require__) {
@@ -58,8 +58,8 @@ module.exports = Component.exports
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  host: 'http://localhost:3000'
-  // host: 'http://35.168.158.241'
+  // host: 'http://localhost:3000'
+  host: 'http://35.168.158.241'
 });
 
 /***/ }),
@@ -726,6 +726,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
           _this7.warnMsg('error', 'Internal Server Error.', 'Error!');
         });
       }
+    },
+    warnMsg: function warnMsg(type, msg, title) {
+      __WEBPACK_IMPORTED_MODULE_3_mini_toastr__["a" /* default */][type](msg, title);
     }
   },
   mounted: function mounted() {

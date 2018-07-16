@@ -32,11 +32,21 @@ exports.load_dept_buyer = function(req, res){
 }
 
 exports.load_order_list = function(req, res){
-  OrderActual.find_all(function(err, list) {
+  OrderActual.find(req.body, function(err, list, total) {
     if(err) {
       res.status(500).send();
     } else {
-      res.status(200).send({isSuccess: true, list: list});
+      res.status(200).send({isSuccess: true, list: list, total: total});
+    }
+  })
+}
+
+exports.load_order = function(req, res) {
+  OrderActual.findOne(req.body.ordidx, function(err, rows) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send({isSuccess: true, info: rows[0]});
     }
   })
 }

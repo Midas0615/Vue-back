@@ -21,6 +21,12 @@ var Material = require('../models/material');
 var AdMaterial = require('../models/admaterial');
 var TestFG = require('../models/testfg');
 var Summary = require('../models/summary');
+var OrderAttachments = require('../models/attachments');
+
+var formidable = require('formidable');
+var fs = require('fs');
+var path = require('path');
+var uniqid = require('uniqid');
 
 exports.load_init = function(req, res) {
   var p1 = new Promise((resolve, reject) => {
@@ -451,6 +457,14 @@ exports.load = function(req, res) {
         }
       })
       break;
+    case 18:
+      OrderAttachments.load(req.body.ordidx, function(err, list) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true, list: list});
+        }
+      })      
   }
   
 }
@@ -577,6 +591,15 @@ exports.delete = function(req, res) {
       break;
     case 17:
       Summary.remove(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true})
+        }
+      })
+      break;
+    case 18:
+      OrderAttachments.remove(req.body, function(err) {
         if(err) {
           res.status(500).send();
         } else {
@@ -813,4 +836,35 @@ exports.confirm8 = function(req, res) {
       res.status(200).send({isSuccess: true});
     }
   })
+}
+exports.attachment = function(req, res) {
+  var form = new formidable.IncomingForm();
+  form.parse(req, function(err, fields, files) {
+    var filename;    
+    if(files.file != undefined){
+      filename = uniqid();
+      var old_path = files.file.path;
+      var file_size = files.file.size;
+      var file_ext = files.file.name.split('.').pop();
+      var new_path = path.join(appRoot, '/public/uploads/attachments/', filename + '.' + file_ext);
+      fs.readFile(old_path, function(err, data) {
+        fs.writeFile(new_path, data, function(err) {
+          fs.unlink(old_path, function(err) {
+            if (err) {
+              console.log('uploading failure!');
+            } else {
+              console.log('uploading success!');
+            }
+          });
+        });
+      });    
+      OrderAttachments.add(fields, filename + '.' + file_ext, function(err, result){
+        if(err){
+          res.json({isSuccess:false});
+        }else{
+          res.json({isSuccess:result});
+        }
+      })
+    }
+  });
 }

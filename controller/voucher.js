@@ -8,6 +8,7 @@ var Voucher = require('../models/voucher');
 var VoucherHeader = require('../models/voucherheader');
 var VoucherBody = require('../models/voucherbody');
 var VoucherRoute = require('../models/voucherroute');
+var VoucherGroup = require('../models/vouchergroup');
 
 exports.load_acc_cus_dep_ord_user_list = function(req, res) {
   var acc_list = [], cus_list = [], dep_list = [], ord_list = [], user_list = [];
@@ -215,7 +216,7 @@ exports.voucher_list = function(req, res) {
   Voucher.find(req.body, function(err, list) {
     if(err) {
       res.status(500).send({isSuccess: false});
-    } else {      
+    } else {
       res.status(200).send({isSuccess: true, list: list});
     }
   })
@@ -411,4 +412,146 @@ exports.vouchers = function(req, res) {
       res.status(200).send({isSuccess: true, list: list});
     }
   })  
+}
+// For Voucher List
+exports.load_acc = function(req, res) {
+  Account.find_all(function(err, rows) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send({isSuccess: true, list: rows});
+    }
+  })
+}
+exports.add_group = function(req, res){
+  VoucherGroup.add(req.body, function(err, isSuccess) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send({isSuccess: isSuccess});
+    }
+  })
+}
+exports.load_group = function(req, res) {
+  VoucherGroup.load_group(req.body.PIdx, function(err, list) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send({list: list});
+    }
+  })
+}
+exports.add_account = function(req, res) {
+  Account.setGroup(req.body, function(err) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send({isSuccess: true});
+    }
+  })
+}
+exports.group_remove = function(req, res) {
+  VoucherGroup.remove(req.body.Idx, function(err, list) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send();
+    }
+  })
+}
+exports.acc_group_remove = function(req, res) {
+  Account.removeGroup(req.body.Idx, function(err, list) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send();
+    }
+  })
+}
+exports.load_group_list = function(req, res) {
+  VoucherGroup.find_all(function(err, list) {
+    if(err) {
+      res.status(500).send();
+    } else {
+      res.status(200).send({list: list});
+    }
+  })
+}
+// For Voucher Report 2
+exports.report_list2 = function(req, res) {
+  var getAmount = function(body) {
+    var sum = 0;
+    for(var i = 0; i < body.length; i++) {
+      sum += (Number(body[i].cantidad) * Number(body[i].unitario));
+    }
+    return sum;
+  }
+  var getMonth = function(d) {
+    return new Date(d).getMonth()+1;
+  }
+  var getYear = function(d) {
+    return new Date(d).getYear()+1900;
+  }
+  var getWeek = function(d1) {
+    var d = new Date(d1);
+    var dayNum = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
+  }
+  var groupByAccount = function(list) {
+    var tmp = [];
+    for(var i = 0; i < list.length; i++) {
+      var b = true;
+      for(var j = 0; j < tmp.length; j++) {
+        if(req.body.type.Value == 1) {
+          if(list[i].acc_idx == tmp[j].acc_idx) {
+            list[i].amount += tmp[j].amount;          
+            b = false;
+            break;
+          }
+        } else if(req.body.type.Value == 2) {
+          if((list[i].acc_idx == tmp[j].acc_idx) && (list[i].month == tmp[j].month)) {
+            list[i].amount += tmp[j].amount;
+            b = false;
+            break;
+          }
+        } else if(req.body.type.Value == 3) {
+          if((list[i].acc_idx == tmp[j].acc_idx) && (list[i].week == tmp[j].week)) {
+            list[i].amount += tmp[j].amount;
+            b = false;
+            break;
+          }
+        }        
+      }
+      if(b) tmp.push(list[i]);
+    }
+    return tmp;
+  }
+  Voucher.find_all(function(err, rows) {
+    if(err) {
+      res.status(500).send({isSuccess: false});
+    } else {
+      var list = [];      
+      for(var i = 0; i < rows.length; i++) {
+        var m = getMonth(rows[i].Fetcha);
+        var amount = rows[i].sum;
+        var year = getYear(rows[i].Fetcha);
+        var week = getWeek(rows[i].Fetcha);        
+        if(year != req.body.year.Value) continue;
+        console.log(req.body);
+        if((req.body.type.Value == 2) && (m != req.body.month.Value)) continue;
+        if((req.body.type.Value == 3) && (week != req.body.week.Value)) continue;
+        list.push({
+          'acc_idx': rows[i].Cuenta,
+          'year': year,
+          'month': m,
+          'week': week,
+          'amount': amount
+        });
+      }
+      var tmp = groupByAccount(list);
+      res.status(200).send({isSuccess: true, list: tmp});
+    }
+  })
 }

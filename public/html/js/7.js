@@ -6,9 +6,9 @@ webpackJsonp([7],{
 var disposed = false
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(873)
+var __vue_script__ = __webpack_require__(874)
 /* template */
-var __vue_template__ = __webpack_require__(874)
+var __vue_template__ = __webpack_require__(875)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,18 +48,18 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 753:
+/***/ 751:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  // host: 'http://localhost:3000'
-  host: 'http://35.168.158.241'
+  host: 'http://localhost:3000'
+  // host: 'http://35.168.158.241'
 });
 
 /***/ }),
 
-/***/ 756:
+/***/ 757:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -336,19 +336,19 @@ const miniToastr = {
 
 /***/ }),
 
-/***/ 821:
+/***/ 822:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(822)
+  __webpack_require__(823)
 }
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(824)
+var __vue_script__ = __webpack_require__(825)
 /* template */
-var __vue_template__ = __webpack_require__(826)
+var __vue_template__ = __webpack_require__(827)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -388,13 +388,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 822:
+/***/ 823:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(823);
+var content = __webpack_require__(824);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -415,7 +415,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 823:
+/***/ 824:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -430,12 +430,12 @@ exports.push([module.i, "\n.pagination[data-v-91e48f20] {\n    margin-top: 12px;
 
 /***/ }),
 
-/***/ 824:
+/***/ 825:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fuse_js__ = __webpack_require__(825);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fuse_js__ = __webpack_require__(826);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fuse_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_fuse_js__);
 //
 //
@@ -691,7 +691,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 825:
+/***/ 826:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -1693,7 +1693,7 @@ module.exports = Fuse;
 
 /***/ }),
 
-/***/ 826:
+/***/ 827:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1984,17 +1984,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 873:
+/***/ 874:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mini_toastr__ = __webpack_require__(756);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mini_toastr__ = __webpack_require__(757);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_store_store__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_src_const_js__ = __webpack_require__(753);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_plugins_DataTable_DataTable_vue__ = __webpack_require__(821);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_src_const_js__ = __webpack_require__(751);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_plugins_DataTable_DataTable_vue__ = __webpack_require__(822);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_plugins_DataTable_DataTable_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_components_plugins_DataTable_DataTable_vue__);
 //
 //
@@ -2030,7 +2030,8 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
         label: 'Account', // Column name
         field: 'acc_name', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '250px'
       }, {
         label: 'Cost Center', // Column name
         field: 'cost', // Field name from row
@@ -2039,11 +2040,6 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
       }, {
         label: 'Department', // Column name
         field: 'dept', // Field name from row
-        numeric: false, // Affects sorting
-        html: false // Escapes output if false.
-      }, {
-        label: 'Team', // Column name
-        field: 'team', // Field name from row
         numeric: false, // Affects sorting
         html: false // Escapes output if false.
       }, {
@@ -2150,6 +2146,18 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
       }
       return null;
     },
+    getCostCenterName: function getCostCenterName(Idx) {
+      for (var i = 0; i < this.cost_options.length; i++) {
+        if (this.cost_options[i].CostcenterIdx == Idx) return this.cost_options[i].CostcenterName;
+      }
+      return null;
+    },
+    getPayType: function getPayType(Idx) {
+      for (var i = 0; i < this.pay_options.length; i++) {
+        if (this.pay_options[i].Idx == Idx) return this.pay_options[i].Name;
+      }
+      return null;
+    },
     warnMsg: function warnMsg(type, msg, title) {
       __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */][type](msg, title);
     },
@@ -2188,15 +2196,14 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
             _this2.rowdata.push({
               'acc_code': _this2.getAccountCode(tmp.Cuenta),
               'acc_name': _this2.getAccountName(tmp.Cuenta),
-              'cost': '',
+              'cost': _this2.getCostCenterName(tmp.CostCenter),
               'dept': _this2.getDeptName(tmp.DeptIdx),
-              'team': '',
               'voucher': tmp.Voucher,
               'iss_date': _this2.formatDate(tmp.Fetcha),
               'cust': _this2.getCustomerName(tmp.Proveedor),
               'cur': _this2.getCurrencyName(tmp.Currency),
               'amount': tmp.sum,
-              'p_type': '',
+              'p_type': _this2.getPayType(tmp.Forma),
               'purchase': '',
               'file': tmp.file.substr(0, tmp.file.length - 1),
               "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
@@ -2220,7 +2227,7 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
 
 /***/ }),
 
-/***/ 874:
+/***/ 875:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

@@ -1,65 +1,12 @@
-webpackJsonp([9],{
-
-/***/ 733:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(842)
-  __webpack_require__(844)
-}
-var normalizeComponent = __webpack_require__(46)
-/* script */
-var __vue_script__ = __webpack_require__(846)
-/* template */
-var __vue_template__ = __webpack_require__(847)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src\\components\\pages\\budget_report.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5721e2d4", Component.options)
-  } else {
-    hotAPI.reload("data-v-5721e2d4", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+webpackJsonp([33],{
 
 /***/ 751:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  host: 'http://localhost:3000'
-  // host: 'http://35.168.158.241'
+  // host: 'http://localhost:3000'
+  host: 'http://35.168.158.241'
 });
 
 /***/ }),
@@ -1578,23 +1525,76 @@ const miniToastr = {
 
 /***/ }),
 
-/***/ 842:
+/***/ 976:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(977)
+  __webpack_require__(979)
+}
+var normalizeComponent = __webpack_require__(46)
+/* script */
+var __vue_script__ = __webpack_require__(981)
+/* template */
+var __vue_template__ = __webpack_require__(982)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-29c6b095"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\components\\pages\\voucher_report2.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-29c6b095", Component.options)
+  } else {
+    hotAPI.reload("data-v-29c6b095", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 977:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(843);
+var content = __webpack_require__(978);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(34)("545e94f1", content, false);
+var update = __webpack_require__(34)("82e11e12", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5721e2d4\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5721e2d4\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29c6b095\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29c6b095\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -1605,7 +1605,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 843:
+/***/ 978:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -1620,23 +1620,23 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 844:
+/***/ 979:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(845);
+var content = __webpack_require__(980);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(34)("e1a0e110", content, false);
+var update = __webpack_require__(34)("17ddb088", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5721e2d4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./budget_report.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5721e2d4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./budget_report.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29c6b095\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_report2.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-29c6b095\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_report2.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -1647,7 +1647,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 845:
+/***/ 980:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -1655,14 +1655,14 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 846:
+/***/ 981:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1676,19 +1676,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_mini_toastr__ = __webpack_require__(757);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_src_store_store__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_src_const_js__ = __webpack_require__(751);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1777,7 +1764,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "budget_report_page",
+  name: "voucher_report_page2",
   components: {
     Multiselect: __WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default.a
   },
@@ -1785,104 +1772,202 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
     return {
       formstate: {},
       model: {
-        department: null,
-        cost: null,
-        year: null
+        type: {
+          Name: 'Yearly',
+          Value: 1
+        },
+        year: {
+          YearName: 2018,
+          Value: 2018
+        },
+        week: null,
+        month: {
+          MonthName: 'Jan',
+          Value: 1
+        }
       },
-      year_options: [{
-        YearName: 2017
+      type_options: [{
+        Name: 'Yearly',
+        Value: 1
       }, {
-        YearName: 2018
+        Name: 'Monthly',
+        Value: 2
       }, {
-        YearName: 2019
+        Name: 'Weekly',
+        Value: 3
       }],
-      account_options: [],
-      department_options: [],
-      cost_options: [],
+      year_options: [{
+        YearName: 2017,
+        Value: 2017
+      }, {
+        YearName: 2018,
+        Value: 2018
+      }, {
+        YearName: 2019,
+        Value: 2019
+      }],
+      week_options: [],
+      month_options: [],
+      acc_options: [],
+      group_options: [],
       tabledata: []
     };
   },
 
   methods: {
-    getAccName: function getAccName(idx) {
-      for (var i = 0; i < this.account_options.length; i++) {
-        if (this.account_options[i].Idx == idx) {
-          return this.account_options[i].AccountName;
-        }
-      }
-    },
-    getTotal: function getTotal(v) {
-      var sum = 0;
-      for (var i = 1; i < 12; i++) {
-        sum += Number(v['m' + i] ? v['m' + i] : 0);
-      }
-      return sum;
-    },
-    onSubmit: function onSubmit() {
-      this.load_report();
-    },
-    load_init_value: function load_init_value() {
-      return new Promise(function (resolve, reject) {
-        __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', true);
-        axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/api/budget/load_acc_cost_dep_list').then(function (res) {
-          resolve(res);
-          __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', false);
-        }).catch(function (err) {
-          reject(err);
-          __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', false);
-        });
-      });
-    },
-    load_report: function load_report() {
+    loadAccountList: function loadAccountList() {
       var _this = this;
 
       __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', true);
-      axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/api/budget/report_list', this.model).then(function (res) {
+      axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_list').then(function (res) {
         if (res.data.isSuccess) {
-          _this.tabledata = [];
-          var list = res.data.list;
-          for (var i = 0; i < list.length; i++) {
-            _this.tabledata.push({
-              acc_name: _this.getAccName(list[i].AccountIdx),
-              m1: list[i].m1, m2: list[i].m2, m3: list[i].m3, m4: list[i].m4, m5: list[i].m5, m6: list[i].m6,
-              m7: list[i].m7, m8: list[i].m8, m9: list[i].m9, m10: list[i].m10, m11: list[i].m11, m12: list[i].m12,
-              total: _this.getTotal(list[i]), per: 10
-            });
-          }
+          _this.acc_options = res.data.list;
         }
         __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', false);
       }).catch(function (err) {
+        if (err.response && err.response.status == 401) {
+          __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('logout');
+          _this.warnMsg('error', 'Authentication Error.', 'Error!');
+        };
         __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', false);
         _this.warnMsg('error', 'Internal Server Error.', 'Error!');
       });
+    },
+    loadGroupList: function loadGroupList() {
+      var _this2 = this;
+
+      __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', true);
+      axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/api/voucher/load_group_list').then(function (res) {
+        _this2.group_options = res.data.list;
+        __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', false);
+      }).catch(function (err) {
+        if (err.response && err.response.status == 401) {
+          __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('logout');
+          _this2.warnMsg('error', 'Authentication Error.', 'Error!');
+        };
+        __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', false);
+        _this2.warnMsg('error', 'Internal Server Error.', 'Error!');
+      });
+    },
+    isFirstGroup: function isFirstGroup(item, index) {
+      return index == 0 || index > 0 && item.PGroup != this.tabledata[index - 1].PGroup && item.PGroup != -1;
+    },
+    getAccount: function getAccount(Idx) {
+      for (var i = 0; i < this.acc_options.length; i++) {
+        if (this.acc_options[i].Idx == Idx) {
+          return this.acc_options[i];
+        }
+      }
+      return null;
+    },
+    onSubmit: function onSubmit() {
+      var _this3 = this;
+
+      __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', true);
+      axios.post(__WEBPACK_IMPORTED_MODULE_5_src_const_js__["a" /* default */].host + '/api/voucher/report_list2', this.model).then(function (res) {
+        __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', false);
+        if (res.data.list.length > 0) {
+          var tmp = [];
+          var p_group = _this3.group_options.filter(function (v) {
+            return v.PIdx == 0;
+          });
+          for (var i = 0; i < p_group.length; i++) {
+            var childgroup = _this3.group_options.filter(function (v) {
+              return v.PIdx == p_group[i].Idx;
+            });
+            for (var j = 0; j < childgroup.length; j++) {
+              for (var k = 0; k < res.data.list.length; k++) {
+                var acc = _this3.getAccount(res.data.list[k].acc_idx);
+                if (acc == null) continue;
+                if (acc.PGroup == childgroup[j].Idx) {
+                  res.data.list[k].used = true;
+                  tmp.push({
+                    PGroup: p_group[i].Name, PGroupIdx: p_group[i].Idx, CGroup: childgroup[j].Name, CGroupIdx: childgroup[j].Idx, amount: Number(res.data.list[k].amount)
+                  });
+                }
+              }
+            }
+          }
+
+          // tmp contains useful list that is linked to group
+          var total = 0;
+          for (var i = 0; i < res.data.list.length; i++) {
+            total += Number(res.data.list[i].amount);
+          }
+          _this3.tabledata.push({
+            PGroup: 'Total', PGroupIdx: -1, CGroup: -1, CGroupIdx: -1, Amount: total, Partial1: -1, Partial2: -1
+          });
+          for (var j = 0; j < p_group.length; j++) {
+            var subtotal = 0;
+            for (var i = 0; i < tmp.length; i++) {
+              if (tmp[i].PGroupIdx == p_group[j].Idx) {
+                subtotal += Number(tmp[i].amount);
+              }
+            }
+            if (subtotal == 0) continue;
+            _this3.tabledata.push({
+              PGroup: p_group[j].Name, PGroupIdx: p_group[j].Idx, CGroup: -1, CGroupIdx: -1, Amount: subtotal, Partial1: -1, Partial2: subtotal / total * 100
+            });
+            for (var i = 0; i < tmp.length; i++) {
+              if (tmp[i].PGroupIdx == p_group[j].Idx) {
+                _this3.tabledata.push({
+                  PGroup: tmp[i].PGroup, PGroupIdx: tmp[i].PGroupIdx, CGroup: tmp[i].CGroup, CGroupIdx: tmp[i].CGroupIdx, Amount: tmp[i].amount, Partial1: tmp[i].amount / total * 100, Partial2: -1
+                });
+              }
+            }
+          }
+          var amount_extra = 0;
+          for (var i = 0; i < res.data.list.length; i++) {
+            if (res.data.list[i].used != true) {
+              amount_extra += Number(res.data.list[i].amount);
+            }
+          }
+
+          _this3.tabledata.push({
+            PGroup: 'Other', PGroupIdx: -1, CGroup: -1, CGroupIdx: -1, Amount: amount_extra, Partial1: -1, Partial2: amount_extra / total * 100
+          });
+          console.log(_this3.tabledata);
+        } else {
+          _this3.tabledata = [];
+        }
+      }).catch(function (err) {
+        console.log(err);
+        __WEBPACK_IMPORTED_MODULE_4_src_store_store__["a" /* default */].commit('changeLoading', false);
+        _this3.warnMsg('error', 'Internal Server Error.', 'Error!');
+      });
+    },
+    mouseOver: function mouseOver(item) {
+      console.log(item);
     },
     warnMsg: function warnMsg(type, msg, title) {
       __WEBPACK_IMPORTED_MODULE_3_mini_toastr__["a" /* default */][type](msg, title);
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
-
-    this.load_init_value().then(function (res) {
-      if (res.data.isSuccess) {
-        _this2.account_options = res.data.acc_list;
-        _this2.department_options = res.data.dep_list;
-        _this2.cost_options = res.data.cost_list;
-        // Load Budget List
-        _this2.load_report();
-      } else {
-        _this2.warnMsg('error', 'Failed to load Search Bar.', 'Server Error!');
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    for (var i = 1; i < 55; i++) {
+      if (i < 13) {
+        this.month_options.push({
+          MonthName: months[i - 1],
+          Value: i
+        });
       }
-    }).catch(function (err) {
-      _this2.warnMsg('error', 'Internal server error.', 'Error!');
-    });
+      this.week_options.push({
+        WeekName: 'Week' + i,
+        Value: i
+      });
+    }
+
+    // Load Account List
+    this.loadAccountList();
+    this.loadGroupList();
   },
   destroyed: function destroyed() {}
 });
 
 /***/ }),
 
-/***/ 847:
+/***/ 982:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1924,22 +2009,22 @@ var render = function() {
                             "div",
                             { staticClass: "form-group" },
                             [
-                              _c("label", [_vm._v("Department")]),
+                              _c("label", [_vm._v("Search Type")]),
                               _vm._v(" "),
                               _c("multiselect", {
                                 attrs: {
                                   "max-height": 800,
-                                  options: _vm.department_options,
+                                  options: _vm.type_options,
                                   selectLabel: "",
-                                  label: "DeptName",
-                                  "track-by": "DeptName"
+                                  label: "Name",
+                                  "track-by": "Name"
                                 },
                                 model: {
-                                  value: _vm.model.department,
+                                  value: _vm.model.type,
                                   callback: function($$v) {
-                                    _vm.$set(_vm.model, "department", $$v)
+                                    _vm.$set(_vm.model, "type", $$v)
                                   },
-                                  expression: "model.department"
+                                  expression: "model.type"
                                 }
                               })
                             ],
@@ -1947,65 +2032,103 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-2" }, [
-                          _c(
-                            "div",
-                            { staticClass: "form-group" },
-                            [
-                              _c("label", { attrs: { for: "cost" } }, [
-                                _vm._v("Cost Center")
-                              ]),
-                              _vm._v(" "),
-                              _c("multiselect", {
-                                attrs: {
-                                  "max-height": 800,
-                                  options: _vm.cost_options,
-                                  selectLabel: "",
-                                  label: "CostcenterName",
-                                  "track-by": "CostcenterName"
-                                },
-                                model: {
-                                  value: _vm.model.cost,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.model, "cost", $$v)
-                                  },
-                                  expression: "model.cost"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ]),
+                        _vm.model.type.Value == 1 || _vm.model.type.Value == 2
+                          ? _c("div", { staticClass: "col-sm-2" }, [
+                              _c(
+                                "div",
+                                { staticClass: "form-group" },
+                                [
+                                  _c("label", [_vm._v("Year")]),
+                                  _vm._v(" "),
+                                  _c("multiselect", {
+                                    attrs: {
+                                      "max-height": 800,
+                                      options: _vm.year_options,
+                                      selectLabel: "",
+                                      label: "YearName",
+                                      "track-by": "YearName"
+                                    },
+                                    model: {
+                                      value: _vm.model.year,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.model, "year", $$v)
+                                      },
+                                      expression: "model.year"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e(),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-2" }, [
-                          _c(
-                            "div",
-                            { staticClass: "form-group" },
-                            [
-                              _c("label", [_vm._v("Year")]),
-                              _vm._v(" "),
-                              _c("multiselect", {
-                                attrs: {
-                                  "max-height": 800,
-                                  options: _vm.year_options,
-                                  selectLabel: "",
-                                  label: "YearName",
-                                  "track-by": "YearName"
-                                },
-                                model: {
-                                  value: _vm.model.year,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.model, "year", $$v)
-                                  },
-                                  expression: "model.year"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ]),
+                        _vm.model.type.Value == 2
+                          ? _c("div", { staticClass: "col-sm-2" }, [
+                              _c(
+                                "div",
+                                { staticClass: "form-group" },
+                                [
+                                  _c("label", [_vm._v("Month")]),
+                                  _vm._v(" "),
+                                  _c("multiselect", {
+                                    attrs: {
+                                      "max-height": 800,
+                                      options: _vm.month_options,
+                                      selectLabel: "",
+                                      label: "MonthName",
+                                      "track-by": "MonthName"
+                                    },
+                                    model: {
+                                      value: _vm.model.month,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.model, "month", $$v)
+                                      },
+                                      expression: "model.month"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e(),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-sm-6" }),
+                        _vm.model.type.Value == 3
+                          ? _c("div", { staticClass: "col-sm-2" }, [
+                              _c(
+                                "div",
+                                { staticClass: "form-group" },
+                                [
+                                  _c("label", [_vm._v("Week")]),
+                                  _vm._v(" "),
+                                  _c("multiselect", {
+                                    attrs: {
+                                      "max-height": 800,
+                                      options: _vm.week_options,
+                                      selectLabel: "",
+                                      label: "WeekName",
+                                      "track-by": "WeekName"
+                                    },
+                                    model: {
+                                      value: _vm.model.week,
+                                      callback: function($$v) {
+                                        _vm.$set(_vm.model, "week", $$v)
+                                      },
+                                      expression: "model.week"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.model.type.Value == 1 || _vm.model.type.Value == 3
+                          ? _c("div", { staticClass: "col-sm-6" })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.model.type.Value == 2
+                          ? _c("div", { staticClass: "col-sm-4" })
+                          : _vm._e(),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-sm-2" }, [
                           _c("div", { staticClass: "form-group" }, [
@@ -2035,126 +2158,87 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "col-lg-12 mb-3" },
+      { staticClass: "col-lg-12" },
       [
         _c(
           "b-card",
           {
             staticClass: "mb-2 bg-default-card",
-            attrs: {
-              header: _vm.model.department
-                ? _vm.model.department.DeptName
-                : "Department",
-              "header-tag": "h4"
-            }
+            attrs: { header: "Search...", "header-tag": "h4" }
           },
           [
             _c("div", { staticClass: "table-responsive" }, [
               _c(
                 "table",
-                {
-                  staticClass: "table table-bordred table-striped",
-                  attrs: { id: "mytable" }
-                },
+                { staticClass: "table table-bordred table-striped" },
                 [
                   _c("thead", [
                     _c("tr", [
-                      _c("th", [_vm._v("Account")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Jan")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Feb")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Mar")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Apr")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("May")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Jun")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Jul")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Aug")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Sep")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Oct")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Nov")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("Dec")]),
-                      _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [
-                        _vm._v("Total")
+                      _c("th", { attrs: { width: "20%" } }, [
+                        _vm._v("Parent Group")
                       ]),
                       _vm._v(" "),
-                      _c("th", { staticClass: "text-right" }, [_vm._v("%")])
+                      _c("th", { attrs: { width: "20%" } }, [
+                        _vm._v("Account Group")
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { attrs: { width: "20%" } }, [_vm._v("Amount")]),
+                      _vm._v(" "),
+                      _c("th", { attrs: { width: "20%" } }),
+                      _vm._v(" "),
+                      _c("th", { attrs: { width: "20%" } })
                     ])
                   ]),
                   _vm._v(" "),
                   _c(
                     "tbody",
                     _vm._l(_vm.tabledata, function(item, index) {
-                      return _c("tr", { key: index }, [
-                        _c("td", [_vm._v(_vm._s(item.acc_name))]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m1))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m2))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m3))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m4))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m5))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m6))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m7))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m8))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m9))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m10))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m11))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.m12))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.total))
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-right" }, [
-                          _vm._v(_vm._s(item.per))
-                        ])
-                      ])
+                      return _c(
+                        "tr",
+                        {
+                          key: index,
+                          on: {
+                            mouseover: function($event) {
+                              _vm.mouseOver(item)
+                            }
+                          }
+                        },
+                        [
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(
+                                _vm.isFirstGroup(item, index) ? item.PGroup : ""
+                              )
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(_vm._s(item.CGroup != -1 ? item.CGroup : ""))
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.Amount))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(
+                                item.Partial1 != -1
+                                  ? item.Partial1.toFixed(0) + " %"
+                                  : ""
+                              )
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(
+                                item.Partial2 != -1
+                                  ? item.Partial2.toFixed(0) + " %"
+                                  : ""
+                              )
+                            )
+                          ])
+                        ]
+                      )
                     })
                   )
                 ]
@@ -2173,7 +2257,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5721e2d4", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-29c6b095", module.exports)
   }
 }
 

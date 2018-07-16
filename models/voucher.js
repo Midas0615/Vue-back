@@ -23,15 +23,23 @@ var find = function(body, callback) {
     q += ' voucherheader.Currency = ? AND'
     arr.push(body.currency.Idx);
   }
+  if(body.p_type) {
+    q += ' voucherheader.Forma = ? AND';
+    arr.push(body.p_type.Idx);
+  }
   
   if(arr.length > 0) {
-    q = `SELECT voucherheader.*, sum(voucherbody.Cantidad*voucherbody.Unitario) as sum, CONCAT(iorderactual.Fileno, ",") as file FROM voucherheader
+    q = `SELECT voucherheader.*, sum(voucherbody.Cantidad*voucherbody.Unitario) as sum, CONCAT(iorderactual.Fileno, ",") as file, costcenter.CostcenterIdx as CostCenter FROM voucherheader
          LEFT JOIN voucherbody ON voucherbody.HeaderIdx = voucherheader.Idx
+         INNER JOIN dept ON voucherheader.DeptIdx = dept.DeptIdx
+         INNER JOIN costcenter ON costcenter.CostcenterIdx = dept.CostCenterIdx
          LEFT JOIN iorderactual ON iorderactual.Idx = voucherbody.File` + q;
     q = q.substring(0, q.lastIndexOf(" "));
   } else {
-    q = `SELECT voucherheader.*, sum(voucherbody.Cantidad*voucherbody.Unitario) as sum, CONCAT(iorderactual.Fileno, ",") as file FROM voucherheader
+    q = `SELECT voucherheader.*, sum(voucherbody.Cantidad*voucherbody.Unitario) as sum, CONCAT(iorderactual.Fileno, ",") as file, costcenter.CostcenterIdx as CostCenter FROM voucherheader
          LEFT JOIN voucherbody ON voucherbody.HeaderIdx = voucherheader.Idx
+         INNER JOIN dept ON voucherheader.DeptIdx = dept.DeptIdx
+         INNER JOIN costcenter ON costcenter.CostcenterIdx = dept.CostCenterIdx
          LEFT JOIN iorderactual ON iorderactual.Idx = voucherbody.File`;
   }
   q += ` GROUP BY voucherheader.Idx`;  
