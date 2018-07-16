@@ -296,6 +296,7 @@ exports.voucher_update = function(req, res) {
       })
     )
   }
+  console.log(req.body);
   Promise.all(p).then(()=>{
     res.status(200).send({isSuccess: true});
   }).catch(err => {
