@@ -54,7 +54,7 @@ exports.load_acc_cost_dep_list = function(req, res) {
     res.status(200).send({isSuccess: true, acc_list: acc_list, cost_list: cost_list, dep_list: dep_list});
   }).catch(err => {
     console.log(err);
-    res.status(200).send({isSuccess: false});
+    res.status(500).send({isSuccess: false});
   })
 }
 exports.budget_add = function(req, res) {
