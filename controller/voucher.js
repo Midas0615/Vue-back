@@ -299,6 +299,16 @@ exports.voucher_update = function(req, res) {
       })
     )
   }
+  for(var i = 0; i < req.body.remove.length; i++) {
+    p.push(
+      new Promise((resolve, reject) => {
+        VoucherBody.remove(req.body.remove[i].oldid, function(err) {
+          if(err) reject(err);
+          else resolve();
+        })
+      })
+    )
+  }
   Promise.all(p).then(()=>{
     res.status(200).send({isSuccess: true});
   }).catch(err => {

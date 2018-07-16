@@ -41,13 +41,15 @@ var add = function(headerid, body, callback) {
 }
 
 var edit = function(headerid, body, callback) {
-  db.query(`UPDATE voucherbody SET ? WHERE HeadrIdx = ? AND Idx = ?`, [{    
-    File: body.file.Idx, Buyer: body.buyer.CustIdx, Reg: body.reg, Fact: body.fact, Descripcion_Title: body.descripcion_title,
+  console.log(body);
+  db.query(`UPDATE voucherbody SET ? WHERE HeaderIdx = ? AND Idx = ?`, [{    
+    File: body.file?body.file.Idx:null, Buyer: body.buyer?body.buyer.CustIdx:null, Reg: body.reg, Fact: body.fact, Descripcion_Title: body.descripcion_title,
     Descripcion_Body: body.descripcion_body, Cantidad: body.cantidad, Unitario: body.unitario
   }, headerid, body.oldid],
   function(err, result)
-  {    
-    return callback(null);
+  {
+    console.log(err);
+    return callback(err);
   })
 }
 
@@ -61,6 +63,14 @@ var get = function(Idx, callback) {
   })
 }
 
+var remove = function(Idx, callback) {
+  db.query('DELETE FROM voucherbody WHERE Idx = ?', [Idx], function(err) {
+    console.log(err);
+    return callback(err);
+  })
+}
+
 exports.add = add;
 exports.get = get;
 exports.update = update;
+exports.remove = remove;
