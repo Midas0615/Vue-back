@@ -55,7 +55,7 @@ module.exports = Component.exports
 /***/ 771:
 /***/ (function(module, exports) {
 
-module.exports = "dist/images/logo_black.png?808637a0af399b8a11165eb3791a3658";
+module.exports = "/images/logo_black.png?808637a0af399b8a11165eb3791a3658";
 
 /***/ }),
 
@@ -518,7 +518,7 @@ module.exports = function (css) {
 /***/ 829:
 /***/ (function(module, exports) {
 
-module.exports = "dist/images/avatar3.jpg?7e593f7330076b4b89e96f89b9396c0a";
+module.exports = "/images/avatar3.jpg?7e593f7330076b4b89e96f89b9396c0a";
 
 /***/ }),
 
@@ -2894,14 +2894,14 @@ if (false) {
 /***/ 947:
 /***/ (function(module, exports) {
 
-module.exports = "dist/images/avatar1.jpg?2d4968bd8ec1519b0535ba849643dd1c";
+module.exports = "/images/avatar1.jpg?2d4968bd8ec1519b0535ba849643dd1c";
 
 /***/ }),
 
 /***/ 948:
 /***/ (function(module, exports) {
 
-module.exports = "dist/images/avatar5.jpg?83fc5fdfbe37fb37db7a2fe84cca6d6d";
+module.exports = "/images/avatar5.jpg?83fc5fdfbe37fb37db7a2fe84cca6d6d";
 
 /***/ }),
 

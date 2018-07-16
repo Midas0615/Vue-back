@@ -1285,14 +1285,14 @@ return VueForm;
 /***/ 771:
 /***/ (function(module, exports) {
 
-module.exports = "dist/images/logo_black.png?808637a0af399b8a11165eb3791a3658";
+module.exports = "/images/logo_black.png?808637a0af399b8a11165eb3791a3658";
 
 /***/ }),
 
 /***/ 772:
 /***/ (function(module, exports) {
 
-module.exports = "dist/images/Login-03-01.png?13d89c25d2f5166aa12b08827d4c9b92";
+module.exports = "/images/Login-03-01.png?13d89c25d2f5166aa12b08827d4c9b92";
 
 /***/ }),
 
@@ -1603,7 +1603,7 @@ if (false) {
 /***/ 974:
 /***/ (function(module, exports) {
 
-module.exports = "dist/images/User-01.png?6faf6aa5a3f6457147611cadc63e5d10";
+module.exports = "/images/User-01.png?6faf6aa5a3f6457147611cadc63e5d10";
 
 /***/ })
 

@@ -7939,14 +7939,14 @@ module.exports = __webpack_amd_options__;
 /***/ 821:
 /***/ (function(module, exports) {
 
-module.exports = "dist/images/voucher_logo.png?7b66ae1c6bdee85fddf72b67d44c9115";
+module.exports = "/images/voucher_logo.png?7b66ae1c6bdee85fddf72b67d44c9115";
 
 /***/ }),
 
 /***/ 822:
 /***/ (function(module, exports) {
 
-module.exports = "dist/images/qr.png?78cce8f660d49eb850b1a7b79f8f5fb0";
+module.exports = "/images/qr.png?78cce8f660d49eb850b1a7b79f8f5fb0";
 
 /***/ }),
 
