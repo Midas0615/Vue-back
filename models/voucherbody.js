@@ -1,9 +1,9 @@
 var db = require('./db');
 var create = function(headerid, body, callback) {
   db.query(`
-    INSERT INTO voucherbody (HeaderIdx,File,Buyer,Reg,Fact,Descripcion_Title,Descripcion_Body,Cantidad,Unitario)
-    values (?,?,?,?,?,?,?,?,?)
-  `, [headerid, body.file?body.file.Idx:null, body.buyer?body.buyer.CustIdx:null, body.reg,
+    INSERT INTO voucherbody (HeaderIdx,InDate,File,Buyer,Reg,Fact,Descripcion_Title,Descripcion_Body,Cantidad,Unitario)
+    values (?,?,?,?,?,?,?,?,?,?)
+  `, [headerid, body.date, body.file?body.file.Idx:null, body.buyer?body.buyer.CustIdx:null, body.reg,
       body.fact, body.descripcion_title, body.descripcion_body, body.cantidad, body.unitario
     ],
   function(err, result)
@@ -43,7 +43,7 @@ var add = function(headerid, body, callback) {
 var edit = function(headerid, body, callback) {
   console.log(body);
   db.query(`UPDATE voucherbody SET ? WHERE HeaderIdx = ? AND Idx = ?`, [{    
-    File: body.file?body.file.Idx:null, Buyer: body.buyer?body.buyer.CustIdx:null, Reg: body.reg, Fact: body.fact, Descripcion_Title: body.descripcion_title,
+    InDate: body.date, File: body.file?body.file.Idx:null, Buyer: body.buyer?body.buyer.CustIdx:null, Reg: body.reg, Fact: body.fact, Descripcion_Title: body.descripcion_title,
     Descripcion_Body: body.descripcion_body, Cantidad: body.cantidad, Unitario: body.unitario
   }, headerid, body.oldid],
   function(err, result)

@@ -6,9 +6,9 @@ webpackJsonp([7],{
 var disposed = false
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(875)
+var __vue_script__ = __webpack_require__(883)
 /* template */
-var __vue_template__ = __webpack_require__(876)
+var __vue_template__ = __webpack_require__(884)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1933,39 +1933,57 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "float-right" }, [
             _c("ul", { staticClass: "pagination" }, [
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn link",
-                    attrs: { href: "javascript:undefined", tabindex: "0" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.previousPage($event)
+              _c(
+                "li",
+                { staticStyle: { background: "#337ab7", margin: "2px" } },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn link",
+                      attrs: { href: "javascript:undefined", tabindex: "0" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.previousPage($event)
+                        }
                       }
-                    }
-                  },
-                  [_c("i", { staticClass: "fa fa-angle-left" })]
-                )
-              ]),
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-angle-left",
+                        staticStyle: { color: "white" }
+                      })
+                    ]
+                  )
+                ]
+              ),
               _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn link",
-                    attrs: { href: "javascript:undefined", tabindex: "0" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.nextPage($event)
+              _c(
+                "li",
+                { staticStyle: { background: "#337ab7", margin: "2px" } },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn link",
+                      attrs: { href: "javascript:undefined", tabindex: "0" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.nextPage($event)
+                        }
                       }
-                    }
-                  },
-                  [_c("i", { staticClass: "fa fa-angle-right" })]
-                )
-              ])
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-angle-right",
+                        staticStyle: { color: "white" }
+                      })
+                    ]
+                  )
+                ]
+              )
             ])
           ])
         ])
@@ -1984,7 +2002,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 875:
+/***/ 883:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2227,7 +2245,7 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
 
 /***/ }),
 
-/***/ 876:
+/***/ 884:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

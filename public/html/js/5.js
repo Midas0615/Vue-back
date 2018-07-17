@@ -6,14 +6,14 @@ webpackJsonp([5],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(834)
-  __webpack_require__(836)
+  __webpack_require__(838)
+  __webpack_require__(840)
 }
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(838)
+var __vue_script__ = __webpack_require__(842)
 /* template */
-var __vue_template__ = __webpack_require__(842)
+var __vue_template__ = __webpack_require__(846)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2042,13 +2042,13 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ 834:
+/***/ 838:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(835);
+var content = __webpack_require__(839);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2069,7 +2069,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 835:
+/***/ 839:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -2084,13 +2084,13 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 836:
+/***/ 840:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(837);
+var content = __webpack_require__(841);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2111,7 +2111,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 837:
+/***/ 841:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -2126,7 +2126,7 @@ exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\ni {\n  cursor: pointe
 
 /***/ }),
 
-/***/ 838:
+/***/ 842:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2139,15 +2139,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_multiselect__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__ = __webpack_require__(766);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_js_modal__ = __webpack_require__(839);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_js_modal__ = __webpack_require__(843);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_js_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vue_js_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue2_dropzone__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_vue2_dropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_vue2_dropzone__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue2_dropzone_dist_vue2Dropzone_css__ = __webpack_require__(840);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue2_dropzone_dist_vue2Dropzone_css__ = __webpack_require__(844);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_vue2_dropzone_dist_vue2Dropzone_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_vue2_dropzone_dist_vue2Dropzone_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_mini_toastr__ = __webpack_require__(753);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_src_store_store__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_src_const_js__ = __webpack_require__(751);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2553,7 +2558,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         cost: null,
         department: null,
         team: "",
-        date: ""
+        date: {
+          YearName: 2018
+        }
       },
       year_options: [{
         YearName: 2017
@@ -2841,7 +2848,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
 
 /***/ }),
 
-/***/ 839:
+/***/ 843:
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(root, factory) {
@@ -3825,13 +3832,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
 
 /***/ }),
 
-/***/ 840:
+/***/ 844:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(841);
+var content = __webpack_require__(845);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -3857,7 +3864,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 841:
+/***/ 845:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -3872,7 +3879,7 @@ exports.push([module.i, "/*\n * The MIT License\n * Copyright (c) 2012 Matias Me
 
 /***/ }),
 
-/***/ 842:
+/***/ 846:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -4268,7 +4275,9 @@ var render = function() {
                               )
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-2" }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Jan")]),
                                 _vm._v(" "),
@@ -4300,7 +4309,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Feb")]),
                                 _vm._v(" "),
@@ -4332,7 +4341,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Mar")]),
                                 _vm._v(" "),
@@ -4364,7 +4373,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Apr")]),
                                 _vm._v(" "),
@@ -4396,7 +4405,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("May")]),
                                 _vm._v(" "),
@@ -4428,7 +4437,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Jun")]),
                                 _vm._v(" "),
@@ -4460,7 +4469,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Jul")]),
                                 _vm._v(" "),
@@ -4492,7 +4501,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Aug")]),
                                 _vm._v(" "),
@@ -4524,7 +4533,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Sep")]),
                                 _vm._v(" "),
@@ -4556,7 +4565,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Oct")]),
                                 _vm._v(" "),
@@ -4588,7 +4597,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Nov")]),
                                 _vm._v(" "),
@@ -4620,7 +4629,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Dec")]),
                                 _vm._v(" "),
@@ -4651,6 +4660,8 @@ var render = function() {
                                 })
                               ])
                             ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-10" }),
                             _vm._v(" "),
                             _c("div", { staticClass: "col-sm-2" }, [
                               _c("div", { staticClass: "form-group" }, [
@@ -4890,7 +4901,9 @@ var render = function() {
                               )
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-2" }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Jan")]),
                                 _vm._v(" "),
@@ -4922,7 +4935,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Feb")]),
                                 _vm._v(" "),
@@ -4954,7 +4967,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Mar")]),
                                 _vm._v(" "),
@@ -4986,7 +4999,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Apr")]),
                                 _vm._v(" "),
@@ -5018,7 +5031,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("May")]),
                                 _vm._v(" "),
@@ -5050,7 +5063,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Jun")]),
                                 _vm._v(" "),
@@ -5082,7 +5095,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Jul")]),
                                 _vm._v(" "),
@@ -5114,7 +5127,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Aug")]),
                                 _vm._v(" "),
@@ -5146,7 +5159,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Sep")]),
                                 _vm._v(" "),
@@ -5178,7 +5191,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Oct")]),
                                 _vm._v(" "),
@@ -5210,7 +5223,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Nov")]),
                                 _vm._v(" "),
@@ -5242,7 +5255,7 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-2" }, [
+                            _c("div", { staticClass: "col-sm-1" }, [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Dec")]),
                                 _vm._v(" "),
@@ -5273,6 +5286,8 @@ var render = function() {
                                 })
                               ])
                             ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-sm-10" }),
                             _vm._v(" "),
                             _c("div", { staticClass: "col-sm-2" }, [
                               _c("div", { staticClass: "form-group" }, [

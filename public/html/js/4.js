@@ -6,14 +6,14 @@ webpackJsonp([4],{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(857)
-  __webpack_require__(859)
+  __webpack_require__(865)
+  __webpack_require__(867)
 }
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(861)
+var __vue_script__ = __webpack_require__(869)
 /* template */
-var __vue_template__ = __webpack_require__(862)
+var __vue_template__ = __webpack_require__(870)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -3183,39 +3183,57 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "float-right" }, [
             _c("ul", { staticClass: "pagination" }, [
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn link",
-                    attrs: { href: "javascript:undefined", tabindex: "0" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.previousPage($event)
+              _c(
+                "li",
+                { staticStyle: { background: "#337ab7", margin: "2px" } },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn link",
+                      attrs: { href: "javascript:undefined", tabindex: "0" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.previousPage($event)
+                        }
                       }
-                    }
-                  },
-                  [_c("i", { staticClass: "fa fa-angle-left" })]
-                )
-              ]),
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-angle-left",
+                        staticStyle: { color: "white" }
+                      })
+                    ]
+                  )
+                ]
+              ),
               _vm._v(" "),
-              _c("li", [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn link",
-                    attrs: { href: "javascript:undefined", tabindex: "0" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        _vm.nextPage($event)
+              _c(
+                "li",
+                { staticStyle: { background: "#337ab7", margin: "2px" } },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn link",
+                      attrs: { href: "javascript:undefined", tabindex: "0" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.nextPage($event)
+                        }
                       }
-                    }
-                  },
-                  [_c("i", { staticClass: "fa fa-angle-right" })]
-                )
-              ])
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-angle-right",
+                        staticStyle: { color: "white" }
+                      })
+                    ]
+                  )
+                ]
+              )
             ])
           ])
         ])
@@ -3234,13 +3252,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 857:
+/***/ 865:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(858);
+var content = __webpack_require__(866);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -3261,7 +3279,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 858:
+/***/ 866:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -3276,13 +3294,13 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 859:
+/***/ 867:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(860);
+var content = __webpack_require__(868);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -3303,7 +3321,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 860:
+/***/ 868:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -3311,14 +3329,14 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\n.mt-40 {\n  margin-top: -40px;\n}\n.hide-body .card-body .row{\n  display: none;\n}\n.hide-body .card-body{\n  padding: 0px !important;\n}\n.hide-body .card-body .mt-40{\n  margin-top: -25px;\n  padding-right: 15px;\n}\ni {\n  cursor: pointer;\n}\n.card-folder {\n   height: 34px;\n   margin-top: -40px;\n   cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.c-input {\n  height: 40px;\n}\n.mt-40 {\n  margin-top: -40px;\n}\n.hide-body .card-body .row{\n  display: none;\n}\n.hide-body .card-body{\n  padding: 0px !important;\n}\n.hide-body .card-body .mt-40{\n  margin-top: -25px;\n  padding-right: 15px;\n}\ni {\n  cursor: pointer;\n}\n.card-folder {\n   height: 34px;\n   margin-top: -40px;\n   cursor: pointer;\n}\ntable tr th {\n  padding: 0.25rem !important;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 861:
+/***/ 869:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3486,7 +3504,8 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         label: 'Account Code', // Column name
         field: 'acc_code', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '200px'
       }, {
         label: 'Account', // Column name
         field: 'acc_name', // Field name from row
@@ -3497,57 +3516,68 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         label: 'Cost Center', // Column name
         field: 'cost', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '200px'
       }, {
         label: 'Department', // Column name
         field: 'dept', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '200px'
       }, {
         label: 'Voucher#', // Column name
         field: 'voucher', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '200px'
       }, {
         label: 'Issued Date', // Column name
         field: 'iss_date', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '200px'
       }, {
         label: 'Customer', // Column name
         field: 'cust', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '200px'
       }, {
         label: 'Currency', // Column name
         field: 'cur', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '50px'
       }, {
         label: 'Amount', // Column name
         field: 'amount', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '50px'
       }, {
         label: 'Payment Type', // Column name
         field: 'p_type', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '50px'
       }, {
         label: 'Purchase #', // Column name
         field: 'purchase', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '50px'
       }, {
         label: 'File#', // Column name
         field: 'file', // Field name from row
         numeric: false, // Affects sorting
-        html: false // Escapes output if false.
+        html: false, // Escapes output if false.
+        width: '200px'
       }, {
         label: 'Action',
         field: 'button',
         numeric: false,
-        html: true
+        html: true,
+        width: '50px'
       }],
       b_fold: false
     };
@@ -3573,7 +3603,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
               'iss_date': _this.formatDate(tmp.Fetcha),
               'cust': _this.getCustomerName(tmp.Proveedor),
               'cur': _this.getCurrencyName(tmp.Currency),
-              'amount': tmp.sum1,
+              'amount': Number(tmp.sum1).toFixed(0),
               'p_type': _this.getPayType(tmp.Forma),
               'purchase': '',
               'file': tmp.file ? tmp.file.substr(0, tmp.file.length - 1) : null,
@@ -3691,7 +3721,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
 
 /***/ }),
 
-/***/ 862:
+/***/ 870:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

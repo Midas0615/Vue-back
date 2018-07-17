@@ -356,6 +356,11 @@ exports.report_list = function(req, res) {
           return v.DeptIdx == req.body.department.DeptIdx;
         })
       }
+      if(req.body.account) {
+        rows = rows.filter(v => {
+          return v.Cuenta == req.body.account.Idx;
+        })        
+      }
       
       for(var i = 0; i < rows.length; i++) {
         var m = getMonth(rows[i].Fetcha);

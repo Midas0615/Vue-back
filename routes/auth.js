@@ -28,7 +28,7 @@ router.post('/login', function(req, res) {
         // return the information including token as JSON
         res.status(200).send({success: true, username: user.name, token: 'JWT ' + token, userdepartment: user.depart, userpoint: user.point, userposition: user.position});
       } else {
-        res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
+        res.status(200).send({success: false, msg: 'Authentication failed. Wrong password.'});
       }      
     }    
   })
