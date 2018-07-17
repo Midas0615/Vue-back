@@ -7,6 +7,7 @@ var budget = require('../controller/budget');
 var voucher = require('../controller/voucher');
 var order = require('../controller/order');
 var ordercard = require('../controller/ordercard');
+var dashboard = require('../controller/dashboard');
 
 router.get('/order/ordercard/attach_download', function(req, res) {
   res.sendFile(path.join(appRoot, '/public/uploads/attachments/'+req.query.name));
@@ -58,4 +59,7 @@ router.post('/order/order_card/confirm7', ordercard.confirm7);
 router.post('/order/order_card/confirm8', ordercard.confirm8);
 router.post('/order/order_card/attachment', ordercard.attachment);
 
+//Dashboard
+router.post('/dashboard/load_dept_report', dashboard.load_dept_report);
+router.post('/dashboard/load_year_order_report', dashboard.load_year_order_report);
 module.exports = router;

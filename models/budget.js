@@ -134,8 +134,22 @@ var report = function(body, callback) {
   });
 }
 
+// For Dashboard
+var report_dept = function(callback) {
+  var year = new Date().getFullYear();
+  var  q = `
+    SELECT budget.DepIdx, dept.DeptName, sum(budget.m1) as m1, sum(budget.m2) as m2, sum(budget.m3) as m3, sum(budget.m4) as m4, sum(budget.m5) as m5, sum(budget.m6) as m6,
+    sum(budget.m7) as m7, sum(budget.m8) as m8, sum(budget.m9) as m9, sum(budget.m10) as m10, sum(budget.m11) as m11, sum(budget.m12) as m12 FROM budget
+    INNER JOIN dept as dept ON dept.DeptIdx = budget.DepIdx
+    WHERE budget.pdate >= ? AND budget.pdate <= ? GROUP BY budget.DepIdx`;
+  db.query(q, [year+'-01-01', year+'-12-31'], function(err, rows) {
+    callback(err, rows);
+  });
+}
+
 exports.add = add;
 exports.find_all = find_all;
 exports.remove = remove;
 exports.edit = edit;
 exports.report = report;
+exports.report_dept = report_dept;

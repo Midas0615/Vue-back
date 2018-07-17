@@ -72,8 +72,15 @@ var remove = function(body, callback) {
   })
 }
 
+var getProfitSum= function(Idx, callback) {
+  db.query('SELECT sum(Amount) as Profit FROM yarnactual WHERE OrderIdx = ?', [Idx], function(err,rows) {
+    callback(err, rows);
+  })
+}
+
 exports.add = add;
 exports.load = load;
 exports.confirm = confirm;
 exports.edit = edit;
 exports.remove = remove;
+exports.getProfitSum = getProfitSum;

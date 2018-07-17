@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 752:
+/***/ 751:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59,7 +59,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 756:
+/***/ 753:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1991,9 +1991,9 @@ if (false) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mini_toastr__ = __webpack_require__(756);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mini_toastr__ = __webpack_require__(753);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_src_store_store__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_src_const_js__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_src_const_js__ = __webpack_require__(751);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_plugins_DataTable_DataTable_vue__ = __webpack_require__(823);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_components_plugins_DataTable_DataTable_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_components_plugins_DataTable_DataTable_vue__);
 //
@@ -2202,7 +2202,7 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
               'iss_date': _this2.formatDate(tmp.Fetcha),
               'cust': _this2.getCustomerName(tmp.Proveedor),
               'cur': _this2.getCurrencyName(tmp.Currency),
-              'amount': tmp.sum,
+              'amount': tmp.sum1,
               'p_type': _this2.getPayType(tmp.Forma),
               'purchase': '',
               'file': tmp.file.substr(0, tmp.file.length - 1),

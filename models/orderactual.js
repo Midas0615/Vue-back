@@ -1,5 +1,9 @@
 var db = require('./db');
 
+var edit = function(body, callback) {
+  
+}
+
 var find_all = function(callback) {
   db.query(`
     SELECT iorderactual.*, users.UserName as HandlerName FROM iorderactual INNER JOIN users ON iorderactual.Handler = users.UserIdx
@@ -55,6 +59,30 @@ var findOne = function(ordIdx, callback) {
     callback(err, rows);
   })
 }
+
+var findQtyByBuyer = function(callback) {
+  db.query(`
+    SELECT sum(iorderactual.OrderAmount) as Amount, iorderactual.Buyer as Buyer, customers.CustName as BuyerName
+    FROM iorderactual
+    INNER JOIN customers ON customers.CustIdx = iorderactual.Buyer
+    WHERE Indate > ? And Indate < ? GROUP BY iorderactual.Buyer`, [
+    new Date(new Date().getFullYear(), 0, 1), new Date(new Date().getFullYear(), 12, 31)
+  ], function(err, rows) {
+    callback(err, rows);
+  })
+}
+
+var findByBuyer = function(buyer, callback) {
+  db.query(`SELECT * FROM iorderactual WHERE Indate > ? And Indate < ? AND Buyer = ?`, [
+    new Date(new Date().getFullYear(), 0, 1), new Date(new Date().getFullYear(), 12, 31), buyer
+  ], function(err, rows) {
+    callback(err, rows);
+  })
+}
+
+exports.edit = edit;
 exports.find = find;
 exports.find_all = find_all;
 exports.findOne = findOne;
+exports.findQtyByBuyer = findQtyByBuyer;
+exports.findByBuyer = findByBuyer;

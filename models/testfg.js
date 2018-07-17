@@ -66,7 +66,14 @@ var remove = function(body, callback) {
   })
 }
 
+var getProfitSum= function(Idx, callback) {
+  db.query('SELECT sum(Cost) as Profit FROM testfg WHERE OrderIdx = ?', [Idx], function(err,rows) {
+    callback(err, rows);
+  })
+}
+
 exports.add = add;
 exports.load = load;
 exports.edit = edit;
 exports.remove = remove;
+exports.getProfitSum = getProfitSum;

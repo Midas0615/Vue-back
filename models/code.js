@@ -6,4 +6,11 @@ var find_all = function(callback) {
   });
 }
 
+var findByClassification = function(name, callback) {
+  db.query(`SELECT * FROM codes WHERE Classification = ?`, [name], function(err, rows) {
+    callback(err, rows);
+  });
+}
+
 exports.find_all = find_all;
+exports.findByClassification = findByClassification;

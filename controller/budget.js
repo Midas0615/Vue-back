@@ -86,7 +86,6 @@ exports.budget_edit = function(req, res) {
 }
 
 exports.report_list = function(req, res) {
-  console.log(req.body);
   Budget.report(req.body, function(err, rows) {
     if(err) {
       res.status(500).send();

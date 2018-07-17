@@ -55,6 +55,17 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 751:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  // host: 'http://localhost:3000'
+  host: 'http://18.222.102.137'
+});
+
+/***/ }),
+
+/***/ 752:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -308,18 +319,284 @@ var TRANSPARENT = exports.TRANSPARENT = new Color([0, 0, 0, 0]);
 
 /***/ }),
 
-/***/ 752:
+/***/ 753:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  // host: 'http://localhost:3000'
-  host: 'http://18.222.102.137'
-});
+/* unused harmony export fadeOut */
+/* unused harmony export flatten */
+/* unused harmony export makeCss */
+/* unused harmony export appendStyles */
+/* unused harmony export makeNode */
+/* unused harmony export createIcon */
+/* unused harmony export addElem */
+/* unused harmony export getTypeClass */
+function fadeOut (element, cb) {
+  if (element.style.opacity && element.style.opacity > 0.05) {
+    element.style.opacity = element.style.opacity - 0.05
+  } else if (element.style.opacity && element.style.opacity <= 0.1) {
+    if (element.parentNode) {
+      element.parentNode.removeChild(element)
+      if (cb) cb()
+    }
+  } else {
+    element.style.opacity = 0.9
+  }
+  setTimeout(() => fadeOut.apply(this, [element, cb]), 1000 / 30
+  )
+}
+
+const LIB_NAME = 'mini-toastr'
+/* unused harmony export LIB_NAME */
+
+
+const ERROR = 'error'
+/* unused harmony export ERROR */
+
+const WARN = 'warn'
+/* unused harmony export WARN */
+
+const SUCCESS = 'success'
+/* unused harmony export SUCCESS */
+
+const INFO = 'info'
+/* unused harmony export INFO */
+
+const CONTAINER_CLASS = LIB_NAME
+/* unused harmony export CONTAINER_CLASS */
+
+const NOTIFICATION_CLASS = `${LIB_NAME}__notification`
+/* unused harmony export NOTIFICATION_CLASS */
+
+const TITLE_CLASS = `${LIB_NAME}-notification__title`
+/* unused harmony export TITLE_CLASS */
+
+const ICON_CLASS = `${LIB_NAME}-notification__icon`
+/* unused harmony export ICON_CLASS */
+
+const MESSAGE_CLASS = `${LIB_NAME}-notification__message`
+/* unused harmony export MESSAGE_CLASS */
+
+const ERROR_CLASS = `-${ERROR}`
+/* unused harmony export ERROR_CLASS */
+
+const WARN_CLASS = `-${WARN}`
+/* unused harmony export WARN_CLASS */
+
+const SUCCESS_CLASS = `-${SUCCESS}`
+/* unused harmony export SUCCESS_CLASS */
+
+const INFO_CLASS = `-${INFO}`
+/* unused harmony export INFO_CLASS */
+
+const DEFAULT_TIMEOUT = 3000
+/* unused harmony export DEFAULT_TIMEOUT */
+
+
+
+function flatten (obj, into, prefix) {
+  into = into || {}
+  prefix = prefix || ''
+
+  for (let k in obj) {
+    if (obj.hasOwnProperty(k)) {
+      const prop = obj[k]
+      if (prop && typeof prop === 'object' && !(prop instanceof Date || prop instanceof RegExp)) {
+        flatten(prop, into, prefix + k + ' ')
+      } else {
+        if (into[prefix] && typeof into[prefix] === 'object') {
+          into[prefix][k] = prop
+        } else {
+          into[prefix] = {}
+          into[prefix][k] = prop
+        }
+      }
+    }
+  }
+
+  return into
+}
+
+function makeCss (obj) {
+  const flat = flatten(obj)
+  let str = JSON.stringify(flat, null, 2)
+  str = str.replace(/"([^"]*)": {/g, '$1 {')
+    .replace(/"([^"]*)"/g, '$1')
+    .replace(/(\w*-?\w*): ([\w\d .#]*),?/g, '$1: $2;')
+    .replace(/},/g, '}\n')
+    .replace(/ &([.:])/g, '$1')
+
+  str = str.substr(1, str.lastIndexOf('}') - 1)
+
+  return str
+}
+
+function appendStyles (css) {
+  let head = document.head || document.getElementsByTagName('head')[0]
+  let styleElem = makeNode('style')
+  styleElem.id = `${LIB_NAME}-styles`
+  styleElem.type = 'text/css'
+
+  if (styleElem.styleSheet) {
+    styleElem.styleSheet.cssText = css
+  } else {
+    styleElem.appendChild(document.createTextNode(css))
+  }
+
+  head.appendChild(styleElem)
+}
+
+const config = {
+  types: {ERROR, WARN, SUCCESS, INFO},
+  animation: fadeOut,
+  timeout: DEFAULT_TIMEOUT,
+  icons: {},
+  appendTarget: document.body,
+  node: makeNode(),
+  style: {
+    [`.${CONTAINER_CLASS}`]: {
+      position: 'fixed',
+      'z-index': 99999,
+      right: '12px',
+      top: '12px'
+    },
+    [`.${NOTIFICATION_CLASS}`]: {
+      cursor: 'pointer',
+      padding: '12px 18px',
+      margin: '0 0 6px 0',
+      'background-color': '#000',
+      opacity: 0.8,
+      color: '#fff',
+      'border-radius': '3px',
+      'box-shadow': '#3c3b3b 0 0 12px',
+      width: '300px',
+      [`&.${ERROR_CLASS}`]: {
+        'background-color': '#D5122B'
+      },
+      [`&.${WARN_CLASS}`]: {
+        'background-color': '#F5AA1E'
+      },
+      [`&.${SUCCESS_CLASS}`]: {
+        'background-color': '#7AC13E'
+      },
+      [`&.${INFO_CLASS}`]: {
+        'background-color': '#4196E1'
+      },
+      '&:hover': {
+        opacity: 1,
+        'box-shadow': '#000 0 0 12px'
+      }
+    },
+    [`.${TITLE_CLASS}`]: {
+      'font-weight': '500'
+    },
+    [`.${MESSAGE_CLASS}`]: {
+      display: 'inline-block',
+      'vertical-align': 'middle',
+      width: '240px',
+      padding: '0 12px'
+    }
+  }
+}
+/* unused harmony export config */
+
+
+function makeNode (type = 'div') {
+  return document.createElement(type)
+}
+
+function createIcon (node, type, config) {
+  const iconNode = makeNode(config.icons[type].nodeType)
+  const attrs = config.icons[type].attrs
+
+  for (const k in attrs) {
+    if (attrs.hasOwnProperty(k)) {
+      iconNode.setAttribute(k, attrs[k])
+    }
+  }
+
+  node.appendChild(iconNode)
+}
+
+function addElem (node, text, className) {
+  const elem = makeNode()
+  elem.className = className
+  elem.appendChild(document.createTextNode(text))
+  node.appendChild(elem)
+}
+
+function getTypeClass (type) {
+  if (type === SUCCESS) return SUCCESS_CLASS
+  if (type === WARN) return WARN_CLASS
+  if (type === ERROR) return ERROR_CLASS
+  if (type === INFO) return INFO_CLASS
+
+  return ''
+}
+
+const miniToastr = {
+  config,
+  isInitialised: false,
+  showMessage (message, title, type, timeout, cb, overrideConf) {
+    const config = {}
+    Object.assign(config, this.config)
+    Object.assign(config, overrideConf)
+
+    const notificationElem = makeNode()
+    notificationElem.className = `${NOTIFICATION_CLASS} ${getTypeClass(type)}`
+
+    notificationElem.onclick = function () {
+      config.animation(notificationElem, null)
+    }
+
+    if (title) addElem(notificationElem, title, TITLE_CLASS)
+    if (config.icons[type]) createIcon(notificationElem, type, config)
+    if (message) addElem(notificationElem, message, MESSAGE_CLASS)
+
+    config.node.insertBefore(notificationElem, config.node.firstChild)
+    setTimeout(() => config.animation(notificationElem, cb), timeout || config.timeout
+    )
+
+    if (cb) cb()
+    return this
+  },
+  init (aConfig) {
+    const newConfig = {}
+    Object.assign(newConfig, config)
+    Object.assign(newConfig, aConfig)
+    this.config = newConfig
+
+    const cssStr = makeCss(newConfig.style)
+    appendStyles(cssStr)
+
+    newConfig.node.id = CONTAINER_CLASS
+    newConfig.node.className = CONTAINER_CLASS
+    newConfig.appendTarget.appendChild(newConfig.node)
+
+    Object.keys(newConfig.types).forEach(v => {
+        this[newConfig.types[v]] = function (message, title, timeout, cb, config) {
+          this.showMessage(message, title, newConfig.types[v], timeout, cb, config)
+          return this
+        }.bind(this)
+      }
+    )
+
+    this.isInitialised = true;
+
+    return this
+  },
+  setIcon (type, nodeType = 'i', attrs = []) {
+    attrs.class = attrs.class ? attrs.class + ' ' + ICON_CLASS : ICON_CLASS
+
+    this.config.icons[type] = {nodeType, attrs}
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (miniToastr);
 
 /***/ }),
 
-/***/ 753:
+/***/ 754:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {(function (global, factory) {
@@ -1549,7 +1826,7 @@ return VueForm;
 
 /***/ }),
 
-/***/ 754:
+/***/ 755:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1635,7 +1912,7 @@ var calculateLengthFromValueWithUnit = exports.calculateLengthFromValueWithUnit 
 
 /***/ }),
 
-/***/ 755:
+/***/ 756:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1845,283 +2122,6 @@ var getCurvePoints = function getCurvePoints(x, y, r1, r2, position) {
 
 /***/ }),
 
-/***/ 756:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export fadeOut */
-/* unused harmony export flatten */
-/* unused harmony export makeCss */
-/* unused harmony export appendStyles */
-/* unused harmony export makeNode */
-/* unused harmony export createIcon */
-/* unused harmony export addElem */
-/* unused harmony export getTypeClass */
-function fadeOut (element, cb) {
-  if (element.style.opacity && element.style.opacity > 0.05) {
-    element.style.opacity = element.style.opacity - 0.05
-  } else if (element.style.opacity && element.style.opacity <= 0.1) {
-    if (element.parentNode) {
-      element.parentNode.removeChild(element)
-      if (cb) cb()
-    }
-  } else {
-    element.style.opacity = 0.9
-  }
-  setTimeout(() => fadeOut.apply(this, [element, cb]), 1000 / 30
-  )
-}
-
-const LIB_NAME = 'mini-toastr'
-/* unused harmony export LIB_NAME */
-
-
-const ERROR = 'error'
-/* unused harmony export ERROR */
-
-const WARN = 'warn'
-/* unused harmony export WARN */
-
-const SUCCESS = 'success'
-/* unused harmony export SUCCESS */
-
-const INFO = 'info'
-/* unused harmony export INFO */
-
-const CONTAINER_CLASS = LIB_NAME
-/* unused harmony export CONTAINER_CLASS */
-
-const NOTIFICATION_CLASS = `${LIB_NAME}__notification`
-/* unused harmony export NOTIFICATION_CLASS */
-
-const TITLE_CLASS = `${LIB_NAME}-notification__title`
-/* unused harmony export TITLE_CLASS */
-
-const ICON_CLASS = `${LIB_NAME}-notification__icon`
-/* unused harmony export ICON_CLASS */
-
-const MESSAGE_CLASS = `${LIB_NAME}-notification__message`
-/* unused harmony export MESSAGE_CLASS */
-
-const ERROR_CLASS = `-${ERROR}`
-/* unused harmony export ERROR_CLASS */
-
-const WARN_CLASS = `-${WARN}`
-/* unused harmony export WARN_CLASS */
-
-const SUCCESS_CLASS = `-${SUCCESS}`
-/* unused harmony export SUCCESS_CLASS */
-
-const INFO_CLASS = `-${INFO}`
-/* unused harmony export INFO_CLASS */
-
-const DEFAULT_TIMEOUT = 3000
-/* unused harmony export DEFAULT_TIMEOUT */
-
-
-
-function flatten (obj, into, prefix) {
-  into = into || {}
-  prefix = prefix || ''
-
-  for (let k in obj) {
-    if (obj.hasOwnProperty(k)) {
-      const prop = obj[k]
-      if (prop && typeof prop === 'object' && !(prop instanceof Date || prop instanceof RegExp)) {
-        flatten(prop, into, prefix + k + ' ')
-      } else {
-        if (into[prefix] && typeof into[prefix] === 'object') {
-          into[prefix][k] = prop
-        } else {
-          into[prefix] = {}
-          into[prefix][k] = prop
-        }
-      }
-    }
-  }
-
-  return into
-}
-
-function makeCss (obj) {
-  const flat = flatten(obj)
-  let str = JSON.stringify(flat, null, 2)
-  str = str.replace(/"([^"]*)": {/g, '$1 {')
-    .replace(/"([^"]*)"/g, '$1')
-    .replace(/(\w*-?\w*): ([\w\d .#]*),?/g, '$1: $2;')
-    .replace(/},/g, '}\n')
-    .replace(/ &([.:])/g, '$1')
-
-  str = str.substr(1, str.lastIndexOf('}') - 1)
-
-  return str
-}
-
-function appendStyles (css) {
-  let head = document.head || document.getElementsByTagName('head')[0]
-  let styleElem = makeNode('style')
-  styleElem.id = `${LIB_NAME}-styles`
-  styleElem.type = 'text/css'
-
-  if (styleElem.styleSheet) {
-    styleElem.styleSheet.cssText = css
-  } else {
-    styleElem.appendChild(document.createTextNode(css))
-  }
-
-  head.appendChild(styleElem)
-}
-
-const config = {
-  types: {ERROR, WARN, SUCCESS, INFO},
-  animation: fadeOut,
-  timeout: DEFAULT_TIMEOUT,
-  icons: {},
-  appendTarget: document.body,
-  node: makeNode(),
-  style: {
-    [`.${CONTAINER_CLASS}`]: {
-      position: 'fixed',
-      'z-index': 99999,
-      right: '12px',
-      top: '12px'
-    },
-    [`.${NOTIFICATION_CLASS}`]: {
-      cursor: 'pointer',
-      padding: '12px 18px',
-      margin: '0 0 6px 0',
-      'background-color': '#000',
-      opacity: 0.8,
-      color: '#fff',
-      'border-radius': '3px',
-      'box-shadow': '#3c3b3b 0 0 12px',
-      width: '300px',
-      [`&.${ERROR_CLASS}`]: {
-        'background-color': '#D5122B'
-      },
-      [`&.${WARN_CLASS}`]: {
-        'background-color': '#F5AA1E'
-      },
-      [`&.${SUCCESS_CLASS}`]: {
-        'background-color': '#7AC13E'
-      },
-      [`&.${INFO_CLASS}`]: {
-        'background-color': '#4196E1'
-      },
-      '&:hover': {
-        opacity: 1,
-        'box-shadow': '#000 0 0 12px'
-      }
-    },
-    [`.${TITLE_CLASS}`]: {
-      'font-weight': '500'
-    },
-    [`.${MESSAGE_CLASS}`]: {
-      display: 'inline-block',
-      'vertical-align': 'middle',
-      width: '240px',
-      padding: '0 12px'
-    }
-  }
-}
-/* unused harmony export config */
-
-
-function makeNode (type = 'div') {
-  return document.createElement(type)
-}
-
-function createIcon (node, type, config) {
-  const iconNode = makeNode(config.icons[type].nodeType)
-  const attrs = config.icons[type].attrs
-
-  for (const k in attrs) {
-    if (attrs.hasOwnProperty(k)) {
-      iconNode.setAttribute(k, attrs[k])
-    }
-  }
-
-  node.appendChild(iconNode)
-}
-
-function addElem (node, text, className) {
-  const elem = makeNode()
-  elem.className = className
-  elem.appendChild(document.createTextNode(text))
-  node.appendChild(elem)
-}
-
-function getTypeClass (type) {
-  if (type === SUCCESS) return SUCCESS_CLASS
-  if (type === WARN) return WARN_CLASS
-  if (type === ERROR) return ERROR_CLASS
-  if (type === INFO) return INFO_CLASS
-
-  return ''
-}
-
-const miniToastr = {
-  config,
-  isInitialised: false,
-  showMessage (message, title, type, timeout, cb, overrideConf) {
-    const config = {}
-    Object.assign(config, this.config)
-    Object.assign(config, overrideConf)
-
-    const notificationElem = makeNode()
-    notificationElem.className = `${NOTIFICATION_CLASS} ${getTypeClass(type)}`
-
-    notificationElem.onclick = function () {
-      config.animation(notificationElem, null)
-    }
-
-    if (title) addElem(notificationElem, title, TITLE_CLASS)
-    if (config.icons[type]) createIcon(notificationElem, type, config)
-    if (message) addElem(notificationElem, message, MESSAGE_CLASS)
-
-    config.node.insertBefore(notificationElem, config.node.firstChild)
-    setTimeout(() => config.animation(notificationElem, cb), timeout || config.timeout
-    )
-
-    if (cb) cb()
-    return this
-  },
-  init (aConfig) {
-    const newConfig = {}
-    Object.assign(newConfig, config)
-    Object.assign(newConfig, aConfig)
-    this.config = newConfig
-
-    const cssStr = makeCss(newConfig.style)
-    appendStyles(cssStr)
-
-    newConfig.node.id = CONTAINER_CLASS
-    newConfig.node.className = CONTAINER_CLASS
-    newConfig.appendTarget.appendChild(newConfig.node)
-
-    Object.keys(newConfig.types).forEach(v => {
-        this[newConfig.types[v]] = function (message, title, timeout, cb, config) {
-          this.showMessage(message, title, newConfig.types[v], timeout, cb, config)
-          return this
-        }.bind(this)
-      }
-    )
-
-    this.isInitialised = true;
-
-    return this
-  },
-  setIcon (type, nodeType = 'i', attrs = []) {
-    attrs.class = attrs.class ? attrs.class + ' ' + ICON_CLASS : ICON_CLASS
-
-    this.config.icons[type] = {nodeType, attrs}
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (miniToastr);
-
-/***/ }),
-
 /***/ 757:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2134,7 +2134,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Color = __webpack_require__(751);
+var _Color = __webpack_require__(752);
 
 var _Color2 = _interopRequireDefault(_Color);
 
@@ -2182,7 +2182,7 @@ var _wordBreak = __webpack_require__(803);
 
 var _zIndex = __webpack_require__(804);
 
-var _Bounds = __webpack_require__(755);
+var _Bounds = __webpack_require__(756);
 
 var _Input = __webpack_require__(780);
 
@@ -2420,11 +2420,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parseBackgroundImage = exports.parseBackground = exports.calculateBackgroundRepeatPath = exports.calculateBackgroundPosition = exports.calculateBackgroungPositioningArea = exports.calculateBackgroungPaintingArea = exports.calculateGradientBackgroundSize = exports.calculateBackgroundSize = exports.BACKGROUND_ORIGIN = exports.BACKGROUND_CLIP = exports.BACKGROUND_SIZE = exports.BACKGROUND_REPEAT = undefined;
 
-var _Color = __webpack_require__(751);
+var _Color = __webpack_require__(752);
 
 var _Color2 = _interopRequireDefault(_Color);
 
-var _Length = __webpack_require__(754);
+var _Length = __webpack_require__(755);
 
 var _Length2 = _interopRequireDefault(_Length);
 
@@ -2436,7 +2436,7 @@ var _Vector = __webpack_require__(762);
 
 var _Vector2 = _interopRequireDefault(_Vector);
 
-var _Bounds = __webpack_require__(755);
+var _Bounds = __webpack_require__(756);
 
 var _padding = __webpack_require__(776);
 
@@ -3315,7 +3315,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parseTextDecoration = exports.TEXT_DECORATION_LINE = exports.TEXT_DECORATION = exports.TEXT_DECORATION_STYLE = undefined;
 
-var _Color = __webpack_require__(751);
+var _Color = __webpack_require__(752);
 
 var _Color2 = _interopRequireDefault(_Color);
 
@@ -3403,7 +3403,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parseBorder = exports.BORDER_SIDES = exports.BORDER_STYLE = undefined;
 
-var _Color = __webpack_require__(751);
+var _Color = __webpack_require__(752);
 
 var _Color2 = _interopRequireDefault(_Color);
 
@@ -4232,7 +4232,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parsePadding = exports.PADDING_SIDES = undefined;
 
-var _Length = __webpack_require__(754);
+var _Length = __webpack_require__(755);
 
 var _Length2 = _interopRequireDefault(_Length);
 
@@ -4373,15 +4373,15 @@ var _Vector = __webpack_require__(762);
 
 var _Vector2 = _interopRequireDefault(_Vector);
 
-var _Color = __webpack_require__(751);
+var _Color = __webpack_require__(752);
 
 var _Color2 = _interopRequireDefault(_Color);
 
-var _Length = __webpack_require__(754);
+var _Length = __webpack_require__(755);
 
 var _Length2 = _interopRequireDefault(_Length);
 
-var _Bounds = __webpack_require__(755);
+var _Bounds = __webpack_require__(756);
 
 var _TextBounds = __webpack_require__(781);
 
@@ -4486,7 +4486,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parseTextBounds = exports.TextBounds = undefined;
 
-var _Bounds = __webpack_require__(755);
+var _Bounds = __webpack_require__(756);
 
 var _textDecoration = __webpack_require__(767);
 
@@ -4965,13 +4965,13 @@ var _Feature = __webpack_require__(765);
 
 var _Feature2 = _interopRequireDefault(_Feature);
 
-var _Bounds = __webpack_require__(755);
+var _Bounds = __webpack_require__(756);
 
 var _Clone = __webpack_require__(813);
 
 var _Font = __webpack_require__(784);
 
-var _Color = __webpack_require__(751);
+var _Color = __webpack_require__(752);
 
 var _Color2 = _interopRequireDefault(_Color);
 
@@ -5378,7 +5378,7 @@ exports.parseBorderRadius = undefined;
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _Length = __webpack_require__(754);
+var _Length = __webpack_require__(755);
 
 var _Length2 = _interopRequireDefault(_Length);
 
@@ -5648,7 +5648,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parseMargin = undefined;
 
-var _Length = __webpack_require__(754);
+var _Length = __webpack_require__(755);
 
 var _Length2 = _interopRequireDefault(_Length);
 
@@ -5707,7 +5707,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parseTextShadow = undefined;
 
-var _Color = __webpack_require__(751);
+var _Color = __webpack_require__(752);
 
 var _Color2 = _interopRequireDefault(_Color);
 
@@ -5809,7 +5809,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.parseTransform = undefined;
 
-var _Length = __webpack_require__(754);
+var _Length = __webpack_require__(755);
 
 var _Length2 = _interopRequireDefault(_Length);
 
@@ -6829,7 +6829,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Bounds = __webpack_require__(755);
+var _Bounds = __webpack_require__(756);
 
 var _Font = __webpack_require__(784);
 
@@ -7169,11 +7169,11 @@ var _NodeContainer2 = _interopRequireDefault(_NodeContainer);
 
 var _Angle = __webpack_require__(812);
 
-var _Color = __webpack_require__(751);
+var _Color = __webpack_require__(752);
 
 var _Color2 = _interopRequireDefault(_Color);
 
-var _Length = __webpack_require__(754);
+var _Length = __webpack_require__(755);
 
 var _Length2 = _interopRequireDefault(_Length);
 
@@ -7652,7 +7652,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Bounds = __webpack_require__(755);
+var _Bounds = __webpack_require__(756);
 
 var _Proxy = __webpack_require__(785);
 
@@ -9300,19 +9300,19 @@ exports.push([module.i, "\n.card-folder {\n   height: 40px;\n   margin-top: -55p
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(753);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form__ = __webpack_require__(754);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_form___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_form__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_multiselect__ = __webpack_require__(759);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_multiselect__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__ = __webpack_require__(766);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_mini_toastr__ = __webpack_require__(756);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_mini_toastr__ = __webpack_require__(753);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_html2canvas__ = __webpack_require__(786);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_html2canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_html2canvas__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jspdf__ = __webpack_require__(816);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jspdf___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jspdf__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_src_store_store__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_src_const_js__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_src_const_js__ = __webpack_require__(751);
 //
 //
 //
@@ -24458,11 +24458,11 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("td", [_vm._v(_vm._s(item.supplier1))]),
                                     _vm._v(" "),
+                                    _c("td", [_vm._v(_vm._s(item.order_qty))]),
+                                    _vm._v(" "),
                                     _c("td", [_vm._v(_vm._s(item.unit_price))]),
                                     _vm._v(" "),
                                     _c("td", [_vm._v(_vm._s(item.amount1))]),
-                                    _vm._v(" "),
-                                    _c("td", [_vm._v(_vm._s(item.order_qty))]),
                                     _vm._v(" "),
                                     _c(
                                       "td",
@@ -25486,11 +25486,11 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("td", [_vm._v(_vm._s(item.supplier1))]),
                                     _vm._v(" "),
+                                    _c("td", [_vm._v(_vm._s(item.order_qty))]),
+                                    _vm._v(" "),
                                     _c("td", [_vm._v(_vm._s(item.unit_price))]),
                                     _vm._v(" "),
                                     _c("td", [_vm._v(_vm._s(item.amount1))]),
-                                    _vm._v(" "),
-                                    _c("td", [_vm._v(_vm._s(item.order_qty))]),
                                     _vm._v(" "),
                                     _c(
                                       "td",

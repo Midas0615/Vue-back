@@ -610,7 +610,17 @@ exports.delete = function(req, res) {
   }  
 }
 exports.edit = function(req, res) {
+  console.log(req.body);
   switch(req.body.num) {
+    case 1:
+      OrderActual.edit(req.body, function(err) {
+        if(err) {
+          res.status(500).send();
+        } else {
+          res.status(200).send({isSuccess: true});
+        }
+      })
+      break;
     case 2:
       PO.edit(req.body, function(err) {
         if(err) {

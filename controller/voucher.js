@@ -359,7 +359,7 @@ exports.report_list = function(req, res) {
       
       for(var i = 0; i < rows.length; i++) {
         var m = getMonth(rows[i].Fetcha);
-        var amount = rows[i].sum;
+        var amount = rows[i].sum1;
         var year = getYear(rows[i].Fetcha);
         if(year != req.body.year.YearName) continue;
         list.push({
@@ -534,7 +534,7 @@ exports.report_list2 = function(req, res) {
       var list = [];      
       for(var i = 0; i < rows.length; i++) {
         var m = getMonth(rows[i].Fetcha);
-        var amount = rows[i].sum;
+        var amount = rows[i].sum1;
         var year = getYear(rows[i].Fetcha);
         var week = getWeek(rows[i].Fetcha);        
         if(year != req.body.year.Value) continue;
