@@ -5187,36 +5187,31 @@ var render = function() {
       ),
       _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "col-lg-12 mb-3" },
+        "b-card",
+        {
+          staticClass: "mb-2 bg-default-card",
+          attrs: { header: "Order Status by Buyer", "header-tag": "h4" }
+        },
         [
-          _c(
-            "b-card",
-            {
-              staticClass: "mb-2 bg-default-card",
-              attrs: { header: "Order Status by Buyer", "header-tag": "h4" }
-            },
-            [
-              _c(
-                "div",
-                { staticStyle: { height: "350px", "text-align": "center" } },
-                [
-                  _c("vue-chartist", {
-                    ref: "chartist2",
-                    attrs: {
-                      data: _vm.bar.data,
-                      options: _vm.bar.options,
-                      responsiveOptions: _vm.bar.responsiveOptions,
-                      type: "Bar"
-                    }
-                  })
-                ],
-                1
-              )
-            ]
-          )
-        ],
-        1
+          _c("div", { staticClass: "col-lg-12 mb-3" }, [
+            _c(
+              "div",
+              { staticStyle: { height: "350px", "text-align": "center" } },
+              [
+                _c("vue-chartist", {
+                  ref: "chartist2",
+                  attrs: {
+                    data: _vm.bar.data,
+                    options: _vm.bar.options,
+                    responsiveOptions: _vm.bar.responsiveOptions,
+                    type: "Bar"
+                  }
+                })
+              ],
+              1
+            )
+          ])
+        ]
       )
     ],
     1
