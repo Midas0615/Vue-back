@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp([26],{
 
 /***/ 742:
 /***/ (function(module, exports, __webpack_require__) {
@@ -59,8 +59,9 @@ module.exports = Component.exports
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  host: 'http://localhost:3000'
-  // host: 'http://18.222.102.137'
+  // host: 'http://localhost:3000',
+  host: 'http://18.222.102.137',
+  pages: [{ PageName: 'Budget Management', Value: 1 }, { PageName: 'Budget Report', Value: 2 }, { PageName: 'Voucher Add', Value: 3 }, { PageName: 'Voucher List', Value: 4 }, { PageName: 'Yearly Report', Value: 5 }, { PageName: 'Voucher Group', Value: 6 }, { PageName: 'Voucher Report', Value: 7 }, { PageName: 'Order', Value: 8 }, { PageName: 'User Management', Value: 9 }]
 });
 
 /***/ }),

@@ -1,22 +1,18 @@
-webpackJsonp([6],{
+webpackJsonp([31],{
 
-/***/ 743:
+/***/ 738:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(911)
-}
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(913)
+var __vue_script__ = __webpack_require__(883)
 /* template */
-var __vue_template__ = __webpack_require__(914)
+var __vue_template__ = __webpack_require__(884)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -29,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\components\\pages\\user_management.vue"
+Component.options.__file = "src\\components\\pages\\vouchers.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3ea2a7df", Component.options)
+    hotAPI.createRecord("data-v-28184e0d", Component.options)
   } else {
-    hotAPI.reload("data-v-3ea2a7df", Component.options)
+    hotAPI.reload("data-v-28184e0d", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -57,8 +53,9 @@ module.exports = Component.exports
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  host: 'http://localhost:3000'
-  // host: 'http://18.222.102.137'
+  // host: 'http://localhost:3000',
+  host: 'http://18.222.102.137',
+  pages: [{ PageName: 'Budget Management', Value: 1 }, { PageName: 'Budget Report', Value: 2 }, { PageName: 'Voucher Add', Value: 3 }, { PageName: 'Voucher List', Value: 4 }, { PageName: 'Yearly Report', Value: 5 }, { PageName: 'Voucher Group', Value: 6 }, { PageName: 'Voucher Report', Value: 7 }, { PageName: 'Order', Value: 8 }, { PageName: 'User Management', Value: 9 }]
 });
 
 /***/ }),
@@ -2006,49 +2003,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 911:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(912);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(34)("1d96aef3", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3ea2a7df\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./user_management.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3ea2a7df\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./user_management.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 912:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(33)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 913:
+/***/ 883:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2076,8 +2031,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+__WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'UserManagement',
+  name: 'VouchersPage',
   components: {
     datatable: __WEBPACK_IMPORTED_MODULE_4_components_plugins_DataTable_DataTable_vue___default.a
   },
@@ -2085,78 +2041,253 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       rowdata: [],
       columndata: [{
-        label: 'UserName',
-        field: 'UserName',
-        numeric: false,
-        html: false
+        label: 'Account Code', // Column name
+        field: 'acc_code', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
       }, {
-        label: 'CostCenter',
-        field: 'CostCenter',
-        numeric: false,
-        html: false
+        label: 'Account', // Column name
+        field: 'acc_name', // Field name from row
+        numeric: false, // Affects sorting
+        html: false, // Escapes output if false.
+        width: '250px'
       }, {
-        label: 'Department',
-        field: 'Department',
-        numeric: false,
-        html: false
+        label: 'Cost Center', // Column name
+        field: 'cost', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
       }, {
-        label: 'Email',
-        field: 'Email',
-        numeric: false,
-        html: false
+        label: 'Department', // Column name
+        field: 'dept', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
       }, {
-        label: 'Point',
-        field: 'PointYR',
-        nuemric: true,
-        html: false
+        label: 'Voucher#', // Column name
+        field: 'voucher', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
+      }, {
+        label: 'Issued Date', // Column name
+        field: 'iss_date', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
+      }, {
+        label: 'Customer', // Column name
+        field: 'cust', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
+      }, {
+        label: 'Currency', // Column name
+        field: 'cur', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
+      }, {
+        label: 'Amount', // Column name
+        field: 'amount', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
+      }, {
+        label: 'Payment Type', // Column name
+        field: 'p_type', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
+      }, {
+        label: 'Purchase #', // Column name
+        field: 'purchase', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
+      }, {
+        label: 'File#', // Column name
+        field: 'file', // Field name from row
+        numeric: false, // Affects sorting
+        html: false // Escapes output if false.
       }, {
         label: 'Action',
-        field: 'Button',
+        field: 'button',
         numeric: false,
-        html: true,
-        width: '50px'
+        html: true
       }],
-      pagelen: [10, 20, 50, 100]
+      acc_options: [],
+      cost_options: [],
+      dept_options: [],
+      cust_options: [],
+      cur_options: [{ Name: 'Q', Idx: 1 }, { Name: '$', Idx: 2 }],
+      pay_options: [{ Name: 'Check', Idx: 1 }, { Name: 'Cash', Idx: 2 }, { Name: 'Wire Transfer', Idx: 3 }]
     };
   },
 
   methods: {
-    load_user_list: function load_user_list() {
+    formatDate: function formatDate(d) {
+      var month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+      var today = new Date(d);
+      var day = today.getDate();
+      var month_index = today.getMonth();
+      var year = today.getFullYear();
+      return day + "-" + month_names[month_index] + "-" + year;
+    },
+    getAmount: function getAmount(body) {
+      var sum = 0;
+      for (var i = 0; i < body.length; i++) {
+        sum += Number(body[i].cantidad) * Number(body[i].unitario);
+      }
+      return sum;
+    },
+    getAccountCode: function getAccountCode(Idx) {
+      for (var i = 0; i < this.acc_options.length; i++) {
+        if (this.acc_options[i].Idx == Idx) return this.acc_options[i].AccountIdx;
+      }
+      return null;
+    },
+    getAccountName: function getAccountName(Idx) {
+      for (var i = 0; i < this.acc_options.length; i++) {
+        if (this.acc_options[i].Idx == Idx) return this.acc_options[i].AccountName;
+      }
+      return null;
+    },
+    getDeptName: function getDeptName(Idx) {
+      for (var i = 0; i < this.dept_options.length; i++) {
+        if (this.dept_options[i].DeptIdx == Idx) {
+          return this.dept_options[i].DeptName;
+        }
+      }
+      return null;
+    },
+    getCustomerName: function getCustomerName(Idx) {
+      for (var i = 0; i < this.cust_options.length; i++) {
+        if (this.cust_options[i].CustIdx == Idx) return this.cust_options[i].CustName;
+      }
+      return null;
+    },
+    getCurrencyName: function getCurrencyName(Idx) {
+      for (var i = 0; i < this.cur_options.length; i++) {
+        if (this.cur_options[i].Idx == Idx) return this.cur_options[i].Name;
+      }
+      return null;
+    },
+    getCostCenterName: function getCostCenterName(Idx) {
+      for (var i = 0; i < this.cost_options.length; i++) {
+        if (this.cost_options[i].CostcenterIdx == Idx) return this.cost_options[i].CostcenterName;
+      }
+      return null;
+    },
+    getPayType: function getPayType(Idx) {
+      for (var i = 0; i < this.pay_options.length; i++) {
+        if (this.pay_options[i].Idx == Idx) return this.pay_options[i].Name;
+      }
+      return null;
+    },
+    warnMsg: function warnMsg(type, msg, title) {
+      __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */][type](msg, title);
+    },
+    load_acc_cost_dept_cust: function load_acc_cost_dept_cust() {
       var _this = this;
 
       __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', true);
-      axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/admin/user_list').then(function (res) {
-        if (res.data.isSuccess) {
-          _this.rowdata = [];
-          for (var i = 0; i < res.data.list.length; i++) {
-            var tmp = res.data.list[i];
-            _this.rowdata.push({
-              'UserName': tmp.UserName,
-              'CostCenter': tmp.CostCenter,
-              'Department': tmp.Department,
-              'Email': tmp.Email,
-              'PointYR': tmp.PointYR,
-              "Button": "<a href='#/admin/auth?id=" + tmp.UserIdx + "'><i class='fa fa-eye text-success'></i></a>"
-            });
-          }
-        }
+      axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_cost_list').then(function (res) {
+        _this.dept_options = res.data.dep_list;
+        _this.cust_options = res.data.cus_list;
+        _this.acc_options = res.data.acc_list;
+        _this.cost_options = res.data.cost_list;
         __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        _this.load_data();
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
           __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('logout');
         };
         __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
       });
+    },
+    load_data: function load_data() {
+      var _this2 = this;
+
+      if (this.$route.query.type == 1) {
+        var search_model = {
+          year: this.$route.query.year,
+          month: this.$route.query.month,
+          acc: this.$route.query.acc
+        };
+        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', true);
+        axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/voucher/vouchers', search_model).then(function (res) {
+          if (res.data.isSuccess) {
+            _this2.rowdata = [];
+            for (var i = 0; i < res.data.list.length; i++) {
+              var tmp = res.data.list[i];
+              _this2.rowdata.push({
+                'acc_code': _this2.getAccountCode(tmp.Cuenta),
+                'acc_name': _this2.getAccountName(tmp.Cuenta),
+                'cost': _this2.getCostCenterName(tmp.CostCenter),
+                'dept': _this2.getDeptName(tmp.DeptIdx),
+                'voucher': tmp.Voucher,
+                'iss_date': _this2.formatDate(tmp.Fetcha),
+                'cust': _this2.getCustomerName(tmp.Proveedor),
+                'cur': _this2.getCurrencyName(tmp.Currency),
+                'amount': tmp.sum1,
+                'p_type': _this2.getPayType(tmp.Forma),
+                'purchase': '',
+                'file': tmp.file ? tmp.file.substr(0, tmp.file.length - 1) : '',
+                "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
+              });
+            }
+          }
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        }).catch(function (err) {
+          if (err.response && err.response.status == 401) {
+            __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('logout');
+          };
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        });
+      } else if (this.$route.query.type == 2) {
+        var _search_model = {
+          year: this.$route.query.year,
+          month: this.$route.query.month,
+          week: this.$route.query.week,
+          type: this.$route.query.type2,
+          p_id: this.$route.query.p,
+          c_id: this.$route.query.c
+        };
+        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', true);
+        axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/voucher/vouchers2', _search_model).then(function (res) {
+          if (res.data.isSuccess) {
+            _this2.rowdata = [];
+            for (var i = 0; i < res.data.list.length; i++) {
+              var tmp = res.data.list[i];
+              _this2.rowdata.push({
+                'acc_code': _this2.getAccountCode(tmp.Cuenta),
+                'acc_name': _this2.getAccountName(tmp.Cuenta),
+                'cost': _this2.getCostCenterName(tmp.CostCenter),
+                'dept': _this2.getDeptName(tmp.DeptIdx),
+                'voucher': tmp.Voucher,
+                'iss_date': _this2.formatDate(tmp.Fetcha),
+                'cust': _this2.getCustomerName(tmp.Proveedor),
+                'cur': _this2.getCurrencyName(tmp.Currency),
+                'amount': tmp.sum1,
+                'p_type': _this2.getPayType(tmp.Forma),
+                'purchase': '',
+                'file': tmp.file ? tmp.file.substr(0, tmp.file.length - 1) : '',
+                "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
+              });
+            }
+          }
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        }).catch(function (err) {
+          console.log(err);
+          if (err.response && err.response.status == 401) {
+            __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('logout');
+          };
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        });
+      }
     }
   },
   mounted: function mounted() {
-    this.load_user_list();
+    this.load_acc_cost_dept_cust();
   }
 });
 
 /***/ }),
 
-/***/ 914:
+/***/ 884:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2172,16 +2303,11 @@ var render = function() {
           "b-card",
           {
             staticClass: "mb-2 bg-success-card",
-            attrs: { header: "User List", "header-tag": "h4" }
+            attrs: { header: "Voucher List", "header-tag": "h4" }
           },
           [
             _c("datatable", {
-              attrs: {
-                title: "",
-                rows: _vm.rowdata,
-                columns: _vm.columndata,
-                pagelen: _vm.pagelen
-              }
+              attrs: { title: "", rows: _vm.rowdata, columns: _vm.columndata }
             })
           ],
           1
@@ -2197,7 +2323,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3ea2a7df", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-28184e0d", module.exports)
   }
 }
 

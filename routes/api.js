@@ -8,6 +8,7 @@ var voucher = require('../controller/voucher');
 var order = require('../controller/order');
 var ordercard = require('../controller/ordercard');
 var dashboard = require('../controller/dashboard');
+var admin = require('../controller/administration');
 
 router.get('/order/ordercard/attach_download', function(req, res) {
   res.sendFile(path.join(appRoot, '/public/uploads/attachments/'+req.query.name));
@@ -63,4 +64,12 @@ router.post('/order/order_card/attachment', ordercard.attachment);
 //Dashboard
 router.post('/dashboard/load_dept_report', dashboard.load_dept_report);
 router.post('/dashboard/load_year_order_report', dashboard.load_year_order_report);
+
+
+//Administration
+router.post('/admin/user_list', admin.load_user_list);
+router.post('/admin/add_auth', admin.add_auth);
+router.post('/admin/load_auth', admin.load_auth);
+router.post('/admin/update_auth', admin.update_auth);
+router.post('/admin/remove_auth', admin.remove_auth);
 module.exports = router;

@@ -3,6 +3,7 @@ var router = express.Router();
 var jwt = require('jsonwebtoken');
 
 var User = require("../models/user");
+var Auth = require('../models/auth');
 var config = require('../config/const').config;
 
 router.post('/register', function(req, res) {
@@ -22,14 +23,24 @@ router.post('/login', function(req, res) {
     if (!user) {
       res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
     } else {
-      if(status) {
+      if(status) {        
         // if user is found and password is right create a token
-        var token = jwt.sign(JSON.stringify(user), config.secret);
-        // return the information including token as JSON
-        res.status(200).send({success: true, username: user.name, token: 'JWT ' + token, userdepartment: user.depart, userpoint: user.point, userposition: user.position});
+        Auth.load({UserIdx: user.UserIdx}, function(err, rows) {
+          if(err) {
+            res.status(200).send({success: false, msg: 'Auth Load failed.'});
+          } else {
+            var token = jwt.sign(JSON.stringify(user), config.secret);
+            // return the information including token as JSON
+            res.status(200).send({
+              success: true, username: user.name, token: 'JWT ' + token,
+              userdepartment: user.depart, userpoint: user.point, userposition: user.position,
+              auth: rows
+            });
+          }
+        })        
       } else {
         res.status(200).send({success: false, msg: 'Authentication failed. Wrong password.'});
-      }      
+      }
     }    
   })
 });

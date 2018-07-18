@@ -5,6 +5,7 @@ var db     = require('./db');
 // Set up User class
 var User = function(user) {
   var that = new Object();
+  that.UserIdx = user.UserIdx,
   that.id       = user.UserId;
   that.email    = user.Email;
   that.password = user.Passwd;

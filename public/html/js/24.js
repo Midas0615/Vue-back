@@ -1,25 +1,26 @@
-webpackJsonp([1],{
+webpackJsonp([24],{
 
-/***/ 737:
+/***/ 734:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(877)
-  __webpack_require__(879)
+  __webpack_require__(857)
+  __webpack_require__(859)
+  __webpack_require__(861)
 }
 var normalizeComponent = __webpack_require__(46)
 /* script */
-var __vue_script__ = __webpack_require__(881)
+var __vue_script__ = __webpack_require__(863)
 /* template */
-var __vue_template__ = __webpack_require__(882)
+var __vue_template__ = __webpack_require__(864)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-16a6b30a"
+var __vue_scopeId__ = "data-v-30eb25b8"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -30,7 +31,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\components\\pages\\voucher_detail.vue"
+Component.options.__file = "src\\components\\pages\\voucher_add.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -39,9 +40,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-16a6b30a", Component.options)
+    hotAPI.createRecord("data-v-30eb25b8", Component.options)
   } else {
-    hotAPI.reload("data-v-16a6b30a", Component.options)
+    hotAPI.reload("data-v-30eb25b8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -58,8 +59,9 @@ module.exports = Component.exports
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
-  host: 'http://localhost:3000'
-  // host: 'http://18.222.102.137'
+  // host: 'http://localhost:3000',
+  host: 'http://18.222.102.137',
+  pages: [{ PageName: 'Budget Management', Value: 1 }, { PageName: 'Budget Report', Value: 2 }, { PageName: 'Voucher Add', Value: 3 }, { PageName: 'Voucher List', Value: 4 }, { PageName: 'Yearly Report', Value: 5 }, { PageName: 'Voucher Group', Value: 6 }, { PageName: 'Voucher Report', Value: 7 }, { PageName: 'Order', Value: 8 }, { PageName: 'User Management', Value: 9 }]
 });
 
 /***/ }),
@@ -8705,23 +8707,23 @@ module.exports = "/images/voucher_logo.png?7b66ae1c6bdee85fddf72b67d44c9115";
 
 /***/ }),
 
-/***/ 877:
+/***/ 857:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(878);
+var content = __webpack_require__(858);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(34)("7c3c336f", content, false);
+var update = __webpack_require__(34)("3e459a34", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-16a6b30a\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
-     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-16a6b30a\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
+   module.hot.accept("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css", function() {
+     var newContent = require("!!../../css-loader/index.js!../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":false,\"hasInlineConfig\":true}!./vue-multiselect.min.css");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -8732,7 +8734,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 878:
+/***/ 858:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -8747,23 +8749,23 @@ exports.push([module.i, "\nfieldset[disabled] .multiselect{pointer-events:none\n
 
 /***/ }),
 
-/***/ 879:
+/***/ 859:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(880);
+var content = __webpack_require__(860);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(34)("5db9bf71", content, false);
+var update = __webpack_require__(34)("c3c05db0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-16a6b30a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_detail.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-16a6b30a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_detail.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_add.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=1&bustCache!./voucher_add.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -8774,7 +8776,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 880:
+/***/ 860:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(33)(undefined);
@@ -8782,14 +8784,56 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n.box-shadow[data-v-16a6b30a]{\n  -webkit-box-shadow: 0px 0px 1px 1px #cfcfcf;\n          box-shadow: 0px 0px 1px 1px #cfcfcf;\n}\n.options .active[data-v-16a6b30a]{\n  background-color: #eee;\n  color: #3e6174 !important;\n}\n.options a[data-v-16a6b30a] {\n  cursor: pointer;\n}\n.options a[data-v-16a6b30a]:hover,.options2 a[data-v-16a6b30a]:hover{\n  background-color: #eee;\n}\n.border-bottom[data-v-16a6b30a] {\n  border-bottom: 1px solid #dee2e6 !important;\n}\n.v-title[data-v-16a6b30a] {\n  font-size: 1.3em;\n  margin: auto;\n}\n.c-input[data-v-16a6b30a] {\n  height: 40px;\n}\n.vo-title[data-v-16a6b30a] {\n   font-weight: 700;\n}\n.vo-number[data-v-16a6b30a] {\n   font-size: 1.7em;\n}\n.t-v-title tr td[data-v-16a6b30a] {\n   border: solid black 1px;\n   text-align: center;\n   padding: 2px;\n}\n.t-v-header tr td[data-v-16a6b30a], .t-v-detail tr td[data-v-16a6b30a], .t-v-detail th[data-v-16a6b30a] {\n   border: solid black 1px;\n   text-align: left;\n   padding: 2px 4px;\n}\n.t-v-detail th[data-v-16a6b30a] {\n  border-top: solid black 3px;\n  padding: 2px 4px;\n}\n.paper[data-v-16a6b30a] {\n  size: 8.5in 11in;\n  margin: auto;\n}\n.paper .qr[data-v-16a6b30a] {\n  width: 93px;\n  height: 93px;\n}\n.w-10[data-v-16a6b30a] {\n  width: 10%;\n}\n.w-12-5[data-v-16a6b30a] {\n  width: 12.5%;\n}\n.w-25[data-v-16a6b30a] {\n  width: 25%;\n}\n.w-80[data-v-16a6b30a] {\n  width: 80%;\n}\n.container[data-v-16a6b30a] {\n  width: 850px;\n  margin: auto\n}\n.nav-tabs-custom[data-v-16a6b30a] {\n  width: 100%;\n}\n.nav-link[data-v-16a6b30a] {\n  font-size:1.2em !important;\n}\n.text-blue[data-v-16a6b30a] {\n  color: blue;\n}\n.roboto-condensed[data-v-16a6b30a] {\n  font-family: 'Roboto Condensed', sans-serif;\n}\n.roboto[data-v-16a6b30a] {\n  font-family: /*'Roboto', */sans-serif;\n}\n", ""]);
+exports.push([module.i, "\n.box-shadow[data-v-30eb25b8]{\n  -webkit-box-shadow: 0px 0px 1px 1px #cfcfcf;\n          box-shadow: 0px 0px 1px 1px #cfcfcf;\n}\n.options .active[data-v-30eb25b8]{\n  background-color: #eee;\n  color: #3e6174 !important;\n}\n.options a[data-v-30eb25b8] {\n  cursor: pointer;\n}\n.options a[data-v-30eb25b8]:hover,.options2 a[data-v-30eb25b8]:hover{\n  background-color: #eee;\n}\n.border-bottom[data-v-30eb25b8] {\n  border-bottom: 1px solid #dee2e6 !important;\n}\n.v-title[data-v-30eb25b8] {\n  font-size: 1.3em;\n  margin: auto;\n}\n.c-input[data-v-30eb25b8] {\n  height: 40px;\n}\n.vo-title[data-v-30eb25b8] {\n   font-weight: 700;\n}\n.vo-number[data-v-30eb25b8] {\n   font-size: 1.7em;\n}\n.t-v-title tr td[data-v-30eb25b8] {\n   border: solid black 1px;\n   text-align: center;\n   padding: 2px;\n}\n.t-v-header tr td[data-v-30eb25b8], .t-v-detail tr td[data-v-30eb25b8], .t-v-detail th[data-v-30eb25b8] {\n   border: solid black 1px;\n   text-align: left;\n   padding: 2px 4px;\n}\n.t-v-detail th[data-v-30eb25b8] {\n  border-top: solid black 3px;\n  padding: 2px 4px;\n}\n.paper[data-v-30eb25b8] {\n  size: 8.5in 11in;\n  margin: auto;\n}\n.paper .qr[data-v-30eb25b8] {\n  width: 93px;\n  height: 93px;\n}\n.w-10[data-v-30eb25b8] {\n  width: 10%;\n}\n.w-12-5[data-v-30eb25b8] {\n  width: 12.5%;\n}\n.w-25[data-v-30eb25b8] {\n  width: 25%;\n}\n.w-80[data-v-30eb25b8] {\n  width: 80%;\n}\n.container[data-v-30eb25b8] {\n  width: 850px;\n  margin: auto\n}\n.nav-tabs-custom[data-v-30eb25b8] {\n  width: 100%;\n}\n.roboto-condensed[data-v-30eb25b8] {\n  font-family: 'Roboto Condensed', sans-serif;\n}\n.roboto[data-v-30eb25b8] {\n  font-family: /*'Roboto', */sans-serif;\n}\n.text-blue[data-v-30eb25b8] {\n  color: blue;\n}\n  \n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 881:
+/***/ 861:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(862);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(34)("a83c80c0", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=2&bustCache!./voucher_add.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-30eb25b8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=2&bustCache!./voucher_add.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 862:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(33)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.nav-item a.active {\n  font-weight: bold !important;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 863:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8798,17 +8842,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_qrcode_component__ = __webpack_require__(828);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_qrcode_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue_qrcode_component__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_multiselect__ = __webpack_require__(760);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_multiselect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__ = __webpack_require__(767);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_mini_toastr__ = __webpack_require__(754);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_html2canvas__ = __webpack_require__(787);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_html2canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_html2canvas__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jspdf__ = __webpack_require__(817);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jspdf___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jspdf__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_src_store_store__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_src_const_js__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_cookie__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_cookie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_cookie__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_multiselect__ = __webpack_require__(760);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue_multiselect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue_multiselect__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuejs_datepicker__ = __webpack_require__(767);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuejs_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_vuejs_datepicker__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_mini_toastr__ = __webpack_require__(754);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_html2canvas__ = __webpack_require__(787);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_html2canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_html2canvas__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jspdf__ = __webpack_require__(817);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_jspdf___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_jspdf__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_src_store_store__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_src_const_js__ = __webpack_require__(752);
 //
 //
 //
@@ -9227,15 +9273,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_4_mini_toastr__["a" /* default */].init();
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default.a);
+
+__WEBPACK_IMPORTED_MODULE_5_mini_toastr__["a" /* default */].init();
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_cookie___default.a);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_3_vue_multiselect___default.a);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('qr-code', __WEBPACK_IMPORTED_MODULE_1_vue_qrcode_component___default.a);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "VoucherDetailPage",
+  name: "VoucherAddPage",
   components: {
-    Multiselect: __WEBPACK_IMPORTED_MODULE_2_vue_multiselect___default.a,
-    Datepicker: __WEBPACK_IMPORTED_MODULE_3_vuejs_datepicker___default.a
+    Multiselect: __WEBPACK_IMPORTED_MODULE_3_vue_multiselect___default.a,
+    Datepicker: __WEBPACK_IMPORTED_MODULE_4_vuejs_datepicker___default.a
   },
   data: function data() {
     return {
@@ -9246,16 +9294,15 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('qr-code', __WEBPACK_IMPOR
         director_general: null,
         d_director: null,
         d_director_general: null,
-        d_presidente: null,
-        oldid: null
+        d_presidente: null
       },
       header_model: {
         departmento: null,
-        fetcha: null,
+        fetcha: new Date(),
         voucher: null,
         cuenta: null,
         proveedor: null,
-        forma: null,
+        forma: { Name: 'Check', Idx: 1 },
         credit_limit: null,
         compora: null,
         cheque: null,
@@ -9263,8 +9310,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('qr-code', __WEBPACK_IMPOR
         buyer: null,
         banco_cuenta: null,
         currency: null,
-        paper_no: null,
-        oldid: null
+        paper_no: null
       },
       body_model: [],
       model: {
@@ -9277,14 +9323,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('qr-code', __WEBPACK_IMPOR
         descripcion_body: null,
         cantidad: null,
         unitario: null,
-        amount: null,
-        oldid: null
+        oldid: null,
+        amount: null
       },
       user_options: [],
       admin_user_options: [],
       dept_options: [],
       acc_options: [],
-      cus_list: [],
       cus_options: [], // except classi 24
       forma_options: [{ Name: 'Check', Idx: 1 }, { Name: 'Cash', Idx: 2 }, { Name: 'Wire Transfer', Idx: 3 }],
       bank_options: [],
@@ -9293,8 +9338,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('qr-code', __WEBPACK_IMPOR
       currency_options: [{ Name: 'Q', Idx: 1 }, { Name: '$', Idx: 2 }],
       s_num: 0,
       b_print: false,
-      oldIdx: null,
-      remove_list: [],
       print_date: new Date().toISOString().split('T')[0],
       total: 0
     };
@@ -9318,50 +9361,95 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('qr-code', __WEBPACK_IMPOR
       this.b_print = false;
     },
     exportpdf: function exportpdf() {
-      __WEBPACK_IMPORTED_MODULE_5_html2canvas___default()(this.$refs.pdf).then(function (canvas) {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_6_html2canvas___default()(this.$refs.pdf).then(function (canvas) {
         var context = canvas.getContext('2d');
         var imgData = canvas.toDataURL("image/jpeg", 1.0);
-        var pdf = new __WEBPACK_IMPORTED_MODULE_6_jspdf___default.a('p', 'in', [8.5, 11]);
+        var pdf = new __WEBPACK_IMPORTED_MODULE_7_jspdf___default.a('p', 'in', [8.5, 11]);
         pdf.addImage(imgData, 'JPEG', 0, 0);
-        pdf.save("download.pdf");
+        pdf.save("Voucher-" + _this.header_model.voucher + ".pdf");
       });
     },
     save: function save() {
-      var _this = this;
+      var _this2 = this;
 
       if (this.header_model.voucher == null) {
         this.warnMsg('warn', 'Please insert voucher number.', 'Warn!');
         return;
       }
-      __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', true);
-      axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/voucher/voucher_update', { top: this.top_model, header: this.header_model, body: this.body_model, remove: this.remove_list }).then(function (res) {
-        __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
-        _this.warnMsg('success', 'Successfully updated.', 'Success!');
+      if (this.header_model.cuenta == null) {
+        this.warnMsg('warn', 'Please choose cuenta.', 'Warn!');
+        return;
+      }
+      __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('changeLoading', true);
+      var data = {
+        top: this.top_model,
+        header: this.header_model,
+        body: this.body_model
+      };
+      axios.post(__WEBPACK_IMPORTED_MODULE_9_src_const_js__["a" /* default */].host + '/api/voucher/voucher_add', { data: data, vo_id: this.header_model.voucher }).then(function (res) {
+        __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('changeLoading', false);
+        if (res.data.isSuccess == false) {
+          _this2.warnMsg('warn', 'Same data exsited.', 'Warn!');
+        } else {
+          _this2.warnMsg('success', 'Successfully saved.', 'Success!');
+          _this2.body_model = [];
+          _this2.top_model.encargador = null;
+          _this2.top_model.gerente = null;
+          _this2.top_model.director = null;
+          _this2.top_model.director_general = null;
+          _this2.header_model.fetcha = new Date();
+          _this2.header_model.cuenta = null;
+          _this2.header_model.proveedor = null;
+          _this2.header_model.credit_limit = null;
+          _this2.header_model.compora = null;
+          _this2.header_model.cheque = null;
+          _this2.header_model.banco_nombre = null;
+          _this2.header_model.buyer = null;
+          _this2.header_model.banco_cuenta = null;
+          _this2.header_model.currency = null;
+          _this2.header_model.paper_no = null;
+          _this2.setVId();
+        }
       }).catch(function (err) {
         if (err.response && err.response.status == 401) {
-          __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('logout');
-          _this.warnMsg('error', 'Authentication Error.', 'Error!');
+          __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('logout');
+          _this2.warnMsg('error', 'Authentication Error.', 'Error!');
         };
-        __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
-        _this.warnMsg('error', 'Internal Server Error.', 'Error!');
+        __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('changeLoading', false);
+        _this2.warnMsg('error', 'Internal Server Error.', 'Error!');
       });
     },
     add_detail: function add_detail() {
       this.body_model.push(Object.assign({}, this.model));
     },
     remove_detail: function remove_detail() {
-      if (this.body_model[this.body_model.length - 1].oldid) {
-        this.remove_list.push(this.body_model[this.body_model.length - 1]);
-      }
       this.body_model.pop();
     },
+    setVId: function setVId() {
+      var _this3 = this;
+
+      axios.post(__WEBPACK_IMPORTED_MODULE_9_src_const_js__["a" /* default */].host + '/api/voucher/generate_id?dpt=' + this.header_model.departmento.DeptIdx + '&date=' + this.formatDateYYMMDD(new Date())).then(function (res) {
+        _this3.header_model.voucher = _this3.formatDateYYMMDD(new Date()) + _this3.header_model.departmento.DeptIdx + res.data.id;
+      }).catch(function (err) {
+        if (err.response && err.response.status == 401) {
+          __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('logout');
+          _this3.warnMsg('error', 'Authentication Error.', 'Error!');
+        } else {
+          _this3.warnMsg('error', 'Internal Server Error.', 'Error!');
+        }
+      });
+    },
     selectDepart: function selectDepart() {
-      var _this2 = this;
+      var _this4 = this;
 
       if (this.header_model.departmento != null) {
         this.admin_user_options = this.user_options.filter(function (v) {
-          return v.DeptIdx == _this2.header_model.departmento.DeptIdx;
+          return v.DeptIdx == _this4.header_model.departmento.DeptIdx;
         });
+        // Set Date
+        this.setVId();
       } else {
         this.admin_user_options = this.user_options;
       }
@@ -9375,6 +9463,16 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('qr-code', __WEBPACK_IMPOR
       var year = today.getFullYear();
       return day + "-" + month_names[month_index] + "-" + year;
     },
+    formatDateYYMMDD: function formatDateYYMMDD(date) {
+      var d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear().toString().substr(-2);
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+
+      return [year, month, day].join('');
+    },
     getMonto: function getMonto(index) {
       var a = Number(this.body_model[index].cantidad ? this.body_model[index].cantidad : 0);
       var b = Number(this.body_model[index].unitario ? this.body_model[index].unitario : 0);
@@ -9387,112 +9485,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('qr-code', __WEBPACK_IMPOR
       }
       return sum;
     },
-    getUser: function getUser(Idx) {
-      for (var i = 0; i < this.user_options.length; i++) {
-        if (this.user_options[i].UserIdx == Idx) return this.user_options[i];
-      }
-      return null;
-    },
-    getAccount: function getAccount(Idx) {
-      for (var i = 0; i < this.acc_options.length; i++) {
-        if (this.acc_options[i].Idx == Idx) return this.acc_options[i];
-      }
-      return null;
-    },
-    getCustomer: function getCustomer(Idx) {
-      for (var i = 0; i < this.cus_list.length; i++) {
-        if (this.cus_list[i].CustIdx == Idx) return this.cus_list[i];
-      }
-      return null;
-    },
-    getForma: function getForma(Idx) {
-      for (var i = 0; i < this.forma_options.length; i++) {
-        if (this.forma_options[i].Idx == Idx) return this.forma_options[i];
-      }
-      return null;
-    },
-    getBank: function getBank(Idx) {
-      for (var i = 0; i < this.bank_options.length; i++) {
-        if (this.bank_options[i].Idx == Idx) return this.bank_options[i];
-      }
-      return null;
-    },
-    getCurrency: function getCurrency(Idx) {
-      for (var i = 0; i < this.currency_options.length; i++) {
-        if (this.currency_options[i].Idx == Idx) return this.currency_options[i];
-      }
-      return null;
-    },
-    getFile: function getFile(Idx) {
-      for (var i = 0; i < this.order_options.length; i++) {
-        if (this.order_options[i].Idx == Idx) return this.order_options[i];
-      }
-      return null;
-    },
-    getDepartmento: function getDepartmento(Idx) {
-      for (var i = 0; i < this.dept_options.length; i++) {
-        if (this.dept_options[i].DeptIdx == Idx) return this.dept_options[i];
-      }
-      return null;
-    },
-    loadVoucherDetail: function loadVoucherDetail(idx) {
-      var _this3 = this;
-
-      this.oldIdx = idx;
-      __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', true);
-      axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/voucher/voucher_detail', { Idx: idx }).then(function (res) {
-        if (res.data.isSuccess) {
-          _this3.top_model = {
-            encargador: _this3.getUser(res.data.top.Encargador),
-            gerente: _this3.getUser(res.data.top.Gerente),
-            director: _this3.getUser(res.data.top.Director),
-            director_general: _this3.getUser(res.data.top.Director_General),
-            d_director: _this3.getUser(res.data.top.D_Director),
-            d_director_general: _this3.getUser(res.data.top.D_Director_General),
-            d_presidente: _this3.getUser(res.data.top.D_Presidente),
-            oldid: res.data.top.Idx
-          };
-          _this3.header_model = {
-            departmento: _this3.getDepartmento(res.data.header.DeptIdx),
-            fetcha: new Date(res.data.header.Fetcha),
-            voucher: res.data.header.Voucher,
-            cuenta: _this3.getAccount(res.data.header.Cuenta),
-            proveedor: _this3.getCustomer(res.data.header.Proveedor),
-            forma: _this3.getForma(res.data.header.Forma),
-            credit_limit: res.data.header.C_Limit,
-            compora: res.data.header.Compora,
-            cheque: res.data.header.Cheque,
-            banco_nombre: _this3.getCustomer(res.data.header.Banco_Nombre),
-            buyer: _this3.getCustomer(res.data.header.Buyer),
-            banco_cuenta: res.data.header.Banco_Cuenta,
-            currency: _this3.getCurrency(res.data.header.Currency),
-            paper_no: res.data.header.Paper_No,
-            oldid: res.data.header.Idx
-          };
-          _this3.body_model = [];
-          for (var i = 0; i < res.data.body.length; i++) {
-            _this3.body_model.push({
-              date: new Date(res.data.body[i].InDate),
-              file: _this3.getFile(res.data.body[i].File),
-              buyer: _this3.getCustomer(res.data.body[i].Buyer),
-              reg: res.data.body[i].Reg,
-              fact: res.data.body[i].Fact,
-              descripcion_title: res.data.body[i].Descripcion_Title,
-              descripcion_body: res.data.body[i].Descripcion_Body,
-              cantidad: res.data.body[i].Cantidad,
-              unitario: res.data.body[i].Unitario,
-              amount: Number(res.data.body[i].Cantidad) * Number(res.data.body[i].Unitario),
-              oldid: res.data.body[i].Idx
-            });
-          }
-        }
-      }).catch(function (err) {
-        if (err.response && err.response.status == 401) {
-          __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('logout');
-        };
-        __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
-      });
-    },
     updateProveedor: function updateProveedor() {
       this.header_model.cheque = this.header_model.proveedor.CheckName;
     },
@@ -9504,46 +9496,77 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('qr-code', __WEBPACK_IMPOR
       }
     },
     warnMsg: function warnMsg(type, msg, title) {
-      __WEBPACK_IMPORTED_MODULE_4_mini_toastr__["a" /* default */][type](msg, title);
+      __WEBPACK_IMPORTED_MODULE_5_mini_toastr__["a" /* default */][type](msg, title);
     }
   },
   mounted: function mounted() {
-    var _this4 = this;
+    var _this5 = this;
 
-    __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', true);
-    axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_ord_user_list').then(function (res) {
-      _this4.dept_options = res.data.dep_list;
-      _this4.cus_list = res.data.cus_list;
-      _this4.cus_options = res.data.cus_list.filter(function (v) {
+    __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('changeLoading', true);
+    axios.post(__WEBPACK_IMPORTED_MODULE_9_src_const_js__["a" /* default */].host + '/api/voucher/load_acc_cus_dep_ord_user_list').then(function (res) {
+      _this5.dept_options = res.data.dep_list;
+      _this5.dept_options.sort(function (a, b) {
+        if (a.DeptName > b.DeptName) return 1;else if (a.DeptName < b.DeptName) return -1;else return 0;
+      });
+      var dpt = __WEBPACK_IMPORTED_MODULE_0_vue___default.a.cookie.get('depart');
+      for (var i = 0; i < _this5.dept_options.length; i++) {
+        if (dpt == _this5.dept_options[i].DeptIdx) _this5.header_model.departmento = _this5.dept_options[i];
+      }
+      _this5.cus_options = res.data.cus_list.filter(function (v) {
         return v.Classification != 24;
       });
-      _this4.buyer_options = res.data.cus_list.filter(function (v) {
+      _this5.cus_options.sort(function (a, b) {
+        if (a.CusttName > b.CustName) return 1;else if (a.CustName < b.CustName) return -1;else return 0;
+      });
+      _this5.buyer_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 24;
       });
-      _this4.order_options = res.data.ord_list;
-      _this4.bank_options = res.data.cus_list.filter(function (v) {
+      _this5.buyer_options.sort(function (a, b) {
+        if (a.CusttName > b.CustName) return 1;else if (a.CustName < b.CustName) return -1;else return 0;
+      });
+      _this5.order_options = res.data.ord_list;
+      _this5.bank_options = res.data.cus_list.filter(function (v) {
         return v.Classification == 28;
       });
-      _this4.acc_options = res.data.acc_list;
-      _this4.user_options = res.data.user_list;
-      _this4.admin_user_options = _this4.user_options;
-
-      _this4.loadVoucherDetail(_this4.$route.query.id);
-      __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
+      _this5.bank_options.sort(function (a, b) {
+        if (a.CusttName > b.CustName) return 1;else if (a.CustName < b.CustName) return -1;else return 0;
+      });
+      _this5.acc_options = res.data.acc_list;
+      _this5.acc_options.sort(function (a, b) {
+        if (a.AccountName > b.AccountName) return 1;else if (a.AccountName < b.AccountName) return -1;else return 0;
+      });
+      _this5.user_options = res.data.user_list;
+      _this5.user_options.sort(function (a, b) {
+        if (a.UserName > b.UserName) return 1;else if (a.UserName < b.UserName) return -1;else return 0;
+      });
+      _this5.admin_user_options = _this5.user_options;
+      for (var i = 0; i < _this5.user_options.length; i++) {
+        if (_this5.user_options[i].UserIdx == 105) {
+          _this5.top_model.d_director = _this5.user_options[i];
+        }
+        if (_this5.user_options[i].UserIdx == 10) {
+          _this5.top_model.d_director_general = _this5.user_options[i];
+        }
+        if (_this5.user_options[i].UserIdx == 95) {
+          _this5.top_model.d_presidente = _this5.user_options[i];
+        }
+      }
+      __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('changeLoading', false);
+      _this5.setVId();
     }).catch(function (err) {
       if (err.response && err.response.status == 401) {
-        __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('logout');
-        _this4.warnMsg('error', 'Authentication Error.', 'Error!');
+        __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('logout');
+        _this5.warnMsg('error', 'Authentication Error.', 'Error!');
       };
-      __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', false);
-      _this4.warnMsg('error', 'Internal Server Error.', 'Error!');
+      __WEBPACK_IMPORTED_MODULE_8_src_store_store__["a" /* default */].commit('changeLoading', false);
+      _this5.warnMsg('error', 'Internal Server Error.', 'Error!');
     });
   }
 });
 
 /***/ }),
 
-/***/ 882:
+/***/ 864:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -9582,7 +9605,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("Update Voucher")]
+                  [_vm._v("Save Voucher")]
                 )
               ]),
               _vm._v(" "),
@@ -10569,7 +10592,10 @@ var render = function() {
                             [
                               _c(
                                 "p",
-                                { staticClass: "d-inline-block v-title" },
+                                {
+                                  staticClass: "d-inline-block v-title",
+                                  staticStyle: { "font-weight": "bold" }
+                                },
                                 [_vm._v("Administración")]
                               )
                             ]
@@ -10745,7 +10771,8 @@ var render = function() {
                                 "p",
                                 {
                                   staticClass:
-                                    "d-inline-block v-title text-blue"
+                                    "d-inline-block v-title text-blue",
+                                  staticStyle: { "font-weight": "bold" }
                                 },
                                 [_vm._v("Departamento Administración")]
                               )
@@ -10773,7 +10800,7 @@ var render = function() {
                                         _c("multiselect", {
                                           attrs: {
                                             "max-height": 800,
-                                            options: _vm.admin_user_options,
+                                            options: _vm.user_options,
                                             label: "UserName",
                                             selectLabel: "",
                                             "track-by": "UserName"
@@ -10811,7 +10838,7 @@ var render = function() {
                                         _c("multiselect", {
                                           attrs: {
                                             "max-height": 800,
-                                            options: _vm.admin_user_options,
+                                            options: _vm.user_options,
                                             label: "UserName",
                                             selectLabel: "",
                                             "track-by": "UserName"
@@ -10849,7 +10876,7 @@ var render = function() {
                                         _c("multiselect", {
                                           attrs: {
                                             "max-height": 800,
-                                            options: _vm.admin_user_options,
+                                            options: _vm.user_options,
                                             label: "UserName",
                                             selectLabel: "",
                                             "track-by": "UserName"
@@ -11497,7 +11524,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-16a6b30a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-30eb25b8", module.exports)
   }
 }
 
