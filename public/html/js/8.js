@@ -1655,7 +1655,7 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -1780,7 +1780,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
           YearName: 2018,
           Value: 2018
         },
-        week: null,
+        week: {
+          WeekName: 'Week1',
+          Value: 1
+        },
         month: {
           MonthName: 'Jan',
           Value: 1
@@ -1810,7 +1813,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       month_options: [],
       acc_options: [],
       group_options: [],
-      tabledata: []
+      tabledata: [],
+      clicks: 0,
+      timer: null
     };
   },
 
@@ -1936,8 +1941,22 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         _this3.warnMsg('error', 'Internal Server Error.', 'Error!');
       });
     },
-    mouseOver: function mouseOver(item) {
-      console.log(item);
+    mouseOver: function mouseOver(item) {},
+
+    oneClick: function oneClick(item) {
+      this.clicks++;
+      if (this.clicks === 1) {
+        var self = this;
+        this.timer = setTimeout(function () {
+          self.clicks = 0;
+        }, 200);
+      } else {
+        clearTimeout(this.timer);
+        this.clicks = 0;
+        console.log(item);
+        var url = "/vouchers?type=2&type2=" + this.model.type.Value + "&year=" + this.model.year.Value + "&month=" + this.model.month.Value + "&week=" + this.model.week.Value + "&p=" + item.PGroupIdx + "&c=" + item.CGroupIdx;
+        this.$router.push(url);
+      }
     },
     warnMsg: function warnMsg(type, msg, title) {
       __WEBPACK_IMPORTED_MODULE_3_mini_toastr__["a" /* default */][type](msg, title);
@@ -2032,35 +2051,33 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _vm.model.type.Value == 1 || _vm.model.type.Value == 2
-                          ? _c("div", { staticClass: "col-sm-2" }, [
-                              _c(
-                                "div",
-                                { staticClass: "form-group" },
-                                [
-                                  _c("label", [_vm._v("Year")]),
-                                  _vm._v(" "),
-                                  _c("multiselect", {
-                                    attrs: {
-                                      "max-height": 800,
-                                      options: _vm.year_options,
-                                      selectLabel: "",
-                                      label: "YearName",
-                                      "track-by": "YearName"
-                                    },
-                                    model: {
-                                      value: _vm.model.year,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.model, "year", $$v)
-                                      },
-                                      expression: "model.year"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ])
-                          : _vm._e(),
+                        _c("div", { staticClass: "col-sm-2" }, [
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c("label", [_vm._v("Year")]),
+                              _vm._v(" "),
+                              _c("multiselect", {
+                                attrs: {
+                                  "max-height": 800,
+                                  options: _vm.year_options,
+                                  selectLabel: "",
+                                  label: "YearName",
+                                  "track-by": "YearName"
+                                },
+                                model: {
+                                  value: _vm.model.year,
+                                  callback: function($$v) {
+                                    _vm.$set(_vm.model, "year", $$v)
+                                  },
+                                  expression: "model.year"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
                         _vm._v(" "),
                         _vm.model.type.Value == 2
                           ? _c("div", { staticClass: "col-sm-2" }, [
@@ -2122,11 +2139,11 @@ var render = function() {
                             ])
                           : _vm._e(),
                         _vm._v(" "),
-                        _vm.model.type.Value == 1 || _vm.model.type.Value == 3
+                        _vm.model.type.Value == 1
                           ? _c("div", { staticClass: "col-sm-6" })
                           : _vm._e(),
                         _vm._v(" "),
-                        _vm.model.type.Value == 2
+                        _vm.model.type.Value == 2 || _vm.model.type.Value == 3
                           ? _c("div", { staticClass: "col-sm-4" })
                           : _vm._e(),
                         _vm._v(" "),
@@ -2200,6 +2217,9 @@ var render = function() {
                           on: {
                             mouseover: function($event) {
                               _vm.mouseOver(item)
+                            },
+                            click: function($event) {
+                              _vm.oneClick(item)
                             }
                           }
                         },
@@ -2216,7 +2236,15 @@ var render = function() {
                             _vm._v(_vm._s(item.CGroup != -1 ? item.CGroup : ""))
                           ]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.Amount))]),
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(
+                                Number.isInteger(item.Amount)
+                                  ? item.Amount
+                                  : item.Amount.toFixed(2)
+                              )
+                            )
+                          ]),
                           _vm._v(" "),
                           _c("td", [
                             _vm._v(

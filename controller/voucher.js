@@ -417,6 +417,66 @@ exports.vouchers = function(req, res) {
     }
   })  
 }
+exports.vouchers2 = function(req, res) {
+  const getYear = function(d) {
+    return new Date(d).getYear()+1900;
+  }
+  const getMonth = function(d) {
+    return new Date(d).getMonth() + 1;
+  }
+  const getWeek = function(d1) {
+    var d = new Date(d1);
+    var dayNum = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
+  }
+  Voucher.find2({}, function(err, list) {
+    if(err) {
+      res.status(500).send({isSuccess: false});
+    } else {
+      if(req.body.type == 1) {
+        //Filter By Year
+        list = list.filter(v => {
+          return getYear(v.Fetcha) == req.body.year;
+        })
+      } else if(req.body.type == 2) {
+        //Filter By Year
+        list = list.filter(v => {
+          return getYear(v.Fetcha) == req.body.year;
+        })
+        // Filter By Month
+        if(req.body.month != 0) {
+          list = list.filter(v => {
+            return getMonth(v.Fetcha) == req.body.month;
+          })
+        }
+      } else if(req.body.type == 3) {
+        //Filter By Year
+        list = list.filter(v => {
+          return getYear(v.Fetcha) == req.body.year;
+        })
+        // Filter By Week
+        if(req.body.week != 0) {
+          list = list.filter(v => {
+            return getWeek(v.Fetcha) == req.body.week;
+          })
+        }
+      }
+      if(req.body.c_id != -1) {
+        // Filter By Account
+        list = list.filter(v => {
+          return Number(v.PGroup) == Number(req.body.c_id);
+        })
+      } else if(req.body.p_id != -1) {
+        list = list.filter(v => {
+          return Number(v.PIdx) == Number(req.body.p_id);
+        })
+      }
+      res.status(200).send({isSuccess: true, list: list});
+    }
+  })  
+}
 // For Voucher List
 exports.load_acc = function(req, res) {
   Account.find_all(function(err, rows) {

@@ -9244,7 +9244,7 @@ exports = module.exports = __webpack_require__(33)(undefined);
 
 
 // module
-exports.push([module.i, "\n.c-input[data-v-7e80e9e9] {\n  height: 40px;\n}\n.mt-40[data-v-7e80e9e9] {\n  margin-top: -40px;\n}\ni[data-v-7e80e9e9] {    \n  cursor: pointer;\n}\n.box-shadow[data-v-7e80e9e9]{\n  -webkit-box-shadow: 0px 0px 1px 1px #cfcfcf;\n          box-shadow: 0px 0px 1px 1px #cfcfcf;\n}\n.options p[data-v-7e80e9e9]:hover{\n  background-color: #eee;\n}\n.options .active[data-v-7e80e9e9]{\n  background-color: #eee;\n}\n.options p[data-v-7e80e9e9] {\n  color: black;\n  padding: 0.5rem;\n  cursor: pointer;\n}\n.border-bottom[data-v-7e80e9e9] {\n  border-bottom: solid 1px;\n}\ntable tr td[data-v-7e80e9e9], table thead th[data-v-7e80e9e9] {\n  border: solid 1px black;\n  height: 30px;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n.paper[data-v-7e80e9e9] {\n  width: 1610px;\n  height: 1108px;\n  margin: auto;\n}\n.paper table[data-v-7e80e9e9] {\n  width: 100%;\n  border-collapse: collapse;\n}\n.paper tr td[data-v-7e80e9e9], .paper th[data-v-7e80e9e9] {\n  font-family: \"Helvetica Narrow\",\"Arial Narrow\",Tahoma,Arial,Helvetica,sans-serif;\n  font-size: smaller;\n  text-align: center;\n  height: 20px !important;\n  white-space: nowrap;\n  font-weight: bold;\n}\n.paper table>tbody>tr>td+td[data-v-7e80e9e9] {\n  border-left-width: 0;\n}\n.paper table>tbody>tr+tr>td[data-v-7e80e9e9] {\n  border-top-width: 0;\n}\n.paper table>thead>tr>th+th[data-v-7e80e9e9] {\n  border-left-width: 0;\n}\n.paper table>thead>tr+tr>th[data-v-7e80e9e9] {\n  border-top-width: 0;\n  border-bottom-width: 0;\n}\n.paper table>thead>tr>th+tr[data-v-7e80e9e9] {\n  border-left-width: 0;\n}\n.roboto-condensed[data-v-7e80e9e9] {\n  font-family: 'Roboto Condensed', sans-serif !important;\n}\n.roboto[data-v-7e80e9e9] {\n  font-family: /*'Roboto', */sans-serif;\n}\n.paper[data-v-7e80e9e9], .paper *[data-v-7e80e9e9] {\n  font-family: 'Roboto Condensed', sans-serif !important;\n}  \n", ""]);
+exports.push([module.i, "\n.c-input[data-v-7e80e9e9] {\n  height: 40px;\n}\n.mt-40[data-v-7e80e9e9] {\n  margin-top: -40px;\n}\ni[data-v-7e80e9e9] {    \n  cursor: pointer;\n}\n.box-shadow[data-v-7e80e9e9]{\n  -webkit-box-shadow: 0px 0px 1px 1px #cfcfcf;\n          box-shadow: 0px 0px 1px 1px #cfcfcf;\n}\n.options p[data-v-7e80e9e9]:hover{\n  background-color: #eee;\n}\n.options .active[data-v-7e80e9e9]{\n  background-color: #ffa5009c;\n}\n.options p[data-v-7e80e9e9] {\n  color: black;\n  padding: 0.5rem;\n  cursor: pointer;\n}\n.border-bottom[data-v-7e80e9e9] {\n  border-bottom: solid 1px;\n}\ntable tr td[data-v-7e80e9e9], table thead th[data-v-7e80e9e9] {\n  border: solid 1px black;\n  height: 30px;\n  padding-left: 1px;\n  padding-right: 1px;\n}\n.paper[data-v-7e80e9e9] {\n  width: 1610px;\n  height: 1108px;\n  margin: auto;\n}\n.paper table[data-v-7e80e9e9] {\n  width: 100%;\n  border-collapse: collapse;\n}\n.paper tr td[data-v-7e80e9e9], .paper th[data-v-7e80e9e9] {\n  font-family: \"Helvetica Narrow\",\"Arial Narrow\",Tahoma,Arial,Helvetica,sans-serif;\n  font-size: smaller;\n  text-align: center;\n  height: 20px !important;\n  white-space: nowrap;\n  font-weight: bold;\n}\n.paper table>tbody>tr>td+td[data-v-7e80e9e9] {\n  border-left-width: 0;\n}\n.paper table>tbody>tr+tr>td[data-v-7e80e9e9] {\n  border-top-width: 0;\n}\n.paper table>thead>tr>th+th[data-v-7e80e9e9] {\n  border-left-width: 0;\n}\n.paper table>thead>tr+tr>th[data-v-7e80e9e9] {\n  border-top-width: 0;\n  border-bottom-width: 0;\n}\n.paper table>thead>tr>th+tr[data-v-7e80e9e9] {\n  border-left-width: 0;\n}\n.roboto-condensed[data-v-7e80e9e9] {\n  font-family: 'Roboto Condensed', sans-serif !important;\n}\n.roboto[data-v-7e80e9e9] {\n  font-family: /*'Roboto', */sans-serif;\n}\n.paper[data-v-7e80e9e9], .paper *[data-v-7e80e9e9] {\n  font-family: 'Roboto Condensed', sans-serif !important;\n}\n.light-yellow[data-v-7e80e9e9] {\n  background: lightyellow;\n}\n.light-blue[data-v-7e80e9e9] {\n  background: lightblue\n}\n", ""]);
 
 // exports
 
@@ -9313,6 +9313,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jspdf___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jspdf__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_src_store_store__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_src_const_js__ = __webpack_require__(751);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -13969,7 +13981,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   no: res.data.list[i].No, po: res.data.list[i].Po, style: res.data.list[i].Style, u_price: res.data.list[i].U_Price,
                   qty: res.data.list[i].Qty, amount: res.data.list[i].Amount, d_date: res.data.list[i].D_Date,
                   factory: _this3.getFactoryName(res.data.list[i].Factory), remark: res.data.list[i].Remark,
-                  Idx: res.data.list[i].Idx, factoryIdx: res.data.list[i].Factory
+                  idx: res.data.list[i].Idx, factoryIdx: res.data.list[i].Factory
                 });
               }
             }
@@ -13989,7 +14001,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   f_type: _this3.getFabricTypeName(res.data.list[i].F_Type), fabric: _this3.getFabricName(res.data.list[i].Fabric),
                   u_price: res.data.list[i].U_Price, consumption: res.data.list[i].Consumption, yds_pcs: res.data.list[i].Yds_Pcs,
                   width: res.data.list[i].Width, weight: res.data.list[i].Weight, confirm: res.data.list[i].Confirm,
-                  ori: res.data.list[i]
+                  ori: res.data.list[i], idx: res.data.list[i].Idx
                 });
               }
             }
@@ -14009,7 +14021,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   f_type: _this3.getFabricTypeName(res.data.list[i].F_Type), fabric: _this3.getFabricName(res.data.list[i].Fabric),
                   u_price: res.data.list[i].U_Price, consumption: res.data.list[i].Consumption, yds_pcs: res.data.list[i].Yds_Pcs,
                   width: res.data.list[i].Width, weight: res.data.list[i].Weight, confirm: res.data.list[i].Confirm,
-                  ori: res.data.list[i]
+                  ori: res.data.list[i], idx: res.data.list[i].Idx
                 });
               }
             }
@@ -14029,7 +14041,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   yarn: _this3.getYarnName(res.data.list[i].Yarn), u_price: res.data.list[i].U_Price,
                   kgs: res.data.list[i].KGS, amount: res.data.list[i].Amount, remark: res.data.list[i].Remark,
                   confirm: res.data.list[i].Confirm, Idx: res.data.list[i].Idx,
-                  ori: res.data.list[i]
+                  ori: res.data.list[i], idx: res.data.list[i].Idx
                 });
               }
             }
@@ -14049,7 +14061,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   yarn: _this3.getYarnName(res.data.list[i].Yarn), u_price: res.data.list[i].U_Price,
                   kgs: res.data.list[i].KGS, amount: res.data.list[i].Amount, remark: res.data.list[i].Remark,
                   confirm: res.data.list[i].Confirm, Idx: res.data.list[i].Idx,
-                  ori: res.data.list[i]
+                  ori: res.data.list[i], idx: res.data.list[i].Idx
                 });
               }
             }
@@ -14111,7 +14123,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   u_price1: res.data.list[i].U_Price1, amount1: res.data.list[i].Amount1, date: res.data.list[i].Date,
                   kg_pcs2: res.data.list[i].Kg_Pcs2, u_price2: res.data.list[i].U_Price2, amount2: res.data.list[i].Amount2,
                   customer2: _this3.getCustomerName(res.data.list[i].Customer2),
-                  Idx: res.data.list[i].Idx, ori: res.data.list[i]
+                  idx: res.data.list[i].Idx, ori: res.data.list[i]
                 });
               }
             }
@@ -14130,7 +14142,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                 _this3.tabledata10.push({
                   ship_date: res.data.list[i].Ship_Date, ship_qty: res.data.list[i].Ship_Qty,
                   u_price: res.data.list[i].U_Price, ship_amount: res.data.list[i].Ship_Amount,
-                  Idx: res.data.list[i].Idx, ori: res.data.list[i]
+                  idx: res.data.list[i].Idx, ori: res.data.list[i]
                 });
               }
             }
@@ -14149,7 +14161,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                 _this3.tabledata11.push({
                   ship_date: res.data.list[i].Ship_Date, ship_qty: res.data.list[i].Ship_Qty,
                   u_price: res.data.list[i].U_Price, remark: res.data.list[i].Remark,
-                  Idx: res.data.list[i].Idx, ori: res.data.list[i]
+                  idx: res.data.list[i].Idx, ori: res.data.list[i]
                 });
               }
             }
@@ -14169,7 +14181,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   report: res.data.list[i].Report, description: res.data.list[i].Description,
                   p_accident: res.data.list[i].P_Accident, amount: res.data.list[i].Amount,
                   confirm: res.data.list[i].Confirm,
-                  Idx: res.data.list[i].Idx, ori: res.data.list[i]
+                  idx: res.data.list[i].Idx, ori: res.data.list[i]
                 });
               }
             }
@@ -14188,7 +14200,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                 _this3.tabledata13.push({
                   d_date: _this3.formatDate(res.data.list[i].D_Date), description: res.data.list[i].Description, amount: res.data.list[i].Amount,
                   confirm: res.data.list[i].Confirm,
-                  Idx: res.data.list[i].Idx, ori: res.data.list[i]
+                  idx: res.data.list[i].Idx, ori: res.data.list[i]
                 });
               }
             }
@@ -14211,7 +14223,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   supplier2: _this3.getCustomerName(res.data.list[i].Supplier2), amount2: res.data.list[i].Amount2,
                   handler1: res.data.list[i].Handler1, manager1: res.data.list[i].Manager1,
                   handler2: res.data.list[i].Handler2, manager2: res.data.list[i].Manager2,
-                  Idx: res.data.list[i].Idx, ori: res.data.list[i]
+                  idx: res.data.list[i].Idx, ori: res.data.list[i]
                 });
               }
             }
@@ -14234,7 +14246,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   supplier2: _this3.getCustomerName(res.data.list[i].Supplier2), amount2: res.data.list[i].Amount2,
                   handler1: res.data.list[i].Handler1, manager1: res.data.list[i].Manager1,
                   handler2: res.data.list[i].Handler2, manager2: res.data.list[i].Manager2,
-                  Idx: res.data.list[i].Idx, ori: res.data.list[i]
+                  idx: res.data.list[i].Idx, ori: res.data.list[i]
                 });
               }
             }
@@ -14255,7 +14267,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   request_date: res.data.list[i].Request_Date, description: res.data.list[i].Description,
                   cost: res.data.list[i].Cost, times_number: res.data.list[i].Times_Number,
                   pass_fail: _this3.getPassFailName(res.data.list[i].Pass_Fail), remarks: res.data.list[i].Remarks,
-                  Idx: res.data.list[i].Idx, ori: res.data.list[i]
+                  idx: res.data.list[i].Idx, ori: res.data.list[i]
                 });
               }
             }
@@ -14304,7 +14316,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
                   title: res.data.list[i].Title,
                   description: res.data.list[i].Description,
                   filename: res.data.list[i].FileName,
-                  Idx: res.data.list[i].Idx
+                  idx: res.data.list[i].Idx
                 });
               }
             }
@@ -14321,7 +14333,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
           this.model2.po = item.po;this.model2.style = item.style;
           this.model2.u_price = item.u_price;this.model2.qty = item.qty;this.model2.amount = item.amount;
           this.model2.d_date = item.d_date;this.model2.factory = this.getFactory(item.factoryIdx);this.model2.remark = item.remark;
-          this.model2.idx = item.Idx;
+          this.model2.idx = item.idx;
           this.show_edit_panel(2);
           break;
         case 3:
@@ -14387,7 +14399,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
           this.model14.order_qty = item.order_qty;this.model14.unit_price = item.unit_price;
           this.model14.amount1 = item.amount1;this.model14.voucher_date = this.formatDate(item.voucher_date);
           this.model14.supplier2 = this.getCustomer(item.ori.Supplier2);this.model14.amount2 = item.amount2;
-          this.model14.idx = item.Idx;
+          this.model14.idx = item.idx;
           this.show_edit_panel(14);
           break;
         case 15:
@@ -14395,7 +14407,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
           this.model15.order_qty = item.order_qty;this.model15.unit_price = item.unit_price;
           this.model15.amount1 = item.amount1;this.model15.voucher_date = this.formatDate(item.voucher_date);
           this.model15.supplier2 = this.getCustomer(item.ori.Supplier2);this.model15.amount2 = item.amount2;
-          this.model15.idx = item.Idx;
+          this.model15.idx = item.idx;
           this.show_edit_panel(15);
           break;
         case 16:
@@ -14430,7 +14442,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         return;
       }
       __WEBPACK_IMPORTED_MODULE_7_src_store_store__["a" /* default */].commit('changeLoading', true);
-      axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/order/order_card/delete', { Idx: item.Idx, num: num }).then(function (res) {
+      axios.post(__WEBPACK_IMPORTED_MODULE_8_src_const_js__["a" /* default */].host + '/api/order/order_card/delete', { Idx: item.idx, num: num }).then(function (res) {
         if (res.data.isSuccess) {
           _this4.loadTable(num);
         }
@@ -14666,6 +14678,9 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
         _this7.f_type_options = res.data.f_type_list;
         _this7.yarn_options = res.data.yarn_list;
         _this7.cust_options = res.data.cust_list;
+        _this7.cust_options.sort(function (a, b) {
+          if (a > b) return 1;else if (a < b) return -1;else return 0;
+        });
         _this7.operation_options = res.data.oper_list;
         _this7.select(1);
       }
@@ -20467,9 +20482,13 @@ var render = function() {
                                             "div",
                                             { staticClass: "form-group" },
                                             [
-                                              _c("label", [
-                                                _vm._v("PAID DATE")
-                                              ]),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticStyle: { color: "blue" }
+                                                },
+                                                [_vm._v("PAID DATE")]
+                                              ),
                                               _vm._v(" "),
                                               _c("datepicker", {
                                                 attrs: {
@@ -20497,7 +20516,13 @@ var render = function() {
                                             "div",
                                             { staticClass: "form-group" },
                                             [
-                                              _c("label", [_vm._v("KG(PCS)")]),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticStyle: { color: "blue" }
+                                                },
+                                                [_vm._v("KG(PCS)")]
+                                              ),
                                               _vm._v(" "),
                                               _c("input", {
                                                 directives: [
@@ -20538,7 +20563,13 @@ var render = function() {
                                             "div",
                                             { staticClass: "form-group" },
                                             [
-                                              _c("label", [_vm._v("U/PRICE")]),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticStyle: { color: "blue" }
+                                                },
+                                                [_vm._v("U/PRICE")]
+                                              ),
                                               _vm._v(" "),
                                               _c("input", {
                                                 directives: [
@@ -20580,7 +20611,13 @@ var render = function() {
                                             "div",
                                             { staticClass: "form-group" },
                                             [
-                                              _c("label", [_vm._v("AMOUNT")]),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticStyle: { color: "blue" }
+                                                },
+                                                [_vm._v("AMOUNT")]
+                                              ),
                                               _vm._v(" "),
                                               _c("input", {
                                                 directives: [
@@ -20621,7 +20658,13 @@ var render = function() {
                                             "div",
                                             { staticClass: "form-group" },
                                             [
-                                              _c("label", [_vm._v("CUSTOMER")]),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticStyle: { color: "blue" }
+                                                },
+                                                [_vm._v("CUSTOMER")]
+                                              ),
                                               _vm._v(" "),
                                               _c("multiselect", {
                                                 attrs: {
@@ -20957,7 +21000,13 @@ var render = function() {
                                             "div",
                                             { staticClass: "form-group" },
                                             [
-                                              _c("label", [_vm._v("KG(PCS)")]),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticStyle: { color: "blue" }
+                                                },
+                                                [_vm._v("KG(PCS)")]
+                                              ),
                                               _vm._v(" "),
                                               _c("input", {
                                                 directives: [
@@ -20998,7 +21047,13 @@ var render = function() {
                                             "div",
                                             { staticClass: "form-group" },
                                             [
-                                              _c("label", [_vm._v("U/PRICE")]),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticStyle: { color: "blue" }
+                                                },
+                                                [_vm._v("U/PRICE")]
+                                              ),
                                               _vm._v(" "),
                                               _c("input", {
                                                 directives: [
@@ -21040,7 +21095,13 @@ var render = function() {
                                             "div",
                                             { staticClass: "form-group" },
                                             [
-                                              _c("label", [_vm._v("AMOUNT")]),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticStyle: { color: "blue" }
+                                                },
+                                                [_vm._v("AMOUNT")]
+                                              ),
                                               _vm._v(" "),
                                               _c("input", {
                                                 directives: [
@@ -21081,7 +21142,13 @@ var render = function() {
                                             "div",
                                             { staticClass: "form-group" },
                                             [
-                                              _c("label", [_vm._v("CUSTOMER")]),
+                                              _c(
+                                                "label",
+                                                {
+                                                  staticStyle: { color: "blue" }
+                                                },
+                                                [_vm._v("CUSTOMER")]
+                                              ),
                                               _vm._v(" "),
                                               _c("multiselect", {
                                                 attrs: {
@@ -21181,13 +21248,23 @@ var render = function() {
                                     [_vm._v("OPERATION")]
                                   ),
                                   _vm._v(" "),
-                                  _c("th", {
-                                    attrs: { width: "750px", colspan: "5" }
-                                  }),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "text-center light-yellow",
+                                      attrs: { width: "750px", colspan: "5" }
+                                    },
+                                    [_vm._v("ORDER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", {
-                                    attrs: { width: "750px", colspan: "5" }
-                                  }),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "text-center light-blue",
+                                      attrs: { width: "750px", colspan: "5" }
+                                    },
+                                    [_vm._v("PAYMENT")]
+                                  ),
                                   _vm._v(" "),
                                   _c(
                                     "th",
@@ -21197,45 +21274,95 @@ var render = function() {
                                 ]),
                                 _vm._v(" "),
                                 _c("tr", [
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("FABRIC TYPE")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("FABRIC TYPE")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("CUSTOMER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("CUSTOMER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("KG(PCS)")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("KG(PCS)")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("U/PRICE")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("U/PRICE")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("AMOUNTS($)")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("AMOUNTS($)")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("PAID DATE")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("PAID DATE")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("KG(PCS)")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("KG(PCS)")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("U/PRICE")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("U/PRICE")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("AMOUNTS")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("AMOUNTS")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("CUSTOMER")
-                                  ])
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("CUSTOMER")]
+                                  )
                                 ])
                               ]),
                               _vm._v(" "),
@@ -24396,57 +24523,139 @@ var render = function() {
                             _c("table", [
                               _c("thead", [
                                 _c("tr", [
+                                  _c("th"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "text-center light-yellow",
+                                      attrs: { colspan: "6" }
+                                    },
+                                    [_vm._v("PURCHASE")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "text-center light-blue",
+                                      attrs: { colspan: "6" }
+                                    },
+                                    [_vm._v("PAYMENT")]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
                                   _c("th", { attrs: { width: "150px" } }, [
                                     _vm._v("NAME OF ACCESSORY")
                                   ]),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("SUPPLIER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("SUPPLIER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("ORDER Q'TY")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("ORDER Q'TY")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("UNIT PRICE")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("UNIT PRICE")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("AMOUNT")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("AMOUNT")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("HANDLER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("HANDLER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("MANAGER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("MANAGER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("DATE OF VOUCHER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("DATE OF VOUCHER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("SUPPLIER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("SUPPLIER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("AMOUNT")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("AMOUNT")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("HANDLER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("HANDLER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("MANAGER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("MANAGER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("ACTION")
-                                  ])
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("ACTION")]
+                                  )
                                 ])
                               ]),
                               _vm._v(" "),
@@ -25424,57 +25633,139 @@ var render = function() {
                             _c("table", [
                               _c("thead", [
                                 _c("tr", [
+                                  _c("th"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "text-center light-yellow",
+                                      attrs: { colspan: "6" }
+                                    },
+                                    [_vm._v("PURCHASE")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "text-center light-blue",
+                                      attrs: { colspan: "6" }
+                                    },
+                                    [_vm._v("PAYMENT")]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("tr", [
                                   _c("th", { attrs: { width: "150px" } }, [
                                     _vm._v("NAME OF ACCESSORY")
                                   ]),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("SUPPLIER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("SUPPLIER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("ORDER Q'TY")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("ORDER Q'TY")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("UNIT PRICE")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("UNIT PRICE")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("AMOUNT")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("AMOUNT")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("HANDLER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("HANDLER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("MANAGER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-yellow",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("MANAGER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("DATE OF VOUCHER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("DATE OF VOUCHER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("SUPPLIER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("SUPPLIER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("AMOUNT")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("AMOUNT")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("HANDLER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("HANDLER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("MANAGER")
-                                  ]),
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("MANAGER")]
+                                  ),
                                   _vm._v(" "),
-                                  _c("th", { attrs: { width: "150px" } }, [
-                                    _vm._v("ACTION")
-                                  ])
+                                  _c(
+                                    "th",
+                                    {
+                                      staticClass: "light-blue",
+                                      attrs: { width: "150px" }
+                                    },
+                                    [_vm._v("ACTION")]
+                                  )
                                 ])
                               ]),
                               _vm._v(" "),
@@ -26602,7 +26893,7 @@ var render = function() {
                                     },
                                     [
                                       _c("div", { staticClass: "row" }, [
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -26648,7 +26939,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -26694,7 +26985,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -26739,7 +27030,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -26788,7 +27079,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -26834,7 +27125,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -26881,7 +27172,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -26926,7 +27217,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -26970,7 +27261,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27015,7 +27306,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27060,7 +27351,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27104,7 +27395,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27149,7 +27440,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27196,7 +27487,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27240,7 +27531,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27285,7 +27576,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27334,7 +27625,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27381,7 +27672,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27429,7 +27720,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27474,7 +27765,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27519,7 +27810,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27564,7 +27855,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27609,7 +27900,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27654,7 +27945,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27699,7 +27990,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27747,7 +28038,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27794,7 +28085,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27840,7 +28131,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27885,7 +28176,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27930,7 +28221,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -27976,7 +28267,9 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c("div", { staticClass: "col-sm-2" }, [
+                                        _c("div", { staticClass: "col-sm-8" }),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "col-sm-4" }, [
                                           _c(
                                             "div",
                                             { staticClass: "form-group" },
@@ -28689,7 +28982,7 @@ var render = function() {
                   staticStyle: { "margin-left": "15px!important" }
                 },
                 [
-                  _c("table", { staticStyle: { width: "550px" } }, [
+                  _c("table", { staticStyle: { width: "525px" } }, [
                     _c("tbody", [
                       _vm._m(0),
                       _vm._v(" "),
@@ -28873,7 +29166,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "table",
-                    { staticStyle: { "margin-top": "1px", width: "550px" } },
+                    { staticStyle: { "margin-top": "1px", width: "525px" } },
                     [
                       _c(
                         "tbody",
@@ -28931,7 +29224,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "table",
-                    { staticStyle: { "margin-top": "1px", width: "550px" } },
+                    { staticStyle: { "margin-top": "1px", width: "525px" } },
                     [
                       _vm._m(3),
                       _vm._v(" "),
@@ -28995,7 +29288,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "table",
-                    { staticStyle: { "margin-top": "1px", width: "550px" } },
+                    { staticStyle: { "margin-top": "1px", width: "525px" } },
                     [
                       _vm._m(4),
                       _vm._v(" "),
@@ -29059,7 +29352,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "table",
-                    { staticStyle: { "margin-top": "1px", width: "550px" } },
+                    { staticStyle: { "margin-top": "1px", width: "525px" } },
                     [
                       _vm._m(5),
                       _vm._v(" "),
@@ -29115,7 +29408,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "table",
-                    { staticStyle: { "margin-top": "1px", width: "550px" } },
+                    { staticStyle: { "margin-top": "1px", width: "525px" } },
                     [
                       _vm._m(6),
                       _vm._v(" "),
@@ -29171,7 +29464,7 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "table",
-                    { staticStyle: { "margin-top": "1px", width: "550px" } },
+                    { staticStyle: { "margin-top": "1px", width: "525px" } },
                     [
                       _vm._m(7),
                       _vm._v(" "),
@@ -29510,7 +29803,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("tr", [
                           _c("td", { staticClass: "roboto-condensed" }, [
-                            _vm._v("Yarn & Fabric")
+                            _vm._v("YARN & FABRIC")
                           ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(_vm.model17.yf_price))]),
@@ -29522,7 +29815,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("tr", [
                           _c("td", { staticClass: "roboto-condensed" }, [
-                            _vm._v("Materials")
+                            _vm._v("MATERIALS")
                           ]),
                           _vm._v(" "),
                           _c("td", [
@@ -29538,7 +29831,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("tr", [
                           _c("td", { staticClass: "roboto-condensed" }, [
-                            _vm._v("Sew")
+                            _vm._v("SEW")
                           ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(_vm.model17.sew_price))]),
@@ -29562,7 +29855,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("tr", [
                           _c("td", { staticClass: "roboto-condensed" }, [
-                            _vm._v("FRT Charge")
+                            _vm._v("FRT CHARGE")
                           ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(_vm.model17.frt_price))]),
@@ -29574,7 +29867,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("tr", [
                           _c("td", { staticClass: "roboto-condensed" }, [
-                            _vm._v("Commission")
+                            _vm._v("COMMISSION")
                           ]),
                           _vm._v(" "),
                           _c("td", [
@@ -29592,7 +29885,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("tr", [
                           _c("td", { staticClass: "roboto-condensed" }, [
-                            _vm._v("Test")
+                            _vm._v("TEST")
                           ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(_vm.model17.test_price))]),
@@ -29604,7 +29897,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("tr", [
                           _c("td", { staticClass: "roboto-condensed" }, [
-                            _vm._v("Duty")
+                            _vm._v("DUTY")
                           ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(_vm.model17.duty_price))]),
@@ -29616,7 +29909,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("tr", [
                           _c("td", { staticClass: "roboto-condensed" }, [
-                            _vm._v("Admini")
+                            _vm._v("ADMINI")
                           ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(_vm.model17.admini_price))]),
@@ -29628,7 +29921,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("tr", [
                           _c("td", { staticClass: "roboto-condensed" }, [
-                            _vm._v("Others")
+                            _vm._v("OTHERS")
                           ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(_vm.model17.other_price))]),
@@ -29654,7 +29947,7 @@ var render = function() {
                   staticStyle: { "margin-left": "1px" }
                 },
                 [
-                  _c("table", { staticStyle: { width: "550px" } }, [
+                  _c("table", { staticStyle: { width: "580px" } }, [
                     _c("tbody", [
                       _vm._m(14),
                       _vm._v(" "),
@@ -29711,7 +30004,7 @@ var render = function() {
                   _c("div", { staticStyle: { display: "inline-block" } }, [
                     _c(
                       "table",
-                      { staticStyle: { "margin-top": "1px", width: "355px" } },
+                      { staticStyle: { "margin-top": "1px", width: "365px" } },
                       [
                         _c(
                           "tbody",
@@ -29868,7 +30161,7 @@ var render = function() {
                       _c(
                         "table",
                         {
-                          staticStyle: { width: "194px", "margin-top": "1px" }
+                          staticStyle: { width: "214px", "margin-top": "1px" }
                         },
                         [
                           _vm._m(18),
@@ -29922,7 +30215,7 @@ var render = function() {
                       _c(
                         "table",
                         {
-                          staticStyle: { width: "194px", "margin-top": "1px" }
+                          staticStyle: { width: "214px", "margin-top": "1px" }
                         },
                         [
                           _vm._m(19),
@@ -29968,7 +30261,7 @@ var render = function() {
                       _c(
                         "table",
                         {
-                          staticStyle: { width: "194px", "margin-top": "1px" }
+                          staticStyle: { width: "214px", "margin-top": "1px" }
                         },
                         [
                           _c(
@@ -29985,7 +30278,7 @@ var render = function() {
                                         staticClass: "roboto-condensed",
                                         attrs: { width: "30%" }
                                       },
-                                      [_vm._v("Report")]
+                                      [_vm._v("REPORT")]
                                     ),
                                     _vm._v(" "),
                                     _c("td", { attrs: { colspan: "3" } }, [
@@ -30006,7 +30299,7 @@ var render = function() {
                                         staticClass: "roboto-condensed",
                                         attrs: { width: "30%" }
                                       },
-                                      [_vm._v("Description")]
+                                      [_vm._v("DESCRIPTION")]
                                     ),
                                     _vm._v(" "),
                                     _c("td", { attrs: { colspan: "3" } }, [
@@ -30078,7 +30371,7 @@ var render = function() {
                       _c(
                         "table",
                         {
-                          staticStyle: { width: "194px", "margin-top": "1px" }
+                          staticStyle: { width: "214px", "margin-top": "1px" }
                         },
                         [
                           _vm._m(21),
@@ -30510,19 +30803,19 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tr", [
       _c("td", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-        _vm._v("Division")
+        _vm._v("DIVISION")
       ]),
       _vm._v(" "),
       _c("td", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-        _vm._v("Price per PCS")
+        _vm._v("PRICE PER PCS")
       ]),
       _vm._v(" "),
       _c("td", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-        _vm._v("Rates(%)")
+        _vm._v("RATES(%)")
       ]),
       _vm._v(" "),
       _c("td", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-        _vm._v("Amount")
+        _vm._v("AMOUNT")
       ])
     ])
   },
@@ -30532,7 +30825,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tr", [
       _c("td", { staticClass: "roboto-condensed", attrs: { colspan: "3" } }, [
-        _vm._v("Production Total")
+        _vm._v("PRODUCTION TOTAL")
       ]),
       _vm._v(" "),
       _c("td")
@@ -30571,7 +30864,7 @@ var staticRenderFns = [
           staticClass: "roboto-condensed",
           attrs: { colspan: "6", width: "80%" }
         },
-        [_vm._v("Action After")]
+        [_vm._v("POST COST")]
       ),
       _vm._v(" "),
       _c("td", {
@@ -30588,31 +30881,31 @@ var staticRenderFns = [
       _c(
         "td",
         { staticClass: "roboto-condensed", staticStyle: { width: "16%" } },
-        [_vm._v("Handler")]
+        [_vm._v("HANDLER")]
       ),
       _vm._v(" "),
       _c(
         "td",
         { staticClass: "roboto-condensed", staticStyle: { width: "16%" } },
-        [_vm._v("Manager")]
+        [_vm._v("MANAGER")]
       ),
       _vm._v(" "),
       _c(
         "td",
         { staticClass: "roboto-condensed", staticStyle: { width: "16%" } },
-        [_vm._v("Director")]
+        [_vm._v("DIRECTOR")]
       ),
       _vm._v(" "),
       _c(
         "td",
         { staticClass: "roboto-condensed", staticStyle: { width: "16%" } },
-        [_vm._v("Managing Director")]
+        [_vm._v("MANAGING DIRECTOR")]
       ),
       _vm._v(" "),
       _c(
         "td",
         { staticClass: "roboto-condensed", staticStyle: { width: "16%" } },
-        [_vm._v("President")]
+        [_vm._v("PRESIDENT")]
       )
     ])
   },
@@ -30644,38 +30937,38 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "table",
-      { staticStyle: { "margin-top": "1px", width: "355px" } },
+      { staticStyle: { "margin-top": "1px", width: "365px" } },
       [
         _c("tbody", [
           _c("tr", [
             _c(
               "td",
               { staticClass: "roboto-condensed", attrs: { width: "25%" } },
-              [_vm._v("Division")]
+              [_vm._v("DIVISION")]
             ),
             _vm._v(" "),
             _c(
               "td",
               { staticClass: "roboto-condensed", attrs: { width: "25%" } },
-              [_vm._v("Price per PCS")]
+              [_vm._v("PRICE PER PCS")]
             ),
             _vm._v(" "),
             _c(
               "td",
               { staticClass: "roboto-condensed", attrs: { width: "25%" } },
-              [_vm._v("Rates(%)")]
+              [_vm._v("RATES(%)")]
             ),
             _vm._v(" "),
             _c(
               "td",
               { staticClass: "roboto-condensed", attrs: { width: "25%" } },
-              [_vm._v("Amount")]
+              [_vm._v("AMOUNT")]
             )
           ]),
           _vm._v(" "),
           _c("tr", [
             _c("td", { staticClass: "roboto-condensed" }, [
-              _vm._v("Yarn & Fabric")
+              _vm._v("YARN & FABRIC")
             ]),
             _vm._v(" "),
             _c("td"),
@@ -30687,7 +30980,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("tr", [
             _c("td", { staticClass: "roboto-condensed" }, [
-              _vm._v("Materials")
+              _vm._v("MATERIALS")
             ]),
             _vm._v(" "),
             _c("td"),
@@ -30698,7 +30991,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("tr", [
-            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("Sew")]),
+            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("SEW")]),
             _vm._v(" "),
             _c("td"),
             _vm._v(" "),
@@ -30719,7 +31012,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("tr", [
             _c("td", { staticClass: "roboto-condensed" }, [
-              _vm._v("FRT Charge")
+              _vm._v("FRT CHARGE")
             ]),
             _vm._v(" "),
             _c("td"),
@@ -30731,7 +31024,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("tr", [
             _c("td", { staticClass: "roboto-condensed" }, [
-              _vm._v("Commission")
+              _vm._v("COMMISSION")
             ]),
             _vm._v(" "),
             _c("td"),
@@ -30742,7 +31035,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("tr", [
-            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("Test")]),
+            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("TEST")]),
             _vm._v(" "),
             _c("td"),
             _vm._v(" "),
@@ -30752,7 +31045,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("tr", [
-            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("Duty")]),
+            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("DUTY")]),
             _vm._v(" "),
             _c("td"),
             _vm._v(" "),
@@ -30762,7 +31055,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("tr", [
-            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("Admini")]),
+            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("ADMINI")]),
             _vm._v(" "),
             _c("td"),
             _vm._v(" "),
@@ -30772,7 +31065,7 @@ var staticRenderFns = [
           ]),
           _vm._v(" "),
           _c("tr", [
-            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("Others")]),
+            _c("td", { staticClass: "roboto-condensed" }, [_vm._v("OTHERS")]),
             _vm._v(" "),
             _c("td"),
             _vm._v(" "),
@@ -30785,7 +31078,7 @@ var staticRenderFns = [
             _c(
               "td",
               { staticClass: "roboto-condensed", attrs: { colspan: "3" } },
-              [_vm._v("Production Total")]
+              [_vm._v("PRODUCTION TOTAL")]
             ),
             _vm._v(" "),
             _c("td")
@@ -30830,11 +31123,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("tr", [
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Date")
+          _vm._v("DATE")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Qty")
+          _vm._v("QTY")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
@@ -30842,7 +31135,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Amount")
+          _vm._v("AMOUNT")
         ])
       ])
     ])
@@ -30859,17 +31152,17 @@ var staticRenderFns = [
             staticClass: "roboto-condensed",
             attrs: { colspan: "4", width: "100%" }
           },
-          [_vm._v("Over Ship, Short")]
+          [_vm._v("OVER SHIP, SHORT")]
         )
       ]),
       _vm._v(" "),
       _c("tr", [
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Date")
+          _vm._v("DATE")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Qty")
+          _vm._v("QTY")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
@@ -30877,7 +31170,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Remark")
+          _vm._v("REMARK")
         ])
       ])
     ])
@@ -30893,7 +31186,7 @@ var staticRenderFns = [
           staticClass: "roboto-condensed",
           attrs: { colspan: "4", width: "100%" }
         },
-        [_vm._v("Accident")]
+        [_vm._v("ACCIDENT")]
       )
     ])
   },
@@ -30909,25 +31202,25 @@ var staticRenderFns = [
             staticClass: "roboto-condensed",
             attrs: { colspan: "4", width: "100%" }
           },
-          [_vm._v("Administration")]
+          [_vm._v("ADMINISTRATION")]
         )
       ]),
       _vm._v(" "),
       _c("tr", [
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Date")
+          _vm._v("DATE")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Description")
+          _vm._v("DESCRIPTION")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Amount")
+          _vm._v("AMOUNT")
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "roboto-condensed", attrs: { width: "25%" } }, [
-          _vm._v("Confirm")
+          _vm._v("CONFIRM")
         ])
       ])
     ])
@@ -30943,7 +31236,7 @@ var staticRenderFns = [
           staticClass: "roboto-condensed",
           attrs: { width: "50%", colspan: "2" }
         },
-        [_vm._v("Total")]
+        [_vm._v("TOTAL")]
       ),
       _vm._v(" "),
       _c("td", { attrs: { width: "50%", colspan: "2" } })

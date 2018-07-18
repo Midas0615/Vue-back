@@ -83,7 +83,28 @@ var getProfitSum = function(orderidx, name, callback) {
   })
 }
 
+var find2 = function(body, callback) {
+  var q = ' WHERE';
+  var arr = [];  
+  q = `SELECT
+          voucherheader.*, sum(voucherbody.Cantidad*voucherbody.Unitario) as sum1, CONCAT(iorderactual.Fileno, ",") as file,
+          costcenter.CostcenterIdx as CostCenter, accounts.PGroup as PGroup, vouchergroup.PIdx as PIdx FROM voucherheader
+        LEFT JOIN voucherbody ON voucherbody.HeaderIdx = voucherheader.Idx
+        LEFT JOIN dept ON voucherheader.DeptIdx = dept.DeptIdx
+        LEFT JOIN costcenter ON costcenter.CostcenterIdx = dept.CostCenterIdx
+        LEFT JOIN iorderactual ON iorderactual.Idx = voucherbody.File
+        LEFT JOIN accounts on accounts.Idx = voucherheader.cuenta
+        LEFT JOIN vouchergroup on accounts.PGroup = vouchergroup.Idx
+      `;
+  q += ` GROUP BY voucherheader.Idx`;  
+  db.query(q, arr, function(err, rows) {
+    callback(err, rows);
+  });
+}
+
 exports.find = find;
+// Find2 is to search by account group
+exports.find2 = find2;
 exports.find_all = find_all;
 exports.report_dept = report_dept;
 //Dashbord

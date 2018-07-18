@@ -1868,7 +1868,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component(__WEBPACK_IMPORTED_MODULE_
       __WEBPACK_IMPORTED_MODULE_3_mini_toastr__["a" /* default */][type](msg, title);
     },
     voucherlist: function voucherlist(item, number) {
-      var url = "/vouchers?year=" + this.model.year.YearName + "&month=" + number + "&acc=" + item.acc_idx;
+      var url = "/vouchers?type=1&year=" + this.model.year.YearName + "&month=" + number + "&acc=" + item.acc_idx;
       this.$router.push(url);
     }
   },
@@ -2145,7 +2145,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m1))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m1)
+                                  ? item.m1.toFixed(2)
+                                  : item.m1
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2158,7 +2166,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m2))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m2)
+                                  ? item.m2.toFixed(2)
+                                  : item.m2
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2171,7 +2187,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m3))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m3)
+                                  ? item.m3.toFixed(2)
+                                  : item.m3
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2184,7 +2208,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m4))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m4)
+                                  ? item.m4.toFixed(2)
+                                  : item.m4
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2197,7 +2229,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m5))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m5)
+                                  ? item.m5.toFixed(2)
+                                  : item.m5
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2210,7 +2250,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m6))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m6)
+                                  ? item.m6.toFixed(2)
+                                  : item.m6
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2223,7 +2271,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m7))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m7)
+                                  ? item.m7.toFixed(2)
+                                  : item.m7
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2236,7 +2292,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m8))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m8)
+                                  ? item.m8.toFixed(2)
+                                  : item.m8
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2249,7 +2313,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m9))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m9)
+                                  ? item.m9.toFixed(2)
+                                  : item.m9
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2262,7 +2334,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m10))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m10)
+                                  ? item.m10.toFixed(2)
+                                  : item.m10
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2275,7 +2355,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m11))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m11)
+                                  ? item.m11.toFixed(2)
+                                  : item.m11
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2288,7 +2376,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.m12))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.m12)
+                                  ? item.m12.toFixed(2)
+                                  : item.m12
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -2301,7 +2397,15 @@ var render = function() {
                               }
                             }
                           },
-                          [_vm._v(_vm._s(item.total))]
+                          [
+                            _vm._v(
+                              _vm._s(
+                                !Number.isInteger(item.total)
+                                  ? item.total.toFixed(2)
+                                  : item.total
+                              )
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(item.per))])

@@ -34,6 +34,7 @@ router.post('/voucher/voucher_detail', voucher.voucher_detail);
 router.post('/voucher/voucher_update', voucher.voucher_update);
 router.post('/voucher/report_list', voucher.report_list);
 router.post('/voucher/vouchers', voucher.vouchers);
+router.post('/voucher/vouchers2', voucher.vouchers2);
 // Voucher Group
 router.post('/voucher/load_acc_list', voucher.load_acc);
 router.post('/voucher/group/add_group', voucher.add_group);

@@ -1,7 +1,15 @@
 var db = require('./db');
 
 var edit = function(body, callback) {
-  
+  db.query(`
+    UPDATE iorderactual SET ? WHERE Idx = ?
+  `, [{
+    DeptIdx: body.model.department.DeptIdx, Handler: body.model.user.UserIdx, Indate: body.model.date,
+    Buyer: body.model.buyer.CustIdx, OrderAmount: body.model.amount, OrderQty: body.model.qty, OrderPrice: body.model.unit    
+  }, body.idx],
+  function(err) {
+    callback(err);
+  })
 }
 
 var find_all = function(callback) {

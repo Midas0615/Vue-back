@@ -17,13 +17,15 @@ var create = function(body, callback) {
   })
 }
 
-var add = function(body, callback) {    
+var add = function(body, callback) {
+  console.log(body);
   db.query(`
     SELECT * FROM testfg WHERE OrderIdx = ? AND Test_Item = ? AND Supplier = ? AND Request_Date = ? AND
       Description = ? AND Cost = ? AND Times_Number = ? AND Pass_Fail = ? AND Remarks = ?
   `,
     [body.ord_idx, body.test_item, body.supplier, body.request_date, body.description, body.cost, body.times_number, body.pass_fail, body.remarks], function(err, rows) {
-      if(err) {        
+      if(err) {
+        console.log(err);
         return callback(err);
       }
       if (rows.length) {

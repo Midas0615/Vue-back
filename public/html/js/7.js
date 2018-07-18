@@ -2200,42 +2200,83 @@ __WEBPACK_IMPORTED_MODULE_1_mini_toastr__["a" /* default */].init();
     load_data: function load_data() {
       var _this2 = this;
 
-      __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', true);
-      var search_model = {
-        year: this.$route.query.year,
-        month: this.$route.query.month,
-        acc: this.$route.query.acc
-      };
-      axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/voucher/vouchers', search_model).then(function (res) {
-        if (res.data.isSuccess) {
-          _this2.rowdata = [];
-          for (var i = 0; i < res.data.list.length; i++) {
-            var tmp = res.data.list[i];
-            _this2.rowdata.push({
-              'acc_code': _this2.getAccountCode(tmp.Cuenta),
-              'acc_name': _this2.getAccountName(tmp.Cuenta),
-              'cost': _this2.getCostCenterName(tmp.CostCenter),
-              'dept': _this2.getDeptName(tmp.DeptIdx),
-              'voucher': tmp.Voucher,
-              'iss_date': _this2.formatDate(tmp.Fetcha),
-              'cust': _this2.getCustomerName(tmp.Proveedor),
-              'cur': _this2.getCurrencyName(tmp.Currency),
-              'amount': tmp.sum1,
-              'p_type': _this2.getPayType(tmp.Forma),
-              'purchase': '',
-              'file': tmp.file.substr(0, tmp.file.length - 1),
-              "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
-            });
-            console.log(_this2.rowdata);
-          }
-        }
-        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
-      }).catch(function (err) {
-        if (err.response && err.response.status == 401) {
-          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('logout');
+      if (this.$route.query.type == 1) {
+        var search_model = {
+          year: this.$route.query.year,
+          month: this.$route.query.month,
+          acc: this.$route.query.acc
         };
-        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
-      });
+        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', true);
+        axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/voucher/vouchers', search_model).then(function (res) {
+          if (res.data.isSuccess) {
+            _this2.rowdata = [];
+            for (var i = 0; i < res.data.list.length; i++) {
+              var tmp = res.data.list[i];
+              _this2.rowdata.push({
+                'acc_code': _this2.getAccountCode(tmp.Cuenta),
+                'acc_name': _this2.getAccountName(tmp.Cuenta),
+                'cost': _this2.getCostCenterName(tmp.CostCenter),
+                'dept': _this2.getDeptName(tmp.DeptIdx),
+                'voucher': tmp.Voucher,
+                'iss_date': _this2.formatDate(tmp.Fetcha),
+                'cust': _this2.getCustomerName(tmp.Proveedor),
+                'cur': _this2.getCurrencyName(tmp.Currency),
+                'amount': tmp.sum1,
+                'p_type': _this2.getPayType(tmp.Forma),
+                'purchase': '',
+                'file': tmp.file ? tmp.file.substr(0, tmp.file.length - 1) : '',
+                "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
+              });
+            }
+          }
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        }).catch(function (err) {
+          if (err.response && err.response.status == 401) {
+            __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('logout');
+          };
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        });
+      } else if (this.$route.query.type == 2) {
+        var _search_model = {
+          year: this.$route.query.year,
+          month: this.$route.query.month,
+          week: this.$route.query.week,
+          type: this.$route.query.type2,
+          p_id: this.$route.query.p,
+          c_id: this.$route.query.c
+        };
+        __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', true);
+        axios.post(__WEBPACK_IMPORTED_MODULE_3_src_const_js__["a" /* default */].host + '/api/voucher/vouchers2', _search_model).then(function (res) {
+          if (res.data.isSuccess) {
+            _this2.rowdata = [];
+            for (var i = 0; i < res.data.list.length; i++) {
+              var tmp = res.data.list[i];
+              _this2.rowdata.push({
+                'acc_code': _this2.getAccountCode(tmp.Cuenta),
+                'acc_name': _this2.getAccountName(tmp.Cuenta),
+                'cost': _this2.getCostCenterName(tmp.CostCenter),
+                'dept': _this2.getDeptName(tmp.DeptIdx),
+                'voucher': tmp.Voucher,
+                'iss_date': _this2.formatDate(tmp.Fetcha),
+                'cust': _this2.getCustomerName(tmp.Proveedor),
+                'cur': _this2.getCurrencyName(tmp.Currency),
+                'amount': tmp.sum1,
+                'p_type': _this2.getPayType(tmp.Forma),
+                'purchase': '',
+                'file': tmp.file ? tmp.file.substr(0, tmp.file.length - 1) : '',
+                "button": "<a href='#/voucher_detail?id=" + tmp.Idx + "'><i class='fa fa-eye text-success'></i></a>"
+              });
+            }
+          }
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        }).catch(function (err) {
+          console.log(err);
+          if (err.response && err.response.status == 401) {
+            __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('logout');
+          };
+          __WEBPACK_IMPORTED_MODULE_2_src_store_store__["a" /* default */].commit('changeLoading', false);
+        });
+      }
     }
   },
   mounted: function mounted() {
