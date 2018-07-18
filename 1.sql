@@ -12,7 +12,7 @@ MySQL - 5.6.26 : Database - vue
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`vue` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`vue` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
 USE `vue`;
 
@@ -23,19 +23,22 @@ DROP TABLE IF EXISTS `accident`;
 CREATE TABLE `accident` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
-  `Report` varchar(30) DEFAULT NULL,
-  `Description` varchar(100) DEFAULT NULL,
-  `P_Accident` varchar(30) DEFAULT NULL,
-  `Amount` varchar(10) DEFAULT NULL,
+  `Report` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Description` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `P_Accident` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `accident` */
 
 insert  into `accident`(`Idx`,`OrderIdx`,`Report`,`Description`,`P_Accident`,`Amount`,`Confirm`) values 
 (1,1,'12','12','12','12',1),
-(4,1,'213','xp asdf awef',NULL,NULL,0);
+(4,1,'213','xp asdf awef',NULL,NULL,0),
+(5,8241,'11','111','1111','1111',0),
+(6,1,'12','12','12','21',1),
+(7,1,'12','afweawef wfe','12','21',0);
 
 /*Table structure for table `accounts` */
 
@@ -44,13 +47,13 @@ DROP TABLE IF EXISTS `accounts`;
 CREATE TABLE `accounts` (
   `Idx` int(11) NOT NULL,
   `CostcenterIdx` int(11) DEFAULT '0',
-  `AccountIdx` varchar(15) CHARACTER SET latin1 DEFAULT NULL,
+  `AccountIdx` varchar(15) DEFAULT NULL,
   `AccountName` varchar(120) DEFAULT NULL,
   `AccountNameKO` varchar(120) DEFAULT NULL,
   `AccountNameES` varchar(120) DEFAULT NULL,
   `LevelNo` tinyint(4) DEFAULT '0',
   `ParentIdx` int(11) DEFAULT '0',
-  `ManualSortKey` varchar(15) CHARACTER SET latin1 DEFAULT NULL,
+  `ManualSortKey` varchar(15) DEFAULT NULL,
   `Distribute` int(11) DEFAULT '0',
   `DistributeWay` int(11) DEFAULT '0',
   `Division` int(11) DEFAULT '0',
@@ -63,7 +66,7 @@ CREATE TABLE `accounts` (
 /*Data for the table `accounts` */
 
 insert  into `accounts`(`Idx`,`CostcenterIdx`,`AccountIdx`,`AccountName`,`AccountNameKO`,`AccountNameES`,`LevelNo`,`ParentIdx`,`ManualSortKey`,`Distribute`,`DistributeWay`,`Division`,`IsUse`,`SubIdx`,`PGroup`) values 
-(2051,1,'1','Activo','Activo','Activo',5,0,'',0,0,0,1,0,NULL),
+(2051,1,'1','Activo','Activo','Activo',5,0,'',0,0,0,1,0,7),
 (2052,1,'111','Corriente','Corriente','Corriente',3,0,'',0,0,0,1,0,NULL),
 (2053,1,'11100','Caja','Caja','Caja',1,0,'',0,0,0,1,0,NULL),
 (2054,1,'11100001','Caja General','Caja General','Caja General',0,0,'',0,0,0,1,0,NULL),
@@ -809,25 +812,26 @@ DROP TABLE IF EXISTS `admaterial`;
 CREATE TABLE `admaterial` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
-  `A_Name` varchar(30) DEFAULT NULL,
-  `Supplier1` varchar(11) DEFAULT NULL,
-  `Order_Qty` varchar(10) DEFAULT NULL,
-  `Unit_Price` varchar(10) DEFAULT NULL,
-  `Amount1` varchar(10) DEFAULT NULL,
-  `Voucher_Date` varchar(20) DEFAULT NULL,
-  `Supplier2` varchar(11) DEFAULT NULL,
-  `Amount2` varchar(10) DEFAULT NULL,
+  `A_Name` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Supplier1` varchar(11) CHARACTER SET utf8 DEFAULT NULL,
+  `Order_Qty` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Unit_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount1` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Voucher_Date` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Supplier2` varchar(11) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount2` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   `Handler1` tinyint(1) DEFAULT '0',
   `Manager1` tinyint(1) DEFAULT '0',
   `Handler2` tinyint(1) DEFAULT '0',
   `Manager2` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `admaterial` */
 
 insert  into `admaterial`(`Idx`,`OrderIdx`,`A_Name`,`Supplier1`,`Order_Qty`,`Unit_Price`,`Amount1`,`Voucher_Date`,`Supplier2`,`Amount2`,`Handler1`,`Manager1`,`Handler2`,`Manager2`) values 
-(2,1,'12','5','321','123','123','2-Jul-2018','2','32',1,1,1,0);
+(2,1,'12','5','321','123','123','2-Jul-2018','2','32',1,1,1,0),
+(3,8241,'111','8','111','1111','1111','10-Jul-2018','8','111',0,0,0,0);
 
 /*Table structure for table `admini` */
 
@@ -836,17 +840,18 @@ DROP TABLE IF EXISTS `admini`;
 CREATE TABLE `admini` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
-  `D_Date` varchar(20) DEFAULT NULL,
-  `Description` varchar(30) DEFAULT NULL,
-  `Amount` varchar(10) DEFAULT NULL,
+  `D_Date` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Description` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `admini` */
 
 insert  into `admini`(`Idx`,`OrderIdx`,`D_Date`,`Description`,`Amount`,`Confirm`) values 
-(2,1,'3-Jul-2018','12','12',0);
+(2,1,'3-Jul-2018','12','12',0),
+(3,8241,'4-Jul-2018','111','1111',0);
 
 /*Table structure for table `approval` */
 
@@ -866,13 +871,14 @@ CREATE TABLE `approval` (
   `Managing_Director2` tinyint(1) DEFAULT '0',
   `President2` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `approval` */
 
 insert  into `approval`(`Idx`,`OrderIdx`,`Handler`,`Manager`,`Director`,`Managing_Director`,`President`,`Handler2`,`Manager2`,`Director2`,`Managing_Director2`,`President2`) values 
 (1,1,NULL,1,1,0,NULL,NULL,1,1,0,NULL),
-(2,7,NULL,0,0,0,NULL,NULL,0,0,0,NULL);
+(2,7,NULL,0,0,0,NULL,NULL,0,0,0,NULL),
+(3,8241,NULL,0,1,0,NULL,NULL,0,1,0,NULL);
 
 /*Table structure for table `attachment` */
 
@@ -881,9 +887,9 @@ DROP TABLE IF EXISTS `attachment`;
 CREATE TABLE `attachment` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) NOT NULL,
-  `Title` varchar(30) DEFAULT NULL,
-  `Description` varchar(300) DEFAULT NULL,
-  `FileName` varchar(50) DEFAULT NULL,
+  `Title` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Description` varchar(300) CHARACTER SET utf8 DEFAULT NULL,
+  `FileName` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`,`OrderIdx`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -891,6 +897,34 @@ CREATE TABLE `attachment` (
 
 insert  into `attachment`(`Idx`,`OrderIdx`,`Title`,`Description`,`FileName`) values 
 (2,1,'TTT','TTT','8d0rgo1e9cjjlmb8r1.xlsx');
+
+/*Table structure for table `auth` */
+
+DROP TABLE IF EXISTS `auth`;
+
+CREATE TABLE `auth` (
+  `Idx` int(11) NOT NULL AUTO_INCREMENT,
+  `UserIdx` int(11) DEFAULT NULL,
+  `Page` int(11) DEFAULT NULL,
+  `Edit` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Idx`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+/*Data for the table `auth` */
+
+insert  into `auth`(`Idx`,`UserIdx`,`Page`,`Edit`) values 
+(1,30,2,1),
+(5,30,1,0),
+(6,19,3,1),
+(7,3,1,1),
+(8,3,2,1),
+(9,3,3,1),
+(10,3,4,1),
+(11,3,5,1),
+(12,3,6,1),
+(15,3,9,1),
+(16,3,8,1),
+(17,3,7,1);
 
 /*Table structure for table `budget` */
 
@@ -901,30 +935,31 @@ CREATE TABLE `budget` (
   `AccountIdx` int(11) DEFAULT NULL,
   `CostIdx` int(11) DEFAULT NULL,
   `DepIdx` int(11) DEFAULT NULL,
-  `team` varchar(10) DEFAULT NULL,
-  `pdate` varchar(30) DEFAULT NULL,
-  `m1` varchar(10) DEFAULT NULL,
-  `m2` varchar(10) DEFAULT NULL,
-  `m3` varchar(10) DEFAULT NULL,
-  `m4` varchar(10) DEFAULT NULL,
-  `m5` varchar(10) DEFAULT NULL,
-  `m6` varchar(10) DEFAULT NULL,
-  `m7` varchar(10) DEFAULT NULL,
-  `m8` varchar(10) DEFAULT NULL,
-  `m9` varchar(10) DEFAULT NULL,
-  `m10` varchar(10) DEFAULT NULL,
-  `m11` varchar(10) DEFAULT NULL,
-  `m12` varchar(10) DEFAULT NULL,
-  `revised_date` varchar(20) DEFAULT NULL,
+  `team` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `pdate` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `m1` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m2` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m3` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m4` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m5` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m6` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m7` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m8` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m9` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m10` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m11` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `m12` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `revised_date` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 /*Data for the table `budget` */
 
 insert  into `budget`(`Idx`,`AccountIdx`,`CostIdx`,`DepIdx`,`team`,`pdate`,`m1`,`m2`,`m3`,`m4`,`m5`,`m6`,`m7`,`m8`,`m9`,`m10`,`m11`,`m12`,`revised_date`) values 
 (16,2609,1,3,'','2018-06-02','335000','335000','335000','335000','335000','335000','335000','335000','335000','335000','335000','335000','12-Jul-2018'),
 (17,2608,1,3,'','2018-01-02','69500','69500','69500','69500','69500','69500','69500','69500','69500','69500','69500','69500','12-Jul-2018'),
-(18,2530,1,1,'13','2018-07-05','11','','11','111','','','','','','','','',NULL);
+(18,2530,1,1,'13','2018-07-05','11','','11','111','','','','2','12','','','','17-Jul-2018'),
+(19,2052,1,3,'','2018-07-17','76','8','68','68','68','687','6','76','76','76','76','8776','17-Jul-2018');
 
 /*Table structure for table `codes` */
 
@@ -933,7 +968,7 @@ DROP TABLE IF EXISTS `codes`;
 CREATE TABLE `codes` (
   `Idx` int(11) NOT NULL,
   `Priority` int(11) NOT NULL DEFAULT '1',
-  `Classification` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `Classification` varchar(20) NOT NULL,
   `Contents` varchar(200) DEFAULT NULL,
   `SubCode1` varchar(50) DEFAULT NULL,
   `SubCode2` varchar(50) DEFAULT NULL,
@@ -1744,7 +1779,11 @@ insert  into `codes`(`Idx`,`Priority`,`Classification`,`Contents`,`SubCode1`,`Su
 (900,0,'VsslAir','VSSL/AIR','','',''),
 (901,0,'Fabric Type','Retazo','','',''),
 (902,0,'Fabric Type','Stripe Slub Single','','',''),
-(903,0,'Fabric Type','Stripe Single Jersey','','','');
+(903,0,'Fabric Type','Stripe Single Jersey','','',''),
+(904,0,'Post FRT Charge','21110001',NULL,NULL,NULL),
+(905,0,'Post Commission','11300337',NULL,NULL,NULL),
+(906,0,'Post Duty','21120156',NULL,NULL,NULL),
+(907,0,'Post Others','11300338',NULL,NULL,NULL);
 
 /*Table structure for table `confirmation` */
 
@@ -1762,13 +1801,14 @@ CREATE TABLE `confirmation` (
   `C7` tinyint(1) DEFAULT '0',
   `C8` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `confirmation` */
 
 insert  into `confirmation`(`Idx`,`OrderIdx`,`C1`,`C2`,`C3`,`C4`,`C5`,`C6`,`C7`,`C8`) values 
 (1,1,0,1,1,0,0,1,0,0),
-(2,7,0,0,0,0,0,0,0,0);
+(2,7,0,0,0,0,0,0,0,0),
+(3,8241,1,0,1,0,0,1,0,0);
 
 /*Table structure for table `constcenter` */
 
@@ -1776,7 +1816,7 @@ DROP TABLE IF EXISTS `constcenter`;
 
 CREATE TABLE `constcenter` (
   `CostcenterIdx` int(11) NOT NULL,
-  `CostcenterName` varchar(30) NOT NULL,
+  `CostcenterName` varchar(30) CHARACTER SET utf8 NOT NULL,
   `IsUse` tinyint(3) DEFAULT '1',
   PRIMARY KEY (`CostcenterIdx`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1800,7 +1840,7 @@ DROP TABLE IF EXISTS `costcenter`;
 
 CREATE TABLE `costcenter` (
   `CostcenterIdx` int(11) NOT NULL,
-  `CostcenterName` varchar(30) NOT NULL,
+  `CostcenterName` varchar(30) CHARACTER SET utf8 NOT NULL,
   `IsUse` tinyint(3) DEFAULT '1',
   PRIMARY KEY (`CostcenterIdx`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1849,13 +1889,13 @@ CREATE TABLE `customers` (
   `IsUse` tinyint(3) DEFAULT '1',
   `iDate` datetime DEFAULT NULL,
   `uDate` datetime DEFAULT NULL,
-  `POTableName` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
+  `POTableName` varchar(20) DEFAULT NULL,
   `GroupID` smallint(6) DEFAULT '0',
   `MaxSize` tinyint(4) DEFAULT '0',
   `Currency` int(11) DEFAULT '0',
-  `BusinessNo` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
-  `BankAccount` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
-  `AttnName` varchar(30) CHARACTER SET latin1 DEFAULT NULL,
+  `BusinessNo` varchar(20) DEFAULT NULL,
+  `BankAccount` varchar(20) DEFAULT NULL,
+  `AttnName` varchar(30) DEFAULT NULL,
   `Handler` int(11) DEFAULT '0',
   `Handler2` int(11) DEFAULT '0',
   `Handler3` int(11) DEFAULT '0',
@@ -1865,13 +1905,13 @@ CREATE TABLE `customers` (
   `DocumentType` int(11) DEFAULT '0',
   `PurchaseType` int(11) DEFAULT '0',
   `Terms` smallint(6) DEFAULT '0',
-  `CheckName` varchar(90) CHARACTER SET latin1 DEFAULT NULL,
-  `Phone` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
-  `Faxno` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
+  `CheckName` varchar(90) DEFAULT NULL,
+  `Phone` varchar(20) DEFAULT NULL,
+  `Faxno` varchar(20) DEFAULT NULL,
   `CostRatesAdmin` decimal(10,0) DEFAULT '0',
   `Units` int(11) DEFAULT '0',
   `ProveedorType` int(11) DEFAULT '0',
-  `Email` varchar(70) CHARACTER SET latin1 DEFAULT NULL,
+  `Email` varchar(70) DEFAULT NULL,
   PRIMARY KEY (`CustIdx`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1885,7 +1925,7 @@ insert  into `customers`(`CustIdx`,`ParentIdx`,`CustName`,`CustNameEN`,`Classifi
 (5,0,'People & Arts, S.A.','People & Arts, S.A.',25,'',1,'2018-07-03 00:00:00','2018-07-03 00:00:00','',0,0,0,'','','',0,0,0,0,0,0,0,0,0,'','','',0,0,301,''),
 (6,0,'서울나염','Seoul Print',25,'',1,'2018-07-03 00:00:00','2018-07-03 00:00:00','',0,0,0,'','','',0,0,0,0,0,0,0,0,0,'','','',0,0,0,''),
 (7,0,'JS Print','JS Print',25,'',1,'2018-07-03 00:00:00','2018-07-03 00:00:00','',0,0,0,'','','',0,0,0,0,0,0,0,0,0,'','','',0,0,301,''),
-(8,0,'ACSA','ACSA',25,'',1,'2018-07-03 00:00:00','2018-07-03 00:00:00','',0,0,0,'','','',0,0,0,0,0,0,0,0,0,'','','',0,0,301,''),
+(8,0,'ACSA','ACSA',25,'',1,'2018-07-03 00:00:00','2018-07-03 00:00:00','',0,0,0,'','','',0,0,0,0,0,0,0,0,0,'ACSA','','',0,0,301,''),
 (9,0,'Printopia','Printopia',25,'',1,'2018-07-03 00:00:00','2018-07-03 00:00:00','',0,0,0,'','','',0,0,0,0,0,0,0,0,0,'','','',0,0,0,''),
 (10,0,'Call Print','Call Print',25,'',1,'2018-07-03 00:00:00','2018-07-03 00:00:00','',0,0,0,'','','',0,0,0,0,0,0,0,0,0,'','','',0,0,301,''),
 (11,0,'월드나염','World Print',25,'',1,'2018-07-03 00:00:00','2018-07-03 00:00:00','',0,0,0,'','','',0,0,0,0,0,0,0,0,0,'','','',0,0,0,''),
@@ -2774,7 +2814,7 @@ DROP TABLE IF EXISTS `dept`;
 CREATE TABLE `dept` (
   `DeptIdx` int(11) NOT NULL,
   `CostCenterIdx` int(11) NOT NULL,
-  `DeptName` varchar(30) DEFAULT NULL,
+  `DeptName` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `IsUse` tinyint(3) DEFAULT '1',
   `ReportNo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`DeptIdx`)
@@ -2805,8 +2845,8 @@ DROP TABLE IF EXISTS `fabrics`;
 
 CREATE TABLE `fabrics` (
   `Idx` int(11) NOT NULL,
-  `LongName` varchar(80) DEFAULT NULL,
-  `ShortName` varchar(30) DEFAULT NULL,
+  `LongName` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
+  `ShortName` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `Yaarn1` int(11) DEFAULT NULL,
   `Yarn2` int(11) DEFAULT NULL,
   `Yarn3` int(11) DEFAULT NULL,
@@ -3348,20 +3388,22 @@ CREATE TABLE `fcactual` (
   `OrderIdx` int(11) DEFAULT NULL,
   `F_Type` int(11) DEFAULT NULL,
   `Fabric` int(11) DEFAULT NULL,
-  `U_Price` varchar(30) DEFAULT NULL,
-  `Consumption` varchar(30) DEFAULT NULL,
-  `Yds_Pcs` varchar(30) DEFAULT NULL,
-  `Width` varchar(30) DEFAULT NULL,
-  `Weight` varchar(30) DEFAULT NULL,
+  `U_Price` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Consumption` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Yds_Pcs` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Width` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Weight` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `fcactual` */
 
 insert  into `fcactual`(`Idx`,`OrderIdx`,`F_Type`,`Fabric`,`U_Price`,`Consumption`,`Yds_Pcs`,`Width`,`Weight`,`Confirm`) values 
 (1,1,147,1,'1232','12','12','12','12',1),
-(2,1,118,1,'1','1','2','2','2',0);
+(2,1,118,1,'1','1','2','2','2',0),
+(3,8241,117,5,'11','111','1111','111','111',0),
+(4,1,147,7,'12','12','12','12','21',0);
 
 /*Table structure for table `fcplan` */
 
@@ -3372,21 +3414,22 @@ CREATE TABLE `fcplan` (
   `OrderIdx` int(11) DEFAULT NULL,
   `F_Type` int(11) DEFAULT NULL,
   `Fabric` int(11) DEFAULT NULL,
-  `U_Price` varchar(30) DEFAULT NULL,
-  `Consumption` varchar(30) DEFAULT NULL,
-  `Yds_Pcs` varchar(30) DEFAULT NULL,
-  `Width` varchar(30) DEFAULT NULL,
-  `Weight` varchar(30) DEFAULT NULL,
+  `U_Price` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Consumption` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Yds_Pcs` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Width` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Weight` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `fcplan` */
 
 insert  into `fcplan`(`Idx`,`OrderIdx`,`F_Type`,`Fabric`,`U_Price`,`Consumption`,`Yds_Pcs`,`Width`,`Weight`,`Confirm`) values 
 (1,1,118,1,'12','12','32','12','12',1),
 (2,1,156,1,'32','12','32','12','32',0),
-(3,1,118,1,'2','2','2','2','1',0);
+(3,1,118,7,'2','2','2','2','1',1),
+(4,8241,117,5,'111','111','111','111','111',0);
 
 /*Table structure for table `iorderactual` */
 
@@ -3398,8 +3441,8 @@ CREATE TABLE `iorderactual` (
   `Fileno` varchar(11) DEFAULT NULL,
   `Indate` datetime DEFAULT NULL,
   `Buyer` int(11) DEFAULT NULL,
-  `Brand` varchar(25) CHARACTER SET latin1 DEFAULT NULL,
-  `Pono` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `Brand` varchar(25) DEFAULT NULL,
+  `Pono` varchar(50) DEFAULT NULL,
   `Styleno` varchar(100) DEFAULT NULL,
   `Season` varchar(50) DEFAULT NULL,
   `Description` varchar(300) DEFAULT NULL,
@@ -9673,26 +9716,27 @@ DROP TABLE IF EXISTS `material`;
 CREATE TABLE `material` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
-  `A_Name` varchar(30) DEFAULT NULL,
-  `Supplier1` varchar(11) DEFAULT NULL,
-  `Order_Qty` varchar(10) DEFAULT NULL,
-  `Unit_Price` varchar(10) DEFAULT NULL,
-  `Amount1` varchar(10) DEFAULT NULL,
-  `Voucher_Date` varchar(20) DEFAULT NULL,
-  `Supplier2` varchar(11) DEFAULT NULL,
-  `Amount2` varchar(10) DEFAULT NULL,
+  `A_Name` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Supplier1` varchar(11) CHARACTER SET utf8 DEFAULT NULL,
+  `Order_Qty` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Unit_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount1` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Voucher_Date` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Supplier2` varchar(11) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount2` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   `Handler1` tinyint(1) DEFAULT '0',
   `Manager1` tinyint(1) DEFAULT '0',
   `Handler2` tinyint(1) DEFAULT '0',
   `Manager2` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `material` */
 
 insert  into `material`(`Idx`,`OrderIdx`,`A_Name`,`Supplier1`,`Order_Qty`,`Unit_Price`,`Amount1`,`Voucher_Date`,`Supplier2`,`Amount2`,`Handler1`,`Manager1`,`Handler2`,`Manager2`) values 
 (3,1,'12','2','32','32','12','2-Jul-2018','2','32',0,0,1,0),
-(4,1,'123','2560','23','21','12','3-Jul-2018','2515','12',0,0,0,0);
+(4,1,'123','2560','23','21','12','3-Jul-2018','2515','12',0,0,0,0),
+(5,8241,'11111','7','111','111','11111','3-Jul-2018','11','1111',1,1,0,0);
 
 /*Table structure for table `ordpay` */
 
@@ -9703,22 +9747,24 @@ CREATE TABLE `ordpay` (
   `OrderIdx` int(11) DEFAULT NULL,
   `Operation` int(11) DEFAULT NULL,
   `F_Type` int(11) DEFAULT NULL,
-  `Customer1` varchar(20) DEFAULT NULL,
-  `Kg_Pcs1` varchar(10) DEFAULT NULL,
-  `U_Price1` varchar(10) DEFAULT NULL,
-  `Amount1` varchar(10) DEFAULT NULL,
-  `Date` varchar(30) DEFAULT NULL,
-  `Kg_Pcs2` varchar(10) DEFAULT NULL,
-  `U_Price2` varchar(10) DEFAULT NULL,
-  `Amount2` varchar(10) DEFAULT NULL,
-  `Customer2` varchar(20) DEFAULT NULL,
+  `Customer1` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Kg_Pcs1` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `U_Price1` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount1` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Date` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Kg_Pcs2` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `U_Price2` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount2` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Customer2` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `ordpay` */
 
 insert  into `ordpay`(`Idx`,`OrderIdx`,`Operation`,`F_Type`,`Customer1`,`Kg_Pcs1`,`U_Price1`,`Amount1`,`Date`,`Kg_Pcs2`,`U_Price2`,`Amount2`,`Customer2`) values 
-(1,1,110,117,'1','1','1','1','10-Jul-2018','1','1','12','2');
+(1,1,110,117,'1','1','1','1','10-Jul-2018','1','1','12','2'),
+(2,8241,114,117,'1','11','11','11111','4-Jul-2018','11','1111','11','2'),
+(3,1,111,147,'39','12','21','12','10-Jul-2018','12','12','12','15');
 
 /*Table structure for table `overshort` */
 
@@ -9727,18 +9773,19 @@ DROP TABLE IF EXISTS `overshort`;
 CREATE TABLE `overshort` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
-  `Ship_Date` varchar(20) DEFAULT NULL,
-  `Ship_Qty` varchar(10) DEFAULT NULL,
-  `U_Price` varchar(10) DEFAULT NULL,
-  `Remark` varchar(30) DEFAULT NULL,
+  `Ship_Date` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Ship_Qty` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `U_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Remark` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `overshort` */
 
 insert  into `overshort`(`Idx`,`OrderIdx`,`Ship_Date`,`Ship_Qty`,`U_Price`,`Remark`) values 
 (1,1,'2-Jul-2018','12','12','12'),
-(2,1,'1-Jul-2018','12','123','121');
+(2,1,'1-Jul-2018','12','123','121'),
+(3,8241,'5-Jul-2018','111','1111','11');
 
 /*Table structure for table `po` */
 
@@ -9747,25 +9794,25 @@ DROP TABLE IF EXISTS `po`;
 CREATE TABLE `po` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
-  `No` varchar(30) DEFAULT NULL,
-  `Po` varchar(30) DEFAULT NULL,
-  `Style` varchar(30) DEFAULT NULL,
-  `U_Price` varchar(30) DEFAULT NULL,
-  `Qty` varchar(30) DEFAULT NULL,
-  `Amount` varchar(30) DEFAULT NULL,
-  `Factory` varchar(30) DEFAULT NULL,
-  `D_Date` varchar(30) DEFAULT NULL,
-  `Remark` varchar(50) DEFAULT NULL,
+  `No` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Po` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Style` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `U_Price` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Qty` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Factory` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `D_Date` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Remark` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `po` */
 
 insert  into `po`(`Idx`,`OrderIdx`,`No`,`Po`,`Style`,`U_Price`,`Qty`,`Amount`,`Factory`,`D_Date`,`Remark`) values 
 (3,1,'1231232','123','123','123','123','1233','1','3-Jul-2018','1233'),
 (4,1,'123','1234123123','123123','123','123','123','1','3-Jul-2018','123'),
-(5,1,'123','12','12','321','123123','12312312','1','3-Jul-2018','12312'),
-(6,2,'1','1','1','1','1','1','1','1-Jul-2018',NULL);
+(6,2,'1','1','1','1','1','1','1','1-Jul-2018',NULL),
+(7,8241,NULL,'111','111','11','111','1111','1','19-Jul-2018',NULL);
 
 /*Table structure for table `shipment` */
 
@@ -9774,17 +9821,18 @@ DROP TABLE IF EXISTS `shipment`;
 CREATE TABLE `shipment` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
-  `Ship_Date` varchar(20) DEFAULT NULL,
-  `Ship_Qty` varchar(10) DEFAULT NULL,
-  `U_Price` varchar(10) DEFAULT NULL,
-  `Ship_Amount` varchar(10) DEFAULT NULL,
+  `Ship_Date` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Ship_Qty` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `U_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Ship_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `shipment` */
 
 insert  into `shipment`(`Idx`,`OrderIdx`,`Ship_Date`,`Ship_Qty`,`U_Price`,`Ship_Amount`) values 
-(2,1,'2-Jul-2018','12','12','12');
+(2,1,'2-Jul-2018','12','12','12'),
+(3,8241,'5-Jul-2018','111','111','11111');
 
 /*Table structure for table `summary` */
 
@@ -9793,38 +9841,38 @@ DROP TABLE IF EXISTS `summary`;
 CREATE TABLE `summary` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
-  `YF_Price` varchar(10) DEFAULT NULL,
-  `YF_Rate` varchar(10) DEFAULT NULL,
-  `YF_Amount` varchar(10) DEFAULT NULL,
-  `Material_Price` varchar(10) DEFAULT NULL,
-  `Material_Rate` varchar(10) DEFAULT NULL,
-  `Material_Amount` varchar(10) DEFAULT NULL,
-  `Sew_Price` varchar(10) DEFAULT NULL,
-  `Sew_Rate` varchar(10) DEFAULT NULL,
-  `Sew_Amount` varchar(10) DEFAULT NULL,
-  `Int_Price` varchar(10) DEFAULT NULL,
-  `Int_Rate` varchar(10) DEFAULT NULL,
-  `Int_Amount` varchar(10) DEFAULT NULL,
-  `Frt_Price` varchar(10) DEFAULT NULL,
-  `Frt_Rate` varchar(10) DEFAULT NULL,
-  `Frt_Amount` varchar(10) DEFAULT NULL,
-  `Commission_Price` varchar(10) DEFAULT NULL,
-  `Commission_Rate` varchar(10) DEFAULT NULL,
-  `Commission_Amount` varchar(10) DEFAULT NULL,
-  `Test_Price` varchar(10) DEFAULT NULL,
-  `Test_Rate` varchar(10) DEFAULT NULL,
-  `Test_Amount` varchar(10) DEFAULT NULL,
-  `Duty_Price` varchar(10) DEFAULT NULL,
-  `Duty_Rate` varchar(10) DEFAULT NULL,
-  `Duty_Amount` varchar(10) DEFAULT NULL,
-  `Admini_Price` varchar(10) DEFAULT NULL,
-  `Admini_Rate` varchar(10) DEFAULT NULL,
-  `Admini_Amount` varchar(10) DEFAULT NULL,
-  `Other_Price` varchar(10) DEFAULT NULL,
-  `Other_Rate` varchar(10) DEFAULT NULL,
-  `Other_Amount` varchar(10) DEFAULT NULL,
+  `YF_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `YF_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `YF_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Material_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Material_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Material_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Sew_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Sew_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Sew_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Int_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Int_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Int_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Frt_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Frt_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Frt_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Commission_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Commission_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Commission_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Test_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Test_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Test_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Duty_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Duty_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Duty_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Admini_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Admini_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Admini_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Other_Price` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Other_Rate` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Other_Amount` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `summary` */
 
@@ -9833,7 +9881,8 @@ insert  into `summary`(`Idx`,`OrderIdx`,`YF_Price`,`YF_Rate`,`YF_Amount`,`Materi
 (2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
 (4,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(5,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(6,8241,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `testfg` */
 
@@ -9842,21 +9891,22 @@ DROP TABLE IF EXISTS `testfg`;
 CREATE TABLE `testfg` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
-  `Test_Item` varchar(30) DEFAULT NULL,
-  `Supplier` varchar(30) DEFAULT NULL,
-  `Request_Date` varchar(20) DEFAULT NULL,
-  `Description` varchar(30) DEFAULT NULL,
-  `Cost` varchar(10) DEFAULT NULL,
-  `Times_Number` varchar(10) DEFAULT NULL,
+  `Test_Item` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Supplier` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Request_Date` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Description` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Cost` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `Times_Number` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   `Pass_Fail` tinyint(1) DEFAULT '1',
-  `Remarks` varchar(50) DEFAULT NULL,
+  `Remarks` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `testfg` */
 
 insert  into `testfg`(`Idx`,`OrderIdx`,`Test_Item`,`Supplier`,`Request_Date`,`Description`,`Cost`,`Times_Number`,`Pass_Fail`,`Remarks`) values 
-(1,1,'123','2','2-Jul-2018','123','123','123',2,'123');
+(1,1,'123','2','2-Jul-2018','123','123','123',2,'123'),
+(2,8241,'111','8','4-Jul-2018','111','111','111',1,'11');
 
 /*Table structure for table `users` */
 
@@ -9866,16 +9916,16 @@ CREATE TABLE `users` (
   `UserIdx` int(11) NOT NULL,
   `CostcenterIdx` int(11) NOT NULL,
   `DeptIdx` int(11) DEFAULT NULL,
-  `UserName` varchar(50) NOT NULL,
-  `UserId` varchar(30) NOT NULL,
-  `Passwd` varchar(100) DEFAULT NULL,
+  `UserName` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `UserId` varchar(30) CHARACTER SET utf8 NOT NULL,
+  `Passwd` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `PasswdInit` smallint(6) DEFAULT NULL,
   `UserImage` binary(1) DEFAULT NULL,
   `SignImage` binary(1) DEFAULT NULL,
-  `MacAddr` varchar(20) DEFAULT NULL,
-  `AuthCode` varchar(20) DEFAULT NULL,
-  `Email` varchar(40) NOT NULL,
-  `Phone` varchar(20) DEFAULT NULL,
+  `MacAddr` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `AuthCode` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Email` varchar(40) CHARACTER SET utf8 NOT NULL,
+  `Phone` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `RegDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `IsUse` tinyint(3) NOT NULL,
   `Connected` tinyint(3) NOT NULL DEFAULT '0',
@@ -9885,8 +9935,8 @@ CREATE TABLE `users` (
   `ExceptionGroup` int(11) DEFAULT '0',
   `Nationality` int(11) DEFAULT '0',
   `Bank` int(11) DEFAULT '0',
-  `BankAccount` varchar(20) DEFAULT NULL,
-  `CheckName` varchar(50) DEFAULT NULL,
+  `BankAccount` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `CheckName` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `Point` int(11) DEFAULT '0',
   `PointYR` int(11) DEFAULT '0',
   PRIMARY KEY (`UserIdx`)
@@ -9999,9 +10049,9 @@ DROP TABLE IF EXISTS `voucher`;
 
 CREATE TABLE `voucher` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
-  `VIdx` varchar(50) DEFAULT NULL,
-  `Txt` text,
-  `Email` varchar(30) DEFAULT NULL,
+  `VIdx` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `Txt` text CHARACTER SET utf8,
+  `Email` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -10016,14 +10066,14 @@ CREATE TABLE `voucherbody` (
   `HeaderIdx` int(11) DEFAULT NULL,
   `File` int(11) DEFAULT NULL,
   `Buyer` int(11) DEFAULT NULL,
-  `Reg` varchar(20) DEFAULT NULL,
-  `Fact` varchar(20) DEFAULT NULL,
-  `Descripcion_Title` varchar(30) DEFAULT NULL,
-  `Descripcion_Body` varchar(100) DEFAULT NULL,
-  `Cantidad` varchar(20) DEFAULT NULL,
-  `Unitario` varchar(20) DEFAULT NULL,
+  `Reg` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Fact` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Descripcion_Title` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Descripcion_Body` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `Cantidad` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Unitario` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `voucherbody` */
 
@@ -10031,7 +10081,11 @@ insert  into `voucherbody`(`Idx`,`HeaderIdx`,`File`,`Buyer`,`Reg`,`Fact`,`Descri
 (1,11,3,15,'321','123','123','51231','1','2'),
 (2,12,1,15,'1234','1','42','1','2','3'),
 (3,12,13,19,'321','24','1','5','2','1'),
-(4,14,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(4,14,1,NULL,NULL,NULL,'Test','Test','12','12'),
+(5,15,8241,20,NULL,'081287','PROBAR VOUCHER PARA IMPRESO','PROBAR VOUCHER PARA IMPRESO 7/16','1824','1.45'),
+(6,17,8241,NULL,NULL,'111','test 111','test descrption','1000','3.64'),
+(7,18,8241,NULL,NULL,'12421','test','test','532','1.976'),
+(8,19,8241,NULL,NULL,'23rawfe','test','test','1324','0.2345');
 
 /*Table structure for table `vouchergroup` */
 
@@ -10039,7 +10093,7 @@ DROP TABLE IF EXISTS `vouchergroup`;
 
 CREATE TABLE `vouchergroup` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(30) DEFAULT NULL,
+  `Name` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `PIdx` int(11) DEFAULT NULL,
   PRIMARY KEY (`Idx`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
@@ -10057,21 +10111,21 @@ DROP TABLE IF EXISTS `voucherheader`;
 CREATE TABLE `voucherheader` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `DeptIdx` int(11) NOT NULL,
-  `Voucher` varchar(20) DEFAULT NULL,
-  `Fetcha` varchar(20) DEFAULT NULL,
+  `Voucher` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Fetcha` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `Cuenta` int(11) DEFAULT NULL,
   `Proveedor` int(11) DEFAULT NULL,
   `Forma` int(11) DEFAULT NULL,
-  `C_Limit` varchar(20) DEFAULT NULL,
-  `Compora` varchar(20) DEFAULT NULL,
-  `Cheque` varchar(20) DEFAULT NULL,
+  `C_Limit` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Compora` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `Cheque` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `Banco_Nombre` int(11) DEFAULT NULL,
   `Buyer` int(11) DEFAULT NULL,
-  `Banco_Cuenta` varchar(20) DEFAULT NULL,
+  `Banco_Cuenta` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   `Currency` int(11) DEFAULT NULL,
-  `Paper_No` varchar(20) DEFAULT NULL,
+  `Paper_No` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`Idx`,`DeptIdx`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 /*Data for the table `voucherheader` */
 
@@ -10079,7 +10133,13 @@ insert  into `voucherheader`(`Idx`,`DeptIdx`,`Voucher`,`Fetcha`,`Cuenta`,`Provee
 (11,5,'12344','20-Jul-2018',2054,7,1,'123','321','12',2943,16,'321',2,'1234'),
 (12,1,'1807131001','13-Jul-2018',2053,7,1,'1234','1234','1234',2943,19,'1234',1,'QWER'),
 (13,5,'4322','13-Jul-2018',2060,10,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'234'),
-(14,5,'123','13-Jul-2018',NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(14,5,'123','11-Jul-2018',2051,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(15,5,'1807165001','16-Jul-2018',2180,2198,1,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL),
+(16,5,'1807165002','17-Jul-2018',2096,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(17,5,'1807165003','17-Jul-2018',2096,2211,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(18,5,'1807165004','17-Jul-2018',2492,2199,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(19,5,'1807165005','17-Jul-2018',2097,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(20,4,'1807174001','17-Jul-2018',2097,8,1,NULL,'432112','ACSA',NULL,1478,NULL,2,NULL);
 
 /*Table structure for table `voucherroute` */
 
@@ -10096,7 +10156,7 @@ CREATE TABLE `voucherroute` (
   `D_Director_General` int(11) DEFAULT NULL,
   `D_Presidente` int(11) DEFAULT NULL,
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 /*Data for the table `voucherroute` */
 
@@ -10104,7 +10164,13 @@ insert  into `voucherroute`(`Idx`,`HeaderIdx`,`Encargador`,`Gerente`,`Director`,
 (3,11,7,17,19,NULL,NULL,20,NULL),
 (4,12,29,47,47,NULL,NULL,NULL,NULL),
 (5,13,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-(6,14,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+(6,14,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+(7,15,NULL,NULL,NULL,NULL,105,10,95),
+(8,16,NULL,NULL,NULL,NULL,105,10,95),
+(9,17,42,NULL,NULL,NULL,105,10,95),
+(10,18,NULL,NULL,NULL,NULL,105,10,95),
+(11,19,42,NULL,NULL,NULL,105,10,95),
+(12,20,NULL,NULL,NULL,NULL,105,10,95);
 
 /*Table structure for table `yarn` */
 
@@ -10112,7 +10178,7 @@ DROP TABLE IF EXISTS `yarn`;
 
 CREATE TABLE `yarn` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
-  `YarnCode` varchar(50) DEFAULT NULL,
+  `YarnCode` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `Composition` int(11) DEFAULT '0',
   `BurnCount` int(11) DEFAULT '0',
   `Contents1` int(11) DEFAULT '0',
@@ -10126,7 +10192,7 @@ CREATE TABLE `yarn` (
   `Method` int(11) DEFAULT '0',
   `YarnType` int(11) DEFAULT '0',
   `Special` int(11) DEFAULT '0',
-  `Remark` varchar(100) DEFAULT NULL,
+  `Remark` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
   `IsUse` bit(1) DEFAULT b'1',
   PRIMARY KEY (`Idx`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
@@ -10144,13 +10210,13 @@ CREATE TABLE `yarnactual` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
   `Yarn` int(11) DEFAULT NULL,
-  `U_Price` varchar(30) DEFAULT NULL,
-  `KGS` varchar(30) DEFAULT NULL,
-  `Amount` varchar(30) DEFAULT NULL,
-  `Remark` varchar(30) DEFAULT NULL,
+  `U_Price` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `KGS` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Remark` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `yarnactual` */
 
@@ -10158,7 +10224,8 @@ insert  into `yarnactual`(`Idx`,`OrderIdx`,`Yarn`,`U_Price`,`KGS`,`Amount`,`Rema
 (2,1,1,'12','12','12','12',1),
 (3,1,1,'12',NULL,NULL,NULL,0),
 (4,1,NULL,'32',NULL,NULL,NULL,0),
-(5,1,NULL,'32',NULL,NULL,NULL,0);
+(5,1,NULL,'32',NULL,NULL,NULL,0),
+(6,8241,1,'11','1111','111','111',0);
 
 /*Table structure for table `yarnplan` */
 
@@ -10168,18 +10235,19 @@ CREATE TABLE `yarnplan` (
   `Idx` int(11) NOT NULL AUTO_INCREMENT,
   `OrderIdx` int(11) DEFAULT NULL,
   `Yarn` int(11) DEFAULT NULL,
-  `U_Price` varchar(30) DEFAULT NULL,
-  `KGS` varchar(30) DEFAULT NULL,
-  `Amount` varchar(30) DEFAULT NULL,
-  `Remark` varchar(30) DEFAULT NULL,
+  `U_Price` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `KGS` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Amount` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
+  `Remark` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
   `Confirm` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`Idx`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `yarnplan` */
 
 insert  into `yarnplan`(`Idx`,`OrderIdx`,`Yarn`,`U_Price`,`KGS`,`Amount`,`Remark`,`Confirm`) values 
-(1,1,1,'12','12','12','12',1);
+(1,1,1,'12','12','12','12',1),
+(2,8241,1,'11','1111','1111',NULL,0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
