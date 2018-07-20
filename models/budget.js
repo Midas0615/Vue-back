@@ -122,7 +122,7 @@ var report = function(body, callback) {
   }
   if(arr.length > 0) {
     q = `SELECT AccountIdx, sum(m1) as m1, sum(m2) as m2, sum(m3) as m3, sum(m4) as m4, sum(m5) as m5, sum(m6) as m6,
-        sum(m7) as sm7, sum(m8) as m8, sum(m9) as m9, sum(m10) as m10, sum(m11) as m11, sum(m12) as m12 FROM budget` + q;
+        sum(m7) as m7, sum(m8) as m8, sum(m9) as m9, sum(m10) as m10, sum(m11) as m11, sum(m12) as m12 FROM budget` + q;
     q = q.substring(0, q.lastIndexOf(" "));
     q += ` GROUP BY AccountIdx`;
   } else {

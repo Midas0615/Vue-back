@@ -359,9 +359,13 @@ exports.report_list = function(req, res) {
       if(req.body.account) {
         rows = rows.filter(v => {
           return v.Cuenta == req.body.account.Idx;
-        })        
+        })
       }
-      
+      if(req.body.buyer) {
+        rows = rows.filter(v => {
+          return v.Buyer == req.body.buyer.CustIdx;
+        })
+      }
       for(var i = 0; i < rows.length; i++) {
         var m = getMonth(rows[i].Fetcha);
         var amount = rows[i].sum1;
